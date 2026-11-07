@@ -1,0 +1,70 @@
+{
+  "schema": "fringe.evidence/1",
+  "eventId": "san-andreas",
+  "eventName": "San Andreas",
+  "region": "California",
+  "episode": "Creeping section",
+  "climateLink": "none-claimed",
+  "climateNote": "This is a tectonic event: steady aseismic creep on a transform fault. No climate connection is claimed — it is included for the fault-slip radar physics lesson and the decade-long window.",
+  "generatedAt": "2026-11-06",
+  "dataset": {
+    "mission": "Sentinel-1A/1B (Copernicus), ascending pass; decade-long studies also use ERS/Envisat",
+    "datasetId": "USGS creep-meter and GNSS series; Copernicus Sentinel-1 SLC",
+    "window": "Published: multi-decade creep record (Titus et al., 2006); in-app pass-pair window: 3,600 days",
+    "coverage": "Central California — San Juan Bautista to Parkfield creeping section (~90 km scene)",
+    "gnss": "P289 (Pacific side) + P290 (North American side), Nevada Geodetic Lab daily IGS20 solutions, bundled as weekly means",
+    "processing": "Published: creep meters, aligned arrays, GNSS velocities. In-app: elastic rectangular dislocation (25 cm slip at 12 km depth); one fringe = λ/2 line-of-sight motion"
+  },
+  "items": [
+    {
+      "label": "MEASURED",
+      "kind": "GNSS position time series",
+      "detail": "Real daily IGS20 solutions from NGL stations P289 and P290 on opposite sides of the creeping section, downsampled to weekly means with NGL-logged equipment offsets removed. Over 2015–2026 they move ≈43 and ≈16 mm/yr parallel to the fault: ≈27 mm/yr of relative motion across it, consistent with the published surface creep rate."
+    },
+    {
+      "label": "MEASURED",
+      "kind": "Published tectonic rates",
+      "detail": "~25 mm/yr surface creep near the center of the creeping section (Titus et al., 2006, BSSA). Shown as citation; not re-derived in-app."
+    },
+    {
+      "label": "MODELED",
+      "kind": "Interferogram scene",
+      "detail": "Physics rendering of a rectangular dislocation source (25 cm slip). NOT a raw SAR image — computed on-device."
+    },
+    {
+      "label": "DERIVED",
+      "kind": "Motion metrics and rate",
+      "detail": "Computed on-device from the physical model (one fringe = λ/2 LOS). Tracks the model, not a downloaded product."
+    },
+    {
+      "label": "LIVE",
+      "kind": "ESP32 demo ground sensor",
+      "detail": "Live accelerometer from the demo ESP32 ground station — IoT demo at the demo site; not a satellite measurement of this event."
+    }
+  ],
+  "limitations": [
+    "The interferogram is a physics rendering of published figures, not raw SAR pixels — no SAR processing is done in-app.",
+    "Creep rate varies along strike and with depth; the uniform-slip model is a simplification.",
+    "Over the 3,600-day window the signal is under one L-band fringe; the band selector exists precisely for this case."
+  ],
+  "sources": [
+    {
+      "title": "Titus et al.: 'Surface creep on the San Andreas Fault system near Parkfield', BSSA",
+      "publisher": "Bulletin of the Seismological Society of America",
+      "year": "2006",
+      "url": "https://doi.org/10.1785/0120050813"
+    },
+    {
+      "title": "USGS — San Andreas Fault observables (creep meters, GNSS)",
+      "publisher": "U.S. Geological Survey",
+      "year": "2025",
+      "url": "https://www.usgs.gov/"
+    },
+    {
+      "title": "Nevada Geodetic Lab daily IGS20 position solutions and equipment-step log (stations P289, P290)",
+      "publisher": "Nevada Geodetic Laboratory, University of Nevada, Reno",
+      "year": "2026",
+      "url": "https://geodesy.unr.edu/"
+    }
+  ]
+}

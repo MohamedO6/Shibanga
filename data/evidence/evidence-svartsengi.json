@@ -1,0 +1,70 @@
+{
+  "schema": "fringe.evidence/1",
+  "eventId": "svartsengi",
+  "eventName": "Svartsengi",
+  "region": "Iceland",
+  "episode": "Inflation episode",
+  "climateLink": "none-claimed",
+  "climateNote": "This is a volcanic-system event: magma inflow and dike intrusion drive the motion, not any climate-linked process. Fringe shows it for radar physics and hazard-monitoring value — no climate connection is claimed.",
+  "generatedAt": "2026-10-22",
+  "dataset": {
+    "mission": "Sentinel-1A/1B (Copernicus), 12-day repeat; COSMO-SkyMed spot acquisitions in published studies",
+    "datasetId": "Icelandic Met Office deformation series (GNSS + InSAR); Copernicus Sentinel-1 SLC",
+    "window": "Published: Oct 2023 – Jan 2026 inflation–eruption cycles; in-app pass-pair window: 120 days",
+    "coverage": "Reykjanes Peninsula — Svartsengi / Sundhnúkur crater row (~40 km scene)",
+    "gnss": "REYK, Nevada Geodetic Lab daily IGS20 solutions, bundled as weekly means — quiet far-field reference 40 km NE of the dome",
+    "processing": "Published: joint GNSS + InSAR pressure-source inversion (Parks et al., 2025). In-app: elastic Mogi point source at 4.5 km depth; one fringe = λ/2 line-of-sight motion"
+  },
+  "items": [
+    {
+      "label": "MEASURED",
+      "kind": "GNSS position time series",
+      "detail": "Real daily IGS20 solutions from NGL station REYK (far-field reference), downsampled to weekly means, bundled and charted in-app."
+    },
+    {
+      "label": "MEASURED",
+      "kind": "Published geophysical rates",
+      "detail": "3–4 mm/day onset uplift (Þorbjörn, Jan 2020, Icelandic Met Office); 4–5 km pressure-source depth (Parks et al., 2025); 9 eruptions Dec 2023–Jan 2026. Shown as citations; not re-derived in-app."
+    },
+    {
+      "label": "MODELED",
+      "kind": "Interferogram scene",
+      "detail": "Physics rendering of an elastic Mogi source (0.02 km³ at 4.5 km depth) tuned to the published geometry. NOT a raw SAR image — computed on-device."
+    },
+    {
+      "label": "DERIVED",
+      "kind": "Motion metrics and rate",
+      "detail": "Computed on-device from the physical model (one fringe = λ/2 LOS). Tracks the model, not a downloaded product."
+    },
+    {
+      "label": "LIVE",
+      "kind": "ESP32 demo ground sensor",
+      "detail": "Live accelerometer from the demo ESP32 ground station — IoT demo at the demo site; not a satellite measurement of this event."
+    }
+  ],
+  "limitations": [
+    "The interferogram is a physics rendering of published figures, not raw SAR pixels — no SAR processing is done in-app.",
+    "Mogi source parameters are simplified; the real system involves multiple sills and dikes.",
+    "Far-field reference station REYK does not capture near-dome deformation."
+  ],
+  "sources": [
+    {
+      "title": "Icelandic Met Office — Reykjanes Peninsula deformation and eruption bulletins",
+      "publisher": "Icelandic Met Office (Vedur)",
+      "year": "2025",
+      "url": "https://en.vedur.is/"
+    },
+    {
+      "title": "Parks et al. — pressure source inversion for the Svartsengi system (GNSS + InSAR)",
+      "publisher": "Published volcanology literature (see app citation)",
+      "year": "2025",
+      "url": null
+    },
+    {
+      "title": "Nevada Geodetic Lab daily IGS20 position solutions (station REYK)",
+      "publisher": "Nevada Geodetic Laboratory, University of Nevada, Reno",
+      "year": "2026",
+      "url": "https://geodesy.unr.edu/"
+    }
+  ]
+}

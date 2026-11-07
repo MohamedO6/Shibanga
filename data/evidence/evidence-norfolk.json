@@ -1,0 +1,117 @@
+{
+  "schema": "fringe.evidence/1",
+  "eventId": "norfolk",
+  "eventName": "Norfolk",
+  "region": "Virginia, USA",
+  "episode": "Coastal subsidence",
+  "climateLink": "substantive",
+  "generatedAt": "2026-10-22",
+  "dossier": {
+    "headline": "The sea rises ~5 mm/yr while the land sinks ~4 mm/yr — Norfolk's flood bill arrives from both directions.",
+    "sections": [
+      {
+        "icon": "eye",
+        "title": "What we observed",
+        "body": "Sentinel-1 InSAR over March 2015 – June 2019 (163 interferograms, ARIA + MintPy processing) found Norfolk subsiding at −4.4 ± 2.5 mm/yr on average and Hampton Roads at −3.6 ± 2.3 mm/yr, with hot spots around Norfolk and Portsmouth. The Sewells Point tide gauge — 98 years of record — measures relative sea level rising 4.84 mm/yr (1927–2025)."
+      },
+      {
+        "icon": "lightbulb",
+        "title": "What it means",
+        "body": "Subsidence contributes roughly half of the region's relative sea-level rise, and the two compound: every millimeter the land drops adds a millimeter the sea effectively gains. Flood planning based only on the tide gauge understates the problem; planning based only on the land misses the ocean."
+      },
+      {
+        "icon": "exclamationmark.2",
+        "title": "Why it matters",
+        "body": "Hampton Roads is among the US metro areas most exposed to sea-level rise, and it hosts the world's largest naval station plus critical port infrastructure. Nuisance flooding is already routine; the difference between land and sea moving at 9 mm/yr combined versus 5 mm/yr is decades of adaptation time."
+      },
+      {
+        "icon": "arrow.triangle.branch",
+        "title": "Possible drivers",
+        "body": "Published drivers include groundwater withdrawal and aquifer compaction, glacial isostatic adjustment (the land still relaxing after Ice Age ice sheets melted), and local settling of young coastal sediments. The study's rates are relative to a stable inland reference — the crust moves in the global frame too, which is why in-app GNSS charts are omitted for this event."
+      },
+      {
+        "icon": "eye.slash",
+        "title": "What the evidence cannot tell us",
+        "body": "How subsidence will respond as the SWIFT aquifer-recharge program scales up; the exact split of drivers at any one hot spot; and future rates, which depend on management and ocean dynamics. This app's scene is a physics rendering tuned to the published figures — not raw SAR pixels."
+      },
+      {
+        "icon": "arrow.forward",
+        "title": "What to investigate next",
+        "body": "Follow HRSD's SWIFT program, which treats wastewater and injects it back into the Potomac aquifer to slow compaction and hold back saltwater intrusion; pair the free DWR-style InSAR services with NOAA tide gauges for any coastal city; and watch how NISAR's L-band handles wet coastal surfaces. Open question: can managed recharge measurably bend the land-motion curve?"
+      }
+    ]
+  },
+  "interpretation": {
+    "public": "Norfolk is dealing with two problems that stack. The ocean is rising about 5 millimeters a year at the local tide gauge — and the ground beneath the city is sinking about 4 millimeters a year, according to radar satellites that watched the region from 2015 to 2019. Together that's nearly a centimeter a year of losing margin. Some of the sinking comes from pumping groundwater, some from the land still slowly relaxing after the Ice Age. The region is fighting back in an unusual way: a water utility cleans wastewater and injects it back into the aquifer, which slows the ground's sinking.",
+    "student": "Relative sea-level rise = ocean rise + land motion. The Sewells Point tide gauge (98 years of data) shows 4.84 mm/yr of relative rise. Sentinel-1 InSAR (2015–2019) shows the land itself sinking at −4.4 ± 2.5 mm/yr in Norfolk — about half the total. Drivers: aquifer compaction from groundwater withdrawal, glacial isostatic adjustment, and soft-sediment settling. The radar compared the phase of 163 satellite pass pairs over 4.3 years and tied them to GPS stations for absolute reference. The SWIFT program now injects treated wastewater into the aquifer to slow compaction — a real-world test of whether land subsidence can be managed.",
+    "scientist": "Buzzanga et al. (2020, GRL 47, e2020GL090013) processed 163 Sentinel-1 interferograms (ARIA preprocessing, MintPy SBAS) over Mar 2015–Jun 2019, tied to GPS in IGS14: Hampton Roads −3.6 ± 2.3 mm/yr, Norfolk −4.4 ± 2.5 mm/yr, Virginia Beach −3.8 ± 2.5 mm/yr, with 85.7% of the map significant at 1σ and hot spots in Norfolk and Portsmouth. NOAA station 8638610 (Sewells Point) gives 4.84 mm/yr relative sea-level rise over 1927–2025, so vertical land motion supplies roughly half the local RSL budget. Rates are referenced to a stable inland frame; the in-app scene is an analytic bowl rendering (MODELED), not SAR."
+  },
+  "dataset": {
+    "mission": "Sentinel-1A/1B (Copernicus), 12-day repeat; NOAA tide gauge 8638610 in situ",
+    "datasetId": "Buzzanga et al. 2020 GRL vertical rates (data DOI 10.25776/5yxq-w948); NOAA tides & currents 8638610",
+    "window": "Published window: Mar 2015 – Jun 2019 (163 interferograms); tide gauge record 1927–2025; in-app pass-pair window: 1,584 days",
+    "coverage": "Hampton Roads, Virginia — Norfolk, Portsmouth, Virginia Beach (~60 km scene centered on Norfolk)",
+    "gnss": "Study tie-in stations incl. VAHP and LOY2 (IGS14). In-app charts omitted: published rates are differential to a stable inland reference, which raw global-frame NGL verticals (e.g. SPVA) do not show directly — pairing left as a research candidate",
+    "processing": "Published: ARIA preprocessed Sentinel-1, MintPy Small Baseline Subset time series, GPS tie-in (RMSE 0.9 mm). In-app: analytic elastic bowl model tuned to the published rates; one fringe = λ/2 line-of-sight motion"
+  },
+  "items": [
+    {
+      "label": "MEASURED",
+      "kind": "Tide gauge, 98 years",
+      "detail": "NOAA station 8638610 at Sewells Point: relative sea level rising 4.84 mm/yr (1927–2025). The longest continuous measurement behind this event; shown as citation, not re-plotted in-app."
+    },
+    {
+      "label": "MEASURED",
+      "kind": "Published InSAR rates",
+      "detail": "Norfolk −4.4 ± 2.5 mm/yr; Hampton Roads −3.6 ± 2.3 mm/yr; Virginia Beach −3.8 ± 2.5 mm/yr (Sentinel-1 InSAR 2015–2019, GPS-tied). From Buzzanga et al. 2020; shown as citations."
+    },
+    {
+      "label": "MODELED",
+      "kind": "Interferogram scene",
+      "detail": "Physics rendering of an elastic bowl source (1.9 cm peak over the 1,584-day window ≈ 4.4 mm/yr) tuned to the published rates. NOT a raw Sentinel-1 image — computed on-device."
+    },
+    {
+      "label": "DERIVED",
+      "kind": "Motion metrics and rate",
+      "detail": "Displacement, fringes and rate readouts computed on-device from the physical model (one fringe = λ/2 LOS). They track the model, not a downloaded data product."
+    },
+    {
+      "label": "LIVE",
+      "kind": "ESP32 demo ground sensor",
+      "detail": "Live accelerometer trace from the demo ESP32 ground station — an IoT ground-truth demo at the demo site. It does not measure the same phenomenon or location as the satellite data."
+    }
+  ],
+  "limitations": [
+    "The interferogram is a physics rendering of published figures, not raw SAR pixels — no SAR processing is done in-app.",
+    "Published subsidence rates are differential to a stable inland reference; bundled global-frame GNSS series do not reproduce them directly, so no in-app GNSS chart is shown for this event.",
+    "The ± 2.5 mm/yr uncertainty means local hot spots could differ substantially from the city average.",
+    "Future land motion depends on SWIFT recharge scale-up and is not projected by this evidence.",
+    "Attribution of subsidence among groundwater withdrawal, GIA, and sediment settling is not resolved at hot-spot level by this record."
+  ],
+  "sources": [
+    {
+      "title": "Buzzanga, Bekaert, Hamlington & Sangha: 'Toward Sustained Monitoring of Subsidence at the Coast Using InSAR and GPS: An Application in Hampton Roads, Virginia', GRL 47, e2020GL090013",
+      "publisher": "Geophysical Research Letters (AGU)",
+      "year": "2020",
+      "url": "https://doi.org/10.1029/2020GL090013"
+    },
+    {
+      "title": "Vertical Land Displacement Rates and Uncertainty in Hampton Roads, VA (dataset)",
+      "publisher": "NASA/JPL–ODU, data DOI 10.25776/5yxq-w948",
+      "year": "2020",
+      "url": "https://doi.org/10.25776/5yxq-w948"
+    },
+    {
+      "title": "NOAA tides & currents, station 8638610 Sewells Point, VA — relative sea-level trend 4.84 mm/yr (1927–2025)",
+      "publisher": "NOAA Center for Operational Oceanographic Products and Services",
+      "year": "2025",
+      "url": "https://tidesandcurrents.noaa.gov/sltrends/sltrends_station.shtml?id=8638610"
+    },
+    {
+      "title": "SWIFT (Sustainable Water Initiative for Tomorrow) — aquifer recharge to slow land subsidence and hold back saltwater intrusion",
+      "publisher": "Hampton Roads Sanitation District (HRSD)",
+      "year": "2026",
+      "url": "https://www.hrsd.com/swift"
+    }
+  ]
+}

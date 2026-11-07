@@ -1,0 +1,64 @@
+{
+  "schema": "fringe.evidence/1",
+  "eventId": "campi-flegrei",
+  "eventName": "Campi Flegrei",
+  "region": "Italy",
+  "episode": "Bradyseism",
+  "climateLink": "none-claimed",
+  "climateNote": "This is a volcanic-system event: bradyseism — pressurization of the caldera's hydrothermal/magmatic system — drives the uplift. No climate connection is claimed.",
+  "generatedAt": "2026-10-22",
+  "dataset": {
+    "mission": "Sentinel-1A/1B (Copernicus), ascending pass; COSMO-SkyMed in published INGV studies",
+    "datasetId": "INGV Osservatorio Vesuviano deformation bulletins (RITE GNSS, InSAR); Copernicus Sentinel-1 SLC",
+    "window": "Published: 2005–2025 bradyseism record; in-app pass-pair window: 360 days (Dec 2025 rate)",
+    "coverage": "Campi Flegrei caldera — Pozzuoli and Naples metropolitan edge (~24 km scene)",
+    "gnss": "FRUL, Nevada Geodetic Lab daily IGS20 solutions, bundled as weekly means",
+    "processing": "Published: INGV OV GNSS + InSAR monitoring bulletins. In-app: elastic Mogi point source at 3.5 km depth; one fringe = λ/2 line-of-sight motion"
+  },
+  "items": [
+    {
+      "label": "MEASURED",
+      "kind": "GNSS position time series",
+      "detail": "Real daily IGS20 solutions from NGL station FRUL, downsampled to weekly means, bundled and charted in-app."
+    },
+    {
+      "label": "MEASURED",
+      "kind": "Published geophysical rates",
+      "detail": "~25 mm/mo uplift (Dec 2025, INGV OV); >1 m cumulative uplift at Pozzuoli since 2005 (RITE GNSS). Shown as citations; not re-derived in-app."
+    },
+    {
+      "label": "MODELED",
+      "kind": "Interferogram scene",
+      "detail": "Physics rendering of an elastic Mogi source (0.0154 km³ at 3.5 km depth). NOT a raw SAR image — computed on-device."
+    },
+    {
+      "label": "DERIVED",
+      "kind": "Motion metrics and rate",
+      "detail": "Computed on-device from the physical model (one fringe = λ/2 LOS). Tracks the model, not a downloaded product."
+    },
+    {
+      "label": "LIVE",
+      "kind": "ESP32 demo ground sensor",
+      "detail": "Live accelerometer from the demo ESP32 ground station — IoT demo at the demo site; not a satellite measurement of this event."
+    }
+  ],
+  "limitations": [
+    "The interferogram is a physics rendering of published figures, not raw SAR pixels — no SAR processing is done in-app.",
+    "Bradyseism involves both magmatic and hydrothermal pressurization; a single Mogi source is a simplification.",
+    "Civil-safety interpretation is INGV's and the Civil Protection Department's domain, not this app's."
+  ],
+  "sources": [
+    {
+      "title": "INGV Osservatorio Vesuviano — Campi Flegrei monitoring bulletins (GNSS RITE, InSAR)",
+      "publisher": "Istituto Nazionale di Geofisica e Vulcanologia",
+      "year": "2025",
+      "url": "https://www.INGV.it/"
+    },
+    {
+      "title": "Nevada Geodetic Lab daily IGS20 position solutions (station FRUL)",
+      "publisher": "Nevada Geodetic Laboratory, University of Nevada, Reno",
+      "year": "2026",
+      "url": "https://geodesy.unr.edu/"
+    }
+  ]
+}

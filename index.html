@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Fringe: NISAR Radar Explorer</title>
+  <meta name="description" content="Explore NISAR radar observations, learn through six interactive Signal Detective missions in English or Arabic, and check the evidence behind Earth's changing surface.">
+  <meta name="theme-color" content="#0d1424">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3CradialGradient id='g'%3E%3Cstop offset='0' stop-color='%23ff4d6d'/%3E%3Cstop offset='.25' stop-color='%23ffc24d'/%3E%3Cstop offset='.5' stop-color='%237cff6b'/%3E%3Cstop offset='.75' stop-color='%234cc9ff'/%3E%3Cstop offset='1' stop-color='%23b48cff'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://server.arcgisonline.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="modulepreload" href="fringe.js?v=7.0">
+  <link rel="modulepreload" href="icons.js?v=7.0">
+  <link rel="modulepreload" href="stories.js?v=7.0">
+  <link rel="modulepreload" href="gl.js?v=7.0">
+  <link rel="stylesheet" href="vendor/leaflet.css">
+  <link rel="stylesheet" href="app.css?v=7.0">
+  <link rel="stylesheet" href="learn.css?v=7.0">
+  <link rel="modulepreload" href="learn.js?v=7.0">
+  <link rel="modulepreload" href="science.js?v=7.0">
+</head>
+<body>
+  <div class="app" id="app" data-view="map">
+
+    <!-- ===================== MAP ===================== -->
+    <section class="view view-map" id="view-map" aria-label="Radar map">
+      <div id="map" aria-label="Interactive map"></div>
+      <div class="map-vignette" aria-hidden="true"></div>
+
+      <header class="hud-brand">
+        <h1 class="brand-title">Fringe</h1>
+        <p class="kicker accent">Watch the ground move with NISAR radar</p>
+      </header>
+
+      <div class="pulse glass" id="pulse" aria-live="off">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <div class="pulse-track"><div class="pulse-items" id="pulse-items"></div></div>
+      </div>
+
+      <div class="hud-tools" role="toolbar" aria-label="Map tools">
+        <button class="glass round tool" id="btn-band" aria-label="Radar band"><span class="band-letter">L</span></button>
+        <button class="glass round tool" id="btn-geom" aria-label="Pass direction"><span class="band-letter small">ASC</span></button>
+        <button class="glass round tool" id="btn-world" aria-label="See the whole world on a globe"></button>
+        <button class="glass round tool" id="btn-me" aria-label="Show NISAR over my location"></button>
+        <button class="glass round tool" id="btn-base" aria-label="Switch basemap"></button>
+        <button class="glass round tool" id="btn-recenter" aria-label="Recenter on the selected site"></button>
+        <div class="tool-pair glass">
+          <button class="tool-flat" id="btn-zoom-in" aria-label="Zoom in"></button>
+          <button class="tool-flat" id="btn-zoom-out" aria-label="Zoom out"></button>
+        </div>
+      </div>
+
+      <div class="legend glass" id="legend"></div>
+
+      <div class="dock" id="dock">
+        <button class="story-cta" id="story-cta" type="button" hidden></button>
+        <article class="event-card glass" id="event-card" aria-live="polite"></article>
+        <div class="scrub-row">
+          <div class="scrubber glass">
+            <div class="scrub-labels"><span id="scrub-left"></span><span id="scrub-right" class="accent"></span></div>
+            <input id="scrubber" type="range" min="0" max="1000" value="0" aria-label="Time through the radar passes">
+            <div class="ticks" id="ticks" aria-hidden="true"></div>
+          </div>
+          <button class="play-btn glass" id="play" aria-label="Pause"></button>
+        </div>
+      </div>
+
+      <aside class="sheet glass" id="sheet" aria-label="Event details" aria-hidden="true">
+        <div class="sheet-grip" aria-hidden="true"></div>
+        <button class="sheet-close round" id="sheet-close" aria-label="Close details"></button>
+        <div class="sheet-body" id="detail"></div>
+      </aside>
+    </section>
+
+    <!-- ===================== EVENTS ===================== -->
+    <section class="view view-page" id="view-events" aria-label="Events">
+      <div class="page">
+        <header class="page-head">
+          <h1 class="page-title">Events</h1>
+          <p class="kicker accent">Real places where the ground is moving</p>
+          <p class="page-lede">Explore observations, cited studies and physics models. Each has a different role in the evidence.</p>
+        </header>
+        <div class="chips" role="group" aria-label="Filter events" id="filters">
+          <button class="chip" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip" data-filter="human" aria-pressed="false">Caused by people</button>
+          <button class="chip" data-filter="volcano" aria-pressed="false">Volcanoes</button>
+          <button class="chip" data-filter="fault" aria-pressed="false">Faults</button>
+          <button class="chip" data-filter="nisar" aria-pressed="false">Real NISAR data</button>
+        </div>
+        <div class="event-grid" id="event-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== LAB ===================== -->
+    <section class="view view-page" id="view-lab" aria-label="Interference lab">
+      <div class="page lab-page">
+        <header class="page-head">
+          <h1 class="page-title">Interference Lab</h1>
+          <p class="kicker accent">Make the ground move and see what the radar would see</p>
+        </header>
+        <div class="lab-grid">
+          <div class="lab-stage">
+            <div class="lab-frame">
+              <canvas id="lab-canvas" width="520" height="520" aria-label="Simulated interferogram"></canvas>
+              <span class="frame-chip" id="lab-chip">NISAR L-band</span>
+              <span class="north" aria-hidden="true">N<svg width="16" height="18" viewBox="0 0 16 18"><path d="M8 0 15 18 8 13 1 18z" fill="currentColor"/></svg></span>
+              <div class="frame-caption">
+                <div><div class="caption-title" id="lab-caption"></div><div class="caption-sub mono" id="lab-sub"></div></div>
+                <div class="scalebar mono" id="lab-scale"><span></span><em></em></div>
+              </div>
+            </div>
+            <div class="legend-inline" id="lab-legend"></div>
+            <div class="stat-grid four" id="lab-readouts"></div>
+          </div>
+          <div class="lab-panel">
+            <div class="seg big" role="group" aria-label="Deformation source" id="lab-type">
+              <button data-type="bowl" aria-pressed="true">Aquifer subsidence</button>
+              <button data-type="mogi" aria-pressed="false">Volcano uplift</button>
+              <button data-type="rupture" aria-pressed="false">Fault slip</button>
+              <button data-type="flank" aria-pressed="false">Flank slide</button>
+            </div>
+            <div class="slider-card" id="lab-params"></div>
+            <div class="slider-card">
+              <div class="slider-row">
+                <div class="slider-head"><span>Radar band</span></div>
+                <div class="seg" role="group" id="lab-band">
+                  <button data-band="L" aria-pressed="true">L (23.8 cm)</button>
+                  <button data-band="S" aria-pressed="false">S (9.4 cm)</button>
+                  <button data-band="C" aria-pressed="false">C (5.55 cm)</button>
+                </div>
+              </div>
+              <div class="slider-row">
+                <div class="slider-head"><span>Incidence angle</span><output class="mono" id="lab-inc-out">37°</output></div>
+                <input id="lab-inc" type="range" min="20" max="50" step="1" value="37" aria-label="Incidence angle">
+                <div class="slider-range mono">20° to 50°</div>
+              </div>
+              <div class="slider-row">
+                <div class="slider-head"><span>Pass direction</span></div>
+                <div class="seg" role="group" id="lab-geom">
+                  <button data-geom="ascending" aria-pressed="true">Ascending</button>
+                  <button data-geom="descending" aria-pressed="false">Descending</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== LEARNING MISSIONS ===================== -->
+    <section class="view view-page" id="view-learn" aria-label="Signal Detective learning missions">
+      <div class="page academy" id="academy"></div>
+    </section>
+
+    <!-- ===================== GUIDE ===================== -->
+    <section class="view view-page" id="view-guide" aria-label="Guide">
+      <div class="page">
+        <article class="guide" id="guide"></article>
+      </div>
+    </section>
+
+    <!-- ===================== TAB BAR ===================== -->
+    <nav class="tabbar glass" role="tablist" aria-label="Sections" id="tabbar">
+      <button class="tab" role="tab" data-view="map" aria-selected="true"><span class="tab-icon" data-icon="map"></span><span>Map</span></button>
+      <button class="tab" role="tab" data-view="events" aria-selected="false"><span class="tab-icon" data-icon="list"></span><span>Events</span></button>
+      <button class="tab" role="tab" data-view="learn" aria-selected="false"><span class="tab-icon" data-icon="sparkle"></span><span>Learn</span></button>
+      <button class="tab" role="tab" data-view="lab" aria-selected="false"><span class="tab-icon" data-icon="activity"></span><span>Lab</span></button>
+      <button class="tab" role="tab" data-view="guide" aria-selected="false"><span class="tab-icon" data-icon="book"></span><span>Guide</span></button>
+    </nav>
+  </div>
+
+  <script src="vendor/leaflet.js"></script>
+  <script type="module" src="app.js?v=7.0"></script>
+</body>
+</html>

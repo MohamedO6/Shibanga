@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fringe: Watching the Ground Move on iOS</title>
+  <meta name="description" content="Native iOS client for spaceborne radar interferometry (InSAR), continuous GPS ground truth, and Bitcoin OpenTimestamps immutability.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%2339D98A%22/></svg>">
+  
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'Menlo', 'monospace'],
+          },
+          colors: {
+            fringe: {
+              cyan: '#06B6D4',
+              emerald: '#10B981',
+              dark: '#05070A',
+              card: '#0B0F17',
+              border: 'rgba(255, 255, 255, 0.08)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #000000;
+      color: #F8FAFC;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Fine background grid */
+    .bg-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    }
+
+    /* Ambient lighting */
+    .ambient-glow {
+      background: radial-gradient(circle at 50% -10%, rgba(6, 182, 212, 0.16) 0%, rgba(16, 185, 129, 0.04) 40%, transparent 70%);
+    }
+
+    /* Apple Titanium iPhone 18 Pro Chassis */
+    .iphone-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .iphone-chassis {
+      width: 320px;
+      height: 660px;
+      border-radius: 54px;
+      padding: 10px;
+      background: linear-gradient(135deg, #3d3e42 0%, #1c1d20 35%, #27282c 70%, #131416 100%);
+      box-shadow: 
+        0 0 0 1px rgba(255, 255, 255, 0.16),
+        0 0 0 4px #0a0b0d,
+        0 30px 90px -20px rgba(6, 182, 212, 0.28),
+        0 50px 100px -30px rgba(0, 0, 0, 0.95);
+      position: relative;
+    }
+
+    /* Side button accents */
+    .iphone-chassis::before {
+      content: '';
+      position: absolute;
+      top: 130px;
+      left: -6px;
+      width: 3px;
+      height: 52px;
+      background: #2a2b2e;
+      border-radius: 2px 0 0 2px;
+      box-shadow: 0 70px 0 #2a2b2e, 0 130px 0 #2a2b2e;
+    }
+
+    .iphone-chassis::after {
+      content: '';
+      position: absolute;
+      top: 170px;
+      right: -6px;
+      width: 3px;
+      height: 75px;
+      background: #2a2b2e;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .iphone-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 44px;
+      overflow: hidden;
+      position: relative;
+      background: #000;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+
+    .dynamic-island {
+      width: 96px;
+      height: 26px;
+      background: #000;
+      border-radius: 20px;
+      position: absolute;
+      top: 11px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 50;
+      box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 9px;
+    }
+
+    .camera-lens {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #182638 0%, #080d14 60%, #000 100%);
+      box-shadow: inset 0 0 2px rgba(6, 182, 212, 0.5);
+    }
+
+    .sensor-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #11141a;
+    }
+
+    /* Modal styles */
+    .modal-active {
+      display: flex !important;
+    }
+  </style>
+</head>
+<body class="selection:bg-cyan-500 selection:text-black min-h-screen flex flex-col justify-between bg-grid">
+<div style="background:#39D98A;color:#05080A;text-align:center;padding:8px 12px;font:600 13px Inter,system-ui,sans-serif">Archived IEEE ClimateChain showcase. <a href="./" style="color:#05080A;text-decoration:underline">Open the live explorer</a></div>
+
+
+  <!-- TOP AMBIENT GLOW -->
+  <div class="absolute top-0 left-0 right-0 h-[700px] ambient-glow pointer-events-none -z-10"></div>
+
+  <!-- NAVIGATION -->
+  <header class="border-b border-white/[0.08] bg-black/70 backdrop-blur-2xl sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      
+      <!-- Brand -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-emerald-400 p-[1px] flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-shadow">
+          <div class="w-full h-full bg-black rounded-[7px] flex items-center justify-center">
+            <i data-lucide="radar" class="w-4 h-4 text-cyan-400"></i>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="font-bold tracking-tight text-white text-base">Fringe</span>
+          <span class="text-[11px] font-mono px-2 py-0.5 rounded-full bg-white/[0.06] text-slate-400 border border-white/[0.08]">iOS 18 Native</span>
+        </div>
+      </a>
+
+      <!-- Badges & Action -->
+      <div class="flex items-center gap-3">
+        <div class="hidden md:flex items-center gap-2 text-xs font-mono text-slate-300 border border-white/[0.08] px-3 py-1.5 rounded-full bg-white/[0.03]">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>IEEE Track 4: Climate Data</span>
+        </div>
+        <a href="https://github.com/omar-aloush/fringe" target="_blank" class="inline-flex items-center gap-2 text-xs font-medium text-white hover:text-white transition-all bg-white/[0.08] hover:bg-white/[0.14] px-4 py-2 rounded-full border border-white/[0.12] shadow-sm">
+          <i data-lucide="github" class="w-3.5 h-3.5"></i>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main class="max-w-6xl mx-auto px-6 pt-12 md:pt-20 pb-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Left Column: Scientific Storytelling -->
+      <div class="lg:col-span-7 space-y-8 text-left">
+        
+        <!-- Track Tag -->
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-xs text-cyan-300">
+          <span class="flex h-2 w-2 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+          </span>
+          <span class="font-medium tracking-wide">Planetary Geodesy & Radar Interferometry</span>
+        </div>
+
+        <!-- Headline -->
+        <div class="space-y-4">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
+            Planetary truth.<br/>
+            <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent">
+              Measured in millimeters.
+            </span>
+          </h1>
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-xl">
+            Fringe turns spaceborne radar interferometry (NASA-ISRO NISAR & Copernicus Sentinel-1) and continuous ground GPS into climate evidence anyone can check. It shows aquifers compacting in droughts and coasts sinking, and stamps every record in Bitcoin so the numbers can't be quietly changed later.
+          </p>
+        </div>
+
+        <!-- Metric Specs Matrix -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
+          
+          <div class="p-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur hover:border-cyan-500/40 transition-colors">
+            <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400">Radar Satellite</div>
+            <div class="text-sm font-semibold text-white mt-1">NISAR & S1</div>
+            <div class="text-[11px] text-cyan-400 font-mono mt-0.5">24 cm & 5.6 cm</div>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur hover:border-emerald-500/40 transition-colors">
+            <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400">Ground Truth</div>
+            <div class="text-sm font-semibold text-white mt-1">NSF GAGE GPS</div>
+            <div class="text-[11px] text-emerald-400 font-mono mt-0.5">Station CRCN</div>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur hover:border-rose-500/40 transition-colors">
+            <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400">Peak Subsidence</div>
+            <div class="text-sm font-semibold text-rose-400 mt-1">-53.9 cm</div>
+            <div class="text-[11px] text-slate-400 font-mono mt-0.5">Aquifer Loss</div>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur hover:border-amber-500/40 transition-colors">
+            <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400">Immutability</div>
+            <div class="text-sm font-semibold text-amber-400 mt-1">Bitcoin (OTS)</div>
+            <div class="text-[11px] text-slate-400 font-mono mt-0.5">Block #972,632</div>
+          </div>
+
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="https://github.com/omar-aloush/fringe" target="_blank" class="h-11 px-6 rounded-full font-semibold text-xs sm:text-sm bg-white text-black hover:bg-slate-200 transition-all flex items-center gap-2 shadow-xl shadow-white/10 font-sans">
+            <i data-lucide="github" class="w-4 h-4"></i>
+            <span>Inspect GitHub Repository</span>
+          </a>
+          <a href="#gallery" class="h-11 px-5 rounded-full font-medium text-xs sm:text-sm bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.1] transition-all flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-4 h-4 text-cyan-400"></i>
+            <span>Browse 10 iOS Screens</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Precision Titanium iPhone Mockup -->
+      <div class="lg:col-span-5 flex flex-col items-center justify-center">
+        <div class="iphone-wrapper">
+          <div class="iphone-chassis">
+            <div class="iphone-inner">
+              <div class="dynamic-island">
+                <div class="camera-lens"></div>
+                <div class="sensor-dot"></div>
+              </div>
+              
+              <!-- Native Video Walkthrough Loop -->
+              <video id="heroVideo" autoplay loop muted playsinline poster="screenshots/01_central_valley_radar_map.png" class="w-full h-full object-cover">
+                <source src="walkthrough_preview.mp4" type="video/mp4">
+                <source src="https://raw.githubusercontent.com/omar-aloush/fringe/main/submission/fringe_demo_walkthrough.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video caption / playback status -->
+        <div class="mt-4 flex items-center gap-2 text-xs font-mono text-slate-400">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span>Live 67s iOS Walkthrough (SwiftUI)</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CORE ARCHITECTURE & SCIENTIFIC RIGOR -->
+    <section class="mt-28 pt-16 border-t border-white/[0.08]">
+      <div class="text-left space-y-2 mb-12">
+        <div class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Physics & Cryptography</div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">The Three Pillars of Ground Truth</h2>
+        <p class="text-sm text-slate-400 max-w-2xl">How Fringe converts raw radar phase measurements into cryptographic climate audit trails.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Pillar 1 -->
+        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-cyan-500/30 transition-colors space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+            <i data-lucide="satellite" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-semibold text-white">Spaceborne InSAR Physics</h3>
+          <p class="text-xs text-slate-400 leading-relaxed font-mono">
+            ΔR = -(λ / 4π) · Δϕ
+          </p>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            By measuring millimeter-scale phase differences across satellite radar passes, Fringe reveals ground deformation invisible to optical sensors.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-emerald-500/30 transition-colors space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-950/60 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+            <i data-lucide="mountain" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-semibold text-white">Continuous GPS Calibration</h3>
+          <p class="text-xs text-emerald-400 leading-relaxed font-mono">
+            NGL GNSS Station CRCN, Corcoran
+          </p>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            InSAR fringe maps are continuously anchored against geodetic-grade continuous GPS stations, measuring -53.9 cm of aquifer compaction at Corcoran (Jan 2015 to Sep 2016).
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-amber-500/30 transition-colors space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-950/60 border border-amber-500/30 flex items-center justify-center text-amber-400">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-semibold text-white">Bitcoin Block Timestamping</h3>
+          <p class="text-xs text-amber-400 leading-relaxed font-mono">
+            OpenTimestamps, block #972,632
+          </p>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Every climate event dossier and radar verification digest is committed to the Bitcoin blockchain, providing non-repudiable audit trails.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VERIFIED 10 APP SCREENS -->
+    <section id="gallery" class="mt-28 pt-16 border-t border-white/[0.08] space-y-10">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div class="space-y-1 text-left">
+          <div class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Verified Native UI</div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Full Walkthrough Progression</h2>
+          <p class="text-sm text-slate-400">Click any screen to inspect the full-resolution retina capture.</p>
+        </div>
+        <span class="text-xs font-mono text-slate-500">10 Verified Captures</span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        
+        <!-- Card 1 -->
+        <div onclick="openModal('screenshots/01_central_valley_radar_map.png', '1. Radar Interferogram Map', 'Central Valley drought-induced fringes with NISAR L-band & Sentinel-1 C-band overlay.')" class="cursor-pointer group space-y-2">
+          <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-slate-950 aspect-[9/19.5] group-hover:border-cyan-500/50 group-hover:shadow-lg group-hover:shadow-cyan-500/10 transition-all">
+            <img src="screenshots/01_central_valley_radar_map.png" alt="Radar Map" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="text-xs font-medium text-white text-left">1. Radar Map</div>
+          <div class="text-[11px] text-slate-500 leading-tight text-left">Central Valley drought fringes with NISAR L-band.</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div onclick="openModal('screenshots/02_radar_wavelength_comparison.png', '2. Radar Wavelength Comparison', 'Comparing NISAR 24 cm L-band penetration vs Sentinel-1 5.6 cm C-band.')" class="cursor-pointer group space-y-2">
+          <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-slate-950 aspect-[9/19.5] group-hover:border-cyan-500/50 group-hover:shadow-lg group-hover:shadow-cyan-500/10 transition-all">
+            <img src="screenshots/02_radar_wavelength_comparison.png" alt="Wavelengths" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="text-xs font-medium text-white text-left">2. Radar Wavelengths</div>
+          <div class="text-[11px] text-slate-500 leading-tight text-left">Comparing 24 cm L-band vs. 5.6 cm C-band.</div>
+        </div>
+
+        <!-- Card 3 -->
+        <div onclick="openModal('screenshots/03_climate_events_directory.png', '3. Climate Events Directory', 'Global directory filtered strictly to climate-driven disasters: drought, subsidence, permafrost.')" class="cursor-pointer group space-y-2">
+          <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-slate-950 aspect-[9/19.5] group-hover:border-cyan-500/50 group-hover:shadow-lg group-hover:shadow-cyan-500/10 transition-all">
+            <img src="screenshots/03_climate_events_directory.png" alt="Events Directory" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="text-xs font-medium text-white text-left">3. Climate Directory</div>
+          <div class="text-[11px] text-slate-500 leading-tight text-left">Filtered exclusively to verified climate crises.</div>
+        </div>
+
+        <!-- Card 4 -->
+        <div onclick="openModal('screenshots/04_central_valley_climate_flagship.png', '4. Flagship Detail Screen', 'Detailed metrics, timeline scrubber, and Sentinel-1/NISAR metadata for California.')" class="cursor-pointer group space-y-2">
+          <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-slate-950 aspect-[9/19.5] group-hover:border-cyan-500/50 group-hover:shadow-lg group-hover:shadow-cyan-500/10 transition-all">
+            <img src="screenshots/04_central_valley_climate_flagship.png" alt="Flagship Detail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="text-xs font-medium text-white text-left">4. Climate Flagship</div>
+          <div class="text-[11px] text-slate-500 leading-tight text-left">Severe megadrought & -30 cm aquifer compaction.</div>
+        </div>
+
+        <!-- Card 5 -->
+        <div onclick="openModal('screenshots/05_substantive_climate_dossier.png', '5. Substantive Climate Dossier', 'In-depth 6-part scientific analysis explaining aquifer clay collapse and irreversible loss.')" class="cursor-pointer group space-y-2">
+          <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-slate-950 aspect-[9/19.5] group-hover:border-cyan-500/50 group-hover:shadow-lg group-hover:shadow-cyan-500/10 transition-all">
+            <img src="screenshots/05_substantive_climate_dossier.png" alt="Dossier" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="text-xs font-medium text-white text-left">5. 6-Part Dossier</div>
+          <div class="text-[11px] text-slate-500 leading-tight text-left">Irreversible clay skeleton collapse breakdown.</div>
+        </div>
+
+        <!-- Card 6 -->
+        <div onclick="openModal('screenshots/06_continuous_gnss_p307_gps.png', '6. Continuous GNSS Ground Truth', 'Recorded before the Nov 2026 data fix: this chart showed a date-parsing artifact. The corrected CRCN/P304/P307 series are in the live explorer.')" class="cursor-pointer group space-y-2">
+          <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-slate-950 aspect-[9/19.5] group-hover:border-cyan-500/50 group-hover:shadow-lg group-hover:shadow-cyan-500/10 transition-all">
+            <img src="screenshots/06_continuous_gnss_p307_gps.png" alt="GNSS Ground Truth" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="text-xs font-medium text-white text-left">6. GPS Ground Truth</div>
+          <div class="text-[11px] text-slate-500 leading-tight text-left">Superseded chart (pre-fix). See the live explorer.</div>
+        </div>
+
+        <!-- Card 7 -->
+        <div onclick="openModal('screenshots/07_grounded_climate_ai.png', '7. Grounded Climate AI', 'InSAR domain expert bounded to verified geodetic measurements and OpenTimestamps.')" class="cursor-pointer group space-y-2">
+          <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-slate-950 aspect-[9/19.5] group-hover:border-cyan-500/50 group-hover:shadow-lg group-hover:shadow-cyan-500/10 transition-all">
+            <img src="screenshots/07_grounded_climate_ai.png" alt="Grounded AI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="text-xs font-medium text-white text-left">7. Grounded AI Q&A</div>
+          <div class="text-[11px] text-slate-500 leading-tight text-left">Strictly bounded to cryptographically hashed records.</div>
+        </div>
+
+        <!-- Card 8 -->
+        <div onclick="openModal('screenshots/08_bitcoin_immutability_proof.png', '8. Bitcoin Immutability Proof', 'Cryptographic verification showing SHA-256 hash and Bitcoin block header anchoring.')" class="cursor-pointer group space-y-2">
+          <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-slate-950 aspect-[9/19.5] group-hover:border-cyan-500/50 group-hover:shadow-lg group-hover:shadow-cyan-500/10 transition-all">
+            <img src="screenshots/08_bitcoin_immutability_proof.png" alt="Bitcoin Anchor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="text-xs font-medium text-white text-left">8. Bitcoin Immutability</div>
+          <div class="text-[11px] text-slate-400 font-mono mt-0.5 text-left">OpenTimestamps proof against greenwashing.</div>
+        </div>
+
+        <!-- Card 9 -->
+        <div onclick="openModal('screenshots/09_norfolk_coastal_sea_level_rise.png', '9. Norfolk Coastal Subsidence', 'Demonstrating land subsidence accelerating relative sea level rise along the Atlantic coast.')" class="cursor-pointer group space-y-2">
+          <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-slate-950 aspect-[9/19.5] group-hover:border-cyan-500/50 group-hover:shadow-lg group-hover:shadow-cyan-500/10 transition-all">
+            <img src="screenshots/09_norfolk_coastal_sea_level_rise.png" alt="Norfolk Subsidence" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="text-xs font-medium text-white text-left">9. Norfolk Coastal</div>
+          <div class="text-[11px] text-slate-500 leading-tight text-left">Subsidence compounding sea-level rise by 50%.</div>
+        </div>
+
+        <!-- Card 10 -->
+        <div onclick="openModal('screenshots/10_metal_interference_physics_lab.png', '10. Interference Physics Lab', 'Interactive physics sandbox rendering radar interference patterns.')" class="cursor-pointer group space-y-2">
+          <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-slate-950 aspect-[9/19.5] group-hover:border-cyan-500/50 group-hover:shadow-lg group-hover:shadow-cyan-500/10 transition-all">
+            <img src="screenshots/10_metal_interference_physics_lab.png" alt="Physics lab" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="text-xs font-medium text-white text-left">10. Interference Lab</div>
+          <div class="text-[11px] text-slate-500 leading-tight text-left">Physics sandbox for radar interference.</div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="imageModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl hidden items-center justify-center p-4" onclick="closeModal()">
+    <div class="max-w-4xl max-h-[92vh] flex flex-col items-center space-y-3 relative" onclick="event.stopPropagation()">
+      <button onclick="closeModal()" class="absolute -top-10 right-0 text-slate-400 hover:text-white flex items-center gap-1.5 text-xs font-mono">
+        <i data-lucide="x" class="w-4 h-4"></i>
+        <span>ESC / Close</span>
+      </button>
+      <div class="rounded-2xl overflow-hidden border border-white/20 bg-black max-h-[78vh] flex items-center justify-center shadow-2xl">
+        <img id="modalImg" src="" alt="Enlarged Screen" class="max-h-[78vh] w-auto object-contain">
+      </div>
+      <div class="text-center">
+        <h3 id="modalTitle" class="text-base font-semibold text-white"></h3>
+        <p id="modalDesc" class="text-xs text-slate-400 max-w-xl"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/[0.08] bg-black py-10 px-6 text-xs text-slate-400 font-mono">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <i data-lucide="shield" class="w-4 h-4 text-cyan-400"></i>
+        <span>Fringe &bull; IEEE ClimateChain Hackathon &bull; Built by Omar Aloush</span>
+      </div>
+      <div class="flex items-center gap-6 text-slate-400">
+        <a href="https://github.com/omar-aloush/fringe" target="_blank" class="hover:text-white transition-colors">GitHub Repository</a>
+        <a href="https://opentimestamps.org" target="_blank" class="hover:text-white transition-colors">OpenTimestamps</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Lucide Icons initialization
+    lucide.createIcons();
+
+    // Lightbox modal logic
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+
+    function openModal(src, title, desc) {
+      modalImg.src = src;
+      modalTitle.textContent = title;
+      modalDesc.textContent = desc;
+      modal.classList.add('modal-active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('modal-active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+</body>
+</html>

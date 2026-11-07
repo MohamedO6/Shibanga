@@ -1,0 +1,865 @@
+{
+ "schema": "fringe.imagery/1",
+ "tileUrl": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/{release}/{z}/{y}/{x}",
+ "credit": "Esri World Imagery Wayback: Esri, Vantor (Maxar), Airbus, Earthstar Geographics, USDA, USGS and the GIS user community",
+ "sites": {
+  "svartsengi": {
+   "eventId": "svartsengi",
+   "focus": {
+    "label": "Grindavík and the Sundhnúkur craters",
+    "lat": 63.862,
+    "lon": -22.425,
+    "zoom": 13,
+    "note": "Barrier walls and fresh lava from the eruptions since December 2023, at the edge of Grindavík.",
+    "event": "2023-11-10",
+    "eventLabel": "Grindavík dike intrusion"
+   },
+   "versions": [
+    {
+     "release": 31144,
+     "releaseDate": "2014-06-11",
+     "captured": "2009-01-15",
+     "source": "Terracolor",
+     "provider": "CNES/Airbus DS",
+     "resM": 2.5
+    },
+    {
+     "release": 13045,
+     "releaseDate": "2018-01-18",
+     "captured": "2018-01-18",
+     "source": "",
+     "provider": "",
+     "resM": null,
+     "approx": true
+    },
+    {
+     "release": 15045,
+     "releaseDate": "2020-04-29",
+     "captured": "2019-06-15",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 9812,
+     "releaseDate": "2021-02-24",
+     "captured": "2020-07-02",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 5314,
+     "releaseDate": "2022-05-18",
+     "captured": "2020-08-21",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 57965,
+     "releaseDate": "2023-02-23",
+     "captured": "2022-08-26",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 52930,
+     "releaseDate": "2024-05-09",
+     "captured": "2023-06-21",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 63116,
+     "releaseDate": "2026-09-24",
+     "captured": "2024-08-07",
+     "source": "WV02",
+     "provider": "Vantor",
+     "resM": 0.5
+    }
+   ]
+  },
+  "central-valley": {
+   "eventId": "central-valley",
+   "focus": {
+    "label": "Tulare Lake bed, near Corcoran",
+    "lat": 36.05,
+    "lon": -119.76,
+    "zoom": 12,
+    "note": "Dry farmland inside the sinking bowl, plus the old Tulare Lake bed that the 2023 storms flooded again."
+   },
+   "versions": [
+    {
+     "release": 31144,
+     "releaseDate": "2014-06-11",
+     "captured": "2008-01-15",
+     "source": "Terracolor",
+     "provider": "CNES/Airbus DS",
+     "resM": 2.5
+    },
+    {
+     "release": 18691,
+     "releaseDate": "2019-04-03",
+     "captured": "2017-09-24",
+     "source": "GE01",
+     "provider": "DigitalGlobe",
+     "resM": 0.46
+    },
+    {
+     "release": 13045,
+     "releaseDate": "2018-01-18",
+     "captured": "2018-01-18",
+     "source": "",
+     "provider": "",
+     "resM": null,
+     "approx": true
+    },
+    {
+     "release": 7072,
+     "releaseDate": "2018-03-28",
+     "captured": "2018-03-28",
+     "source": "",
+     "provider": "",
+     "resM": null,
+     "approx": true
+    },
+    {
+     "release": 11334,
+     "releaseDate": "2018-06-27",
+     "captured": "2018-06-27",
+     "source": "",
+     "provider": "",
+     "resM": null,
+     "approx": true
+    },
+    {
+     "release": 11060,
+     "releaseDate": "2019-10-30",
+     "captured": "2018-06-30",
+     "source": "WV02",
+     "provider": "DigitalGlobe",
+     "resM": 0.5
+    },
+    {
+     "release": 2168,
+     "releaseDate": "2018-09-06",
+     "captured": "2018-09-06",
+     "source": "",
+     "provider": "",
+     "resM": null,
+     "approx": true
+    },
+    {
+     "release": 239,
+     "releaseDate": "2018-11-29",
+     "captured": "2018-11-29",
+     "source": "",
+     "provider": "",
+     "resM": null,
+     "approx": true
+    },
+    {
+     "release": 9812,
+     "releaseDate": "2021-02-24",
+     "captured": "2019-08-20",
+     "source": "WV02",
+     "provider": "Maxar",
+     "resM": 0.5
+    },
+    {
+     "release": 16749,
+     "releaseDate": "2021-10-13",
+     "captured": "2020-04-27",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 12457,
+     "releaseDate": "2023-11-01",
+     "captured": "2021-06-25",
+     "source": "GE01",
+     "provider": "Maxar",
+     "resM": 0.46
+    },
+    {
+     "release": 52304,
+     "releaseDate": "2025-09-04",
+     "captured": "2023-04-04",
+     "source": "GE01",
+     "provider": "Maxar",
+     "resM": 0.46
+    },
+    {
+     "release": 43291,
+     "releaseDate": "2026-10-29",
+     "captured": "2025-08-12",
+     "source": "LG01",
+     "provider": "Vantor",
+     "resM": 0.34
+    }
+   ]
+  },
+  "norfolk": {
+   "eventId": "norfolk",
+   "focus": {
+    "label": "Downtown Norfolk waterfront",
+    "lat": 36.846,
+    "lon": -76.292,
+    "zoom": 15,
+    "note": "The Elizabeth River waterfront, where sinking ground and rising sea bring the most frequent tidal flooding."
+   },
+   "versions": [
+    {
+     "release": 10,
+     "releaseDate": "2014-02-20",
+     "captured": "2011-02-15",
+     "source": "UC-G",
+     "provider": "Microsoft",
+     "resM": 0.30000001192092896
+    },
+    {
+     "release": 19085,
+     "releaseDate": "2016-03-16",
+     "captured": "2013-03-09",
+     "source": "VBMP Orthophotography",
+     "provider": "Commonwealth of Virginia",
+     "resM": 0.3
+    },
+    {
+     "release": 24007,
+     "releaseDate": "2015-07-08",
+     "captured": "2014-07-05",
+     "source": "NAIP",
+     "provider": "USDA FSA",
+     "resM": 1
+    },
+    {
+     "release": 13161,
+     "releaseDate": "2018-01-08",
+     "captured": "2015-10-22",
+     "source": "WV02",
+     "provider": "DigitalGlobe",
+     "resM": 0.5
+    },
+    {
+     "release": 784,
+     "releaseDate": "2017-05-03",
+     "captured": "2016-07-23",
+     "source": "NAIP",
+     "provider": "USDA FSA",
+     "resM": 1
+    },
+    {
+     "release": 8249,
+     "releaseDate": "2018-06-06",
+     "captured": "2017-04-11",
+     "source": "GE01",
+     "provider": "DigitalGlobe",
+     "resM": 0.46
+    },
+    {
+     "release": 12576,
+     "releaseDate": "2019-06-05",
+     "captured": "2018-11-29",
+     "source": "WV02",
+     "provider": "DigitalGlobe",
+     "resM": 0.5
+    },
+    {
+     "release": 18289,
+     "releaseDate": "2020-07-01",
+     "captured": "2020-01-27",
+     "source": "WV02",
+     "provider": "Maxar",
+     "resM": 0.5
+    },
+    {
+     "release": 42663,
+     "releaseDate": "2022-01-12",
+     "captured": "2020-11-29",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 60013,
+     "releaseDate": "2024-03-07",
+     "captured": "2022-02-09",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 27982,
+     "releaseDate": "2025-04-24",
+     "captured": "2024-02-14",
+     "source": "WV02",
+     "provider": "Maxar",
+     "resM": 0.5
+    },
+    {
+     "release": 22869,
+     "releaseDate": "2026-03-26",
+     "captured": "2025-03-01",
+     "source": "Virginia Orthos",
+     "provider": "VGIN",
+     "resM": 0.3048
+    }
+   ]
+  },
+  "jakarta": {
+   "eventId": "jakarta",
+   "focus": {
+    "label": "North Jakarta coast",
+    "lat": -6.095,
+    "lon": 106.77,
+    "zoom": 13,
+    "note": "Reclaimed islands and new sea walls, built along a coast that is sinking faster than the sea is rising."
+   },
+   "versions": [
+    {
+     "release": 31144,
+     "releaseDate": "2014-06-11",
+     "captured": "2007-01-15",
+     "source": "Terracolor",
+     "provider": "CNES/Airbus DS",
+     "resM": 2.5
+    },
+    {
+     "release": 13045,
+     "releaseDate": "2018-01-18",
+     "captured": "2018-01-18",
+     "source": "",
+     "provider": "",
+     "resM": null,
+     "approx": true
+    },
+    {
+     "release": 16681,
+     "releaseDate": "2019-07-17",
+     "captured": "2018-05-02",
+     "source": "WV03",
+     "provider": "DigitalGlobe",
+     "resM": 0.31
+    },
+    {
+     "release": 9812,
+     "releaseDate": "2021-02-24",
+     "captured": "2019-09-23",
+     "source": "WV02",
+     "provider": "Maxar",
+     "resM": 0.5
+    },
+    {
+     "release": 56102,
+     "releaseDate": "2023-12-07",
+     "captured": "2020-08-25",
+     "source": "WV02",
+     "provider": "Maxar",
+     "resM": 0.5
+    },
+    {
+     "release": 5314,
+     "releaseDate": "2022-05-18",
+     "captured": "2020-09-21",
+     "source": "WV02",
+     "provider": "Maxar",
+     "resM": 0.5
+    },
+    {
+     "release": 27982,
+     "releaseDate": "2025-04-24",
+     "captured": "2023-08-17",
+     "source": "GE01",
+     "provider": "Maxar",
+     "resM": 0.46
+    },
+    {
+     "release": 25285,
+     "releaseDate": "2025-05-29",
+     "captured": "2024-03-04",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 32246,
+     "releaseDate": "2026-06-30",
+     "captured": "2025-06-26",
+     "source": "GE01",
+     "provider": "Vantor",
+     "resM": 0.46
+    }
+   ]
+  },
+  "mexico-city": {
+   "eventId": "mexico-city",
+   "focus": {
+    "label": "Former Lake Texcoco",
+    "lat": 19.49,
+    "lon": -98.975,
+    "zoom": 13,
+    "note": "A new airport was started here in 2015 and cancelled in 2018. It sat on the same soft lakebed clay that makes the city sink."
+   },
+   "versions": [
+    {
+     "release": 31144,
+     "releaseDate": "2014-06-11",
+     "captured": "2007-01-15",
+     "source": "Terracolor",
+     "provider": "CNES/Airbus DS",
+     "resM": 2.5
+    },
+    {
+     "release": 13045,
+     "releaseDate": "2018-01-18",
+     "captured": "2018-01-18",
+     "source": "",
+     "provider": "",
+     "resM": null,
+     "approx": true
+    },
+    {
+     "release": 7072,
+     "releaseDate": "2018-03-28",
+     "captured": "2018-03-28",
+     "source": "",
+     "provider": "",
+     "resM": null,
+     "approx": true
+    },
+    {
+     "release": 16749,
+     "releaseDate": "2021-10-13",
+     "captured": "2021-04-17",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 45441,
+     "releaseDate": "2022-08-31",
+     "captured": "2022-05-09",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 64776,
+     "releaseDate": "2023-08-31",
+     "captured": "2022-12-02",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 20337,
+     "releaseDate": "2024-09-19",
+     "captured": "2024-02-06",
+     "source": "WV02",
+     "provider": "Maxar",
+     "resM": 0.5
+    },
+    {
+     "release": 26334,
+     "releaseDate": "2026-08-05",
+     "captured": "2025-02-05",
+     "source": "WV02",
+     "provider": "Vantor",
+     "resM": 0.5
+    },
+    {
+     "release": 52304,
+     "releaseDate": "2025-09-04",
+     "captured": "2025-02-23",
+     "source": "LG01",
+     "provider": "Maxar",
+     "resM": 0.34
+    }
+   ]
+  },
+  "kilauea": {
+   "eventId": "kilauea",
+   "focus": {
+    "label": "Kapoho, lower East Rift Zone",
+    "lat": 19.5,
+    "lon": -154.83,
+    "zoom": 13,
+    "note": "The 2018 eruption buried this bay and neighbourhood under new land.",
+    "event": "2018-05-03",
+    "eventLabel": "2018 eruption"
+   },
+   "versions": [
+    {
+     "release": 31144,
+     "releaseDate": "2014-06-11",
+     "captured": "1999-01-15",
+     "source": "Terracolor",
+     "provider": "Earthstar Geographics",
+     "resM": 15
+    },
+    {
+     "release": 13045,
+     "releaseDate": "2018-01-18",
+     "captured": "2018-01-18",
+     "source": "",
+     "provider": "",
+     "resM": null,
+     "approx": true
+    },
+    {
+     "release": 15045,
+     "releaseDate": "2020-04-29",
+     "captured": "2018-05-23",
+     "source": "WV02",
+     "provider": "Maxar",
+     "resM": 0.5
+    },
+    {
+     "release": 11334,
+     "releaseDate": "2018-06-27",
+     "captured": "2018-06-27",
+     "source": "",
+     "provider": "",
+     "resM": null,
+     "approx": true
+    },
+    {
+     "release": 10312,
+     "releaseDate": "2022-02-24",
+     "captured": "2019-05-12",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 64001,
+     "releaseDate": "2026-02-26",
+     "captured": "2021-12-26",
+     "source": "GE01",
+     "provider": "Vantor",
+     "resM": 0.46
+    },
+    {
+     "release": 49059,
+     "releaseDate": "2026-04-30",
+     "captured": "2025-11-30",
+     "source": "WV02",
+     "provider": "Vantor",
+     "resM": 0.5
+    }
+   ]
+  },
+  "san-andreas": {
+   "eventId": "san-andreas",
+   "focus": {
+    "label": "The creeping fault trace",
+    "lat": 36.3,
+    "lon": -120.9,
+    "zoom": 14,
+    "note": "Creep here is a few centimetres a year. You can't see that in photos, and that's exactly why radar matters."
+   },
+   "versions": [
+    {
+     "release": 11019,
+     "releaseDate": "2014-10-29",
+     "captured": "2010-05-12",
+     "source": "UC-G",
+     "provider": "Microsoft",
+     "resM": 0.30000001192092896
+    },
+    {
+     "release": 9175,
+     "releaseDate": "2016-08-31",
+     "captured": "2014-06-09",
+     "source": "NAIP",
+     "provider": "USDA FSA",
+     "resM": 1
+    },
+    {
+     "release": 11334,
+     "releaseDate": "2018-06-27",
+     "captured": "2016-04-18",
+     "source": "WV02",
+     "provider": "DigitalGlobe",
+     "resM": 0.5
+    },
+    {
+     "release": 14342,
+     "releaseDate": "2017-05-31",
+     "captured": "2016-06-03",
+     "source": "NAIP",
+     "provider": "USDA FSA",
+     "resM": 0.6
+    },
+    {
+     "release": 645,
+     "releaseDate": "2019-06-26",
+     "captured": "2018-08-29",
+     "source": "WV02",
+     "provider": "DigitalGlobe",
+     "resM": 0.5
+    },
+    {
+     "release": 27659,
+     "releaseDate": "2021-04-28",
+     "captured": "2019-11-04",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 26120,
+     "releaseDate": "2021-12-21",
+     "captured": "2021-05-26",
+     "source": "GE01",
+     "provider": "Maxar",
+     "resM": 0.46
+    },
+    {
+     "release": 64776,
+     "releaseDate": "2023-08-31",
+     "captured": "2021-09-18",
+     "source": "GE01",
+     "provider": "Maxar",
+     "resM": 0.46
+    },
+    {
+     "release": 56102,
+     "releaseDate": "2023-12-07",
+     "captured": "2023-03-27",
+     "source": "GE01",
+     "provider": "Maxar",
+     "resM": 0.46
+    },
+    {
+     "release": 52304,
+     "releaseDate": "2025-09-04",
+     "captured": "2024-05-14",
+     "source": "WV02",
+     "provider": "Maxar",
+     "resM": 0.5
+    },
+    {
+     "release": 63116,
+     "releaseDate": "2026-09-24",
+     "captured": "2025-10-10",
+     "source": "LG02",
+     "provider": "Vantor",
+     "resM": 0.34
+    }
+   ]
+  },
+  "campi-flegrei": {
+   "eventId": "campi-flegrei",
+   "focus": {
+    "label": "Pozzuoli harbour",
+    "lat": 40.8225,
+    "lon": 14.1215,
+    "zoom": 15,
+    "note": "The ground under this harbour has risen more than a metre since 2005."
+   },
+   "versions": [
+    {
+     "release": 10,
+     "releaseDate": "2014-02-20",
+     "captured": "2011-04-21",
+     "source": "UC-G",
+     "provider": "Microsoft",
+     "resM": 0.30000001192092896
+    },
+    {
+     "release": 784,
+     "releaseDate": "2017-05-03",
+     "captured": "2014-10-30",
+     "source": "WV02",
+     "provider": "DigitalGlobe",
+     "resM": 0.5
+    },
+    {
+     "release": 13045,
+     "releaseDate": "2018-01-18",
+     "captured": "2016-07-26",
+     "source": "WV02",
+     "provider": "DigitalGlobe",
+     "resM": 0.5
+    },
+    {
+     "release": 6049,
+     "releaseDate": "2020-08-12",
+     "captured": "2018-11-14",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 16245,
+     "releaseDate": "2022-04-27",
+     "captured": "2021-07-31",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 25982,
+     "releaseDate": "2023-06-13",
+     "captured": "2022-04-11",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 36557,
+     "releaseDate": "2025-01-30",
+     "captured": "2023-09-10",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 22869,
+     "releaseDate": "2026-03-26",
+     "captured": "2025-03-04",
+     "source": "LG01",
+     "provider": "Vantor",
+     "resM": 0.34
+    },
+    {
+     "release": 49059,
+     "releaseDate": "2026-04-30",
+     "captured": "2025-12-29",
+     "source": "GE01",
+     "provider": "Vantor",
+     "resM": 0.46
+    }
+   ]
+  },
+  "kahramanmaras": {
+   "eventId": "kahramanmaras",
+   "focus": {
+    "label": "Antakya city centre",
+    "lat": 36.2025,
+    "lon": 36.1605,
+    "zoom": 16,
+    "note": "About 200 km south-west of the epicentre: whole blocks collapsed in the 6 February 2023 earthquakes.",
+    "event": "2023-02-06",
+    "eventLabel": "M 7.8 earthquake"
+   },
+   "versions": [
+    {
+     "release": 30195,
+     "releaseDate": "2014-11-12",
+     "captured": "2010-09-19",
+     "source": "WV02",
+     "provider": "DigitalGlobe",
+     "resM": 0.5
+    },
+    {
+     "release": 14765,
+     "releaseDate": "2017-06-14",
+     "captured": "2015-07-25",
+     "source": "GE01",
+     "provider": "DigitalGlobe",
+     "resM": 0.46
+    },
+    {
+     "release": 20753,
+     "releaseDate": "2020-11-18",
+     "captured": "2019-06-03",
+     "source": "WV02",
+     "provider": "Maxar",
+     "resM": 0.5
+    },
+    {
+     "release": 44873,
+     "releaseDate": "2023-03-15",
+     "captured": "2021-09-27",
+     "source": "WV02",
+     "provider": "Maxar",
+     "resM": 0.5
+    },
+    {
+     "release": 22252,
+     "releaseDate": "2026-01-29",
+     "captured": "2023-04-04",
+     "source": "WV02",
+     "provider": "Vantor",
+     "resM": 0.5
+    }
+   ]
+  },
+  "nile-delta": {
+   "eventId": "nile-delta",
+   "focus": {
+    "label": "New Mansoura, on the delta coast",
+    "lat": 31.47,
+    "lon": 31.445,
+    "zoom": 14,
+    "note": "A whole new city has gone up on this low, flat coast since 2017. Nearby, the land sinks a few millimetres a year while the sea rises about 3.4 mm a year."
+   },
+   "versions": [
+    {
+     "release": 1052,
+     "releaseDate": "2017-04-19",
+     "captured": "2010-08-28",
+     "source": "WV02",
+     "provider": "DigitalGlobe",
+     "resM": 0.5
+    },
+    {
+     "release": 31026,
+     "releaseDate": "2017-02-27",
+     "captured": "2010-12-10",
+     "source": "WV02",
+     "provider": "DigitalGlobe",
+     "resM": 0.5
+    },
+    {
+     "release": 10768,
+     "releaseDate": "2018-01-31",
+     "captured": "2016-08-05",
+     "source": "WV02",
+     "provider": "DigitalGlobe",
+     "resM": 0.5
+    },
+    {
+     "release": 20753,
+     "releaseDate": "2020-11-18",
+     "captured": "2018-02-01",
+     "source": "WV02",
+     "provider": "Maxar",
+     "resM": 0.5
+    },
+    {
+     "release": 45134,
+     "releaseDate": "2022-12-14",
+     "captured": "2021-05-05",
+     "source": "WV03",
+     "provider": "Maxar",
+     "resM": 0.31
+    },
+    {
+     "release": 64001,
+     "releaseDate": "2026-02-26",
+     "captured": "2023-01-19",
+     "source": "GE01",
+     "provider": "Vantor",
+     "resM": 0.46
+    },
+    {
+     "release": 63116,
+     "releaseDate": "2026-09-24",
+     "captured": "2025-03-30",
+     "source": "LG04",
+     "provider": "Vantor",
+     "resM": 0.34
+    }
+   ]
+  }
+ },
+ "generatedAt": "2026-11-06T14:05:07Z"
+}

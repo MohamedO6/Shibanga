@@ -1,0 +1,4 @@
+sync-data.py
+.gitignore
+.env*
+.vercel

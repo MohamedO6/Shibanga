@@ -1,0 +1,260 @@
+{
+ "schema": "fringe.photos/1",
+ "sites": {
+  "central-valley": [
+   {
+    "file": "photos/central-valley/sanjoaquindrop.jpg",
+    "caption": "USGS's famous pole near Mendota: the signs mark the ground level in 1925, 1955 and 1977. That's about 9 m (28 ft) of sinking, all from pumping groundwater.",
+    "title": "SanJoaquinDrop.jpg",
+    "author": "USGS (unknown photographer)",
+    "credit": "http://pubs.usgs.gov/circ/circ1182/pdf/06SanJoaquinValley.pdf",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "Unknown date",
+    "source": "https://commons.wikimedia.org/wiki/File:SanJoaquinDrop.jpg",
+    "width": 1280,
+    "height": 3199
+   },
+   {
+    "file": "photos/central-valley/map-of-california-subsidence-and-uplift-pia25530.jpg",
+    "caption": "NASA JPL radar map of land sinking and rising across California. The Central Valley bowls really stand out.",
+    "title": "Map of California Subsidence and Uplift (PIA25530).jpg",
+    "author": "NASA Earth Observatory",
+    "credit": "This image or video was catalogued by Jet Propulsion Laboratory of the United States National Aeronautics and Space Administration (NASA) under Photo ID: PIA25530.",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "2025-02-10",
+    "source": "https://commons.wikimedia.org/wiki/File:Map_of_California_Subsidence_and_Uplift_(PIA25530).jpg",
+    "width": 1280,
+    "height": 1600
+   }
+  ],
+  "norfolk": [
+   {
+    "file": "photos/norfolk/us-navy-030918-n-3235p-018-rain-and-heavy-winds-from-hurrica.jpg",
+    "caption": "Hurricane Isabel floods parking at Naval Station Norfolk, September 2003. As the ground sinks and the sea rises, water like this reaches further.",
+    "title": "US Navy 030918-N-3235P-018 Rain and heavy winds from Hurricane Isabel flooded portions of Fleet Parking at Naval Station Norfolk, Virginia.jpg",
+    "author": "U.S. Navy photo by Photographer’s Mate 1st Class Michael Pendergrass.",
+    "credit": "This image was released by the United States Navy with the ID 030918-N-3235P-018 (next). This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required.",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "2003-09-18",
+    "source": "https://commons.wikimedia.org/wiki/File:US_Navy_030918-N-3235P-018_Rain_and_heavy_winds_from_Hurricane_Isabel_flooded_portions_of_Fleet_Parking_at_Naval_Station_Norfolk,_Virginia.jpg",
+    "width": 1280,
+    "height": 834
+   }
+  ],
+  "jakarta": [
+   {
+    "file": "photos/jakarta/pulang-dari-laut.jpg",
+    "caption": "Fishermen in Muara Baru, North Jakarta, walk home along the sea wall. It was built because the land behind it now sits below the sea.",
+    "title": "Pulang dari Laut.jpg",
+    "author": "Yohaneshsh7342",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2025-11-13 12:44:51",
+    "source": "https://commons.wikimedia.org/wiki/File:Pulang_dari_Laut.jpg",
+    "width": 1280,
+    "height": 1920
+   },
+   {
+    "file": "photos/jakarta/voa-people-walk-through-jakarta-s-flooded-streets.jpg",
+    "caption": "Flooded streets in Jakarta, January 2013. Sinking ground makes floods deeper and slower to drain.",
+    "title": "VOA People walk through Jakarta's flooded streets.jpg",
+    "author": "VOA Indonesian Service",
+    "credit": "Voice of America: Flooded Jakarta Braces for More Downpours",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "2013-01-17",
+    "source": "https://commons.wikimedia.org/wiki/File:VOA_People_walk_through_Jakarta%27s_flooded_streets.jpg",
+    "width": 1280,
+    "height": 960
+   }
+  ],
+  "mexico-city": [
+   {
+    "file": "photos/mexico-city/us-indian-spacecraft-captures-mexico-city-subsidence-pia2670.jpg",
+    "caption": "NISAR's own map of Mexico City sinking (NASA/JPL-Caltech, 2026): the same L-band radar this app is built around.",
+    "title": "US-Indian Spacecraft Captures Mexico City Subsidence (PIA26709).jpg",
+    "author": "NASA/JPL-Caltech/David Bekaert",
+    "credit": "This image or video was catalogued by Jet Propulsion Laboratory of the United States National Aeronautics and Space Administration (NASA) under Photo ID: PIA26709.",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "2026-04-29 21:13:00",
+    "source": "https://commons.wikimedia.org/wiki/File:US-Indian_Spacecraft_Captures_Mexico_City_Subsidence_(PIA26709).jpg",
+    "width": 1280,
+    "height": 1101
+   },
+   {
+    "file": "photos/mexico-city/ciudad-de-m-xico-calles-y-plazas-1986-07.jpg",
+    "caption": "Our Lady of Loreto, Mexico City, 1986: the church is slightly tilted by ground subsidence as the lakebed clay beneath it compacts.",
+    "title": "Ciudad de México, calles y plazas 1986 07.jpg",
+    "author": "LBM1948",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "1986-07",
+    "source": "https://commons.wikimedia.org/wiki/File:Ciudad_de_M%C3%A9xico,_calles_y_plazas_1986_07.jpg",
+    "width": 1280,
+    "height": 843
+   }
+  ],
+  "svartsengi": [
+   {
+    "file": "photos/svartsengi/sundhn-kur-2024-0734.jpg",
+    "caption": "Sundhnúkur crater ringed by fresh lava, August 2024, with the Svartsengi power plant behind.",
+    "title": "Sundhnúkur 2024 (0734).jpg",
+    "author": "Steinninn",
+    "credit": "Own work",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "date": "Taken on 6 August 2024, 08:49:23",
+    "source": "https://commons.wikimedia.org/wiki/File:Sundhn%C3%BAkur_2024_(0734).jpg",
+    "width": 1280,
+    "height": 853
+   },
+   {
+    "file": "photos/svartsengi/2025-grindavik-volcanic-eruption-aftermath-aerial-view.jpg",
+    "caption": "Grindavík and the Reykjanes coast from a plane, April 2025, after the Sundhnúkur eruptions.",
+    "title": "2025 Grindavik volcanic eruption aftermath aerial view.jpg",
+    "author": "Manticorp",
+    "credit": "Own work",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "date": "Taken on 22 April 2025, 10:28:57",
+    "source": "https://commons.wikimedia.org/wiki/File:2025_Grindavik_volcanic_eruption_aftermath_aerial_view.jpg",
+    "width": 1280,
+    "height": 961
+   }
+  ],
+  "kilauea": [
+   {
+    "file": "photos/kilauea/kilauea-fissure-8-cone-erupting-on-6-28-2018.jpg",
+    "caption": "Fissure 8 erupting in Leilani Estates on 28 June 2018 (USGS). This is the vent that fed the lava flow to Kapoho.",
+    "title": "Kilauea Fissure 8 cone erupting on 6-28-2018.jpg",
+    "author": "United States Geological Survey",
+    "credit": "http://volcano.istad.org/tag/tina-neal/https://volcanoes.usgs.gov/observatories/hvo/multimedia_uploads/multimediaFile-2331.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "2018-06-28 06:10:02",
+    "source": "https://commons.wikimedia.org/wiki/File:Kilauea_Fissure_8_cone_erupting_on_6-28-2018.jpg",
+    "width": 1280,
+    "height": 853
+   },
+   {
+    "file": "photos/kilauea/kapoho-bay-lava-20180604.jpg",
+    "caption": "Lava pours into Kapoho Bay on 4 June 2018 and buries the homes around it (USGS). You can see this same bay before and after in Then & Now.",
+    "title": "Kapoho Bay lava 20180604.jpg",
+    "author": "US Geological Survey",
+    "credit": "https://volcanoes.usgs.gov/volcanoes/kilauea/multimedia_chronology.html (USGS-HVO)",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "2018-06-04",
+    "source": "https://commons.wikimedia.org/wiki/File:Kapoho_Bay_lava_20180604.jpg",
+    "width": 1280,
+    "height": 720
+   }
+  ],
+  "san-andreas": [
+   {
+    "file": "photos/san-andreas/san-andreas-fault-aseismic-creep.jpg",
+    "caption": "A curb in Hollister pulled out of line by fault creep, the slow and quiet slip that radar can measure from space.",
+    "title": "San Andreas Fault Aseismic Creep.jpg",
+    "author": "USGS",
+    "credit": "http://education.usgs.gov/california/pp1515/chapter7.html",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "",
+    "source": "https://commons.wikimedia.org/wiki/File:San_Andreas_Fault_Aseismic_Creep.jpg",
+    "width": 1280,
+    "height": 1746
+   }
+  ],
+  "campi-flegrei": [
+   {
+    "file": "photos/campi-flegrei/serapeum-pozzuoli-1.jpg",
+    "caption": "The Roman 'Serapeum' in Pozzuoli. Marine shells bored into these columns when the ground sank below the sea. They keep a 2,000-year record of the caldera rising and falling.",
+    "title": "Serapeum (Pozzuoli) -1.jpg",
+    "author": "Ferdinando Marfella",
+    "credit": "originally posted to Flickr as Pozzuoli",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "date": "2004-02-07 05:09:43",
+    "source": "https://commons.wikimedia.org/wiki/File:Serapeum_(Pozzuoli)_-1.jpg",
+    "width": 1280,
+    "height": 960
+   }
+  ],
+  "kahramanmaras": [
+   {
+    "file": "photos/kahramanmaras/city-of-antakya-after-7-8-magnitude-earthquake-in-t-rkiye.jpg",
+    "caption": "Antakya from the air, May 2023, three months after the M 7.8 and M 7.5 earthquakes.",
+    "title": "City of Antakya after 7.8 magnitude earthquake in Türkiye.jpg",
+    "author": "Orhan Erkılıç (VOA)",
+    "credit": "Voice of America",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "2023-05-10 18:47:16",
+    "source": "https://commons.wikimedia.org/wiki/File:City_of_Antakya_after_7.8_magnitude_earthquake_in_T%C3%BCrkiye.jpg",
+    "width": 1280,
+    "height": 720
+   },
+   {
+    "file": "photos/kahramanmaras/a-damaged-building-in-antakya.jpg",
+    "caption": "A damaged building in Antakya, February 2023.",
+    "title": "A damaged building in Antakya.jpg",
+    "author": "Yıldız Yazıcıoğlu (VOA)",
+    "credit": "Voice of America",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "2023-02-13 18:14",
+    "source": "https://commons.wikimedia.org/wiki/File:A_damaged_building_in_Antakya.jpg",
+    "width": 1280,
+    "height": 960
+   }
+  ],
+  "nile-delta": [
+   {
+    "file": "photos/nile-delta/egypt-s-nile-delta-region-iss072e905240.jpg",
+    "caption": "The Nile Delta at night from the International Space Station, March 2025 (NASA). About 39 million people live on this low fan of land between Cairo and the sea.",
+    "title": "Egypt's Nile Delta region (iss072e905240).jpg",
+    "author": "NASA Johnson Space Center",
+    "credit": "This image or video was catalogued by Lyndon B. Johnson Space Center of the United States National Aeronautics and Space Administration (NASA) under Photo ID: iss072e905240.",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "Taken on 22 March 2025",
+    "source": "https://commons.wikimedia.org/wiki/File:Egypt%27s_Nile_Delta_region_(iss072e905240).jpg",
+    "width": 1280,
+    "height": 853
+   },
+   {
+    "file": "photos/nile-delta/rashidnilemouth.jpg",
+    "caption": "Where the Rosetta branch of the Nile meets the Mediterranean at Rashid. Since the Aswan High Dam, the river carries very little mud down to build this coast back up.",
+    "title": "RashidNileMouth.jpg",
+    "author": "Roland Unger",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "date": "2007-08-29",
+    "source": "https://commons.wikimedia.org/wiki/File:RashidNileMouth.jpg",
+    "width": 1280,
+    "height": 848
+   },
+   {
+    "file": "photos/nile-delta/egypt-alexandria-the-corniche-of-alexandria-mediterranean-se.jpg",
+    "caption": "Alexandria's Corniche runs right along the sea. Old buildings along this coast have been collapsing far more often as salty groundwater rises beneath them.",
+    "title": "Egypt, Alexandria, The Corniche of Alexandria, Mediterranean Sea.jpg",
+    "author": "Vyacheslav Argenberg",
+    "credit": "Own work",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "date": "2007-05-02 15:36:29",
+    "source": "https://commons.wikimedia.org/wiki/File:Egypt,_Alexandria,_The_Corniche_of_Alexandria,_Mediterranean_Sea.jpg",
+    "width": 1280,
+    "height": 853
+   }
+  ]
+ },
+ "generatedAt": "2026-11-06T14:06:08Z"
+}

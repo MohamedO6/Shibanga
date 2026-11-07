@@ -1,0 +1,64 @@
+{
+  "schema": "fringe.evidence/1",
+  "eventId": "kilauea",
+  "eventName": "Kīlauea",
+  "region": "Hawaiʻi",
+  "episode": "South flank creep",
+  "climateLink": "none-claimed",
+  "climateNote": "This is a volcano-mechanics event: magma pressure pushing the south flank seaward along a deep fault. No climate connection is claimed — it is included for the descending-pass radar physics lesson.",
+  "generatedAt": "2026-10-22",
+  "dataset": {
+    "mission": "Sentinel-1A/1B (Copernicus), descending pass; historical ALOS/ENVISAT in published studies",
+    "datasetId": "USGS Hawaiian Volcano Observatory GNSS + InSAR; Copernicus Sentinel-1 SLC",
+    "window": "Published: multi-year flank creep record; in-app pass-pair window: 1,080 days",
+    "coverage": "Kīlauea south flank, Hawaiʻi (~70 km scene)",
+    "gnss": "UWEV + AHUP, Nevada Geodetic Lab daily IGS20 solutions, bundled as weekly means",
+    "processing": "Published: HVO GNSS/inSAR monitoring and flank-creep studies. In-app: elastic flank-slide model; one fringe = λ/2 line-of-sight motion"
+  },
+  "items": [
+    {
+      "label": "MEASURED",
+      "kind": "GNSS position time series",
+      "detail": "Real daily IGS20 solutions from NGL stations UWEV and AHUP, downsampled to weekly means, bundled and charted in-app."
+    },
+    {
+      "label": "MEASURED",
+      "kind": "Published geophysical rates",
+      "detail": "Up to ~10 cm/yr seaward flank motion (USGS HVO); M 6.9 south-flank earthquake 4 May 2018 (USGS). Shown as citations; not re-derived in-app."
+    },
+    {
+      "label": "MODELED",
+      "kind": "Interferogram scene",
+      "detail": "Physics rendering of the elastic flank model (peak 27 cm over 1,080 days). NOT a raw SAR image — computed on-device."
+    },
+    {
+      "label": "DERIVED",
+      "kind": "Motion metrics and rate",
+      "detail": "Computed on-device from the physical model (one fringe = λ/2 LOS). Tracks the model, not a downloaded product."
+    },
+    {
+      "label": "LIVE",
+      "kind": "ESP32 demo ground sensor",
+      "detail": "Live accelerometer from the demo ESP32 ground station — IoT demo at the demo site; not a satellite measurement of this event."
+    }
+  ],
+  "limitations": [
+    "The interferogram is a physics rendering of published figures, not raw SAR pixels — no SAR processing is done in-app.",
+    "Flank creep is episodic; the steady model under-represents rupture-driven jumps like May 2018.",
+    "Descending-pass look geometry makes the scene sensitive to along-track ionosphere in real data."
+  ],
+  "sources": [
+    {
+      "title": "USGS Hawaiian Volcano Observatory — Kīlauea monitoring (GNSS, InSAR, flank creep)",
+      "publisher": "U.S. Geological Survey",
+      "year": "2025",
+      "url": "https://www.usgs.gov/observatories/hvo"
+    },
+    {
+      "title": "Nevada Geodetic Lab daily IGS20 position solutions (stations UWEV, AHUP)",
+      "publisher": "Nevada Geodetic Laboratory, University of Nevada, Reno",
+      "year": "2026",
+      "url": "https://geodesy.unr.edu/"
+    }
+  ]
+}

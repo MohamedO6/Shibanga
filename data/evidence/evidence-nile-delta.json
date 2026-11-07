@@ -1,0 +1,122 @@
+{
+  "schema": "fringe.evidence/1",
+  "eventId": "nile-delta",
+  "eventName": "Nile Delta",
+  "region": "Egypt",
+  "episode": "Coastal subsidence",
+  "climateLink": "substantive",
+  "generatedAt": "2026-11-06",
+  "dossier": {
+    "headline": "The delta sinks up to 11 mm a year while the sea rises 3.4 mm, so the Mediterranean gains on Egypt from both sides.",
+    "sections": [
+      {
+        "icon": "eye",
+        "title": "What we observed",
+        "body": "Sentinel-1 radar (191 scenes, 2014 to 2019) tied to Egyptian GPS stations found Damietta sinking 11 ± 0.6 mm a year, Mansoura 8.9 ± 0.7 mm and Port Said 6.3 ± 0.7 mm, while Alexandria moves much less (about 1.5 mm a year). Satellite altimetry shows the sea off the delta rising 3.4 ± 0.5 mm a year since 1993. NISAR's first L-band pairs over the delta (June to October 2026) are animated in the web app."
+      },
+      {
+        "icon": "lightbulb",
+        "title": "What it means",
+        "body": "For anyone living on the coast, what counts is the sea rising relative to the land. Where the land sinks 11 mm a year and the sea rises 3.4 mm, the sea effectively climbs more than 14 mm a year, about four times faster than sea-level rise alone."
+      },
+      {
+        "icon": "exclamationmark.2",
+        "title": "Why it matters",
+        "body": "The delta is home to more than 42% of Egypt's people and over half of its farmland, and its northern edge sits only about a metre above the sea. In the study's worst case about 2,400 km² of the delta could flood within 100 years. In Alexandria, rising salty groundwater is weakening foundations: building collapses went from about one a year to about 40 a year in the last decade."
+      },
+      {
+        "icon": "arrow.triangle.branch",
+        "title": "Possible drivers",
+        "body": "Groundwater pumping and the weight of fast-growing cities compact the soft clays of the delta. Since the Aswan High Dam was finished in 1970, the Nile carries very little mud to the coast, so nothing builds the land back up. On top of that, a warming climate is raising the Mediterranean."
+      },
+      {
+        "icon": "eye.slash",
+        "title": "What the evidence cannot tell us",
+        "body": "How the sinking splits between pumping, building load and natural compaction at any one place; rates outside the cities, where radar has fewer stable targets; and how much of Alexandria's collapse trend comes from the sea versus building age and construction quality, which a published comment on that study debates."
+      },
+      {
+        "icon": "arrow.forward",
+        "title": "What to investigate next",
+        "body": "Keep stacking NISAR L-band pairs over the delta. L-band holds its signal over farmland far better than C-band, so it can measure the countryside between the cities, not only the cities. Pair it with the Egyptian permanent GPS network and the tide gauges at Alexandria, Port Said and Damietta."
+      }
+    ]
+  },
+  "interpretation": {
+    "public": "More than 40% of Egyptians live on the Nile Delta, and much of Egypt's food grows there. It is slowly sinking. Radar satellites found cities like Damietta and Mansoura dropping about a centimetre a year, while the Mediterranean rises a few millimetres a year. The two add up, so the sea is gaining on the coast faster than climate change alone would suggest. The river used to bring fresh mud that built the land back up, but since the Aswan High Dam it no longer does, and pumping groundwater and building heavy cities on soft clay make the sinking worse.",
+    "student": "Relative sea-level rise = sea-level rise + land sinking. Satellite altimetry shows the sea off the delta rising 3.4 ± 0.5 mm/yr (1993 to 2019). Sentinel-1 radar from 2014 to 2019, checked against GPS stations, shows Damietta sinking 11 ± 0.6 mm/yr and Mansoura 8.9 ± 0.7 mm/yr, so the coast near Damietta loses more than 14 mm/yr of height against the sea. Causes: compaction of young delta clays under groundwater pumping and urban load, with no new river sediment since the Aswan High Dam. The study's worst case floods about 2,400 km² within 100 years.",
+    "scientist": "Hassan et al. (2025, Sci. Rep. 15:19209) ran PSI on 191 ascending Sentinel-1 scenes (track 58, 2014 to 2019) calibrated with EPGN and SONEL GNSS: Damietta −11 ± 0.6, Mansoura −8.9 ± 0.7, Port Said −6.3 ± 0.7, New Damietta −3.8 ± 0.7, Alexandria −1.6 ± 0.7 mm/yr; GNSS MNSO −9.65 ± 1.27, SAID −6.77 ± 1.68, ALX2 −1.50 ± 0.45 mm/yr. Altimetry gives 3.42 ± 0.5 mm/yr along the delta shoreline (1993 to 2019), and the New Damietta tide gauge minus altimetry implies about −4.8 ± 1.2 mm/yr of land motion there. The bundled NGL IGS20 series for ALX2 (2014 to 2024) gives about −1.45 mm/yr, consistent with the study. Fouad et al. (2025, Earth's Future) link a rise in Alexandria building collapses to coastal erosion and seawater intrusion. The in-app scene is an analytic bowl rendering (MODELED); the NISAR layer is real GUNW phase recovered from JPL browse images."
+  },
+  "dataset": {
+    "mission": "Sentinel-1 (Copernicus), 12-day repeat; NASA-ISRO NISAR L-band GUNW (provisional); Egyptian GNSS; satellite altimetry",
+    "datasetId": "Hassan et al. 2025 Sci. Rep. rates (doi 10.1038/s41598-025-03831-w); NISAR_L2_GUNW_PROVISIONAL_V1 tracks 7 D and 28 A; NGL IGS20 ALX2",
+    "window": "Published radar window: 2014 to 2019 (191 scenes); altimetry 1993 to 2019; NISAR pairs Jun to Oct 2026; in-app pass-pair window: 1,826 days",
+    "coverage": "Northern Nile Delta, Egypt: Damietta, Mansoura and the Damietta branch (100 km scene)",
+    "gnss": "Bundled chart: ALX2 (Alexandria, SONEL/NGL), 2014 to 2024. Study stations MNSO, SAID, DAMT and others belong to the Egyptian permanent GNSS network and are not in the public NGL archive",
+    "processing": "Published: PSI time series calibrated with GNSS, plus altimetry and tide gauge. In-app: analytic elastic bowl tuned to the published rates; NISAR phase recovered from JPL browse images; one fringe = half a wavelength of line-of-sight motion"
+  },
+  "items": [
+    {
+      "label": "MEASURED",
+      "kind": "Published radar and GPS rates",
+      "detail": "Damietta −11 ± 0.6 mm/yr, Mansoura −8.9 ± 0.7 mm/yr, Port Said −6.3 ± 0.7 mm/yr (Sentinel-1, 2014 to 2019, GPS-calibrated), from Hassan et al. 2025; shown as citations."
+    },
+    {
+      "label": "MEASURED",
+      "kind": "Sea-level rise",
+      "detail": "3.4 ± 0.5 mm/yr off the delta coast from satellite altimetry, 1993 to 2019 (Hassan et al. 2025); shown as a citation."
+    },
+    {
+      "label": "MEASURED",
+      "kind": "NISAR L-band pairs",
+      "detail": "14 real NISAR GUNW pairs over the delta, June to October 2026, on descending track 7 and ascending track 28. Phase recovered from JPL's public browse images, so it includes atmosphere."
+    },
+    {
+      "label": "MEASURED",
+      "kind": "GPS station ALX2",
+      "detail": "Daily IGS20 positions for Alexandria from the Nevada Geodetic Lab, 2014 to 2024, averaged by week. It sinks about 1.45 mm/yr, matching the published −1.50 ± 0.45 mm/yr."
+    },
+    {
+      "label": "MODELED",
+      "kind": "Interferogram scene",
+      "detail": "Physics rendering of an elastic bowl source (5.5 cm peak over the 1,826-day window, about 11 mm/yr) centred between Mansoura and Damietta and tuned to the published rates. Not a raw radar image; computed on the device."
+    },
+    {
+      "label": "DERIVED",
+      "kind": "Motion metrics and rate",
+      "detail": "Displacement, fringes and rate readouts computed on the device from the physical model (one fringe = half a wavelength of line-of-sight motion). They follow the model, not a downloaded data product."
+    }
+  ],
+  "limitations": [
+    "The animated rings are a physics rendering of published figures, not raw radar pixels.",
+    "A single bowl simplifies a delta where sinking is patchy: the fastest rates sit under cities, and farmland in between has fewer radar targets.",
+    "The NISAR browse-image phase includes atmosphere and is provisional data; it shows the signal, not calibrated millimetres.",
+    "The bundled GPS chart is Alexandria (ALX2), the slowest-moving city in the study; the faster stations at Mansoura and Port Said are not in the public archive.",
+    "The share of Alexandria's building collapses caused by seawater intrusion, rather than building age or quality, is debated in a published comment on Fouad et al. 2025."
+  ],
+  "sources": [
+    {
+      "title": "Hassan, Saleh, Mohamed, Elhebiry, Abdeldayem, Issawy, Zahran & Kamh: 'Environmental risk assessment of the Nile Delta, Egypt, based on radar interferometry, altimetry, and geodetic measurements', Scientific Reports 15, 19209",
+      "publisher": "Scientific Reports (Nature Portfolio)",
+      "year": "2025",
+      "url": "https://doi.org/10.1038/s41598-025-03831-w"
+    },
+    {
+      "title": "Fouad, Heggy et al.: 'Soaring Building Collapses in Southern Mediterranean Coasts: Hydroclimatic Drivers and Adaptive Landscape Mitigations', Earth's Future 13(2)",
+      "publisher": "Earth's Future (AGU)",
+      "year": "2025",
+      "url": "https://doi.org/10.1029/2024EF004883"
+    },
+    {
+      "title": "NISAR L2 GUNW provisional products over the Nile Delta, tracks 7 (descending) and 28 (ascending)",
+      "publisher": "NASA/JPL-Caltech and ISRO, via the Alaska Satellite Facility DAAC",
+      "year": "2026",
+      "url": "https://search.asf.alaska.edu/#/?dataset=NISAR&sciProducts=GUNW"
+    },
+    {
+      "title": "GNSS station ALX2, Alexandria: daily IGS20 position time series",
+      "publisher": "Nevada Geodetic Laboratory, University of Nevada, Reno",
+      "year": "2024",
+      "url": "https://geodesy.unr.edu/NGLStationPages/stations/ALX2.sta"
+    }
+  ]
+}

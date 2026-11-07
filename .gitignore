@@ -1,0 +1,17 @@
+# Generated screenshots
+full-screenshots/
+screenshots/
+full-screenshots.zip
+
+# Large media
+*.mp4
+
+# Environment & cache
+.vercel/
+.env.local
+__pycache__/
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
