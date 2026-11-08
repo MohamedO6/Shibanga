@@ -1,9 +1,13 @@
-import * as F from "./fringe.js?v=7.0";
-import { icon, playIcon, pauseIcon } from "./icons.js?v=7.0";
-import { TOURS, LOOK_FOR, FEATURED } from "./stories.js?v=7.0";
-import { createRingRenderer } from "./gl.js?v=7.0";
-import { initAcademy } from "./learn.js?v=7.0";
-import { consecutiveRun, datasetCounts, validationSummary, seriesSpan, buildObservationReport, comparisonCsv, downloadFile } from "./science.js?v=7.0";
+import * as F from "./fringe.js?v=10.0";
+import { icon, playIcon, pauseIcon } from "./icons.js?v=10.0";
+import { TOURS, LOOK_FOR, FEATURED } from "./stories.js?v=10.0";
+import { createRingRenderer } from "./gl.js?v=10.0";
+import { initJourney } from "./learn.js?v=10.0";
+import { initDeltaGame } from "./game.js?v=10.0";
+import { initInvestigation } from "./investigate.js?v=10.0";
+import { canonicalView, shouldShowJourney } from "./learn-content.js?v=10.0";
+import { createExplorerTour } from "./journey-tour.js?v=10.0";
+import { consecutiveRun, datasetCounts, validationSummary, seriesSpan, buildObservationReport, comparisonCsv, downloadFile } from "./science.js?v=10.0";
 
 // ===========================================================================
 // State
@@ -56,13 +60,18 @@ const state = {
 };
 
 const data = { index: null, stations: {}, manifest: null, evidence: {}, evidenceBytes: {}, proofs: {}, gnss: {}, nisar: null, imagery: null, photos: null };
-let academy = null;
-const PAGE_VIEWS = ["events", "learn", "lab", "guide"];
+let journey = null, explorerTour = null, deltaGame = null, investigation = null;
+const PAGE_VIEWS = ["events", "journey", "game", "investigate", "lab", "guide"];
 
-function openAcademy() {
+function openInvestigation(selection = {}) { closeWelcome(); setView("investigate"); investigation?.open(selection); }
+
+function openGame() { closeWelcome(); setView("game"); deltaGame?.enter(); }
+
+function openJourney() {
   closeWelcome();
-  setView("learn");
-  academy?.enter();
+  setView("journey");
+  journey?.replay();
+  journey?.enter();
 }
 
 function observationReport(event = byId(state.eventId), stackId = nis.stackId) {
@@ -1435,13 +1444,18 @@ function renderNisarCard() {
     <p class="quality-note ${processed ? "neutral" : ""}">${processed ? "The full product provides phase-derived LOS estimates, not automatically validated ground motion. Compare against independent observations and inspect residuals below." : "This layer is recovered from a public browse image. It is useful for exploring radar patterns, but it does not provide a validated displacement rate. Its confidence mask is not measured product coherence."}</p>
     ${g ? gnssTable(g) : ""}
     ${fieldsBlockHtml()}
-    <div class="quality-actions"><button class="pill-btn ghost" data-export-observation>${icon("download", { size: 14 })}Observation report (.json)</button>${g?.n ? `<button class="pill-btn ghost" data-export-comparison>${icon("download", { size: 14 })}All station residuals (.csv)</button>` : ""}<button class="pill-btn ghost" data-learn-evidence>${icon("sparkle", { size: 14 })}Learn to read this</button></div>
+    <div class="observation-sources"><div class="quality-actions"><button class="pill-btn ghost" data-export-observation>${icon("download", { size: 14 })}Observation report (.json)</button>${g?.n ? `<button class="pill-btn ghost" data-export-comparison>${icon("download", { size: 14 })}All station residuals (.csv)</button>` : ""}<button class="pill-btn ghost" data-learn-evidence>${icon("sparkle", { size: 14 })}Learn to read this</button></div>
     <p class="muted" style="margin:0;font-size:11.5px;line-height:1.5">Data: NASA/JPL-Caltech &amp; ISRO NISAR, ASF DAAC (<span class="mono">NISAR_L2_GUNW_PROVISIONAL_V1</span>${gcovOf() ? `, <span class="mono">NISAR_L2_GCOV_PROVISIONAL_V1</span>` : ""}).
-      <a href="https://search.asf.alaska.edu/#/?dataset=NISAR&sciProducts=GUNW" target="_blank" rel="noopener">Find it in ASF Vertex</a></p>`;
+      <a href="https://search.asf.alaska.edu/#/?dataset=NISAR&sciProducts=GUNW" target="_blank" rel="noopener">Find it in ASF Vertex</a></p></div>`;
   $("#nisar-toggle").addEventListener("click", () => setMode(on ? "model" : "nisar"));
   card.querySelector("[data-export-observation]")?.addEventListener("click", () => downloadFile(`fringe-${state.eventId}-observation.json`, JSON.stringify(observationReport(), null, 2)));
   card.querySelector("[data-export-comparison]")?.addEventListener("click", () => downloadFile(`fringe-${state.eventId}-station-residuals.csv`, comparisonCsv(nisarStack()?.cumulativeGnss), "text/csv"));
-  card.querySelector("[data-learn-evidence]")?.addEventListener("click", openAcademy);
+  card.querySelector("[data-learn-evidence]")?.addEventListener("click", openJourney);
+  const inspect = document.createElement("button");
+  inspect.className = "pill-btn ghost";
+  inspect.textContent = gcovOf() ? "Compare actual dates ↗" : "Inspect validation & methods ↗";
+  inspect.addEventListener("click", () => openInvestigation({panel: gcovOf() ? "compare" : "validation"}));
+  card.querySelector(".quality-actions")?.append(inspect);
   $("#fields-toggle")?.addEventListener("click", () => setMode(state.mode === "fields" ? "nisar" : "fields"));
   for (const b of $$("[data-gdate]", card)) {
     b.addEventListener("click", async () => {
@@ -2085,7 +2099,7 @@ function ensureGlobe() {
   if (globeLoading) return;
   const el = $("#welcome-globe");
   const sites = F.EVENTS.map((e) => ({ id: e.id, name: e.name, status: statusText(e), lat: e.lat, lon: e.lon, kind: kindColor(e.kind), color: KIND_HEX[kindColor(e.kind)] }));
-  globeLoading = import("./globe.js?v=7.0")
+  globeLoading = import("./globe.js?v=10.0")
     .then((m) => m.createGlobe(el, sites, { onPick: (id) => whenReady(() => startStory(id)), reduceMotion, small: isPhone() }))
     .then((api) => {
       globeApi = api;
@@ -2096,6 +2110,8 @@ function ensureGlobe() {
 }
 
 function openWelcome() {
+  explorerTour?.stop();
+  journey?.setActive(false);
   const w = $("#welcome");
   ui.welcome = true;
   setDockMin(false);
@@ -2137,9 +2153,9 @@ function wireWelcome() {
       <div class="welcome-globe" id="welcome-globe" aria-hidden="true"></div>
       <div class="welcome-card glass">
         <p class="kicker accent">Fringe, a NISAR radar explorer</p>
-        <h1 id="welcome-title">The ground under your feet is moving</h1>
-        <p class="welcome-lede">Radar helps us investigate changes we cannot see from the ground. Learn to read the signals, then explore the evidence.</p>
-        <button class="welcome-academy" id="welcome-learn"><span aria-hidden="true">◎</span><span><strong>New to radar? Become a Signal Detective.</strong><small>6 hands-on missions · English / العربية · about 6–8 minutes</small></span><b aria-hidden="true">↗</b></button>
+        <h1 id="welcome-title">A planet in motion.</h1>
+        <p class="welcome-lede">Choose a place and follow its story through radar, photographs and the evidence on the ground.</p>
+        <button class="welcome-journey" id="welcome-learn"><strong>Replay See the Unseen →</strong><small>A cinematic introduction to the explorer · 2–3 minutes</small></button>
         <div class="welcome-grid">${cards}</div>
         <div class="welcome-foot"><div class="pin-key"><span class="coral">Sinking</span><span class="amber">Rising</span><span class="lateral">Moving sideways</span></div>
           <span class="welcome-actions"><button class="pill-btn ghost" id="welcome-home">${icon("crosshair", { size: 15 })}NISAR over my home</button>
@@ -2148,7 +2164,7 @@ function wireWelcome() {
     </div>`);
   for (const b of $$("[data-tour-go]")) b.addEventListener("click", () => whenReady(() => startStory(b.dataset.tourGo)));
   $("#welcome-skip").addEventListener("click", closeWelcome);
-  $("#welcome-learn").addEventListener("click", openAcademy);
+  $("#welcome-learn").addEventListener("click", openJourney);
   $("#welcome-home").addEventListener("click", () => whenReady(() => { closeWelcome(); locateMe(); }));
   window.addEventListener("resize", () => { if (!$("#welcome").hidden) globeApi?.resize(); });
   $("#welcome").addEventListener("click", (ev) => { if (ev.target.id === "welcome") closeWelcome(); });
@@ -2825,7 +2841,7 @@ function wireLab() {
 function renderGuide() {
   const rows = F.EVENTS.map((e) => `<tr><td>${esc(e.name)}</td><td>${esc(F.KIND[e.kind].label)}</td><td>${esc(e.driver)}</td><td class="mono">${(data.gnss[e.id] || []).map((s) => esc(s.station)).join(", ") || "None"}</td></tr>`).join("");
   $("#guide").innerHTML = `
-    <div class="guide-academy-cta"><h2>Learn by investigating</h2><p>Become a Signal Detective: six small missions about radar, colour cycles, polarization, uncertainty and real evidence. Available in English and Arabic.</p><button class="learn-primary" id="guide-learn">Start the learning missions <span aria-hidden="true">↗</span></button></div>
+    <div class="guide-journey-cta"><h2>See the Unseen.</h2><p>Follow NISAR over an illustrated delta, reveal the radar signal, then take the controls in the real explorer. A short cinematic field guide, at your own pace.</p><button id="guide-learn">Replay Journey <span aria-hidden="true">↗</span></button><div class="guide-game-cta"><div><b>Delta Dispatch</b><span>A playable pixel adventure with Echo: explore, compare two visits and bring the evidence home.</span></div><button id="guide-game">Play the adventure ${icon("gamepad", {size:16})}</button></div></div>
     <div class="guide-hero"><div>
       <h1 class="page-title">How to read a fringe</h1>
       <p class="kicker accent">How it works and where the data comes from</p>
@@ -2866,7 +2882,12 @@ function renderGuide() {
       <li>Open source under the MIT licence. Leaflet 1.9.4 is bundled locally with its BSD-2-Clause licence. Pipeline: <code>pipeline/nisar_pipeline.py</code>.</li>
       <li>Learning concepts: <a href="https://science.nasa.gov/mission/nisar/polarimetry/" target="_blank" rel="noopener">NASA NISAR polarimetry</a>, <a href="https://science.nasa.gov/mission/nisar/calibration-and-validation/" target="_blank" rel="noopener">calibration and validation</a>, and <a href="https://nisar-docs.asf.alaska.edu/gcov/" target="_blank" rel="noopener">ASF GCOV documentation</a>. Learning illustrations are schematic.</li>
     </ul>`;
-  $("#guide-learn").addEventListener("click", openAcademy);
+  $("#guide-learn").addEventListener("click", openJourney);
+  $("#guide-game").addEventListener("click", openGame);
+  const desk=document.createElement("div");desk.className="guide-journey-cta";
+  desk.innerHTML=`<h2>From curiosity to evidence.</h2><p>Compare actual acquisition dates, keep an observation notebook and export an illustrated brief. Inspect every station comparison, source and limitation.</p><button data-open-inspect>Open the Observation Desk ↗</button><p><a href="study.html" target="_blank" rel="noopener">Facilitator tools: run an anonymous usability session ↗</a></p>`;
+  $("#guide").querySelector(".guide-journey-cta").after(desk);
+  desk.querySelector("[data-open-inspect]").addEventListener("click",()=>openInvestigation());
   const c = $("#guide-canvas");
   const e = byId("central-valley");
   F.renderPrepared(c.getContext("2d"), F.prepareScene({ model: e.model, extentKm: e.extentKm, geometry: F.GEOMETRIES.ascending, resolution: 400, seed: e.seed }), { scale: 1, wavelengthCm: 23.8, atmosphereCm: 0.5, style: "scene" });
@@ -2877,11 +2898,17 @@ function renderGuide() {
 // ===========================================================================
 
 function setView(view) {
+  view = canonicalView(view);
   if (!["map", ...PAGE_VIEWS].includes(view)) return;
+  explorerTour?.stop();
   if (view !== "map" && ui.welcome) closeWelcome();
   if (view !== "map" && story.active) stopStory();
   setDockMin(false);
   state.view = view;
+  journey?.setActive(view === "journey");
+  deltaGame?.setActive(view === "game");
+  investigation?.setActive(view === "investigate");
+  if (["journey", "game", "investigate"].includes(view)) setPlaying(false);
   $("#app").dataset.view = view;
   for (const section of $$(".view")) {
     section.inert = section.id !== `view-${view}`;
@@ -2894,8 +2921,10 @@ function setView(view) {
   }
   if (view === "map") { setTimeout(() => { map.invalidateSize(); dirty = true; }, 30); history.replaceState(null, "", `#${state.eventId}`); }
   else history.replaceState(null, "", `#${view}`);
+  if (view === "investigate") investigation?.setActive(true);
   if (view === "lab") drawLab();
   if (view !== "map") $(`#view-${view}`).scrollTop = 0;
+  if (view === "game") deltaGame?.enter();
 }
 
 // On a developer's machine everything is re-checked; on the live site the server's cache rules apply and
@@ -2939,67 +2968,65 @@ async function loadData() {
 }
 
 async function main() {
-  academy = initAcademy({
-    root: $("#academy"), getData: () => data,
-    getCaseReport: () => buildObservationReport({ event: byId("nile-delta"), site: nisarSiteFor("nile-delta"), series: data.gnss["nile-delta"] || [], stackId: "007_D_073", mode: "fields" }),
-    onGuide: () => setView("guide"),
-    onExplore: () => whenReady(async () => {
-      closeWelcome(); setPlaying(false); setView("map");
+  const initialHash = location.hash.slice(1);
+  const hash = canonicalView(initialHash);
+  const params = new URLSearchParams(location.search);
+  explorerTour = createExplorerTour({ openDetails: () => setSheet(true) });
+  const exploreFromIntro = async ({ guided, observationDate }) => {
+    if (dataReady) await dataReady;
+    journey.markVisited();
+    closeWelcome(); setPlaying(false); setView("map");
+    if (guided) {
+      await setMode("model");
       selectEvent("nile-delta", { fly: !reduceMotion });
       await setMode(gcovOf() ? "fields" : nis.site ? "nisar" : "model");
-      setSheet(true);
-    }),
+      const frameIndex = gcovOf()?.frames.findIndex((frame) => frame.date === observationDate) ?? -1;
+      if (state.mode === "fields" && frameIndex >= 0) showField(frameIndex, { instant: true });
+    }
+    setSheet(false);
+    if (guided) setTimeout(() => { if (state.view === "map") explorerTour.start(); }, reduceMotion ? 50 : 400);
+  };
+  journey = initJourney({
+    root: $("#journey"), getData: () => data, reducedMotion: reduceMotion,
+    onExplore: exploreFromIntro, onGame: openGame,
   });
+  deltaGame = initDeltaGame({root: $("#delta-game"), getData: () => data, reducedMotion: reduceMotion,
+    onExplore: exploreFromIntro, onJourney: openJourney, onInvestigate: openInvestigation});
+  investigation = initInvestigation({root: $("#investigation"), getData: () => data, onMap: async ({observationDate,eventId}) => {
+    await dataReady; closeWelcome(); setView("map"); setPlaying(false);
+    if (eventId) { await setMode("model"); selectEvent(eventId, {fly: !reduceMotion}); await setMode("nisar"); }
+    else { await setMode("model"); selectEvent("nile-delta", {fly: !reduceMotion}); await setMode(gcovOf() ? "fields" : "nisar");
+      const index=gcovOf()?.frames.findIndex((f)=>f.date===observationDate)??-1;
+      if(state.mode==="fields"&&index>=0)showField(index,{instant:true}); }
+    setSheet(true);
+  }});
   initMap();
-  wireTools();
-  wireEvents();
-  wireLab();
-  wireSwipe();
-  wireLightbox();
-  wireStory();
-  wireLive();
-  wireWelcome();
-  wireDockSheet();
+  wireTools(); wireEvents(); wireLab(); wireSwipe(); wireLightbox(); wireStory(); wireLive(); wireWelcome(); wireDockSheet();
   setPlaying(state.playing);
-  const hash = location.hash.slice(1);
-  const params = new URLSearchParams(location.search);
-  if (PAGE_VIEWS.includes(hash)) setView(hash);
+  const enterJourney = shouldShowJourney({ hash: initialHash, params, visited: journey.hasVisited() });
+  if (enterJourney) setView("journey");
+  else if (PAGE_VIEWS.includes(hash)) setView(hash);
+  else setView("map");
   renderGuide();
-  // First visit in this tab: offer a story (skipped for deep links and the other pages). It opens before
-  // the data arrives, so there is something to look at straight away.
-  let seen = false;
-  try { seen = sessionStorage.getItem("fringe.welcome") === "seen"; } catch { /* private mode */ }
-  if (!seen && !params.get("mode") && !params.get("story") && !params.get("live") && params.get("welcome") !== "0" && !PAGE_VIEWS.includes(hash)) openWelcome();
-  try {
-    await (dataReady = loadData());
-  } catch (err) {
-    closeWelcome();
-    $("#event-card").innerHTML = `<div style="grid-column:1/-1"><strong>Data failed to load.</strong> <span class="muted">${esc(err.message)}. Serve this folder over HTTP (e.g. <code>python -m http.server</code>) instead of opening the file directly.</span></div>`;
-    requestAnimationFrame(frame);
-    return;
+  dataReady = loadData().catch((err) => { data.loadError = err.message; console.warn("Observation data unavailable", err); });
+  await dataReady;
+  renderPulse(); renderEvents(); renderGuide(); journey.refreshData(true); deltaGame.refreshData(); investigation.refreshData();
+  const start = F.EVENTS.some((e) => e.id === initialHash) ? initialHash : "nile-delta";
+  if (params.get("play") === "0" || ["journey", "game"].includes(state.view)) setPlaying(false);
+  selectEvent(start, { fly: state.view === "map" && !reduceMotion && !params.get("mode"), intro: true });
+  if (state.view === "map") {
+    if (params.get("sheet") === "1" || (window.innerWidth >= 1500 && params.get("sheet") !== "0")) setSheet(true);
+    if (["nisar", "fields", "photos"].includes(params.get("mode"))) await setMode(params.get("mode"));
+    if (params.get("story")) startStory(params.get("story"));
+    const liveAt = (params.get("live") || "").split(",").map(Number);
+    if (liveAt.length === 2 && liveAt.every(Number.isFinite)) openLive(liveAt[0], liveAt[1]);
+    if (state.mode === "fields" && params.get("frame")) showField(Number(params.get("frame")), { instant: true });
   }
-  renderPulse();
-  renderEvents();
-  renderGuide();
-  academy.refresh();
-  if (PAGE_VIEWS.includes(hash)) setView(hash);
-  const start = F.EVENTS.some((e) => e.id === hash) ? hash : "nile-delta";
-  // Shareable deep links: ?mode=nisar|fields|photos&play=0&sheet=0#nile-delta opens straight into a view.
-  if (params.get("play") === "0") setPlaying(false);
-  if (params.get("sheet") === "1" || (window.innerWidth >= 1500 && params.get("sheet") !== "0")) setSheet(true);
-  // Intro: start wide, then fly in while the rings begin to move (the app does the same). Behind the
-  // welcome screen nobody would see the flight, so go straight there.
-  selectEvent(start, { fly: !reduceMotion && !params.get("mode") && !ui.welcome, intro: true });
-  if (!PAGE_VIEWS.includes(hash) && ["nisar", "fields", "photos"].includes(params.get("mode"))) setMode(params.get("mode"));
-  if (!PAGE_VIEWS.includes(hash) && params.get("story")) startStory(params.get("story"));
-  const liveAt = (params.get("live") || "").split(",").map(Number);
-  if (!PAGE_VIEWS.includes(hash) && liveAt.length === 2 && liveAt.every(Number.isFinite)) openLive(liveAt[0], liveAt[1]);
-  if (state.mode === "fields" && params.get("frame")) showField(Number(params.get("frame")), { instant: true });
   setInterval(updateClock, 1000);
   window.addEventListener("hashchange", () => {
-    const h = location.hash.slice(1);
-    if (PAGE_VIEWS.includes(h)) setView(h);
-    else if (F.EVENTS.some((e) => e.id === h) && h !== state.eventId) { setView("map"); selectEvent(h); }
+    const h = location.hash.slice(1), view = canonicalView(h);
+    if (PAGE_VIEWS.includes(view)) { setView(view); if (view === "journey") journey.enter(); if (view === "game") deltaGame.enter(); }
+    else if (F.EVENTS.some((e) => e.id === h)) { setView("map"); if (h !== state.eventId) selectEvent(h); }
   });
   window.addEventListener("resize", () => { dirty = true; });
   requestAnimationFrame(frame);

@@ -1,0 +1,6 @@
+earthaccess>=0.19
+h5py>=3.11
+numpy>=2.0
+pyproj>=3.6
+Pillow>=10.0
+matplotlib>=3.8  # only to build the twilight colour-map inverse once

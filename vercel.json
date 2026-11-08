@@ -3,6 +3,60 @@
   "cleanUrls": true,
   "headers": [
     {
+      "source": "/game-renderer.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/game-core.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/game.css",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/game.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/journey-tour.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/journey-audio.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
       "source": "/app.js",
       "headers": [
         {

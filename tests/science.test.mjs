@@ -2,7 +2,6 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { dateMs, seriesSpan, consecutiveRun, validationSummary, datasetCounts, fringeCycles, buildObservationReport, comparisonCsv } from "../science.js";
-import { MISSION_IDS, COPY, readProgress, missionSolved } from "../learn-content.js";
 
 const json = async (file) => JSON.parse(await readFile(new URL(file, import.meta.url), "utf8"));
 const index = await json("../data/nisar/index.json");
@@ -115,38 +114,8 @@ test("station CSV exports all rows and protects spreadsheet formula-like identif
   assert.equal(comparisonCsv(central.cumulativeGnss).split("\r\n").length, 10);
 });
 
-test("corrupt or stale saved progress is recoverable", () => {
-  assert.deepEqual(readProgress("broken").completed, []);
-  assert.deepEqual(readProgress('{"version":0,"completed":["radar"]}').completed, []);
-  const p = readProgress(JSON.stringify({ version: 1, completed: ["radar", "radar", "made-up"], attempts: { radar: -10, fringes: 2 }, language: "bad" }));
-  assert.deepEqual(p.completed, ["radar"]);
-  assert.equal(p.attempts.radar, 0);
-  assert.equal(p.attempts.fringes, 2);
-  assert.equal(p.language, null);
-});
-
-test("both languages cover the same six concepts and answer identifiers", () => {
-  for (const lang of ["en", "ar"]) {
-    assert.equal(COPY[lang].missions.length, MISSION_IDS.length);
-    assert.equal(COPY[lang].stamps.length, MISSION_IDS.length);
-    COPY[lang].missions.forEach((m, i) => {
-      assert.ok(m.title && m.task && m.hint && m.success);
-      if (m.choices) assert.ok(m.choices.some(([id]) => id === COPY.en.missions[i].answer));
-    });
-  }
-});
-
-test("the ruler mission checks both the wavelength and the motion", () => {
-  assert.equal(missionSolved("fringes", { band: "C", motion: 23.8 }), false);
-  assert.equal(missionSolved("fringes", { band: "L", motion: 11.9 }), false);
-  assert.equal(missionSolved("fringes", { band: "L", motion: 23.8 }), true);
-});
-
-test("evidence labels and final decision require all of the right reasoning", () => {
-  assert.equal(missionSolved("evidence", { labels: ["modeled", "cited", "scenario"] }), true);
-  assert.equal(missionSolved("evidence", { labels: ["modeled", "cited", "cited"] }), false);
-  assert.equal(missionSolved("delta", { choice: "old-gps" }), false);
-  assert.equal(missionSolved("delta", { choice: "validate" }), true);
-  assert.equal(missionSolved("validation", { choice: "no-motion" }), false);
-  assert.equal(missionSolved("invalid"), false);
+test('continuous animation retains a longer chain when date paths branch',()=>{
+ const p=(a,b)=>pair(`2026-01-${a}`,`2026-01-${b}`);
+ const run=consecutiveRun({browse:[p('01','03'),p('01','02'),p('02','04'),p('03','05'),p('04','05'),p('05','06')]});
+ assert.equal(run.length,4);assert.deepEqual(run.map((p)=>p.reference),['2026-01-01','2026-01-02','2026-01-04','2026-01-05']);
 });

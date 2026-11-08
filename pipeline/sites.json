@@ -1,0 +1,66 @@
+{
+  "_comment": "Study areas for nisar_pipeline.py. center = [lat, lon]; extentKm = square scene width (matches the web explorer's event scene). eventId links the layers to an event in web/fringe.js. referenceStation (optional) ties InSAR to that GNSS station; otherwise the scene median is the reference.",
+  "central-valley": {
+    "name": "Central Valley — Corcoran subsidence bowl",
+    "eventId": "central-valley",
+    "center": [36.10, -119.56],
+    "extentKm": 140,
+    "referenceStation": null
+  },
+  "mexico-city": {
+    "name": "Mexico City — lakebed aquifer subsidence",
+    "eventId": "mexico-city",
+    "center": [19.43, -99.08],
+    "extentKm": 55,
+    "referenceStation": null
+  },
+  "jakarta": {
+    "name": "Jakarta — coastal subsidence",
+    "eventId": "jakarta",
+    "center": [-6.12, 106.83],
+    "extentKm": 50,
+    "referenceStation": null
+  },
+  "norfolk": {
+    "name": "Norfolk / Hampton Roads — coastal subsidence",
+    "eventId": "norfolk",
+    "center": [36.89, -76.29],
+    "extentKm": 60,
+    "referenceStation": null
+  },
+  "campi-flegrei": {
+    "name": "Campi Flegrei — caldera uplift",
+    "eventId": "campi-flegrei",
+    "center": [40.827, 14.139],
+    "extentKm": 24,
+    "referenceStation": null
+  },
+  "svartsengi": {
+    "name": "Svartsengi — magma inflation",
+    "eventId": "svartsengi",
+    "center": [63.878, -22.432],
+    "extentKm": 40,
+    "referenceStation": null
+  },
+  "kilauea": {
+    "name": "Kīlauea — south flank",
+    "eventId": "kilauea",
+    "center": [19.30, -155.15],
+    "extentKm": 70,
+    "referenceStation": null
+  },
+  "san-andreas": {
+    "name": "San Andreas — creeping section",
+    "eventId": "san-andreas",
+    "center": [36.30, -120.90],
+    "extentKm": 90,
+    "referenceStation": null
+  },
+  "nile-delta": {
+    "name": "Nile Delta, Damietta and Mansoura",
+    "eventId": "nile-delta",
+    "center": [31.25, 31.62],
+    "extentKm": 100,
+    "referenceStation": null
+  }
+}

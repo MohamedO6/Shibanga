@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Fringe: NISAR Radar Explorer</title>
-  <meta name="description" content="Explore NISAR radar observations, learn through six interactive Signal Detective missions in English or Arabic, and check the evidence behind Earth's changing surface.">
+  <meta name="description" content="See the Unseen. Follow NISAR through a cinematic journey over the Nile Delta, then explore real radar observations and the evidence behind Earth's changing surface.">
   <meta name="theme-color" content="#0d1424">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3CradialGradient id='g'%3E%3Cstop offset='0' stop-color='%23ff4d6d'/%3E%3Cstop offset='.25' stop-color='%23ffc24d'/%3E%3Cstop offset='.5' stop-color='%237cff6b'/%3E%3Cstop offset='.75' stop-color='%234cc9ff'/%3E%3Cstop offset='1' stop-color='%23b48cff'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,15 +12,17 @@
   <link rel="preconnect" href="https://server.arcgisonline.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap" rel="stylesheet">
-  <link rel="modulepreload" href="fringe.js?v=7.0">
-  <link rel="modulepreload" href="icons.js?v=7.0">
-  <link rel="modulepreload" href="stories.js?v=7.0">
-  <link rel="modulepreload" href="gl.js?v=7.0">
+  <link rel="modulepreload" href="fringe.js?v=10.0">
+  <link rel="modulepreload" href="icons.js?v=10.0">
+  <link rel="modulepreload" href="stories.js?v=10.0">
+  <link rel="modulepreload" href="gl.js?v=10.0">
   <link rel="stylesheet" href="vendor/leaflet.css">
-  <link rel="stylesheet" href="app.css?v=7.0">
-  <link rel="stylesheet" href="learn.css?v=7.0">
-  <link rel="modulepreload" href="learn.js?v=7.0">
-  <link rel="modulepreload" href="science.js?v=7.0">
+  <link rel="stylesheet" href="app.css?v=10.0">
+  <link rel="stylesheet" href="learn.css?v=10.0">
+  <link rel="stylesheet" href="game.css?v=10.0">
+  <link rel="stylesheet" href="investigate.css?v=10.0">
+  <link rel="modulepreload" href="learn.js?v=10.0">
+  <link rel="modulepreload" href="science.js?v=10.0">
 </head>
 <body>
   <div class="app" id="app" data-view="map">
@@ -150,12 +152,14 @@
       </div>
     </section>
 
-    <!-- ===================== LEARNING MISSIONS ===================== -->
-    <section class="view view-page" id="view-learn" aria-label="Signal Detective learning missions">
-      <div class="page academy" id="academy"></div>
+    <!-- ===================== CINEMATIC JOURNEY ===================== -->
+    <section class="view" id="view-game" aria-label="Delta Dispatch exploration game"><div id="delta-game"></div></section>
+    <section class="view" id="view-journey" aria-label="See the Unseen cinematic field guide">
+      <div id="journey"></div>
     </section>
 
     <!-- ===================== GUIDE ===================== -->
+    <section class="view view-page" id="view-investigate" aria-label="Observation desk"><div id="investigation"></div></section>
     <section class="view view-page" id="view-guide" aria-label="Guide">
       <div class="page">
         <article class="guide" id="guide"></article>
@@ -166,13 +170,15 @@
     <nav class="tabbar glass" role="tablist" aria-label="Sections" id="tabbar">
       <button class="tab" role="tab" data-view="map" aria-selected="true"><span class="tab-icon" data-icon="map"></span><span>Map</span></button>
       <button class="tab" role="tab" data-view="events" aria-selected="false"><span class="tab-icon" data-icon="list"></span><span>Events</span></button>
-      <button class="tab" role="tab" data-view="learn" aria-selected="false"><span class="tab-icon" data-icon="sparkle"></span><span>Learn</span></button>
+      <button class="tab" role="tab" data-view="journey" aria-selected="false"><span class="tab-icon" data-icon="sparkle"></span><span>Journey</span></button>
+      <button class="tab" role="tab" data-view="game" aria-selected="false"><span class="tab-icon" data-icon="gamepad"></span><span>Play</span></button>
+      <button class="tab" role="tab" data-view="investigate" aria-selected="false"><span class="tab-icon" data-icon="crosshair"></span><span>Inspect</span></button>
       <button class="tab" role="tab" data-view="lab" aria-selected="false"><span class="tab-icon" data-icon="activity"></span><span>Lab</span></button>
       <button class="tab" role="tab" data-view="guide" aria-selected="false"><span class="tab-icon" data-icon="book"></span><span>Guide</span></button>
     </nav>
   </div>
 
   <script src="vendor/leaflet.js"></script>
-  <script type="module" src="app.js?v=7.0"></script>
+  <script type="module" src="app.js?v=10.0"></script>
 </body>
 </html>

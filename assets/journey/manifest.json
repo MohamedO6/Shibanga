@@ -1,0 +1,61 @@
+{
+  "illustrations": [
+    {
+      "asset": "delta",
+      "file": "delta.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "bytes": 226590,
+      "alphaRange": null,
+      "sha256": "ec67592aa9200fe275dc39b67d2d96c1866d8749b474af916d89700fc67e6847",
+      "source": "OpenAI built-in imagegen; original illustration"
+    },
+    {
+      "asset": "clouds",
+      "file": "clouds.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "bytes": 383100,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "sha256": "8ffe2bb897413635b92db1c48bc5af7341920ae276b80c2c2c8de4b79c95ee6f",
+      "source": "OpenAI built-in imagegen; original illustration"
+    },
+    {
+      "asset": "foreground",
+      "file": "foreground.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "bytes": 264478,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "sha256": "0bea684b215f7b7a462b498e46617a73e788c4e6215cbe3ff72c8e847058727a",
+      "source": "OpenAI built-in imagegen; original illustration"
+    },
+    {
+      "asset": "satellite",
+      "file": "satellite.webp",
+      "size": [
+        1254,
+        1254
+      ],
+      "bytes": 319222,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "sha256": "582ae4a574f25e76867f001e471dc45e93156e5ff5af290ba7140977da04f305",
+      "source": "OpenAI built-in imagegen; original illustration"
+    }
+  ]
+}

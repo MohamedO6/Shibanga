@@ -1,0 +1,41 @@
+{
+  "_comment": "Ground-level and agency photos per event, from Wikimedia Commons. ground_photos.py re-checks every licence (public domain, CC0, CC BY, CC BY-SA only) and stores credits. Captions are ours; keep them factual.",
+  "central-valley": [
+    { "title": "File:SanJoaquinDrop.jpg", "caption": "USGS's famous pole near Mendota: the signs mark the ground level in 1925, 1955 and 1977. That's about 9 m (28 ft) of sinking, all from pumping groundwater." },
+    { "title": "File:Map of California Subsidence and Uplift (PIA25530).jpg", "caption": "NASA JPL radar map of land sinking and rising across California. The Central Valley bowls really stand out." }
+  ],
+  "norfolk": [
+    { "title": "File:US Navy 030918-N-3235P-018 Rain and heavy winds from Hurricane Isabel flooded portions of Fleet Parking at Naval Station Norfolk, Virginia.jpg", "caption": "Hurricane Isabel floods parking at Naval Station Norfolk, September 2003. As the ground sinks and the sea rises, water like this reaches further." }
+  ],
+  "jakarta": [
+    { "title": "File:Pulang dari Laut.jpg", "caption": "Fishermen in Muara Baru, North Jakarta, walk home along the sea wall. It was built because the land behind it now sits below the sea." },
+    { "title": "File:VOA People walk through Jakarta's flooded streets.jpg", "caption": "Flooded streets in Jakarta, January 2013. Sinking ground makes floods deeper and slower to drain." }
+  ],
+  "mexico-city": [
+    { "title": "File:US-Indian Spacecraft Captures Mexico City Subsidence (PIA26709).jpg", "caption": "NISAR's own map of Mexico City sinking (NASA/JPL-Caltech, 2026): the same L-band radar this app is built around." },
+    { "title": "File:Ciudad de México, calles y plazas 1986 07.jpg", "caption": "Our Lady of Loreto, Mexico City, 1986: the church is slightly tilted by ground subsidence as the lakebed clay beneath it compacts." }
+  ],
+  "svartsengi": [
+    { "title": "File:Sundhnúkur 2024 (0734).jpg", "caption": "Sundhnúkur crater ringed by fresh lava, August 2024, with the Svartsengi power plant behind." },
+    { "title": "File:2025 Grindavik volcanic eruption aftermath aerial view.jpg", "caption": "Grindavík and the Reykjanes coast from a plane, April 2025, after the Sundhnúkur eruptions." }
+  ],
+  "kilauea": [
+    { "title": "File:Kilauea Fissure 8 cone erupting on 6-28-2018.jpg", "caption": "Fissure 8 erupting in Leilani Estates on 28 June 2018 (USGS). This is the vent that fed the lava flow to Kapoho." },
+    { "title": "File:Kapoho Bay lava 20180604.jpg", "caption": "Lava pours into Kapoho Bay on 4 June 2018 and buries the homes around it (USGS). You can see this same bay before and after in Then & Now." }
+  ],
+  "san-andreas": [
+    { "title": "File:San Andreas Fault Aseismic Creep.jpg", "caption": "A curb in Hollister pulled out of line by fault creep, the slow and quiet slip that radar can measure from space." }
+  ],
+  "campi-flegrei": [
+    { "title": "File:Serapeum (Pozzuoli) -1.jpg", "caption": "The Roman 'Serapeum' in Pozzuoli. Marine shells bored into these columns when the ground sank below the sea. They keep a 2,000-year record of the caldera rising and falling." }
+  ],
+  "kahramanmaras": [
+    { "title": "File:City of Antakya after 7.8 magnitude earthquake in Türkiye.jpg", "caption": "Antakya from the air, May 2023, three months after the M 7.8 and M 7.5 earthquakes." },
+    { "title": "File:A damaged building in Antakya.jpg", "caption": "A damaged building in Antakya, February 2023." }
+  ],
+  "nile-delta": [
+    { "title": "File:Egypt's Nile Delta region (iss072e905240).jpg", "caption": "The Nile Delta at night from the International Space Station, March 2025 (NASA). About 39 million people live on this low fan of land between Cairo and the sea." },
+    { "title": "File:RashidNileMouth.jpg", "caption": "Where the Rosetta branch of the Nile meets the Mediterranean at Rashid. Since the Aswan High Dam, the river carries very little mud down to build this coast back up." },
+    { "title": "File:Egypt, Alexandria, The Corniche of Alexandria, Mediterranean Sea.jpg", "caption": "Alexandria's Corniche runs right along the sea. Old buildings along this coast have been collapsing far more often as salty groundwater rises beneath them." }
+  ]
+}

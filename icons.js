@@ -3,6 +3,8 @@ const svg = (body, { fill = false, size = 20 } = {}) =>
   `<svg class="icon" width="${size}" height="${size}" viewBox="0 0 24 24" fill="${fill ? "currentColor" : "none"}" stroke="${fill ? "none" : "currentColor"}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${body}</svg>`;
 
 const P = {
+  gamepad: '<path d="M7 7h10c2 0 3 2 3.5 4l1 6c.3 2-2 3-3.2 1.7L15 15H9l-3.3 3.7C4.5 20 2.2 19 2.5 17l1-6C4 9 5 7 7 7z"/><path d="M7 9.5v5M4.5 12h5M16 11h.01M18.5 13.5h.01"/>',
+  pause: '<path d="M8 5v14M16 5v14" stroke-width="3"/>',
   map: '<path d="M9 4 3 6.2v13.8l6-2.2 6 2.2 6-2.2V4l-6 2.2z"/><path d="M9 4v13.8M15 6.2V20"/>',
   list: '<path d="M9 6h11M9 12h11M9 18h11"/><path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01" stroke-width="2.6"/>',
   activity: '<path d="M3 12h4l3-8 4 16 3-8h4"/>',

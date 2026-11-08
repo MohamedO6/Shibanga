@@ -1,0 +1,6 @@
+# Offline synthetic-product tests; Earthdata credentials and earthaccess are not needed.
+h5py>=3.11
+numpy>=2.0
+pyproj>=3.6
+Pillow>=10.0
+matplotlib>=3.8

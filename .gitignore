@@ -15,3 +15,14 @@ node_modules/
 # OS
 .DS_Store
 Thumbs.db
+
+# Credentials and reproducibility caches
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+pipeline/cache/
+*.pem
+*.key
+*.zip

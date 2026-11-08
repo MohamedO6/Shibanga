@@ -22,16 +22,17 @@ export function consecutiveRun(stack) {
   const source = processed.length ? processed : (stack?.browse || []).filter((p) => p.phase);
   const valid = source.filter((p) => dateMs(p.reference) !== null && dateMs(p.secondary) !== null && dateMs(p.secondary) > dateMs(p.reference));
   const unique = [...new Map(valid.map((p) => [`${p.reference}|${p.secondary}`, p])).values()];
-  const sorted = unique.sort((a, b) => a.reference.localeCompare(b.reference) || a.secondary.localeCompare(b.secondary));
-  let longest = [], run = [];
+  // Dates form a DAG. A greedy pass can discard a valid chain when tracks branch.
+  const sorted = unique.sort((a, b) => a.secondary.localeCompare(b.secondary) || a.reference.localeCompare(b.reference));
+  const ending = new Map();
+  const better = (a, b = []) => a.length > b.length || (a.length === b.length && a.length && a[0].reference < b[0].reference);
+  let longest = [];
   for (const pair of sorted) {
-    if (run.length && run[run.length - 1].secondary !== pair.reference) {
-      if (run.length > longest.length) longest = run;
-      run = [];
-    }
-    run.push(pair);
+    const chain = [...(ending.get(pair.reference) || []), pair];
+    if (better(chain, ending.get(pair.secondary))) ending.set(pair.secondary, chain);
+    if (better(chain, longest)) longest = chain;
   }
-  return run.length > longest.length ? run : longest;
+  return longest;
 }
 
 export function validationSummary(check) {
@@ -117,15 +118,16 @@ export function buildObservationReport({ event, site, series = [], stackId, mode
 }
 
 export function comparisonCsv(check) {
-  const q = (v) => {
-    const value = typeof v === "string" && /^[=+\-@\t\r]/.test(v) ? `'${v}` : String(v ?? "");
-    return `"${value.replace(/"/g, '""')}"`;
-  };
   const rows = (check?.stations || []).filter((s) => isNumber(s.insarCm) && isNumber(s.gnssCm));
   return [
     ["station", "reference_station", "nisar_relative_los_cm", "gnss_relative_los_cm", "residual_cm"],
     ...rows.map((s) => [s.station, check.reference, s.insarCm, s.gnssCm, Number((s.insarCm - s.gnssCm).toFixed(6))]),
-  ].map((r) => r.map(q).join(",")).join("\r\n");
+  ].map((r) => r.map(csvCell).join(",")).join("\r\n");
+}
+
+export function csvCell(v) {
+  const value = typeof v === "string" && /^[\s]*[=+\-@\t\r]/.test(v) ? `'${v}` : String(v ?? "");
+  return `"${value.replace(/"/g, '""')}"`;
 }
 
 export function downloadFile(name, text, type = "application/json") {
