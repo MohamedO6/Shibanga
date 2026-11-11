@@ -1,6 +1,6 @@
 # Prompt for Claude chat (with Higgsfield connected)
 
-Copy everything between the lines into Claude chat. Replace `REPO_URL` with the repository link.
+Copy everything between the lines into Claude chat.
 
 ---
 
@@ -8,14 +8,15 @@ You are the director and editor of a 30-second cinematic film for **Undula**, ou
 (challenge "Dancing with the SARs", team **Shiblanga** from Egypt). Use the Higgsfield connector and my
 **unlimited free-trial generations** (`use_unlim: true`) for every generation.
 
-**The repository:** REPO_URL
+**The repository (branch `undula`):** https://github.com/MohamedO6/Shibanga/tree/undula
 
 Read these first:
 - `video/README.md`: the storyboard, voice-over, facts and file list. Follow it.
 - `video/screens/*.png`: stills of the real app.
 - `README.md`: what the app does.
 
-Raw file links have the form `REPO_URL/raw/main/<path>`, for example `REPO_URL/raw/main/video/clips/03-sea-2100.mp4`.
+Raw file links have the form `https://raw.githubusercontent.com/MohamedO6/Shibanga/undula/<path>`, for example
+`https://raw.githubusercontent.com/MohamedO6/Shibanga/undula/video/clips/03-sea-2100.mp4`.
 Import any file you need into Higgsfield with `media_import_url`.
 
 **What Undula is (one line):** an interactive web app that turns NASA-ISRO NISAR radar into stories anyone can
