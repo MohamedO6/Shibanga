@@ -1,0 +1,74 @@
+{
+ "events": {
+  "campi-flegrei": {
+   "evidence": "evidence-campi-flegrei.json",
+   "proof": "evidence-campi-flegrei.ots",
+   "gnss": [
+    "campi-flegrei-FRUL.json"
+   ]
+  },
+  "central-valley": {
+   "evidence": "evidence-central-valley.json",
+   "proof": "evidence-central-valley.ots",
+   "gnss": [
+    "central-valley-CRCN.json",
+    "central-valley-P304.json",
+    "central-valley-P307.json"
+   ]
+  },
+  "jakarta": {
+   "evidence": "evidence-jakarta.json",
+   "proof": "evidence-jakarta.ots",
+   "gnss": [
+    "jakarta-BAKO.json",
+    "jakarta-CIBG.json"
+   ]
+  },
+  "kahramanmaras": {
+   "evidence": "evidence-kahramanmaras.json",
+   "proof": "evidence-kahramanmaras.ots",
+   "gnss": []
+  },
+  "kilauea": {
+   "evidence": "evidence-kilauea.json",
+   "proof": "evidence-kilauea.ots",
+   "gnss": [
+    "kilauea-AHUP.json",
+    "kilauea-UWEV.json"
+   ]
+  },
+  "mexico-city": {
+   "evidence": "evidence-mexico-city.json",
+   "proof": "evidence-mexico-city.ots",
+   "gnss": []
+  },
+  "nile-delta": {
+   "evidence": "evidence-nile-delta.json",
+   "proof": "evidence-nile-delta.ots",
+   "gnss": [
+    "nile-delta-ALX2.json"
+   ]
+  },
+  "norfolk": {
+   "evidence": "evidence-norfolk.json",
+   "proof": "evidence-norfolk.ots",
+   "gnss": []
+  },
+  "san-andreas": {
+   "evidence": "evidence-san-andreas.json",
+   "proof": "evidence-san-andreas.ots",
+   "gnss": [
+    "san-andreas-P289.json",
+    "san-andreas-P290.json"
+   ]
+  },
+  "svartsengi": {
+   "evidence": "evidence-svartsengi.json",
+   "proof": "evidence-svartsengi.ots",
+   "gnss": [
+    "svartsengi-REYK.json"
+   ]
+  }
+ },
+ "manifest": "evidence-manifest.json"
+}

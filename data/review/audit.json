@@ -1,0 +1,1144 @@
+{
+  "schema": "fringe.bundle-audit/1",
+  "datasetSnapshot": "2026-11-06T17:08:45Z",
+  "counts": {
+    "radarSites": 9,
+    "uniqueGUNWPairs": 93,
+    "fullGUNWPairs": 9,
+    "gcovPreviews": 9,
+    "files": 224
+  },
+  "findings": {
+    "evidenceRecordsChecked": 10,
+    "comparisonStationDifferences": 9,
+    "referenceStation": "CAD1",
+    "radarGnssRmsCm": 3.062437300945478,
+    "zeroMotionBaselineRmsCm": 0.42604120823121217,
+    "interpretation": "Small motion unresolved in this bundled comparison; shared-reference errors are correlated.",
+    "scope": "Metadata and file integrity only. No source authentication, OTS proof verification, scientific accuracy certification or independent field validation performed."
+  },
+  "errors": [],
+  "files": [
+    {
+      "path": "data/evidence/evidence-campi-flegrei.json",
+      "bytes": 3080,
+      "sha256": "6857fdb51c024705c9ea90389761abfad820294506163fa638bccb2470c79347"
+    },
+    {
+      "path": "data/evidence/evidence-campi-flegrei.ots",
+      "bytes": 1343,
+      "sha256": "e50424d4127afb3dc95fd8a5ca09b9dad4080ce43acabd7ba8336c8b32bafbec"
+    },
+    {
+      "path": "data/evidence/evidence-central-valley.json",
+      "bytes": 9880,
+      "sha256": "9d899471b385f3d492bec1b7fb023f5b2433347adde7ae4f23f681e35a84cda5"
+    },
+    {
+      "path": "data/evidence/evidence-central-valley.ots",
+      "bytes": 1168,
+      "sha256": "ed268da5430128534a3a1453ef73d992ed22291e643fb03369811d063e928903"
+    },
+    {
+      "path": "data/evidence/evidence-jakarta.json",
+      "bytes": 5429,
+      "sha256": "4fdfd53189cd61218519b09640270af3b19e262c9afc3a221b10a6065143d50d"
+    },
+    {
+      "path": "data/evidence/evidence-jakarta.ots",
+      "bytes": 1273,
+      "sha256": "a6f759fb06d6006c55e1c66fe9c295cf9308bd3ddc7bcc74216091420ab3ce62"
+    },
+    {
+      "path": "data/evidence/evidence-kahramanmaras.json",
+      "bytes": 2694,
+      "sha256": "366a470ad10a9726774dd306f7262b79e297945f408f6610c0ceddbd7b17f8c6"
+    },
+    {
+      "path": "data/evidence/evidence-kahramanmaras.ots",
+      "bytes": 1343,
+      "sha256": "5f0dce75974bc72643ade95b5bae870068e368dc74de2ccaaf327ffab2d7247f"
+    },
+    {
+      "path": "data/evidence/evidence-kilauea.json",
+      "bytes": 3042,
+      "sha256": "7af7b274eb44d551ac91422751f365bcdbc2bb2a994386ef557691871d10fc2c"
+    },
+    {
+      "path": "data/evidence/evidence-kilauea.ots",
+      "bytes": 1273,
+      "sha256": "ad00c3498d39a1d27b49599444d87370d02b242842d3ecd6e7c979957b5f6c47"
+    },
+    {
+      "path": "data/evidence/evidence-manifest.json",
+      "bytes": 1533,
+      "sha256": "491bfd369f8fb72face14f6d39e766c6cd03a022eb99b14b97c80d002d555f6b"
+    },
+    {
+      "path": "data/evidence/evidence-manifest.ots",
+      "bytes": 307,
+      "sha256": "168c36cae466fea338a219916c93da6fe862c671bab13cac0d812a071919f737"
+    },
+    {
+      "path": "data/evidence/evidence-mexico-city.json",
+      "bytes": 5147,
+      "sha256": "a75a86bf24764e7b50c58332c35017d8aa474d0322d760ca98866b49e487635b"
+    },
+    {
+      "path": "data/evidence/evidence-mexico-city.ots",
+      "bytes": 1273,
+      "sha256": "0a989b781d995939026cb8e783eadfcc788c7a02424bb1331543aa30c6bf87cc"
+    },
+    {
+      "path": "data/evidence/evidence-nile-delta.json",
+      "bytes": 9802,
+      "sha256": "c6942086358bb028b03b0671c0cc962c4f646addf8d43e6a89dcf15c5b505ec5"
+    },
+    {
+      "path": "data/evidence/evidence-nile-delta.ots",
+      "bytes": 342,
+      "sha256": "d59799750ee845b4e4ca2c08b9373503270217f816bad3392211acc85eecdcbb"
+    },
+    {
+      "path": "data/evidence/evidence-norfolk.json",
+      "bytes": 9284,
+      "sha256": "eaec4f20709e4d4e14e2aded0f55babf72c2cd1f73a6ec35ff9026e0dc7e43ff"
+    },
+    {
+      "path": "data/evidence/evidence-norfolk.ots",
+      "bytes": 1273,
+      "sha256": "94510f52473deb6354345292c1f7be637eabd3c37c4218aab120cddd045034c4"
+    },
+    {
+      "path": "data/evidence/evidence-san-andreas.json",
+      "bytes": 3602,
+      "sha256": "46f9f61fa9d6508eb9e925108d7c2ef6cc3847edf649164a076dcbaded88f451"
+    },
+    {
+      "path": "data/evidence/evidence-san-andreas.ots",
+      "bytes": 1203,
+      "sha256": "b6339fcf4dd3e47df92a8c7083f45d798d6f36712b7b6d4b2c97f6ac4b7aebff"
+    },
+    {
+      "path": "data/evidence/evidence-svartsengi.json",
+      "bytes": 3477,
+      "sha256": "867066dc46b168640a4b6e3a32db82d28be5449f4abd80ec1725b9fb5430dd6e"
+    },
+    {
+      "path": "data/evidence/evidence-svartsengi.ots",
+      "bytes": 1308,
+      "sha256": "46d968c24e677b53c37914262e97eefee7e31c189d94976f37a3b5cef59bad55"
+    },
+    {
+      "path": "data/geography/README.md",
+      "bytes": 2542,
+      "sha256": "331a4102ebef3e509e944ba868311f21ff6ac806f80f651ea11a99f67e2aa1c4"
+    },
+    {
+      "path": "data/geography/atlas.json",
+      "bytes": 8162942,
+      "sha256": "615e187d9ce5eec424b4d860b94e65543ed9e61c9e64ef389ff5fe84579d0671"
+    },
+    {
+      "path": "data/gnss/campi-flegrei-FRUL.json",
+      "bytes": 6675,
+      "sha256": "b3013b9a37c09d8da228bc885d8b641b4d78ba461683bc4eedee652afce297d9"
+    },
+    {
+      "path": "data/gnss/central-valley-CRCN.json",
+      "bytes": 2375,
+      "sha256": "6c316490427721fe3b572dc86bfc7d52a97283cbbf1c3bc5bb4ac86d8a1c9767"
+    },
+    {
+      "path": "data/gnss/central-valley-P304.json",
+      "bytes": 2170,
+      "sha256": "a08d33e72755c940b8ece411702c1a3e3b730f01dcbd1804834cbad75b50e220"
+    },
+    {
+      "path": "data/gnss/central-valley-P307.json",
+      "bytes": 2186,
+      "sha256": "2292184f1455ada8d7f3ec93ce4af26330ff1b3170684702217005cf9f65d690"
+    },
+    {
+      "path": "data/gnss/jakarta-BAKO.json",
+      "bytes": 11744,
+      "sha256": "b3c99ddd3965aea1e1f0dad7c6c5216d925f34146883a348a85d6e6fa033bddf"
+    },
+    {
+      "path": "data/gnss/jakarta-CIBG.json",
+      "bytes": 12275,
+      "sha256": "cc7812a340811721640210c33d53836fc2cbd40079588597012da72f5f3ca59c"
+    },
+    {
+      "path": "data/gnss/kilauea-AHUP.json",
+      "bytes": 11929,
+      "sha256": "797aefcf285237f4f13cf00361229741b66e4d42e73f17e52063416714f4afec"
+    },
+    {
+      "path": "data/gnss/kilauea-UWEV.json",
+      "bytes": 11964,
+      "sha256": "9115a15808011dff6687d4fdedb1a0ed1e0f90be4eff8eba6eb20f372ee315f2"
+    },
+    {
+      "path": "data/gnss/nile-delta-ALX2.json",
+      "bytes": 12915,
+      "sha256": "ee546041efa002cfc82c249beeee14f0e891650c13ebe89685bffe36f86e7a55"
+    },
+    {
+      "path": "data/gnss/san-andreas-P289.json",
+      "bytes": 14895,
+      "sha256": "688eec31bb457ea94f1918ed8bc3e1b30cf193b824d226d1349c8bb0f4c2a4fb"
+    },
+    {
+      "path": "data/gnss/san-andreas-P290.json",
+      "bytes": 13826,
+      "sha256": "8b83ce24c2ccde47f4b96c251cc0b2059b51fa49f03916edf65a64acd8ea2816"
+    },
+    {
+      "path": "data/gnss/svartsengi-REYK.json",
+      "bytes": 9250,
+      "sha256": "8af0bec4f4628c0234ae12d56e21bf3c5101e00305e02b53fbfa0d7ae0483c58"
+    },
+    {
+      "path": "data/imagery.json",
+      "bytes": 19998,
+      "sha256": "d36eb0024ee8a91e8bb9b274c1decaa766e2a98ca4423e64e791592bde8e1452"
+    },
+    {
+      "path": "data/index.json",
+      "bytes": 1691,
+      "sha256": "2e472e2f85feaa78bff69b0daf368e68f78066d687ba6b1d8879dccf14721dc5"
+    },
+    {
+      "path": "data/nisar/campi-flegrei/152_D_068_20260624_20260706_browse_phase.png",
+      "bytes": 19430,
+      "sha256": "8f875be23578489d7d943c769739087f2d459e168b9fbf657492aa08efd0ca1f"
+    },
+    {
+      "path": "data/nisar/campi-flegrei/152_D_068_20260706_20260718_browse_phase.png",
+      "bytes": 19260,
+      "sha256": "91c6d0d4297886faf377b427cb677510430cbd3429982e82362f4a0c7544ee7d"
+    },
+    {
+      "path": "data/nisar/campi-flegrei/152_D_068_20260718_20260811_browse_phase.png",
+      "bytes": 19582,
+      "sha256": "82ee985128ec43104681615edc76336bbb22bf2cfbef86d57bce1a7ca88f95b3"
+    },
+    {
+      "path": "data/nisar/campi-flegrei/152_D_068_20260811_20260823_browse_phase.png",
+      "bytes": 18485,
+      "sha256": "58da54c073b3c7eb1a0d55c544fc51940027b6cfa8bc1bbad58d22a9a74067ef"
+    },
+    {
+      "path": "data/nisar/campi-flegrei/152_D_068_20260823_20260904_browse_phase.png",
+      "bytes": 18509,
+      "sha256": "e16784c865c5d84f235d629d18361a9dd36e6c8090ea0a6c5e042ad1b7bd307c"
+    },
+    {
+      "path": "data/nisar/campi-flegrei/152_D_068_20260904_20260916_browse_phase.png",
+      "bytes": 18779,
+      "sha256": "5413db006648db756b8797819401f387845f8c5fb83cda11ffc970e2068565dd"
+    },
+    {
+      "path": "data/nisar/campi-flegrei/152_D_068_20260916_20260928_browse_phase.png",
+      "bytes": 18711,
+      "sha256": "c14277396d500b3d421d5d00fa8c95520105bd61e147dba0eb9ec3e4959a1fbf"
+    },
+    {
+      "path": "data/nisar/campi-flegrei/152_D_068_20260928_20261010_browse_phase.png",
+      "bytes": 19390,
+      "sha256": "4113e8024c3a497cf8ac7f504cc44cc37d18d4d05f79d06d756aa01f140e9eea"
+    },
+    {
+      "path": "data/nisar/campi-flegrei/152_D_068_20261010_20261022_browse_phase.png",
+      "bytes": 19519,
+      "sha256": "ed5e552c387a1284949dcfc39fc537142fbc55b708f51a45310d3af8533004d9"
+    },
+    {
+      "path": "data/nisar/central-valley/034_A_020_20260616_20260628_browse_phase.png",
+      "bytes": 212302,
+      "sha256": "1e7b464d199a76c8fad0bc1aac9ed1599a5ef4b87cafd2eba3a60f2981ea87df"
+    },
+    {
+      "path": "data/nisar/central-valley/034_A_020_20260628_20260710_browse_phase.png",
+      "bytes": 211801,
+      "sha256": "44bf4f07d9337537f1ca0fd37d44b70894459c4a4a675e55750c310bd2e1b8b5"
+    },
+    {
+      "path": "data/nisar/central-valley/034_A_020_20260710_20260722_browse_phase.png",
+      "bytes": 221938,
+      "sha256": "14162ae47e6685b26a8b29f218c5ad5da2ad7967803d7ab67f94293686878348"
+    },
+    {
+      "path": "data/nisar/central-valley/034_A_020_20260722_20260815_browse_phase.png",
+      "bytes": 250222,
+      "sha256": "be25f2495017be372f74106d8eac4218427ba4f6bbd29156ede598c81c854e06"
+    },
+    {
+      "path": "data/nisar/central-valley/034_A_020_20260815_20260827_browse_phase.png",
+      "bytes": 211916,
+      "sha256": "0f17cdc22e8a5e2cc2bbdbe714a13c3a9df372800f4964ea891dd5dee6b6e402"
+    },
+    {
+      "path": "data/nisar/central-valley/034_A_020_20260827_20260908_browse_phase.png",
+      "bytes": 213593,
+      "sha256": "1b437d529e37c86c3ab6e9d3bd6460abc928b17fb5c604365a3246c69ce2e25a"
+    },
+    {
+      "path": "data/nisar/central-valley/034_A_020_20260908_20260920_browse_phase.png",
+      "bytes": 210241,
+      "sha256": "b3c1dae509a3d6d6baa8aa65fed55ba5b3a2975e2563a26e909ac0167de43e5c"
+    },
+    {
+      "path": "data/nisar/central-valley/034_A_020_20260920_20261014_browse_phase.png",
+      "bytes": 242199,
+      "sha256": "dfe509141532328a438e080e285b1645cf6a2ca2fdec1e2194f801530eb528a8"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260610_20260622_browse_phase.png",
+      "bytes": 225295,
+      "sha256": "775c8432bd687c608ced5f630f807b12071219e36b8b511c3e26766c6920dd46"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260610_20260622_los.i16",
+      "bytes": 91590,
+      "sha256": "beaacc9635beebf6d1cea834af48d4ddf9aa948eef6954383ec9c2a004b1cd9d"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260610_20260622_los.png",
+      "bytes": 827199,
+      "sha256": "78584927815e52b509a324cad5bd0ef25469539646954176e2d37a4b7b64a791"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260610_20260622_phase.png",
+      "bytes": 336296,
+      "sha256": "ea67202b8c9ca59ba6c914215f411c353232ff684653cd329cfd41b391d8ec94"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260610_20260622_wrapped.png",
+      "bytes": 654916,
+      "sha256": "be3d5e10c3c632d45862a27ddc6e2ea60b511c7b5a0bb34ace7d673b06ded9fe"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260622_20260704_browse_phase.png",
+      "bytes": 213933,
+      "sha256": "e6034415be1bdcce2b4f55f22a38f02b0264b324bf0618bcbe132b9f47915c85"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260622_20260704_los.i16",
+      "bytes": 91590,
+      "sha256": "672765cd98e7efe09749ff1483cc28d99c3646dcb79f31e419072a99208ec2cc"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260622_20260704_los.png",
+      "bytes": 833514,
+      "sha256": "3a22f67e9d8dff6ba8fab621b8ed313285a9c5cc95799b57504e56542d34f85b"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260622_20260704_phase.png",
+      "bytes": 336251,
+      "sha256": "5366d81421282618ef2921c9236d91b5d98e9b5351491fb5506a78a6a35ec9c4"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260622_20260704_wrapped.png",
+      "bytes": 665058,
+      "sha256": "625fbf823fcaee1abaa56cbf6f6b0fd2f575a5de445a2cfcacebe65f6b965a1e"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260704_20260716_browse_phase.png",
+      "bytes": 222107,
+      "sha256": "ce677ff678b137987d7dbbc9491eab5bb6fc61a4aff491ad0730675476f24565"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260704_20260716_los.i16",
+      "bytes": 91590,
+      "sha256": "1c2091f5172b3ad8738980de313dd2123b588babcc2d24cc9e1ca0c0674484d0"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260704_20260716_los.png",
+      "bytes": 869036,
+      "sha256": "1df6688bd940cdefd849da8c87bdfd2242d7693820c74496e30a61d517ba2d4c"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260704_20260716_phase.png",
+      "bytes": 337943,
+      "sha256": "51122945e3075983c243f57efc3ef136f102877e31f679c0dc4557a95a83de6d"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260704_20260716_wrapped.png",
+      "bytes": 662743,
+      "sha256": "c20125df2a3a8383659c9176fa082da2dc306980bd98b9cb47eccd62702ba200"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260716_20260821_browse_phase.png",
+      "bytes": 262219,
+      "sha256": "b184a9a779cfb72e32f5b40e4221a61a1ed06070010756e45cd7b2dc32680abf"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260716_20260821_los.i16",
+      "bytes": 91590,
+      "sha256": "68e6c8fa03c60fd59d499b627af1ff574bce3e3a4bfc9052f19a6c9c7702e22e"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260716_20260821_los.png",
+      "bytes": 887061,
+      "sha256": "de696001ec7aeea6822f699534d3e1224ece82ca81386f0f92bf4c1cdd5ee0c3"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260716_20260821_phase.png",
+      "bytes": 321443,
+      "sha256": "555561856a7c558b137ace856e4a6e2b28d28e1b7a645e98afbc5690a910eefa"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260716_20260821_wrapped.png",
+      "bytes": 599364,
+      "sha256": "c5adce7b41993277e6f8767eaf70ddf1dfea66e668d091ffde4a161ca5bbb917"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260821_20260902_browse_phase.png",
+      "bytes": 201549,
+      "sha256": "faeaf37dc2c65bba283441327575f105a78a16d07ef74154ecc498df8f9579db"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260821_20260902_los.i16",
+      "bytes": 91590,
+      "sha256": "fcce1fd8bc2598eef02f36a2a778baffeff4bd2d876ee1fd2ed71aa7af97eb7c"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260821_20260902_los.png",
+      "bytes": 906530,
+      "sha256": "7843f1f168aa2bf894baabdf2602df8cb39b04a41232b47a5f250e12b94509dc"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260821_20260902_phase.png",
+      "bytes": 316918,
+      "sha256": "42125c3a6ab8cd8500718bbd08e0d3960fd630d6afc5506ab0b4332d9529ea69"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260821_20260902_wrapped.png",
+      "bytes": 605421,
+      "sha256": "4cab264879905a0cbedc7eb80164b941f74c2de61b41900ad38d6507e591ee25"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260902_20260914_browse_phase.png",
+      "bytes": 201819,
+      "sha256": "5385b001dc7bfb19160288a738681f9a3765d9c2ab95127cef584a682b1fb49f"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260902_20260914_los.i16",
+      "bytes": 91590,
+      "sha256": "260e95a0ed19767b940c59039332e4d827fca9c7ae237c01fe87b11c9883848e"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260902_20260914_los.png",
+      "bytes": 838254,
+      "sha256": "f6d503214bb7873a36dbc1cbf18974b661c97a6fc148b89d9d89ce67cb4a56e2"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260902_20260914_phase.png",
+      "bytes": 322776,
+      "sha256": "afeae874d1e126a8de52edd9766695b7fad8f7ffd5a29a7dfbc892d592ce1a38"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260902_20260914_wrapped.png",
+      "bytes": 610491,
+      "sha256": "8bce9014ead46de8d59c19b8afb2dbc67e2060bf2d7f639bc4e02e0485aefafc"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260914_20260926_browse_phase.png",
+      "bytes": 204424,
+      "sha256": "3509e0ecb3f436e99852ceaac7039f62c7c24365b92bcb0abf3be2cfccdff3da"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260914_20260926_los.i16",
+      "bytes": 91590,
+      "sha256": "fa3bd52f61076f840bf7463b0d63e3fc2cc6167bfa913ff1d2ec62e62f5ba454"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260914_20260926_los.png",
+      "bytes": 930475,
+      "sha256": "dcba0452734cffd52e6c0b3ca23c38f9c01258080e7f9780e98f1b7289f5198f"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260914_20260926_phase.png",
+      "bytes": 306746,
+      "sha256": "af59928cd2a40cdbc0d7fd0493f9e5cff730048a29f469b5210e956177a2be05"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260914_20260926_wrapped.png",
+      "bytes": 583122,
+      "sha256": "bcdcf50a50960dd2a84b4d844ce27a02dca378a40f4867592134560a20ec5767"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260926_20261008_browse_phase.png",
+      "bytes": 200025,
+      "sha256": "df616f8e1a8777c937667e53d1451ce969588e1c1309fced7112d369b754dbb5"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260926_20261008_los.i16",
+      "bytes": 91590,
+      "sha256": "e04df8c05f7789a4667fcc4f69d779889c313f49ef5bbcbb76c3eeac7d87265a"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260926_20261008_los.png",
+      "bytes": 864226,
+      "sha256": "c7b9cef4fbcaff2aa5cb1db26c61eea3923803dd85047a8be37598a5e9a6c154"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260926_20261008_phase.png",
+      "bytes": 300966,
+      "sha256": "29020827f0568c7343e358aa17005eaa5b18f3aca53cb52de44985008a434e3b"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20260926_20261008_wrapped.png",
+      "bytes": 586764,
+      "sha256": "719ba5163f973422cdcd61a3cf8c302d81107e1b72f3fc741935a1f4a7d4a5b3"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20261008_20261020_browse_phase.png",
+      "bytes": 196065,
+      "sha256": "639c64a145b4aa1d97c31eece5445c8b5bd4010473b016b438e5821f2b1f18a8"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20261008_20261020_los.i16",
+      "bytes": 91590,
+      "sha256": "5e1069bf5ac79efae08b60ecb0dcabb74baae86fd37c3f3fd0457b23657e1575"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20261008_20261020_los.png",
+      "bytes": 892887,
+      "sha256": "b741b214694faea64f7ae1ce60d3f93bc0a830674151a42f25134ac13af8ceb2"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20261008_20261020_phase.png",
+      "bytes": 289466,
+      "sha256": "f3beba7ed1001cd4231c66b05cd8c3f406120e956953dead1e3e53bd70a086aa"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_20261008_20261020_wrapped.png",
+      "bytes": 538378,
+      "sha256": "9e4390bd89d896dbd61a6525dfbf02a5156d8a2289a40a8a69c8f11380b35fb6"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260622_los.i16",
+      "bytes": 91590,
+      "sha256": "beaacc9635beebf6d1cea834af48d4ddf9aa948eef6954383ec9c2a004b1cd9d"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260622_los.png",
+      "bytes": 820115,
+      "sha256": "11514cffc450d3fb0eaa6a93c4fb8cc23b0ef0cf8142682bc78faff2feac9cc9"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260622_wrapped.png",
+      "bytes": 654916,
+      "sha256": "be3d5e10c3c632d45862a27ddc6e2ea60b511c7b5a0bb34ace7d673b06ded9fe"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260704_los.i16",
+      "bytes": 91590,
+      "sha256": "1e785bcf11622aee3418db7e092dbcf418dfb007371d1d2c39aba76b23f42b01"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260704_los.png",
+      "bytes": 870924,
+      "sha256": "7641b46dd1dea54e4debbd5a9f0523098d8c9babf8a80b179e13f258ee70e5fd"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260704_wrapped.png",
+      "bytes": 710380,
+      "sha256": "28112b72e59f66e9feec5f9d9034d1c2b7aec391a50418925f52f6c2c0d1e92a"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260716_los.i16",
+      "bytes": 91590,
+      "sha256": "414d8ef0c82226a26c6d5110cc0f4c6e278932a4d324a4cf90a4c64d41c1d8c6"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260716_los.png",
+      "bytes": 930153,
+      "sha256": "5be58b1c945d2b62896d7d25f7abbb8aae2aad139f293820003713ccf80c72aa"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260716_wrapped.png",
+      "bytes": 739842,
+      "sha256": "0ce2402c9730bb4df6137b5e096bd3d2f7ef3ce115eb6c1466f2b58630a10d92"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260821_los.i16",
+      "bytes": 91590,
+      "sha256": "8ca1384d2633f325c50774a896b8919cb87cb36ad8cb7ffeb8122a1446d6bd1c"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260821_los.png",
+      "bytes": 850912,
+      "sha256": "2c7586ea6d91aeb306d375d920441e47d71dcdddffe8c6c91c23e01d781460fe"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260821_wrapped.png",
+      "bytes": 686464,
+      "sha256": "d7b5901c7194bc772a18556c586e832dcb2ffea5d192b629f6080bad07e47b74"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260902_los.i16",
+      "bytes": 91590,
+      "sha256": "83d9e8158926bfd18972fa218681f5469a67b3731fcd582230ca8decd14cef41"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260902_los.png",
+      "bytes": 839928,
+      "sha256": "5cb2d4e9e561ef218bb43930b44a34ad05ea36e26deef3202451f25992f2be6f"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260902_wrapped.png",
+      "bytes": 693385,
+      "sha256": "e1a5175dbee4705778bde48105e8f189dbe0bed6450a34e5c61e748f0309cd9e"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260914_los.i16",
+      "bytes": 91590,
+      "sha256": "0be1676d869e50485dcce7d768718b58905c6148631c8f63931ae726b4fee637"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260914_los.png",
+      "bytes": 845777,
+      "sha256": "8cb4747d8aa9bc0bb0b2c351b89400540f9f56ca55169a9bec07f6ce3721fd86"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260914_wrapped.png",
+      "bytes": 648551,
+      "sha256": "784fce323418ef1a2a7f794b309df350bbe4fbc8ec800d69369b4f835ce5b800"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260926_los.i16",
+      "bytes": 91590,
+      "sha256": "9db4ded22df9ee3cc0238c8dbf78e9aea6050bb37df47666f9f18501e82d938b"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260926_los.png",
+      "bytes": 840876,
+      "sha256": "0518594fb729b9c98649cc6155ce3797285034bafcb1f35c65012bd24649bf15"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20260926_wrapped.png",
+      "bytes": 668201,
+      "sha256": "adfbe86b7d44dced5b0c065fd70c8f1d352f4a4f80a562a9ba34205f208655b2"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20261008_los.i16",
+      "bytes": 91590,
+      "sha256": "602b923cf6fb00a4f5491eb1ad1e2c72629abcd7f4361f9a1120ba9e1ce138f3"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20261008_los.png",
+      "bytes": 839567,
+      "sha256": "7b3292c76ab0121d97f4e458d857f7734535b219b90ff672338fa04786c15f54"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20261008_wrapped.png",
+      "bytes": 664241,
+      "sha256": "0e53d0619d7cfce0cc759f571d80a2e55f19bb40574afe4420afe1228152bd24"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20261020_los.i16",
+      "bytes": 91590,
+      "sha256": "584ab378352ad9c6b7ec1230a2eb6606fb97096e1e3af39ae29a283aad579d9a"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20261020_los.png",
+      "bytes": 816761,
+      "sha256": "0c155b4d3ce5281b60f986c3ba3717df6eb57f0c17054f9aa281193c4722125e"
+    },
+    {
+      "path": "data/nisar/central-valley/114_D_070_cum_20261020_wrapped.png",
+      "bytes": 663490,
+      "sha256": "08ce6f4594145b6f8d89e970972aa66dc1343612e4928c5388b5caa1f46e0caf"
+    },
+    {
+      "path": "data/nisar/index.json",
+      "bytes": 100094,
+      "sha256": "3cdf7833de5d45d77a0ab5fc543a0b5e19455d0ceb6ef5425296b0ec52dcf456"
+    },
+    {
+      "path": "data/nisar/jakarta/010_A_174_20260626_20260708_browse_phase.png",
+      "bytes": 62783,
+      "sha256": "abded3fac4890b3af446eecd578dfd4e79e39e59c47c80181ff3cce23eedd36a"
+    },
+    {
+      "path": "data/nisar/jakarta/010_A_174_20260708_20260720_browse_phase.png",
+      "bytes": 55908,
+      "sha256": "a9ddb80f54ce4c2f890c98e787c0ed61e34264ac8636bc1072aa9a96569674d7"
+    },
+    {
+      "path": "data/nisar/jakarta/010_A_174_20260720_20260813_browse_phase.png",
+      "bytes": 59057,
+      "sha256": "691ad9bbe579799969c95fcb8934d210e46953bea5c3e7cba5dc483ea1e40f85"
+    },
+    {
+      "path": "data/nisar/jakarta/010_A_174_20260813_20260825_browse_phase.png",
+      "bytes": 61468,
+      "sha256": "a4a8263d3798cbb4c68eab006093e22d3ee9fe87891b0d411b56b0d47c340d08"
+    },
+    {
+      "path": "data/nisar/jakarta/010_A_174_20260825_20260906_browse_phase.png",
+      "bytes": 62527,
+      "sha256": "3976b82ccf795a2335849d4f416c316bb031d6428c4b4d406cbdf9e14d38fedd"
+    },
+    {
+      "path": "data/nisar/jakarta/010_A_174_20260906_20260918_browse_phase.png",
+      "bytes": 64289,
+      "sha256": "aacfb434e71c4e934c79d4377bf32265858f84f17f3d6608515a197523cb2da0"
+    },
+    {
+      "path": "data/nisar/jakarta/010_A_174_20260918_20260930_browse_phase.png",
+      "bytes": 63594,
+      "sha256": "b33c2e26937822f9c803a4bf8fdafbbcf378cad5d86123d35f414d90809d81cc"
+    },
+    {
+      "path": "data/nisar/jakarta/010_A_174_20260930_20261012_browse_phase.png",
+      "bytes": 58129,
+      "sha256": "07f23941f705ef70690cd8ac8a190a0f9c32c9f849cbb25cea65c851d3535fb5"
+    },
+    {
+      "path": "data/nisar/kilauea/072_D_079_20260526_20260619_browse_phase.png",
+      "bytes": 146822,
+      "sha256": "415fbe2c504f1d093026f15e9b3245ad3e686a1de85ee7cc37f0d87f91026138"
+    },
+    {
+      "path": "data/nisar/kilauea/072_D_079_20260701_20260713_browse_phase.png",
+      "bytes": 146653,
+      "sha256": "7095826273e529f073ba474bed5b04609c6759f7bbf6ebdb7d3733c178f36f16"
+    },
+    {
+      "path": "data/nisar/kilauea/072_D_079_20260713_20260818_browse_phase.png",
+      "bytes": 156639,
+      "sha256": "b43d9cd1f2d086dd8f67154962f123598bd857a39ca32c4ca9de1484b1a2fdc3"
+    },
+    {
+      "path": "data/nisar/kilauea/072_D_079_20260818_20260830_browse_phase.png",
+      "bytes": 144895,
+      "sha256": "f66b8ff3b904fdecabc6305dd47070a0d4d1fada44440e429c78e4acb1aff9e2"
+    },
+    {
+      "path": "data/nisar/kilauea/072_D_079_20260830_20260911_browse_phase.png",
+      "bytes": 149825,
+      "sha256": "45d5c5b19bab74978d9a613fb22c313aa4c9ea3460940b50eea58113e296d6c0"
+    },
+    {
+      "path": "data/nisar/kilauea/072_D_079_20260911_20260923_browse_phase.png",
+      "bytes": 150460,
+      "sha256": "fa3ce476b8a486a650636857614c64502b3f3930dff6d80967d64569501e9e19"
+    },
+    {
+      "path": "data/nisar/kilauea/072_D_079_20260923_20261005_browse_phase.png",
+      "bytes": 144003,
+      "sha256": "7440c73c7c75f13c30d5d1c145e4dfc4d27345b22067d44f23fd3ded09316fe3"
+    },
+    {
+      "path": "data/nisar/kilauea/072_D_079_20261005_20261017_browse_phase.png",
+      "bytes": 142269,
+      "sha256": "4a9600ef03996b111d7fa57869d008dd39b24c18b48a89261d4656560596e33c"
+    },
+    {
+      "path": "data/nisar/mexico-city/019_A_011_20260615_20260627_browse_phase.png",
+      "bytes": 41902,
+      "sha256": "266e72e2c76b9f1b1c46a1565d1b961c1bf50a19c694e7cc69730f2c146bd7f5"
+    },
+    {
+      "path": "data/nisar/mexico-city/019_A_011_20260627_20260709_browse_phase.png",
+      "bytes": 42234,
+      "sha256": "e8903a5e781c27ba69d0cf407160027969f559d96c43e96136f6e52f68d23e19"
+    },
+    {
+      "path": "data/nisar/mexico-city/019_A_011_20260709_20260721_browse_phase.png",
+      "bytes": 41730,
+      "sha256": "f656d90fab06eedeffa8ab2ccf15ccfe3707b6f90532576d8f965cdb779eba11"
+    },
+    {
+      "path": "data/nisar/mexico-city/019_A_011_20260721_20260814_browse_phase.png",
+      "bytes": 40375,
+      "sha256": "51eee21d4888d669e5ae7b3495cb3dffd36f2fa0559fee162078d1ba693e9d29"
+    },
+    {
+      "path": "data/nisar/mexico-city/019_A_011_20260814_20260826_browse_phase.png",
+      "bytes": 35584,
+      "sha256": "f56b19c0b892a9bd66c3197937bda0fffd58f3e766442b30040b8c238c63c394"
+    },
+    {
+      "path": "data/nisar/mexico-city/019_A_011_20260826_20260907_browse_phase.png",
+      "bytes": 42454,
+      "sha256": "fdbb1b070d210f3b6360a6ad80c5d605a5906896b04921b9f9ac6f231b6f8ee7"
+    },
+    {
+      "path": "data/nisar/mexico-city/019_A_011_20260907_20260919_browse_phase.png",
+      "bytes": 41320,
+      "sha256": "f13fba985f09883ed372ee5510d4cb33acfc612bbed86e4868a5651e3765ee52"
+    },
+    {
+      "path": "data/nisar/mexico-city/019_A_011_20260919_20261001_browse_phase.png",
+      "bytes": 41718,
+      "sha256": "f97f16b0fa4c95f7d05c2c3dbed82b388b51006603d7ff3eb5309b5a9115ccc4"
+    },
+    {
+      "path": "data/nisar/mexico-city/019_A_011_20261001_20261013_browse_phase.png",
+      "bytes": 40346,
+      "sha256": "ac16b748eb05912b64183c97f1f9d983e4f0442a02c3f042d3a049cc1b6498bb"
+    },
+    {
+      "path": "data/nisar/nile-delta/007_D_073_20260626_20260708_browse_phase.png",
+      "bytes": 95009,
+      "sha256": "ff6aeb9293d3191a3e12bdd89311138cf271c46d6ab55fb5e2f1caf21c03ffda"
+    },
+    {
+      "path": "data/nisar/nile-delta/007_D_073_20260708_20260720_browse_phase.png",
+      "bytes": 100504,
+      "sha256": "42188c5be7586ecc359ec0092c4a1e63600cd5adcdeaf9d5cc5222c8890b9d2f"
+    },
+    {
+      "path": "data/nisar/nile-delta/007_D_073_20260720_20260813_browse_phase.png",
+      "bytes": 115041,
+      "sha256": "c68139d3cda67b3480ce16c53184129e415273a6c17a145f49cbed04172479f1"
+    },
+    {
+      "path": "data/nisar/nile-delta/007_D_073_20260813_20260825_browse_phase.png",
+      "bytes": 104390,
+      "sha256": "3206a51b783db6f0767b1fb9ace3378e6c387571093433b9d3409a44675edcec"
+    },
+    {
+      "path": "data/nisar/nile-delta/007_D_073_20260825_20260906_browse_phase.png",
+      "bytes": 100563,
+      "sha256": "c90c386c70353328a96708bc76d3fb1b828fe57698fdddcb3a2581ce731db459"
+    },
+    {
+      "path": "data/nisar/nile-delta/007_D_073_20260906_20260918_browse_phase.png",
+      "bytes": 96300,
+      "sha256": "c73f87e317928c5bd20879ed3e8038a62a473f26ec7c82cf192408853814dea7"
+    },
+    {
+      "path": "data/nisar/nile-delta/007_D_073_20260918_20260930_browse_phase.png",
+      "bytes": 90358,
+      "sha256": "490f4cfc9e14f5c8632f2a743413098c2a87f40e257bcb263ee470d40f2a1e37"
+    },
+    {
+      "path": "data/nisar/nile-delta/007_D_073_20260930_20261012_browse_phase.png",
+      "bytes": 78326,
+      "sha256": "040c8a6a469607640468069e321787bd73dbbd3fac86059a806934a6c249b8eb"
+    },
+    {
+      "path": "data/nisar/nile-delta/028_A_017_20260628_20260710_browse_phase.png",
+      "bytes": 240625,
+      "sha256": "7f8d25db7695165b8d96fb5c23b704a255b16ac38efa14b0bd1bac741019d98f"
+    },
+    {
+      "path": "data/nisar/nile-delta/028_A_017_20260710_20260722_browse_phase.png",
+      "bytes": 249010,
+      "sha256": "0c9fcbf2788963ec49fc09cd691e0e3798e353c6453a77ff0ffb2fe4bb155600"
+    },
+    {
+      "path": "data/nisar/nile-delta/028_A_017_20260722_20260815_browse_phase.png",
+      "bytes": 279729,
+      "sha256": "d96ef73df88d679802832cf7ef7d787897d935935e2d0b982ee716341a05ffe7"
+    },
+    {
+      "path": "data/nisar/nile-delta/028_A_017_20260815_20260827_browse_phase.png",
+      "bytes": 258078,
+      "sha256": "bd05fd62233de22d6d8abb8bf70e9501be23136f96ea1c1fc9f0aca361b340ea"
+    },
+    {
+      "path": "data/nisar/nile-delta/028_A_017_20260827_20260920_browse_phase.png",
+      "bytes": 301659,
+      "sha256": "cd17d12748d1323bd4f5e6858c9d1b104a30ec70e004c2aaa188c9ed9bcf9337"
+    },
+    {
+      "path": "data/nisar/nile-delta/028_A_017_20260920_20261002_browse_phase.png",
+      "bytes": 237650,
+      "sha256": "0a01b366d061702ca71bbd11ee778db896f2e81e5c2566c840f213b1d0ec079f"
+    },
+    {
+      "path": "data/nisar/nile-delta/gcov/007_D_073_20260626.webp",
+      "bytes": 102128,
+      "sha256": "929f0bf4fb44606e424efbd18d0f4a33ba66fc883353b54ff7545888c962b588"
+    },
+    {
+      "path": "data/nisar/nile-delta/gcov/007_D_073_20260708.webp",
+      "bytes": 101296,
+      "sha256": "fa01250f6b6a603a62a3af0d45a54dbda5437e31f6beb4f3fece72b2c6351f21"
+    },
+    {
+      "path": "data/nisar/nile-delta/gcov/007_D_073_20260720.webp",
+      "bytes": 101360,
+      "sha256": "25779520754a6980feed37d72a08ffc1fb2d8cd160e4dfd326907b4f77058da8"
+    },
+    {
+      "path": "data/nisar/nile-delta/gcov/007_D_073_20260813.webp",
+      "bytes": 96470,
+      "sha256": "c006f19d4a8089456aa20bab159799ddf6897081d2248c65cf327c6b193e609c"
+    },
+    {
+      "path": "data/nisar/nile-delta/gcov/007_D_073_20260825.webp",
+      "bytes": 98652,
+      "sha256": "d2cddfaac97f3e4e7dd72a169eedfdd0efa86da632ffac96bb1f02e5fac7b806"
+    },
+    {
+      "path": "data/nisar/nile-delta/gcov/007_D_073_20260906.webp",
+      "bytes": 97806,
+      "sha256": "0269024cd69aaadb7ae28f0bde4c6b76d5f96d146ec0800115f49d67e19ab3bc"
+    },
+    {
+      "path": "data/nisar/nile-delta/gcov/007_D_073_20260918.webp",
+      "bytes": 96826,
+      "sha256": "8de1ab41ec858d850bae556e68845962d04b7894cf06cad021b399b4494e0240"
+    },
+    {
+      "path": "data/nisar/nile-delta/gcov/007_D_073_20260930.webp",
+      "bytes": 100176,
+      "sha256": "1cfbf37b5ee5d0be22249b618500eff6da656890c61942caf7b15bd384f24fa3"
+    },
+    {
+      "path": "data/nisar/nile-delta/gcov/007_D_073_20261012.webp",
+      "bytes": 103506,
+      "sha256": "8eb505a0e74d454f625bc96bce79b194fe7af8973ef3d0009956dcc4422c1eb5"
+    },
+    {
+      "path": "data/nisar/norfolk/069_D_070_20260630_20260712_browse_phase.png",
+      "bytes": 94834,
+      "sha256": "94edbda44ff74de609abe49baccd5dc04999d8abffb2ee374923a11151297421"
+    },
+    {
+      "path": "data/nisar/norfolk/069_D_070_20260712_20260724_browse_phase.png",
+      "bytes": 96901,
+      "sha256": "de2190480dff54a76082b71f7b05c8a1c84d2e81d8ce55bf6e517f5662b4367c"
+    },
+    {
+      "path": "data/nisar/norfolk/069_D_070_20260724_20260817_browse_phase.png",
+      "bytes": 99006,
+      "sha256": "1b418015ee52ab205dd4dc6712283eedd3f99d85cdc5970c373eaf9b4cef8bcd"
+    },
+    {
+      "path": "data/nisar/norfolk/069_D_070_20260817_20260829_browse_phase.png",
+      "bytes": 94036,
+      "sha256": "2caa09db549b7dcc209e31d1d5f86dc1f4907ba4ed799b7ceb5c62651b2c7519"
+    },
+    {
+      "path": "data/nisar/norfolk/069_D_070_20260829_20260910_browse_phase.png",
+      "bytes": 94028,
+      "sha256": "1059bab1a29d72cc018e77b1420e83612279f16c7ad3f55f3ac42d7babdfc30c"
+    },
+    {
+      "path": "data/nisar/norfolk/069_D_070_20260910_20260922_browse_phase.png",
+      "bytes": 103973,
+      "sha256": "b791d8fd8dc66318aaad01b0848aa9c7fffc64c76424ece2d489ec013b17ad1b"
+    },
+    {
+      "path": "data/nisar/norfolk/069_D_070_20260922_20261004_browse_phase.png",
+      "bytes": 106284,
+      "sha256": "ef6bf31fd5197ceff94b0ebf134a0a5a8435eaa5d340816b1535a4b8edade4a5"
+    },
+    {
+      "path": "data/nisar/norfolk/069_D_070_20261004_20261016_browse_phase.png",
+      "bytes": 104851,
+      "sha256": "61959612cef5a569117508ad27284c1f059e3da946acca442929d8844e633930"
+    },
+    {
+      "path": "data/nisar/san-andreas/135_A_020_20260611_20260623_browse_phase.png",
+      "bytes": 93697,
+      "sha256": "55cd4ad539a127f4c9f020ac27a4e874331bb6d07dc9194ebeffbed6dbb57579"
+    },
+    {
+      "path": "data/nisar/san-andreas/135_A_020_20260623_20260705_browse_phase.png",
+      "bytes": 93586,
+      "sha256": "ab95dbd128fd4427e299d5e8648967efa078bafc0c674a16d4086ce9d8b692b0"
+    },
+    {
+      "path": "data/nisar/san-andreas/135_A_020_20260705_20260717_browse_phase.png",
+      "bytes": 99569,
+      "sha256": "b0793697ae2a5c8dcdf03599b80c4facbae566c1f19899b611b1364e8eec9556"
+    },
+    {
+      "path": "data/nisar/san-andreas/135_A_020_20260717_20260810_browse_phase.png",
+      "bytes": 96779,
+      "sha256": "2640409fa7beba2d56d0c28c75d0eb35cacfa5eeb5c539039d288df66a078592"
+    },
+    {
+      "path": "data/nisar/san-andreas/135_A_020_20260810_20260822_browse_phase.png",
+      "bytes": 90003,
+      "sha256": "47d818f9a54faa060e16f721efc796efd0ecff0f620809ca2ba9092b89c38ab9"
+    },
+    {
+      "path": "data/nisar/san-andreas/135_A_020_20260822_20260903_browse_phase.png",
+      "bytes": 87173,
+      "sha256": "7608830768f59e650df04ce8c2c50620362c0402ff6b516c51d5eabcc831fdae"
+    },
+    {
+      "path": "data/nisar/san-andreas/135_A_020_20260903_20260915_browse_phase.png",
+      "bytes": 90501,
+      "sha256": "91ad05f37a3a366119ab172dbc3278ff237e2f31f50399dceb381e10de35d1ce"
+    },
+    {
+      "path": "data/nisar/san-andreas/135_A_020_20260915_20260927_browse_phase.png",
+      "bytes": 90964,
+      "sha256": "587104fb684bd306c28ce816eff8847e16eb15191cdbe4f405bef01c67d99dd4"
+    },
+    {
+      "path": "data/nisar/san-andreas/135_A_020_20260927_20261009_browse_phase.png",
+      "bytes": 92992,
+      "sha256": "41fa852fd1d81d5729dc201d0927661312d31bd9cec14f2c64d7622d777f8a80"
+    },
+    {
+      "path": "data/nisar/san-andreas/135_A_020_20261009_20261021_browse_phase.png",
+      "bytes": 96025,
+      "sha256": "0c7e4017024070aaf71c19d549985113a3dbac5c6076845861fda7ab206a6cab"
+    },
+    {
+      "path": "data/nisar/svartsengi/159_A_034_20260613_20260625_browse_phase.png",
+      "bytes": 36133,
+      "sha256": "ddb2c73941e7de65253d44248cee5988fea65ef77aa095bcc3ab27d597368391"
+    },
+    {
+      "path": "data/nisar/svartsengi/159_A_034_20260625_20260707_browse_phase.png",
+      "bytes": 33314,
+      "sha256": "5109468d9005b910b38482314e4fd04bc312072eb87f393970b471578bb1f68a"
+    },
+    {
+      "path": "data/nisar/svartsengi/159_A_034_20260707_20260719_browse_phase.png",
+      "bytes": 31114,
+      "sha256": "39991e1feaeb738725fdc441f22fc43c673a0ff70967d104b5368fbfc79f1f9e"
+    },
+    {
+      "path": "data/nisar/svartsengi/159_A_034_20260719_20260812_browse_phase.png",
+      "bytes": 31525,
+      "sha256": "77ea73e83e4cde6cc5c1bdf2c0b83ba33b1b5cc9379090c2ae48fe8cdd3125ff"
+    },
+    {
+      "path": "data/nisar/svartsengi/159_A_034_20260812_20260824_browse_phase.png",
+      "bytes": 32101,
+      "sha256": "56f15a1793adfdf9121d6d481a37e17b48a28dbd7cbab40093d76f1916572da3"
+    },
+    {
+      "path": "data/nisar/svartsengi/159_A_034_20260824_20260905_browse_phase.png",
+      "bytes": 31249,
+      "sha256": "daaa9899377826d0348d9e5e6a44e9b4c82455561438dc773f9fa0141b5c4048"
+    },
+    {
+      "path": "data/nisar/svartsengi/159_A_034_20260905_20260917_browse_phase.png",
+      "bytes": 31935,
+      "sha256": "373e4624a54684ea0dc64b8adc81bf1f69b9f6f4fb3598fd57fa4df99dd50bd5"
+    },
+    {
+      "path": "data/nisar/svartsengi/159_A_034_20260917_20260929_browse_phase.png",
+      "bytes": 30237,
+      "sha256": "6330c5694abf1b96051b5ef2860acc20b83622e8e8e0ba7fe012c84503638c88"
+    },
+    {
+      "path": "data/nisar/svartsengi/159_A_034_20260929_20261011_browse_phase.png",
+      "bytes": 31886,
+      "sha256": "fca8118149a3ed883a40d1eb3e9300cf2e794f3f3764f2b22ca7925206f1b276"
+    },
+    {
+      "path": "data/nisar/svartsengi/159_A_034_20261011_20261023_browse_phase.png",
+      "bytes": 31618,
+      "sha256": "d723d6db92b892a623ba1f973281f5062b129a2a25f2c640215eba2528514c94"
+    },
+    {
+      "path": "data/photos/campi-flegrei/serapeum-pozzuoli-1.jpg",
+      "bytes": 483061,
+      "sha256": "d73d1bd100606ed94d7795432064efbc3629152da50c508b038791cb9b49e412"
+    },
+    {
+      "path": "data/photos/central-valley/map-of-california-subsidence-and-uplift-pia25530.jpg",
+      "bytes": 242471,
+      "sha256": "7fba3425a20dbcefad9e1ad71ad1c059cafe781b6fbc8cc8f44ee706d96bc9b9"
+    },
+    {
+      "path": "data/photos/central-valley/sanjoaquindrop.jpg",
+      "bytes": 174868,
+      "sha256": "e7cfce6870935f40663e72546bbed66c92ea60cac0065ef163ec496e187e3fb8"
+    },
+    {
+      "path": "data/photos/jakarta/pulang-dari-laut.jpg",
+      "bytes": 381735,
+      "sha256": "00075d7beeb792debad0640b752c1ffbd1780b6cb6c86820f8e54309bd53b752"
+    },
+    {
+      "path": "data/photos/jakarta/voa-people-walk-through-jakarta-s-flooded-streets.jpg",
+      "bytes": 328053,
+      "sha256": "71282c05618537d8ecf365e878c69e7b6ca08d1535e8e3cb14ba9ed95a213585"
+    },
+    {
+      "path": "data/photos/kahramanmaras/a-damaged-building-in-antakya.jpg",
+      "bytes": 435378,
+      "sha256": "4ac2b985694efcce761f94f115441f904e3b5655e64d3726684306d514912aba"
+    },
+    {
+      "path": "data/photos/kahramanmaras/city-of-antakya-after-7-8-magnitude-earthquake-in-t-rkiye.jpg",
+      "bytes": 409433,
+      "sha256": "249a83f4fb59edc272da399d5b3aa082f218b1bcfd66966aa78dd47a80ea5334"
+    },
+    {
+      "path": "data/photos/kilauea/kapoho-bay-lava-20180604.jpg",
+      "bytes": 264305,
+      "sha256": "6287f6205f6610e5ef30a457a5a1a0750a6ed7587f5d5bf7320f69205baa99d5"
+    },
+    {
+      "path": "data/photos/kilauea/kilauea-fissure-8-cone-erupting-on-6-28-2018.jpg",
+      "bytes": 200693,
+      "sha256": "3e87f9af1660d377bba1da144dc6be012e299c83f6f630958a5a8bc6c38adeec"
+    },
+    {
+      "path": "data/photos/mexico-city/ciudad-de-m-xico-calles-y-plazas-1986-07.jpg",
+      "bytes": 551423,
+      "sha256": "756cbc503288cb62bf0d6175a17193171567c8c73c1eff09f15e00ba332adc41"
+    },
+    {
+      "path": "data/photos/mexico-city/us-indian-spacecraft-captures-mexico-city-subsidence-pia2670.jpg",
+      "bytes": 525453,
+      "sha256": "e3057417ca6b26b0569700bff3b9d13f0a530917edb46d7f5d73b85659e4c3f6"
+    },
+    {
+      "path": "data/photos/nile-delta/egypt-alexandria-the-corniche-of-alexandria-mediterranean-se.jpg",
+      "bytes": 300560,
+      "sha256": "ba5e17b227e31ade22ac3433b61d9d5b52b53088c1099a8020ab1324825b19f9"
+    },
+    {
+      "path": "data/photos/nile-delta/egypt-s-nile-delta-region-iss072e905240.jpg",
+      "bytes": 199827,
+      "sha256": "a5484459712a87ea5e1d0d1c9df2f2f31872dc72285aaf84ab2d8d52560091d7"
+    },
+    {
+      "path": "data/photos/nile-delta/rashidnilemouth.jpg",
+      "bytes": 230591,
+      "sha256": "cb76956a1bccf0747f687de4e1235671230903bf46b3105c9d9579f238cfa0ce"
+    },
+    {
+      "path": "data/photos/norfolk/us-navy-030918-n-3235p-018-rain-and-heavy-winds-from-hurrica.jpg",
+      "bytes": 268046,
+      "sha256": "282e4039cda59b34641290cc73964fdec42d3f341a215e4ee85e7eaa38bf9605"
+    },
+    {
+      "path": "data/photos/san-andreas/san-andreas-fault-aseismic-creep.jpg",
+      "bytes": 204117,
+      "sha256": "92f89eea17c1d5707aae3f9d8dea29139ded78f45dba565f523d3baa98ebde2e"
+    },
+    {
+      "path": "data/photos/svartsengi/2025-grindavik-volcanic-eruption-aftermath-aerial-view.jpg",
+      "bytes": 178227,
+      "sha256": "7744539646c7d63759dac306906b9776ad173e8b142dde8311a132e9fc48e63b"
+    },
+    {
+      "path": "data/photos/svartsengi/sundhn-kur-2024-0734.jpg",
+      "bytes": 378291,
+      "sha256": "590740a5c4c451e8724304d06e0df41fbb7fac174e9257801280d7436ec5d6f6"
+    },
+    {
+      "path": "data/photos.json",
+      "bytes": 12509,
+      "sha256": "42ca20cb1801d054d64deef99d9d5b4b15a0c9ba8e7a082334363ded1b88285e"
+    },
+    {
+      "path": "data/stations.json",
+      "bytes": 664,
+      "sha256": "8ec515296871b5eacf45680edb2b6bfcc6163ce78035a8fbd40cce5963e9f17d"
+    }
+  ],
+  "generatedAt": "2026-11-09T00:53:14.372818+00:00"
+}

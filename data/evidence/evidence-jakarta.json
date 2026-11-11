@@ -1,0 +1,88 @@
+{
+  "schema": "fringe.evidence/1",
+  "eventId": "jakarta",
+  "eventName": "Jakarta",
+  "region": "Indonesia",
+  "episode": "Coastal subsidence",
+  "climateLink": "condensed",
+  "generatedAt": "2026-10-22",
+  "dossier": {
+    "headline": "Sinking faster than the sea rises — North Jakarta's race against the Java Sea.",
+    "sections": [
+      {
+        "icon": "eye",
+        "title": "What we observed",
+        "body": "Published geodetic surveys (levelling, GNSS, InSAR) document city-wide subsidence of 1–15 cm/yr with local maxima of 20–28 cm/yr in North Jakarta (Abidin et al., 2011). Northern districts already sit below sea level behind sea walls."
+      },
+      {
+        "icon": "lightbulb",
+        "title": "What it means",
+        "body": "Groundwater pumping and the load of new construction compact young coastal sediments. Because Jakarta's sinking outpaces regional sea-level rise in many districts, subsidence — a hazard climate change amplifies through deeper droughts and heavier bursts of rain — is the dominant flood driver here."
+      },
+      {
+        "icon": "eye.slash",
+        "title": "What the evidence cannot tell us",
+        "body": "Current rates after pumping restrictions and the seawall/coastal-defense program; the compaction split between shallow and deep aquifers; and how the capital relocation changes water demand. This app's scene is a physics rendering tuned to published figures — not raw SAR pixels."
+      }
+    ]
+  },
+  "interpretation": {
+    "public": "Jakarta is the fastest-sinking major city on Earth in parts of its north: some districts drop by 20 centimeters or more in a single year, several times faster than the sea is rising. Pumping groundwater and piling new buildings on soft coastal mud squeezes the ground down. It's one reason Indonesia is moving its capital to the island of Borneo.",
+    "student": "Young, loose coastal sediments compact when groundwater is pumped out and heavy construction loads them. Geodetic surveys show 1–15 cm/yr city-wide and 20–28 cm/yr maxima in North Jakarta (Abidin et al., 2011) — faster than sea-level rise, so subsidence dominates the local flood risk. The bundled GNSS chart (stations BAKO and CIBG) shows the measured vertical motion on the ground.",
+    "scientist": "Published rates: 1–15 cm/yr across Jakarta, 20–28 cm/yr North Jakarta (Abidin et al. 2011, Nat. Hazards), driven by aquifer compaction + building load on alluvial sediments. In-app: analytic bowl (MODELED, peak 18 cm over 360 days) with bundled NGL GNSS series BAKO and CIBG as measured ground truth. Raw SAR not processed in-app."
+  },
+  "dataset": {
+    "mission": "Sentinel-1A/1B (Copernicus) for in-app scene; published rates from multi-sensor geodetic literature",
+    "datasetId": "Abidin et al. 2011 (Natural Hazards) rate table; Copernicus Sentinel-1 SLC",
+    "window": "Published: multi-year geodetic series (1990s–2011); in-app pass-pair window: 360 days",
+    "coverage": "Jakarta and North Jakarta coastal districts (~50 km scene)",
+    "gnss": "BAKO + CIBG, Nevada Geodetic Lab daily IGS20 solutions, bundled as weekly means (see MEASURED ON THE GROUND chart)",
+    "processing": "Published: levelling, GNSS and InSAR time series. In-app: analytic elastic bowl model tuned to the published peak rates; one fringe = λ/2 line-of-sight motion"
+  },
+  "items": [
+    {
+      "label": "MEASURED",
+      "kind": "GNSS position time series",
+      "detail": "Real daily IGS20 solutions from NGL stations BAKO and CIBG, downsampled to weekly means, bundled and charted in-app."
+    },
+    {
+      "label": "MEASURED",
+      "kind": "Published geodetic rates",
+      "detail": "1–15 cm/yr city-wide, 20–28 cm/yr maxima in North Jakarta (Abidin et al., 2011). Shown as citations; not re-derived in-app."
+    },
+    {
+      "label": "MODELED",
+      "kind": "Interferogram scene",
+      "detail": "Physics rendering of an elastic bowl source (peak 18 cm over the 360-day window) tuned to published rates. NOT a raw SAR image — computed on-device."
+    },
+    {
+      "label": "DERIVED",
+      "kind": "Motion metrics and rate",
+      "detail": "Computed on-device from the physical model (one fringe = λ/2 LOS). Tracks the model, not a downloaded product."
+    },
+    {
+      "label": "LIVE",
+      "kind": "ESP32 demo ground sensor",
+      "detail": "Live accelerometer from the demo ESP32 ground station — IoT demo at the demo site; not a satellite measurement of this event."
+    }
+  ],
+  "limitations": [
+    "The interferogram is a physics rendering of published figures, not raw SAR pixels — no SAR processing is done in-app.",
+    "The cited rates are from 2011-era geodetic studies; current rates under new management are not resolved by this record.",
+    "Vertical/horizontal partition of the measured GNSS motion differs from the InSAR line-of-sight projection."
+  ],
+  "sources": [
+    {
+      "title": "Abidin et al.: 'Land subsidence of Jakarta (Indonesia) and its relation with urban development', Natural Hazards",
+      "publisher": "Natural Hazards (Springer)",
+      "year": "2011",
+      "url": "https://doi.org/10.1007/s11069-010-9686-0"
+    },
+    {
+      "title": "Nevada Geodetic Lab daily IGS20 position solutions (stations BAKO, CIBG)",
+      "publisher": "Nevada Geodetic Laboratory, University of Nevada, Reno",
+      "year": "2026",
+      "url": "https://geodesy.unr.edu/"
+    }
+  ]
+}

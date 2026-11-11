@@ -1,0 +1,79 @@
+{
+  "_comment": "Places where change is visible from space, one per event. imagery_timeline.py finds every distinct Esri World Imagery Wayback capture here. zoom = map zoom used for the comparison.",
+  "central-valley": {
+    "label": "Tulare Lake bed, near Corcoran",
+    "lat": 36.05,
+    "lon": -119.76,
+    "zoom": 12,
+    "note": "Dry farmland inside the sinking bowl, plus the old Tulare Lake bed that the 2023 storms flooded again."
+  },
+  "norfolk": {
+    "label": "Downtown Norfolk waterfront",
+    "lat": 36.846,
+    "lon": -76.292,
+    "zoom": 15,
+    "note": "The Elizabeth River waterfront, where sinking ground and rising sea bring the most frequent tidal flooding."
+  },
+  "jakarta": {
+    "label": "North Jakarta coast",
+    "lat": -6.095,
+    "lon": 106.77,
+    "zoom": 13,
+    "note": "Reclaimed islands and new sea walls, built along a coast that is sinking faster than the sea is rising."
+  },
+  "mexico-city": {
+    "label": "Former Lake Texcoco",
+    "lat": 19.49,
+    "lon": -98.975,
+    "zoom": 13,
+    "note": "A new airport was started here in 2015 and cancelled in 2018. It sat on the same soft lakebed clay that makes the city sink."
+  },
+  "svartsengi": {
+    "label": "Grindavík and the Sundhnúkur craters",
+    "lat": 63.862,
+    "lon": -22.425,
+    "zoom": 13,
+    "note": "Barrier walls and fresh lava from the eruptions since December 2023, at the edge of Grindavík.",
+    "event": "2023-11-10",
+    "eventLabel": "Grindavík dike intrusion"
+  },
+  "kilauea": {
+    "label": "Kapoho, lower East Rift Zone",
+    "lat": 19.5,
+    "lon": -154.83,
+    "zoom": 13,
+    "note": "The 2018 eruption buried this bay and neighbourhood under new land.",
+    "event": "2018-05-03",
+    "eventLabel": "2018 eruption"
+  },
+  "san-andreas": {
+    "label": "The creeping fault trace",
+    "lat": 36.3,
+    "lon": -120.9,
+    "zoom": 14,
+    "note": "Creep here is a few centimetres a year. You can't see that in photos, and that's exactly why radar matters."
+  },
+  "campi-flegrei": {
+    "label": "Pozzuoli harbour",
+    "lat": 40.8225,
+    "lon": 14.1215,
+    "zoom": 15,
+    "note": "The ground under this harbour has risen more than a metre since 2005."
+  },
+  "kahramanmaras": {
+    "label": "Antakya city centre",
+    "lat": 36.2025,
+    "lon": 36.1605,
+    "zoom": 16,
+    "note": "About 200 km south-west of the epicentre: whole blocks collapsed in the 6 February 2023 earthquakes.",
+    "event": "2023-02-06",
+    "eventLabel": "M 7.8 earthquake"
+  },
+  "nile-delta": {
+    "label": "New Mansoura, on the delta coast",
+    "lat": 31.47,
+    "lon": 31.445,
+    "zoom": 14,
+    "note": "A whole new city has gone up on this low, flat coast since 2017. Nearby, the land sinks a few millimetres a year while the sea rises about 3.4 mm a year."
+  }
+}

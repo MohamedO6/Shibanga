@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Undula: watch the ground move with NISAR radar</title>
+  <meta name="description" content="See the Unseen. Follow NISAR through a cinematic journey over the Nile Delta, then explore real radar observations and the evidence behind Earth's changing surface.">
+  <meta name="theme-color" content="#0d1424">
+  <link rel="icon" href="assets/brand/undula-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="application-name" content="Undula">
+  <meta name="apple-mobile-web-app-title" content="Undula">
+  <meta property="og:title" content="Undula: watch the ground move with NISAR radar">
+  <meta property="og:description" content="See and hear the ground move: sinking cities, rising volcanoes and creeping faults, from NASA-ISRO NISAR radar.">
+  <meta property="og:image" content="assets/brand/undula-512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://server.arcgisonline.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=Space+Grotesk:wght@500..700&display=swap" rel="stylesheet">
+  <link rel="modulepreload" href="fringe.js?v=10.0">
+  <link rel="modulepreload" href="icons.js?v=19.0">
+  <link rel="modulepreload" href="stories.js?v=10.0">
+  <link rel="modulepreload" href="gl.js?v=10.0">
+  <link rel="stylesheet" href="vendor/leaflet.css">
+  <link rel="stylesheet" href="app.css?v=20.0">
+  <link rel="stylesheet" href="learn.css?v=10.0">
+  <link rel="stylesheet" href="mission.css?v=13.0">
+  <link rel="stylesheet" href="scout.css?v=20.0">
+  <link rel="modulepreload" href="learn.js?v=11.0">
+  <link rel="modulepreload" href="science.js?v=10.0">
+</head>
+<body>
+  <div class="app" id="app" data-view="map">
+
+    <!-- ===================== MAP ===================== -->
+    <section class="view view-map" id="view-map" aria-label="Radar map">
+      <div id="map" aria-label="Interactive map"></div>
+      <div class="map-vignette" aria-hidden="true"></div>
+
+      <header class="hud-brand">
+        <h1 class="brand-title"><svg class="brand-mark" viewBox="0 0 48 40" fill="none" aria-hidden="true"><defs><linearGradient id="undula-g" x1="3" y1="0" x2="45" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ff5d73"/><stop offset=".26" stop-color="#ffc24d"/><stop offset=".5" stop-color="#7cf28b"/><stop offset=".74" stop-color="#4cc9ff"/><stop offset="1" stop-color="#b48cff"/></linearGradient></defs><g stroke="url(#undula-g)" stroke-linecap="round" stroke-width="3.6"><path d="M4 29a20 20 0 0 1 40 0"/><path d="M12 29a12 12 0 0 1 24 0"/><path d="M20 29a4 4 0 0 1 8 0"/></g><path d="M4 37h40" stroke="currentColor" stroke-opacity=".45" stroke-width="2.4" stroke-linecap="round"/></svg><span>Undula</span></h1>
+        <p class="kicker accent">Watch the ground move with NISAR radar</p>
+      </header>
+
+      <div class="pulse glass" id="pulse" aria-live="off">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <div class="pulse-track"><div class="pulse-items" id="pulse-items"></div></div>
+      </div>
+
+      <div class="hud-tools" role="toolbar" aria-label="Map tools">
+        <button class="glass round tool" id="btn-band" aria-label="Radar band"><span class="band-letter">L</span></button>
+        <button class="glass round tool" id="btn-geom" aria-label="Pass direction"><span class="band-letter small">ASC</span></button>
+        <button class="glass round tool" id="btn-world" aria-label="See the whole world on a globe"></button>
+        <button class="glass round tool" id="btn-me" aria-label="Show NISAR over my location"></button>
+        <button class="glass round tool" id="btn-sound" aria-label="Hear the ground move" title="Hear the ground move" aria-pressed="false"></button>
+        <button class="glass round tool" id="btn-base" aria-label="Switch basemap"></button>
+        <button class="glass round tool" id="btn-recenter" aria-label="Recenter on the selected site"></button>
+        <button class="glass tool scout-toggle" id="btn-astrounit" aria-label="Explore as Astrounit" title="Explore as Astrounit" aria-pressed="false"><span class="scout-toggle-icon" aria-hidden="true"></span><span class="scout-toggle-label">Explore as Astrounit</span></button>
+        <div class="tool-pair glass">
+          <button class="tool-flat" id="btn-zoom-in" aria-label="Zoom in"></button>
+          <button class="tool-flat" id="btn-zoom-out" aria-label="Zoom out"></button>
+        </div>
+      </div>
+
+      <div class="legend glass" id="legend"></div>
+
+      <div class="dock" id="dock">
+        <button class="story-cta" id="story-cta" type="button" hidden></button>
+        <article class="event-card glass" id="event-card" aria-live="polite"></article>
+        <div class="scrub-row">
+          <div class="scrubber glass">
+            <div class="scrub-labels"><span id="scrub-left"></span><span id="scrub-right" class="accent"></span></div>
+            <input id="scrubber" type="range" min="0" max="1000" value="0" aria-label="Time through the radar passes">
+            <div class="ticks" id="ticks" aria-hidden="true"></div>
+          </div>
+          <button class="play-btn glass" id="play" aria-label="Pause"></button>
+        </div>
+      </div>
+
+      <aside class="sheet glass" id="sheet" aria-label="Event details" aria-hidden="true">
+        <div class="sheet-grip" aria-hidden="true"></div>
+        <button class="sheet-close round" id="sheet-close" aria-label="Close details"></button>
+        <div class="sheet-body" id="detail"></div>
+      </aside>
+    </section>
+
+    <!-- ===================== EVENTS ===================== -->
+    <section class="view view-page" id="view-events" aria-label="Events">
+      <div class="page">
+        <header class="page-head">
+          <h1 class="page-title">Events</h1>
+          <p class="kicker accent">Real places where the ground is moving</p>
+          <p class="page-lede">Explore observations, cited studies and physics models. Each has a different role in the evidence.</p>
+        </header>
+        <div class="chips" role="group" aria-label="Filter events" id="filters">
+          <button class="chip" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip" data-filter="human" aria-pressed="false">Caused by people</button>
+          <button class="chip" data-filter="volcano" aria-pressed="false">Volcanoes</button>
+          <button class="chip" data-filter="fault" aria-pressed="false">Faults</button>
+          <button class="chip" data-filter="nisar" aria-pressed="false">Real NISAR data</button>
+        </div>
+        <div class="event-grid" id="event-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== LAB ===================== -->
+    <section class="view view-page" id="view-lab" aria-label="Interference lab">
+      <div class="page lab-page">
+        <header class="page-head">
+          <h1 class="page-title">Interference Lab</h1>
+          <p class="kicker accent">Make the ground move and see what the radar would see</p>
+        </header>
+        <div class="lab-grid">
+          <div class="lab-stage">
+            <div class="lab-frame">
+              <canvas id="lab-canvas" width="520" height="520" aria-label="Simulated interferogram"></canvas>
+              <span class="frame-chip" id="lab-chip">NISAR L-band</span>
+              <span class="north" aria-hidden="true">N<svg width="16" height="18" viewBox="0 0 16 18"><path d="M8 0 15 18 8 13 1 18z" fill="currentColor"/></svg></span>
+              <div class="frame-caption">
+                <div><div class="caption-title" id="lab-caption"></div><div class="caption-sub mono" id="lab-sub"></div></div>
+                <div class="scalebar mono" id="lab-scale"><span></span><em></em></div>
+              </div>
+            </div>
+            <div class="legend-inline" id="lab-legend"></div>
+            <div class="stat-grid four" id="lab-readouts"></div>
+          </div>
+          <div class="lab-panel">
+            <div class="seg big" role="group" aria-label="Deformation source" id="lab-type">
+              <button data-type="bowl" aria-pressed="true">Aquifer subsidence</button>
+              <button data-type="mogi" aria-pressed="false">Volcano uplift</button>
+              <button data-type="rupture" aria-pressed="false">Fault slip</button>
+              <button data-type="flank" aria-pressed="false">Flank slide</button>
+            </div>
+            <div class="slider-card" id="lab-params"></div>
+            <div class="slider-card">
+              <div class="slider-row">
+                <div class="slider-head"><span>Radar band</span></div>
+                <div class="seg" role="group" id="lab-band">
+                  <button data-band="L" aria-pressed="true">L (23.8 cm)</button>
+                  <button data-band="S" aria-pressed="false">S (9.4 cm)</button>
+                  <button data-band="C" aria-pressed="false">C (5.55 cm)</button>
+                </div>
+              </div>
+              <div class="slider-row">
+                <div class="slider-head"><span>Incidence angle</span><output class="mono" id="lab-inc-out">37°</output></div>
+                <input id="lab-inc" type="range" min="20" max="50" step="1" value="37" aria-label="Incidence angle">
+                <div class="slider-range mono">20° to 50°</div>
+              </div>
+              <div class="slider-row">
+                <div class="slider-head"><span>Pass direction</span></div>
+                <div class="seg" role="group" id="lab-geom">
+                  <button data-geom="ascending" aria-pressed="true">Ascending</button>
+                  <button data-geom="descending" aria-pressed="false">Descending</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CINEMATIC JOURNEY ===================== -->
+    <section class="view" id="view-briefing" aria-label="A Changing Frontier field mission"><div id="field-mission"></div></section>
+    <section class="view" id="view-journey" aria-label="See the Unseen cinematic field guide">
+      <div id="journey"></div>
+    </section>
+
+    <!-- ===================== GUIDE ===================== -->
+    <section class="view view-page" id="view-guide" aria-label="Guide">
+      <div class="page">
+        <article class="guide" id="guide"></article>
+      </div>
+    </section>
+
+    <!-- ===================== TAB BAR ===================== -->
+    <nav class="tabbar glass" role="tablist" aria-label="Sections" id="tabbar">
+      <button class="tab" role="tab" data-view="map" aria-selected="true"><span class="tab-icon" data-icon="map"></span><span>Map</span></button>
+      <button class="tab" role="tab" data-view="briefing" aria-selected="false"><span class="tab-icon" data-icon="playCircle"></span><span>Story</span></button>
+      <button class="tab tab-more" id="tab-more" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="more-menu"><span class="tab-icon" data-icon="grid"></span><span>More</span></button>
+      <div class="more-menu glass" id="more-menu" role="menu" aria-label="More sections" hidden>
+        <button class="more-item" role="menuitem" data-view="journey"><b>Journey</b><span>A guided flight over the delta</span></button>
+        <button class="more-item" role="menuitem" data-view="events"><b>All places</b><span>Every place where the ground moves</span></button>
+        <button class="more-item" role="menuitem" data-view="lab"><b>Lab</b><span>Make the ground move, see the rings</span></button>
+        <button class="more-item" role="menuitem" data-view="guide"><b>Guide</b><span>How radar sees the ground</span></button>
+      </div>
+    </nav>
+  </div>
+
+  <script src="vendor/leaflet.js"></script>
+  <script type="module" src="app.js?v=21.0"></script>
+</body>
+</html>

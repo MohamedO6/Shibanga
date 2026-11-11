@@ -1,0 +1,31 @@
+# Generated screenshots
+full-screenshots/
+screenshots/
+full-screenshots.zip
+
+# Large media
+*.mp4
+
+# Environment & cache
+.vercel/
+.env.local
+__pycache__/
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Credentials and reproducibility caches
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+pipeline/cache/
+*.pem
+*.key
+*.zip
+
+# Film kit clips are small and needed
+!video/clips/*.mp4

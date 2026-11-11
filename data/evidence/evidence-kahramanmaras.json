@@ -1,0 +1,53 @@
+{
+  "schema": "fringe.evidence/1",
+  "eventId": "kahramanmaras",
+  "eventName": "Kahramanmaraş",
+  "region": "Türkiye",
+  "episode": "M 7.8 earthquake",
+  "climateLink": "none-claimed",
+  "climateNote": "This is a tectonic event: coseismic rupture on the East Anatolian Fault. No climate connection is claimed — it is included for the single-pass-pair rupture signature and the L-band vs C-band comparison.",
+  "generatedAt": "2026-10-22",
+  "dataset": {
+    "mission": "Sentinel-1A/B (Copernicus), ascending pass, single pass pair spanning the rupture",
+    "datasetId": "USGS event page 2023 Kahramanmaraş M 7.8; Copernicus Sentinel-1 SLC",
+    "window": "Published: 6 February 2023 rupture; in-app pass pair: 12 days with coseismic step at day 6",
+    "coverage": "East Anatolian Fault — ~300 km rupture, Pazarcık segment (~380 km scene)",
+    "gnss": "No bundled GNSS chart — coseismic offsets are step functions; published GNSS/InSAR coseismic studies are cited instead",
+    "processing": "Published: USGS rupture characterization, published InSAR coseismic maps. In-app: elastic rectangular rupture (5 m slip at 15 km depth); one fringe = λ/2 line-of-sight motion"
+  },
+  "items": [
+    {
+      "label": "MEASURED",
+      "kind": "Seismological parameters",
+      "detail": "M 7.8 on 6 Feb 2023, East Anatolian Fault, ~300 km surface rupture (USGS). Shown as citations; not re-derived in-app."
+    },
+    {
+      "label": "MODELED",
+      "kind": "Interferogram scene",
+      "detail": "Physics rendering of a rectangular rupture (5 m slip, 300 km length). NOT a raw SAR image — computed on-device."
+    },
+    {
+      "label": "DERIVED",
+      "kind": "Motion metrics and rate",
+      "detail": "Computed on-device from the physical model (one fringe = λ/2 LOS). Tracks the model, not a downloaded product."
+    },
+    {
+      "label": "LIVE",
+      "kind": "ESP32 demo ground sensor",
+      "detail": "Live accelerometer from the demo ESP32 ground station — IoT demo at the demo site; not a satellite measurement of this event."
+    }
+  ],
+  "limitations": [
+    "The interferogram is a physics rendering of published figures, not raw SAR pixels — no SAR processing is done in-app.",
+    "A single uniform-slip rectangle cannot reproduce the multi-segment, M 7.5 doublet complexity.",
+    "Near-fault signal loss (decorrelation) visible in real coseismic scenes is not simulated in-app."
+  ],
+  "sources": [
+    {
+      "title": "USGS Earthquake Hazards Program — M 7.8 Türkiye earthquake, 6 February 2023",
+      "publisher": "U.S. Geological Survey",
+      "year": "2023",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000jllz/"
+    }
+  ]
+}

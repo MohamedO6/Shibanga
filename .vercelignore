@@ -1,0 +1,15 @@
+sync-data.py
+.gitignore
+.env*
+.vercel
+
+# Source-only review and scientific reproduction files
+.github/
+Tools/
+pipeline/
+docs/
+tests/
+README.md
+
+# Film kit, not part of the website
+video/

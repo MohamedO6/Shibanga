@@ -1,0 +1,3300 @@
+{
+ "schema": "fringe.nisar/1",
+ "sites": {
+  "central-valley": {
+   "name": "Central Valley — Corcoran subsidence bowl",
+   "eventId": "central-valley",
+   "bounds": [
+    [
+     35.46694,
+     -120.33825
+    ],
+    [
+     36.73306,
+     -118.78175
+    ]
+   ],
+   "stacks": {
+    "114_D_070": {
+     "direction": "D",
+     "track": 114,
+     "frame": 70,
+     "browse": [
+      {
+       "id": "20260610_20260622",
+       "reference": "2026-06-10",
+       "secondary": "2026-06-22",
+       "days": 12,
+       "phase": "nisar/central-valley/114_D_070_20260610_20260622_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_022_114_D_070_023_4000_SH_20260610T024823_20260610T024858_20260622T024823_20260622T024857_P05023_N_F_J_001",
+       "fitRmsPx": 0.87,
+       "coverage": 0.863
+      },
+      {
+       "id": "20260622_20260704",
+       "reference": "2026-06-22",
+       "secondary": "2026-07-04",
+       "days": 12,
+       "phase": "nisar/central-valley/114_D_070_20260622_20260704_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_023_114_D_070_024_4000_SH_20260622T024823_20260622T024857_20260704T024822_20260704T024857_P05023_N_F_J_001",
+       "fitRmsPx": 1.2,
+       "coverage": 0.862
+      },
+      {
+       "id": "20260704_20260716",
+       "reference": "2026-07-04",
+       "secondary": "2026-07-16",
+       "days": 12,
+       "phase": "nisar/central-valley/114_D_070_20260704_20260716_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_024_114_D_070_025_4000_SH_20260704T024822_20260704T024857_20260716T024821_20260716T024856_P05023_N_F_J_001",
+       "fitRmsPx": 1.05,
+       "coverage": 0.891
+      },
+      {
+       "id": "20260716_20260821",
+       "reference": "2026-07-16",
+       "secondary": "2026-08-21",
+       "days": 36,
+       "phase": "nisar/central-valley/114_D_070_20260716_20260821_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_025_114_D_070_028_4000_SH_20260716T024821_20260716T024856_20260821T024819_20260821T024854_P05023_N_F_J_001",
+       "fitRmsPx": 1.3,
+       "coverage": 0.871
+      },
+      {
+       "id": "20260821_20260902",
+       "reference": "2026-08-21",
+       "secondary": "2026-09-02",
+       "days": 12,
+       "phase": "nisar/central-valley/114_D_070_20260821_20260902_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_028_114_D_070_029_4000_SH_20260821T024819_20260821T024854_20260902T024819_20260902T024854_P05023_N_F_J_001",
+       "fitRmsPx": 1.15,
+       "coverage": 0.85
+      },
+      {
+       "id": "20260902_20260914",
+       "reference": "2026-09-02",
+       "secondary": "2026-09-14",
+       "days": 12,
+       "phase": "nisar/central-valley/114_D_070_20260902_20260914_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_029_114_D_070_030_4000_SH_20260902T024819_20260902T024854_20260914T024819_20260914T024854_P05023_N_F_J_001",
+       "fitRmsPx": 0.94,
+       "coverage": 0.859
+      },
+      {
+       "id": "20260914_20260926",
+       "reference": "2026-09-14",
+       "secondary": "2026-09-26",
+       "days": 12,
+       "phase": "nisar/central-valley/114_D_070_20260914_20260926_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_030_114_D_070_031_4000_SH_20260914T024819_20260914T024854_20260926T024819_20260926T024854_P05023_N_F_J_001",
+       "fitRmsPx": 0.98,
+       "coverage": 0.867
+      },
+      {
+       "id": "20260926_20261008",
+       "reference": "2026-09-26",
+       "secondary": "2026-10-08",
+       "days": 12,
+       "phase": "nisar/central-valley/114_D_070_20260926_20261008_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_031_114_D_070_032_4000_SH_20260926T024819_20260926T024854_20261008T024819_20261008T024854_P05023_N_F_J_001",
+       "fitRmsPx": 1.01,
+       "coverage": 0.865
+      },
+      {
+       "id": "20261008_20261020",
+       "reference": "2026-10-08",
+       "secondary": "2026-10-20",
+       "days": 12,
+       "phase": "nisar/central-valley/114_D_070_20261008_20261020_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_032_114_D_070_033_4000_SH_20261008T024819_20261008T024854_20261020T024819_20261020T024854_P05023_N_F_J_001",
+       "fitRmsPx": 1.01,
+       "coverage": 0.858
+      }
+     ],
+     "pairs": [
+      {
+       "id": "20260610_20260622",
+       "reference": "2026-06-10",
+       "secondary": "2026-06-22",
+       "days": 12,
+       "granule": "NISAR_L2_PR_GUNW_022_114_D_070_023_4000_SH_20260610T024823_20260610T024858_20260622T024823_20260622T024857_P05023_N_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/central-valley/114_D_070_20260610_20260622_wrapped.png",
+       "los": "nisar/central-valley/114_D_070_20260610_20260622_los.png",
+       "phase": "nisar/central-valley/114_D_070_20260610_20260622_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_20260610_20260622_los.i16"
+       },
+       "colorLimitCm": 6.81,
+       "validFraction": 0.736,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "reference": "CAD1",
+        "n": 26,
+        "rmsCm": 6.55,
+        "correlation": 0.035,
+        "note": null,
+        "stations": [
+         {
+          "station": "CAFP",
+          "lat": 36.424,
+          "lon": -120.102,
+          "insarCm": -7.88,
+          "gnssCm": -0.97
+         },
+         {
+          "station": "CAHA",
+          "lat": 36.3234,
+          "lon": -119.62280000000001,
+          "insarCm": -3.79,
+          "gnssCm": -0.34
+         },
+         {
+          "station": "CAKC",
+          "lat": 36.008,
+          "lon": -119.9674,
+          "insarCm": -7.9,
+          "gnssCm": 0.1
+         },
+         {
+          "station": "CAWO",
+          "lat": 36.4003,
+          "lon": -119.1038,
+          "insarCm": -6.93,
+          "gnssCm": 0.11
+         },
+         {
+          "station": "F098",
+          "lat": 36.0509,
+          "lon": -119.0975,
+          "insarCm": -6.8,
+          "gnssCm": -0.05
+         },
+         {
+          "station": "F103",
+          "lat": 35.9637,
+          "lon": -119.10640000000001,
+          "insarCm": -6.81,
+          "gnssCm": -0.61
+         },
+         {
+          "station": "F112",
+          "lat": 35.8568,
+          "lon": -119.16149999999999,
+          "insarCm": -6.44,
+          "gnssCm": -0.18
+         },
+         {
+          "station": "HANF",
+          "lat": 36.2152,
+          "lon": -119.6591,
+          "insarCm": -3.42,
+          "gnssCm": -0.15
+         },
+         {
+          "station": "HELP",
+          "lat": 36.6802,
+          "lon": -119.02279999999999,
+          "insarCm": -10.18,
+          "gnssCm": 0.04
+         },
+         {
+          "station": "LNDC",
+          "lat": 36.36,
+          "lon": -119.05789999999999,
+          "insarCm": -8.14,
+          "gnssCm": 0.26
+         },
+         {
+          "station": "P056",
+          "lat": 36.0274,
+          "lon": -119.06290000000001,
+          "insarCm": -6.92,
+          "gnssCm": -0.07
+         },
+         {
+          "station": "P298",
+          "lat": 36.0158,
+          "lon": -120.29409999999999,
+          "insarCm": -6.62,
+          "gnssCm": 0.13
+         },
+         {
+          "station": "P300",
+          "lat": 36.3044,
+          "lon": -120.27699999999999,
+          "insarCm": -8.27,
+          "gnssCm": -0.25
+         },
+         {
+          "station": "P540",
+          "lat": 35.8013,
+          "lon": -120.13059999999999,
+          "insarCm": -6.6,
+          "gnssCm": -0.16
+         },
+         {
+          "station": "P544",
+          "lat": 35.7313,
+          "lon": -119.738,
+          "insarCm": -3.81,
+          "gnssCm": -0.09
+         },
+         {
+          "station": "P564",
+          "lat": 35.6229,
+          "lon": -119.3494,
+          "insarCm": -0.47,
+          "gnssCm": 0.08
+         },
+         {
+          "station": "P565",
+          "lat": 35.7439,
+          "lon": -119.23670000000001,
+          "insarCm": -0.33,
+          "gnssCm": -0.03
+         },
+         {
+          "station": "P566",
+          "lat": 36.3245,
+          "lon": -119.2293,
+          "insarCm": -6.54,
+          "gnssCm": -0.02
+         },
+         {
+          "station": "P572",
+          "lat": 36.5855,
+          "lon": -118.9546,
+          "insarCm": -11.24,
+          "gnssCm": -0.02
+         },
+         {
+          "station": "Q143",
+          "lat": 36.3257,
+          "lon": -120.2267,
+          "insarCm": -7.46,
+          "gnssCm": -0.38
+         },
+         {
+          "station": "Q164",
+          "lat": 36.1011,
+          "lon": -120.0592,
+          "insarCm": -7.36,
+          "gnssCm": -0.14
+         },
+         {
+          "station": "Q174",
+          "lat": 35.9939,
+          "lon": -119.96090000000001,
+          "insarCm": -7.78,
+          "gnssCm": 0.08
+         },
+         {
+          "station": "Q189",
+          "lat": 35.7866,
+          "lon": -119.8648,
+          "insarCm": -4.22,
+          "gnssCm": -0.14
+         },
+         {
+          "station": "QCAP",
+          "lat": 36.3136,
+          "lon": -119.63220000000001,
+          "insarCm": -2.97,
+          "gnssCm": -0.19
+         },
+         {
+          "station": "TLBN",
+          "lat": 35.9347,
+          "lon": -119.40710000000001,
+          "insarCm": -6.64,
+          "gnssCm": -1.01
+         },
+         {
+          "station": "TRAN",
+          "lat": 36.6508,
+          "lon": -120.249,
+          "insarCm": -5.91,
+          "gnssCm": -0.14
+         }
+        ]
+       },
+       "notes": []
+      },
+      {
+       "id": "20260622_20260704",
+       "reference": "2026-06-22",
+       "secondary": "2026-07-04",
+       "days": 12,
+       "granule": "NISAR_L2_PR_GUNW_023_114_D_070_024_4000_SH_20260622T024823_20260622T024857_20260704T024822_20260704T024857_P05023_N_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/central-valley/114_D_070_20260622_20260704_wrapped.png",
+       "los": "nisar/central-valley/114_D_070_20260622_20260704_los.png",
+       "phase": "nisar/central-valley/114_D_070_20260622_20260704_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_20260622_20260704_los.i16"
+       },
+       "colorLimitCm": 6.85,
+       "validFraction": 0.766,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "reference": "CAD1",
+        "n": 23,
+        "rmsCm": 2.96,
+        "correlation": 0.197,
+        "note": null,
+        "stations": [
+         {
+          "station": "CAFP",
+          "lat": 36.424,
+          "lon": -120.102,
+          "insarCm": -2.69,
+          "gnssCm": -0.23
+         },
+         {
+          "station": "CAHA",
+          "lat": 36.3234,
+          "lon": -119.62280000000001,
+          "insarCm": 3.1,
+          "gnssCm": -0.32
+         },
+         {
+          "station": "CAKC",
+          "lat": 36.008,
+          "lon": -119.9674,
+          "insarCm": 2.66,
+          "gnssCm": 0.08
+         },
+         {
+          "station": "CAWO",
+          "lat": 36.4003,
+          "lon": -119.1038,
+          "insarCm": 2.04,
+          "gnssCm": 0.29
+         },
+         {
+          "station": "HANF",
+          "lat": 36.2152,
+          "lon": -119.6591,
+          "insarCm": -1.18,
+          "gnssCm": -0.51
+         },
+         {
+          "station": "HELP",
+          "lat": 36.6802,
+          "lon": -119.02279999999999,
+          "insarCm": -0.04,
+          "gnssCm": -0.32
+         },
+         {
+          "station": "LNDC",
+          "lat": 36.36,
+          "lon": -119.05789999999999,
+          "insarCm": 2.42,
+          "gnssCm": 0.06
+         },
+         {
+          "station": "P056",
+          "lat": 36.0274,
+          "lon": -119.06290000000001,
+          "insarCm": 5.67,
+          "gnssCm": -0.34
+         },
+         {
+          "station": "P298",
+          "lat": 36.0158,
+          "lon": -120.29409999999999,
+          "insarCm": 2.06,
+          "gnssCm": -0.17
+         },
+         {
+          "station": "P300",
+          "lat": 36.3044,
+          "lon": -120.27699999999999,
+          "insarCm": -0.98,
+          "gnssCm": 0.21
+         },
+         {
+          "station": "P540",
+          "lat": 35.8013,
+          "lon": -120.13059999999999,
+          "insarCm": 2.27,
+          "gnssCm": 0.31
+         },
+         {
+          "station": "P544",
+          "lat": 35.7313,
+          "lon": -119.738,
+          "insarCm": 0.28,
+          "gnssCm": 0.06
+         },
+         {
+          "station": "P564",
+          "lat": 35.6229,
+          "lon": -119.3494,
+          "insarCm": -1.75,
+          "gnssCm": -0.18
+         },
+         {
+          "station": "P565",
+          "lat": 35.7439,
+          "lon": -119.23670000000001,
+          "insarCm": -0.09,
+          "gnssCm": -0.24
+         },
+         {
+          "station": "P566",
+          "lat": 36.3245,
+          "lon": -119.2293,
+          "insarCm": 7.55,
+          "gnssCm": 0.07
+         },
+         {
+          "station": "P572",
+          "lat": 36.5855,
+          "lon": -118.9546,
+          "insarCm": 0.63,
+          "gnssCm": 0.12
+         },
+         {
+          "station": "Q143",
+          "lat": 36.3257,
+          "lon": -120.2267,
+          "insarCm": -1.55,
+          "gnssCm": -0.04
+         },
+         {
+          "station": "Q164",
+          "lat": 36.1011,
+          "lon": -120.0592,
+          "insarCm": 1.16,
+          "gnssCm": -0.47
+         },
+         {
+          "station": "Q174",
+          "lat": 35.9939,
+          "lon": -119.96090000000001,
+          "insarCm": 3.29,
+          "gnssCm": 0.08
+         },
+         {
+          "station": "Q189",
+          "lat": 35.7866,
+          "lon": -119.8648,
+          "insarCm": 0.68,
+          "gnssCm": 0.18
+         },
+         {
+          "station": "QCAP",
+          "lat": 36.3136,
+          "lon": -119.63220000000001,
+          "insarCm": 2.11,
+          "gnssCm": -0.38
+         },
+         {
+          "station": "TLBN",
+          "lat": 35.9347,
+          "lon": -119.40710000000001,
+          "insarCm": 4.84,
+          "gnssCm": -0.32
+         },
+         {
+          "station": "TRAN",
+          "lat": 36.6508,
+          "lon": -120.249,
+          "insarCm": -4.36,
+          "gnssCm": -0.47
+         }
+        ]
+       },
+       "notes": []
+      },
+      {
+       "id": "20260704_20260716",
+       "reference": "2026-07-04",
+       "secondary": "2026-07-16",
+       "days": 12,
+       "granule": "NISAR_L2_PR_GUNW_024_114_D_070_025_4000_SH_20260704T024822_20260704T024857_20260716T024821_20260716T024856_P05023_N_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/central-valley/114_D_070_20260704_20260716_wrapped.png",
+       "los": "nisar/central-valley/114_D_070_20260704_20260716_los.png",
+       "phase": "nisar/central-valley/114_D_070_20260704_20260716_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_20260704_20260716_los.i16"
+       },
+       "colorLimitCm": 6.04,
+       "validFraction": 0.79,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "reference": "CAD1",
+        "n": 24,
+        "rmsCm": 3.33,
+        "correlation": 0.149,
+        "note": null,
+        "stations": [
+         {
+          "station": "CAFP",
+          "lat": 36.424,
+          "lon": -120.102,
+          "insarCm": 2.59,
+          "gnssCm": -1.07
+         },
+         {
+          "station": "CAHA",
+          "lat": 36.3234,
+          "lon": -119.62280000000001,
+          "insarCm": -0.54,
+          "gnssCm": -0.45
+         },
+         {
+          "station": "CAKC",
+          "lat": 36.008,
+          "lon": -119.9674,
+          "insarCm": -0.69,
+          "gnssCm": -0.21
+         },
+         {
+          "station": "CAWO",
+          "lat": 36.4003,
+          "lon": -119.1038,
+          "insarCm": 6.82,
+          "gnssCm": 0.06
+         },
+         {
+          "station": "HANF",
+          "lat": 36.2152,
+          "lon": -119.6591,
+          "insarCm": 0.49,
+          "gnssCm": -0.89
+         },
+         {
+          "station": "HELP",
+          "lat": 36.6802,
+          "lon": -119.02279999999999,
+          "insarCm": 6.6,
+          "gnssCm": 0.51
+         },
+         {
+          "station": "LNDC",
+          "lat": 36.36,
+          "lon": -119.05789999999999,
+          "insarCm": 5.53,
+          "gnssCm": 0.2
+         },
+         {
+          "station": "P283",
+          "lat": 35.8067,
+          "lon": -120.2853,
+          "insarCm": -1.44,
+          "gnssCm": 0.22
+         },
+         {
+          "station": "P298",
+          "lat": 36.0158,
+          "lon": -120.29409999999999,
+          "insarCm": 0.73,
+          "gnssCm": -0.07
+         },
+         {
+          "station": "P300",
+          "lat": 36.3044,
+          "lon": -120.27699999999999,
+          "insarCm": 4.45,
+          "gnssCm": -0.03
+         },
+         {
+          "station": "P540",
+          "lat": 35.8013,
+          "lon": -120.13059999999999,
+          "insarCm": -1.34,
+          "gnssCm": -0.11
+         },
+         {
+          "station": "P544",
+          "lat": 35.7313,
+          "lon": -119.738,
+          "insarCm": -0.58,
+          "gnssCm": 0.1
+         },
+         {
+          "station": "P564",
+          "lat": 35.6229,
+          "lon": -119.3494,
+          "insarCm": 1.8,
+          "gnssCm": 0.17
+         },
+         {
+          "station": "P565",
+          "lat": 35.7439,
+          "lon": -119.23670000000001,
+          "insarCm": 0.13,
+          "gnssCm": 0.16
+         },
+         {
+          "station": "P566",
+          "lat": 36.3245,
+          "lon": -119.2293,
+          "insarCm": -0.51,
+          "gnssCm": -0.1
+         },
+         {
+          "station": "P572",
+          "lat": 36.5855,
+          "lon": -118.9546,
+          "insarCm": 7.39,
+          "gnssCm": -0.11
+         },
+         {
+          "station": "Q143",
+          "lat": 36.3257,
+          "lon": -120.2267,
+          "insarCm": 3.36,
+          "gnssCm": -0.81
+         },
+         {
+          "station": "Q164",
+          "lat": 36.1011,
+          "lon": -120.0592,
+          "insarCm": -0.03,
+          "gnssCm": -0.37
+         },
+         {
+          "station": "Q174",
+          "lat": 35.9939,
+          "lon": -119.96090000000001,
+          "insarCm": -1.46,
+          "gnssCm": 0.04
+         },
+         {
+          "station": "Q189",
+          "lat": 35.7866,
+          "lon": -119.8648,
+          "insarCm": -2.11,
+          "gnssCm": 0.12
+         },
+         {
+          "station": "Q198",
+          "lat": 35.6923,
+          "lon": -119.767,
+          "insarCm": -1.56,
+          "gnssCm": -0.07
+         },
+         {
+          "station": "QCAP",
+          "lat": 36.3136,
+          "lon": -119.63220000000001,
+          "insarCm": -0.35,
+          "gnssCm": -0.76
+         },
+         {
+          "station": "TLBN",
+          "lat": 35.9347,
+          "lon": -119.40710000000001,
+          "insarCm": -0.23,
+          "gnssCm": -0.74
+         },
+         {
+          "station": "TRAN",
+          "lat": 36.6508,
+          "lon": -120.249,
+          "insarCm": 5.03,
+          "gnssCm": -0.14
+         }
+        ]
+       },
+       "notes": []
+      },
+      {
+       "id": "20260716_20260821",
+       "reference": "2026-07-16",
+       "secondary": "2026-08-21",
+       "days": 36,
+       "granule": "NISAR_L2_PR_GUNW_025_114_D_070_028_4000_SH_20260716T024821_20260716T024856_20260821T024819_20260821T024854_P05023_N_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/central-valley/114_D_070_20260716_20260821_wrapped.png",
+       "los": "nisar/central-valley/114_D_070_20260716_20260821_los.png",
+       "phase": "nisar/central-valley/114_D_070_20260716_20260821_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_20260716_20260821_los.i16"
+       },
+       "colorLimitCm": 4.16,
+       "validFraction": 0.623,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "reference": "CAD1",
+        "n": 23,
+        "rmsCm": 1.24,
+        "correlation": 0.564,
+        "note": null,
+        "stations": [
+         {
+          "station": "CAFP",
+          "lat": 36.424,
+          "lon": -120.102,
+          "insarCm": -0.47,
+          "gnssCm": 0.24
+         },
+         {
+          "station": "CAHA",
+          "lat": 36.3234,
+          "lon": -119.62280000000001,
+          "insarCm": -1.91,
+          "gnssCm": -0.9
+         },
+         {
+          "station": "CAKC",
+          "lat": 36.008,
+          "lon": -119.9674,
+          "insarCm": 2.51,
+          "gnssCm": 0.43
+         },
+         {
+          "station": "CAWO",
+          "lat": 36.4003,
+          "lon": -119.1038,
+          "insarCm": -0.01,
+          "gnssCm": 0.52
+         },
+         {
+          "station": "HANF",
+          "lat": 36.2152,
+          "lon": -119.6591,
+          "insarCm": -0.62,
+          "gnssCm": -0.24
+         },
+         {
+          "station": "HELP",
+          "lat": 36.6802,
+          "lon": -119.02279999999999,
+          "insarCm": 1.8,
+          "gnssCm": -0.04
+         },
+         {
+          "station": "LNDC",
+          "lat": 36.36,
+          "lon": -119.05789999999999,
+          "insarCm": 1.39,
+          "gnssCm": 0.61
+         },
+         {
+          "station": "P056",
+          "lat": 36.0274,
+          "lon": -119.06290000000001,
+          "insarCm": 2.87,
+          "gnssCm": -0.09
+         },
+         {
+          "station": "P298",
+          "lat": 36.0158,
+          "lon": -120.29409999999999,
+          "insarCm": 0.61,
+          "gnssCm": 0.67
+         },
+         {
+          "station": "P300",
+          "lat": 36.3044,
+          "lon": -120.27699999999999,
+          "insarCm": -1.47,
+          "gnssCm": 0.46
+         },
+         {
+          "station": "P540",
+          "lat": 35.8013,
+          "lon": -120.13059999999999,
+          "insarCm": 1.69,
+          "gnssCm": 0.4
+         },
+         {
+          "station": "P544",
+          "lat": 35.7313,
+          "lon": -119.738,
+          "insarCm": 1.11,
+          "gnssCm": 0.47
+         },
+         {
+          "station": "P564",
+          "lat": 35.6229,
+          "lon": -119.3494,
+          "insarCm": -0.72,
+          "gnssCm": -0.07
+         },
+         {
+          "station": "P565",
+          "lat": 35.7439,
+          "lon": -119.23670000000001,
+          "insarCm": 0.14,
+          "gnssCm": -0.18
+         },
+         {
+          "station": "P566",
+          "lat": 36.3245,
+          "lon": -119.2293,
+          "insarCm": 1.08,
+          "gnssCm": 0.42
+         },
+         {
+          "station": "P572",
+          "lat": 36.5855,
+          "lon": -118.9546,
+          "insarCm": 1.05,
+          "gnssCm": 0.75
+         },
+         {
+          "station": "Q143",
+          "lat": 36.3257,
+          "lon": -120.2267,
+          "insarCm": -1.63,
+          "gnssCm": -0.07
+         },
+         {
+          "station": "Q164",
+          "lat": 36.1011,
+          "lon": -120.0592,
+          "insarCm": 0.39,
+          "gnssCm": 0.11
+         },
+         {
+          "station": "Q174",
+          "lat": 35.9939,
+          "lon": -119.96090000000001,
+          "insarCm": 2.5,
+          "gnssCm": 0.67
+         },
+         {
+          "station": "Q189",
+          "lat": 35.7866,
+          "lon": -119.8648,
+          "insarCm": 1.81,
+          "gnssCm": 0.51
+         },
+         {
+          "station": "QCAP",
+          "lat": 36.3136,
+          "lon": -119.63220000000001,
+          "insarCm": -1.72,
+          "gnssCm": -0.93
+         },
+         {
+          "station": "TLBN",
+          "lat": 35.9347,
+          "lon": -119.40710000000001,
+          "insarCm": -0.32,
+          "gnssCm": -1.24
+         },
+         {
+          "station": "TRAN",
+          "lat": 36.6508,
+          "lon": -120.249,
+          "insarCm": -1.18,
+          "gnssCm": -0.41
+         }
+        ]
+       },
+       "notes": []
+      },
+      {
+       "id": "20260821_20260902",
+       "reference": "2026-08-21",
+       "secondary": "2026-09-02",
+       "days": 12,
+       "granule": "NISAR_L2_PR_GUNW_028_114_D_070_029_4000_SH_20260821T024819_20260821T024854_20260902T024819_20260902T024854_P05023_N_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/central-valley/114_D_070_20260821_20260902_wrapped.png",
+       "los": "nisar/central-valley/114_D_070_20260821_20260902_los.png",
+       "phase": "nisar/central-valley/114_D_070_20260821_20260902_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_20260821_20260902_los.i16"
+       },
+       "colorLimitCm": 4.34,
+       "validFraction": 0.75,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "reference": "CAD1",
+        "n": 22,
+        "rmsCm": 2.06,
+        "correlation": 0.295,
+        "note": null,
+        "stations": [
+         {
+          "station": "CAFP",
+          "lat": 36.424,
+          "lon": -120.102,
+          "insarCm": -0.94,
+          "gnssCm": -0.61
+         },
+         {
+          "station": "CAHA",
+          "lat": 36.3234,
+          "lon": -119.62280000000001,
+          "insarCm": -0.58,
+          "gnssCm": -0.42
+         },
+         {
+          "station": "CAKC",
+          "lat": 36.008,
+          "lon": -119.9674,
+          "insarCm": 1.53,
+          "gnssCm": -0.04
+         },
+         {
+          "station": "CAWO",
+          "lat": 36.4003,
+          "lon": -119.1038,
+          "insarCm": 1.47,
+          "gnssCm": -0.38
+         },
+         {
+          "station": "HANF",
+          "lat": 36.2152,
+          "lon": -119.6591,
+          "insarCm": 0.22,
+          "gnssCm": 0.13
+         },
+         {
+          "station": "HELP",
+          "lat": 36.6802,
+          "lon": -119.02279999999999,
+          "insarCm": 0.83,
+          "gnssCm": 0.25
+         },
+         {
+          "station": "LNDC",
+          "lat": 36.36,
+          "lon": -119.05789999999999,
+          "insarCm": 0.78,
+          "gnssCm": -0.21
+         },
+         {
+          "station": "P298",
+          "lat": 36.0158,
+          "lon": -120.29409999999999,
+          "insarCm": 6.26,
+          "gnssCm": 0.15
+         },
+         {
+          "station": "P300",
+          "lat": 36.3044,
+          "lon": -120.27699999999999,
+          "insarCm": -0.22,
+          "gnssCm": -0.15
+         },
+         {
+          "station": "P540",
+          "lat": 35.8013,
+          "lon": -120.13059999999999,
+          "insarCm": 5.07,
+          "gnssCm": 0.02
+         },
+         {
+          "station": "P544",
+          "lat": 35.7313,
+          "lon": -119.738,
+          "insarCm": 1.35,
+          "gnssCm": -0.13
+         },
+         {
+          "station": "P564",
+          "lat": 35.6229,
+          "lon": -119.3494,
+          "insarCm": 0.35,
+          "gnssCm": -0.06
+         },
+         {
+          "station": "P565",
+          "lat": 35.7439,
+          "lon": -119.23670000000001,
+          "insarCm": -0.46,
+          "gnssCm": 0.21
+         },
+         {
+          "station": "P566",
+          "lat": 36.3245,
+          "lon": -119.2293,
+          "insarCm": 1.95,
+          "gnssCm": -0.0
+         },
+         {
+          "station": "P572",
+          "lat": 36.5855,
+          "lon": -118.9546,
+          "insarCm": 1.19,
+          "gnssCm": -0.04
+         },
+         {
+          "station": "Q143",
+          "lat": 36.3257,
+          "lon": -120.2267,
+          "insarCm": -0.52,
+          "gnssCm": -0.15
+         },
+         {
+          "station": "Q164",
+          "lat": 36.1011,
+          "lon": -120.0592,
+          "insarCm": 1.23,
+          "gnssCm": 0.46
+         },
+         {
+          "station": "Q174",
+          "lat": 35.9939,
+          "lon": -119.96090000000001,
+          "insarCm": 2.16,
+          "gnssCm": -0.13
+         },
+         {
+          "station": "Q189",
+          "lat": 35.7866,
+          "lon": -119.8648,
+          "insarCm": 2.35,
+          "gnssCm": -0.07
+         },
+         {
+          "station": "QCAP",
+          "lat": 36.3136,
+          "lon": -119.63220000000001,
+          "insarCm": -0.68,
+          "gnssCm": -0.13
+         },
+         {
+          "station": "TLBN",
+          "lat": 35.9347,
+          "lon": -119.40710000000001,
+          "insarCm": -1.14,
+          "gnssCm": -0.33
+         },
+         {
+          "station": "TRAN",
+          "lat": 36.6508,
+          "lon": -120.249,
+          "insarCm": -1.5,
+          "gnssCm": 0.15
+         }
+        ]
+       },
+       "notes": []
+      },
+      {
+       "id": "20260902_20260914",
+       "reference": "2026-09-02",
+       "secondary": "2026-09-14",
+       "days": 12,
+       "granule": "NISAR_L2_PR_GUNW_029_114_D_070_030_4000_SH_20260902T024819_20260902T024854_20260914T024819_20260914T024854_P05023_N_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/central-valley/114_D_070_20260902_20260914_wrapped.png",
+       "los": "nisar/central-valley/114_D_070_20260902_20260914_los.png",
+       "phase": "nisar/central-valley/114_D_070_20260902_20260914_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_20260902_20260914_los.i16"
+       },
+       "colorLimitCm": 5.57,
+       "validFraction": 0.755,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "reference": "CAD1",
+        "n": 22,
+        "rmsCm": 2.61,
+        "correlation": 0.086,
+        "note": null,
+        "stations": [
+         {
+          "station": "CAFP",
+          "lat": 36.424,
+          "lon": -120.102,
+          "insarCm": 3.91,
+          "gnssCm": 0.59
+         },
+         {
+          "station": "CAHA",
+          "lat": 36.3234,
+          "lon": -119.62280000000001,
+          "insarCm": 1.26,
+          "gnssCm": 0.09
+         },
+         {
+          "station": "CAKC",
+          "lat": 36.008,
+          "lon": -119.9674,
+          "insarCm": 0.43,
+          "gnssCm": -0.08
+         },
+         {
+          "station": "CAWO",
+          "lat": 36.4003,
+          "lon": -119.1038,
+          "insarCm": -3.61,
+          "gnssCm": 0.09
+         },
+         {
+          "station": "HANF",
+          "lat": 36.2152,
+          "lon": -119.6591,
+          "insarCm": 0.27,
+          "gnssCm": 0.24
+         },
+         {
+          "station": "HELP",
+          "lat": 36.6802,
+          "lon": -119.02279999999999,
+          "insarCm": -0.65,
+          "gnssCm": -0.56
+         },
+         {
+          "station": "LNDC",
+          "lat": 36.36,
+          "lon": -119.05789999999999,
+          "insarCm": -3.68,
+          "gnssCm": 0.09
+         },
+         {
+          "station": "P298",
+          "lat": 36.0158,
+          "lon": -120.29409999999999,
+          "insarCm": -1.46,
+          "gnssCm": -0.2
+         },
+         {
+          "station": "P300",
+          "lat": 36.3044,
+          "lon": -120.27699999999999,
+          "insarCm": 3.92,
+          "gnssCm": -0.04
+         },
+         {
+          "station": "P540",
+          "lat": 35.8013,
+          "lon": -120.13059999999999,
+          "insarCm": -2.3,
+          "gnssCm": 0.17
+         },
+         {
+          "station": "P544",
+          "lat": 35.7313,
+          "lon": -119.738,
+          "insarCm": 2.02,
+          "gnssCm": -0.04
+         },
+         {
+          "station": "P564",
+          "lat": 35.6229,
+          "lon": -119.3494,
+          "insarCm": 2.04,
+          "gnssCm": 0.02
+         },
+         {
+          "station": "P565",
+          "lat": 35.7439,
+          "lon": -119.23670000000001,
+          "insarCm": 0.48,
+          "gnssCm": 0.01
+         },
+         {
+          "station": "P566",
+          "lat": 36.3245,
+          "lon": -119.2293,
+          "insarCm": -4.29,
+          "gnssCm": 0.03
+         },
+         {
+          "station": "P572",
+          "lat": 36.5855,
+          "lon": -118.9546,
+          "insarCm": -1.19,
+          "gnssCm": 0.0
+         },
+         {
+          "station": "Q143",
+          "lat": 36.3257,
+          "lon": -120.2267,
+          "insarCm": 4.13,
+          "gnssCm": 0.16
+         },
+         {
+          "station": "Q164",
+          "lat": 36.1011,
+          "lon": -120.0592,
+          "insarCm": 1.88,
+          "gnssCm": 0.38
+         },
+         {
+          "station": "Q174",
+          "lat": 35.9939,
+          "lon": -119.96090000000001,
+          "insarCm": 0.03,
+          "gnssCm": 0.04
+         },
+         {
+          "station": "Q189",
+          "lat": 35.7866,
+          "lon": -119.8648,
+          "insarCm": -0.01,
+          "gnssCm": 0.05
+         },
+         {
+          "station": "QCAP",
+          "lat": 36.3136,
+          "lon": -119.63220000000001,
+          "insarCm": 1.08,
+          "gnssCm": -0.18
+         },
+         {
+          "station": "TLBN",
+          "lat": 35.9347,
+          "lon": -119.40710000000001,
+          "insarCm": -0.29,
+          "gnssCm": -0.09
+         },
+         {
+          "station": "TRAN",
+          "lat": 36.6508,
+          "lon": -120.249,
+          "insarCm": 5.85,
+          "gnssCm": -0.27
+         }
+        ]
+       },
+       "notes": []
+      },
+      {
+       "id": "20260914_20260926",
+       "reference": "2026-09-14",
+       "secondary": "2026-09-26",
+       "days": 12,
+       "granule": "NISAR_L2_PR_GUNW_030_114_D_070_031_4000_SH_20260914T024819_20260914T024854_20260926T024819_20260926T024854_P05023_N_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/central-valley/114_D_070_20260914_20260926_wrapped.png",
+       "los": "nisar/central-valley/114_D_070_20260914_20260926_los.png",
+       "phase": "nisar/central-valley/114_D_070_20260914_20260926_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_20260914_20260926_los.i16"
+       },
+       "colorLimitCm": 3.38,
+       "validFraction": 0.777,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "reference": "CAD1",
+        "n": 20,
+        "rmsCm": 1.72,
+        "correlation": 0.363,
+        "note": null,
+        "stations": [
+         {
+          "station": "CAFP",
+          "lat": 36.424,
+          "lon": -120.102,
+          "insarCm": -1.95,
+          "gnssCm": -0.1
+         },
+         {
+          "station": "CAHA",
+          "lat": 36.3234,
+          "lon": -119.62280000000001,
+          "insarCm": 0.5,
+          "gnssCm": -0.21
+         },
+         {
+          "station": "CAKC",
+          "lat": 36.008,
+          "lon": -119.9674,
+          "insarCm": -1.13,
+          "gnssCm": -0.31
+         },
+         {
+          "station": "CAWO",
+          "lat": 36.4003,
+          "lon": -119.1038,
+          "insarCm": 1.61,
+          "gnssCm": 0.05
+         },
+         {
+          "station": "HELP",
+          "lat": 36.6802,
+          "lon": -119.02279999999999,
+          "insarCm": 1.41,
+          "gnssCm": 0.19
+         },
+         {
+          "station": "LNDC",
+          "lat": 36.36,
+          "lon": -119.05789999999999,
+          "insarCm": 1.34,
+          "gnssCm": -0.05
+         },
+         {
+          "station": "P056",
+          "lat": 36.0274,
+          "lon": -119.06290000000001,
+          "insarCm": 1.0,
+          "gnssCm": 0.03
+         },
+         {
+          "station": "P298",
+          "lat": 36.0158,
+          "lon": -120.29409999999999,
+          "insarCm": -3.18,
+          "gnssCm": -0.16
+         },
+         {
+          "station": "P300",
+          "lat": 36.3044,
+          "lon": -120.27699999999999,
+          "insarCm": -2.71,
+          "gnssCm": 0.15
+         },
+         {
+          "station": "P540",
+          "lat": 35.8013,
+          "lon": -120.13059999999999,
+          "insarCm": -0.11,
+          "gnssCm": -0.03
+         },
+         {
+          "station": "P544",
+          "lat": 35.7313,
+          "lon": -119.738,
+          "insarCm": -1.69,
+          "gnssCm": -0.0
+         },
+         {
+          "station": "P564",
+          "lat": 35.6229,
+          "lon": -119.3494,
+          "insarCm": -1.17,
+          "gnssCm": -0.07
+         },
+         {
+          "station": "P565",
+          "lat": 35.7439,
+          "lon": -119.23670000000001,
+          "insarCm": -0.17,
+          "gnssCm": -0.02
+         },
+         {
+          "station": "P566",
+          "lat": 36.3245,
+          "lon": -119.2293,
+          "insarCm": 2.45,
+          "gnssCm": 0.08
+         },
+         {
+          "station": "P572",
+          "lat": 36.5855,
+          "lon": -118.9546,
+          "insarCm": 2.12,
+          "gnssCm": 0.03
+         },
+         {
+          "station": "Q174",
+          "lat": 35.9939,
+          "lon": -119.96090000000001,
+          "insarCm": -1.26,
+          "gnssCm": -0.21
+         },
+         {
+          "station": "Q189",
+          "lat": 35.7866,
+          "lon": -119.8648,
+          "insarCm": -1.04,
+          "gnssCm": -0.07
+         },
+         {
+          "station": "QCAP",
+          "lat": 36.3136,
+          "lon": -119.63220000000001,
+          "insarCm": 0.72,
+          "gnssCm": 0.08
+         },
+         {
+          "station": "TLBN",
+          "lat": 35.9347,
+          "lon": -119.40710000000001,
+          "insarCm": -0.76,
+          "gnssCm": -0.21
+         },
+         {
+          "station": "TRAN",
+          "lat": 36.6508,
+          "lon": -120.249,
+          "insarCm": -3.73,
+          "gnssCm": -0.04
+         }
+        ]
+       },
+       "notes": []
+      },
+      {
+       "id": "20260926_20261008",
+       "reference": "2026-09-26",
+       "secondary": "2026-10-08",
+       "days": 12,
+       "granule": "NISAR_L2_PR_GUNW_031_114_D_070_032_4000_SH_20260926T024819_20260926T024854_20261008T024819_20261008T024854_P05023_N_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/central-valley/114_D_070_20260926_20261008_wrapped.png",
+       "los": "nisar/central-valley/114_D_070_20260926_20261008_los.png",
+       "phase": "nisar/central-valley/114_D_070_20260926_20261008_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_20260926_20261008_los.i16"
+       },
+       "colorLimitCm": 4.03,
+       "validFraction": 0.774,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "reference": "CAD1",
+        "n": 21,
+        "rmsCm": 2.06,
+        "correlation": 0.101,
+        "note": null,
+        "stations": [
+         {
+          "station": "CAFP",
+          "lat": 36.424,
+          "lon": -120.102,
+          "insarCm": 2.55,
+          "gnssCm": 0.14
+         },
+         {
+          "station": "CAHA",
+          "lat": 36.3234,
+          "lon": -119.62280000000001,
+          "insarCm": -0.73,
+          "gnssCm": 0.07
+         },
+         {
+          "station": "CAKC",
+          "lat": 36.008,
+          "lon": -119.9674,
+          "insarCm": 2.77,
+          "gnssCm": 0.09
+         },
+         {
+          "station": "CAWO",
+          "lat": 36.4003,
+          "lon": -119.1038,
+          "insarCm": -1.39,
+          "gnssCm": 0.16
+         },
+         {
+          "station": "HELP",
+          "lat": 36.6802,
+          "lon": -119.02279999999999,
+          "insarCm": 0.97,
+          "gnssCm": 0.05
+         },
+         {
+          "station": "LNDC",
+          "lat": 36.36,
+          "lon": -119.05789999999999,
+          "insarCm": -0.91,
+          "gnssCm": 0.03
+         },
+         {
+          "station": "P056",
+          "lat": 36.0274,
+          "lon": -119.06290000000001,
+          "insarCm": -1.28,
+          "gnssCm": -0.05
+         },
+         {
+          "station": "P298",
+          "lat": 36.0158,
+          "lon": -120.29409999999999,
+          "insarCm": 3.08,
+          "gnssCm": 0.08
+         },
+         {
+          "station": "P300",
+          "lat": 36.3044,
+          "lon": -120.27699999999999,
+          "insarCm": 3.67,
+          "gnssCm": 0.05
+         },
+         {
+          "station": "P540",
+          "lat": 35.8013,
+          "lon": -120.13059999999999,
+          "insarCm": 2.27,
+          "gnssCm": -0.01
+         },
+         {
+          "station": "P544",
+          "lat": 35.7313,
+          "lon": -119.738,
+          "insarCm": 2.14,
+          "gnssCm": 0.09
+         },
+         {
+          "station": "P564",
+          "lat": 35.6229,
+          "lon": -119.3494,
+          "insarCm": 0.84,
+          "gnssCm": 0.0
+         },
+         {
+          "station": "P565",
+          "lat": 35.7439,
+          "lon": -119.23670000000001,
+          "insarCm": 0.15,
+          "gnssCm": -0.02
+         },
+         {
+          "station": "P566",
+          "lat": 36.3245,
+          "lon": -119.2293,
+          "insarCm": -1.44,
+          "gnssCm": 0.01
+         },
+         {
+          "station": "P572",
+          "lat": 36.5855,
+          "lon": -118.9546,
+          "insarCm": -0.79,
+          "gnssCm": 0.01
+         },
+         {
+          "station": "Q160",
+          "lat": 36.1515,
+          "lon": -120.0489,
+          "insarCm": 3.07,
+          "gnssCm": 0.18
+         },
+         {
+          "station": "Q174",
+          "lat": 35.9939,
+          "lon": -119.96090000000001,
+          "insarCm": 2.96,
+          "gnssCm": -0.04
+         },
+         {
+          "station": "Q189",
+          "lat": 35.7866,
+          "lon": -119.8648,
+          "insarCm": 2.83,
+          "gnssCm": -0.02
+         },
+         {
+          "station": "QCAP",
+          "lat": 36.3136,
+          "lon": -119.63220000000001,
+          "insarCm": -0.88,
+          "gnssCm": 0.11
+         },
+         {
+          "station": "TLBN",
+          "lat": 35.9347,
+          "lon": -119.40710000000001,
+          "insarCm": 0.33,
+          "gnssCm": -0.25
+         },
+         {
+          "station": "TRAN",
+          "lat": 36.6508,
+          "lon": -120.249,
+          "insarCm": 2.83,
+          "gnssCm": -0.06
+         }
+        ]
+       },
+       "notes": []
+      },
+      {
+       "id": "20261008_20261020",
+       "reference": "2026-10-08",
+       "secondary": "2026-10-20",
+       "days": 12,
+       "granule": "NISAR_L2_PR_GUNW_032_114_D_070_033_4000_SH_20261008T024819_20261008T024854_20261020T024819_20261020T024854_P05023_N_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/central-valley/114_D_070_20261008_20261020_wrapped.png",
+       "los": "nisar/central-valley/114_D_070_20261008_20261020_los.png",
+       "phase": "nisar/central-valley/114_D_070_20261008_20261020_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_20261008_20261020_los.i16"
+       },
+       "colorLimitCm": 3.16,
+       "validFraction": 0.761,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "reference": "CAD1",
+        "n": 10,
+        "rmsCm": 3.23,
+        "correlation": -0.39,
+        "note": null,
+        "stations": [
+         {
+          "station": "HELP",
+          "lat": 36.6802,
+          "lon": -119.02279999999999,
+          "insarCm": 1.19,
+          "gnssCm": 0.02
+         },
+         {
+          "station": "LNDC",
+          "lat": 36.36,
+          "lon": -119.05789999999999,
+          "insarCm": 3.52,
+          "gnssCm": -0.11
+         },
+         {
+          "station": "P056",
+          "lat": 36.0274,
+          "lon": -119.06290000000001,
+          "insarCm": 2.22,
+          "gnssCm": -0.02
+         },
+         {
+          "station": "P298",
+          "lat": 36.0158,
+          "lon": -120.29409999999999,
+          "insarCm": 5.08,
+          "gnssCm": -0.13
+         },
+         {
+          "station": "P300",
+          "lat": 36.3044,
+          "lon": -120.27699999999999,
+          "insarCm": 6.16,
+          "gnssCm": -0.08
+         },
+         {
+          "station": "P544",
+          "lat": 35.7313,
+          "lon": -119.738,
+          "insarCm": 2.39,
+          "gnssCm": -0.26
+         },
+         {
+          "station": "P564",
+          "lat": 35.6229,
+          "lon": -119.3494,
+          "insarCm": 0.51,
+          "gnssCm": 0.11
+         },
+         {
+          "station": "P565",
+          "lat": 35.7439,
+          "lon": -119.23670000000001,
+          "insarCm": 0.26,
+          "gnssCm": 0.0
+         },
+         {
+          "station": "P566",
+          "lat": 36.3245,
+          "lon": -119.2293,
+          "insarCm": 2.41,
+          "gnssCm": -0.33
+         },
+         {
+          "station": "P572",
+          "lat": 36.5855,
+          "lon": -118.9546,
+          "insarCm": 2.0,
+          "gnssCm": -0.02
+         }
+        ]
+       },
+       "notes": []
+      }
+     ],
+     "cumulative": [
+      {
+       "date": "2026-06-22",
+       "start": "2026-06-10",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/central-valley/114_D_070_cum_20260622_los.png",
+       "wrapped": "nisar/central-valley/114_D_070_cum_20260622_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_cum_20260622_los.i16"
+       },
+       "colorLimitCm": 7.13
+      },
+      {
+       "date": "2026-07-04",
+       "start": "2026-06-10",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/central-valley/114_D_070_cum_20260704_los.png",
+       "wrapped": "nisar/central-valley/114_D_070_cum_20260704_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_cum_20260704_los.i16"
+       },
+       "colorLimitCm": 7.13
+      },
+      {
+       "date": "2026-07-16",
+       "start": "2026-06-10",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/central-valley/114_D_070_cum_20260716_los.png",
+       "wrapped": "nisar/central-valley/114_D_070_cum_20260716_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_cum_20260716_los.i16"
+       },
+       "colorLimitCm": 7.13
+      },
+      {
+       "date": "2026-08-21",
+       "start": "2026-06-10",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/central-valley/114_D_070_cum_20260821_los.png",
+       "wrapped": "nisar/central-valley/114_D_070_cum_20260821_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_cum_20260821_los.i16"
+       },
+       "colorLimitCm": 7.13
+      },
+      {
+       "date": "2026-09-02",
+       "start": "2026-06-10",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/central-valley/114_D_070_cum_20260902_los.png",
+       "wrapped": "nisar/central-valley/114_D_070_cum_20260902_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_cum_20260902_los.i16"
+       },
+       "colorLimitCm": 7.13
+      },
+      {
+       "date": "2026-09-14",
+       "start": "2026-06-10",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/central-valley/114_D_070_cum_20260914_los.png",
+       "wrapped": "nisar/central-valley/114_D_070_cum_20260914_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_cum_20260914_los.i16"
+       },
+       "colorLimitCm": 7.13
+      },
+      {
+       "date": "2026-09-26",
+       "start": "2026-06-10",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/central-valley/114_D_070_cum_20260926_los.png",
+       "wrapped": "nisar/central-valley/114_D_070_cum_20260926_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_cum_20260926_los.i16"
+       },
+       "colorLimitCm": 7.13
+      },
+      {
+       "date": "2026-10-08",
+       "start": "2026-06-10",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/central-valley/114_D_070_cum_20261008_los.png",
+       "wrapped": "nisar/central-valley/114_D_070_cum_20261008_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_cum_20261008_los.i16"
+       },
+       "colorLimitCm": 7.13
+      },
+      {
+       "date": "2026-10-20",
+       "start": "2026-06-10",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/central-valley/114_D_070_cum_20261020_los.png",
+       "wrapped": "nisar/central-valley/114_D_070_cum_20261020_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/central-valley/114_D_070_cum_20261020_los.i16"
+       },
+       "colorLimitCm": 7.13
+      }
+     ],
+     "cumulativeGnss": {
+      "reference": "CAD1",
+      "n": 9,
+      "rmsCm": 3.06,
+      "correlation": 0.07,
+      "note": null,
+      "stations": [
+       {
+        "station": "HELP",
+        "lat": 36.6802,
+        "lon": -119.02279999999999,
+        "insarCm": 1.61,
+        "gnssCm": 0.15
+       },
+       {
+        "station": "LNDC",
+        "lat": 36.36,
+        "lon": -119.05789999999999,
+        "insarCm": 1.77,
+        "gnssCm": 0.89
+       },
+       {
+        "station": "P298",
+        "lat": 36.0158,
+        "lon": -120.29409999999999,
+        "insarCm": 6.73,
+        "gnssCm": 0.31
+       },
+       {
+        "station": "P300",
+        "lat": 36.3044,
+        "lon": -120.27699999999999,
+        "insarCm": 4.7,
+        "gnssCm": 0.33
+       },
+       {
+        "station": "P544",
+        "lat": 35.7313,
+        "lon": -119.738,
+        "insarCm": 3.82,
+        "gnssCm": 0.2
+       },
+       {
+        "station": "P564",
+        "lat": 35.6229,
+        "lon": -119.3494,
+        "insarCm": 1.3,
+        "gnssCm": -0.01
+       },
+       {
+        "station": "P565",
+        "lat": 35.7439,
+        "lon": -119.23670000000001,
+        "insarCm": 0.38,
+        "gnssCm": -0.11
+       },
+       {
+        "station": "P566",
+        "lat": 36.3245,
+        "lon": -119.2293,
+        "insarCm": 2.59,
+        "gnssCm": 0.17
+       },
+       {
+        "station": "P572",
+        "lat": 36.5855,
+        "lon": -118.9546,
+        "insarCm": 1.25,
+        "gnssCm": 0.73
+       }
+      ]
+     }
+    },
+    "034_A_020": {
+     "direction": "A",
+     "track": 34,
+     "frame": 20,
+     "browse": [
+      {
+       "id": "20260616_20260628",
+       "reference": "2026-06-16",
+       "secondary": "2026-06-28",
+       "days": 12,
+       "phase": "nisar/central-valley/034_A_020_20260616_20260628_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_023_034_A_020_024_4000_SH_20260616T130900_20260616T130935_20260628T130859_20260628T130934_P05023_N_F_J_001",
+       "fitRmsPx": 0.98,
+       "coverage": 0.943
+      },
+      {
+       "id": "20260628_20260710",
+       "reference": "2026-06-28",
+       "secondary": "2026-07-10",
+       "days": 12,
+       "phase": "nisar/central-valley/034_A_020_20260628_20260710_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_024_034_A_020_025_4000_SH_20260628T130859_20260628T130934_20260710T130859_20260710T130933_P05023_N_F_J_001",
+       "fitRmsPx": 0.8,
+       "coverage": 0.95
+      },
+      {
+       "id": "20260710_20260722",
+       "reference": "2026-07-10",
+       "secondary": "2026-07-22",
+       "days": 12,
+       "phase": "nisar/central-valley/034_A_020_20260710_20260722_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_025_034_A_020_026_4000_SH_20260710T130859_20260710T130933_20260722T130858_20260722T130933_P05023_N_F_J_001",
+       "fitRmsPx": 0.88,
+       "coverage": 0.934
+      },
+      {
+       "id": "20260722_20260815",
+       "reference": "2026-07-22",
+       "secondary": "2026-08-15",
+       "days": 24,
+       "phase": "nisar/central-valley/034_A_020_20260722_20260815_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_026_034_A_020_028_4000_SH_20260722T130858_20260722T130933_20260815T130857_20260815T130931_P05023_N_F_J_001",
+       "fitRmsPx": 0.94,
+       "coverage": 0.94
+      },
+      {
+       "id": "20260815_20260827",
+       "reference": "2026-08-15",
+       "secondary": "2026-08-27",
+       "days": 12,
+       "phase": "nisar/central-valley/034_A_020_20260815_20260827_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_028_034_A_020_029_4000_SH_20260815T130857_20260815T130931_20260827T130856_20260827T130931_P05023_N_F_J_001",
+       "fitRmsPx": 0.73,
+       "coverage": 0.939
+      },
+      {
+       "id": "20260827_20260908",
+       "reference": "2026-08-27",
+       "secondary": "2026-09-08",
+       "days": 12,
+       "phase": "nisar/central-valley/034_A_020_20260827_20260908_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_029_034_A_020_030_4000_SH_20260827T130856_20260827T130931_20260908T130856_20260908T130931_P05023_N_F_J_001",
+       "fitRmsPx": 1.07,
+       "coverage": 0.959
+      },
+      {
+       "id": "20260908_20260920",
+       "reference": "2026-09-08",
+       "secondary": "2026-09-20",
+       "days": 12,
+       "phase": "nisar/central-valley/034_A_020_20260908_20260920_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_030_034_A_020_031_4000_SH_20260908T130856_20260908T130931_20260920T130856_20260920T130931_P05023_N_F_J_001",
+       "fitRmsPx": 1.03,
+       "coverage": 0.957
+      },
+      {
+       "id": "20260920_20261014",
+       "reference": "2026-09-20",
+       "secondary": "2026-10-14",
+       "days": 24,
+       "phase": "nisar/central-valley/034_A_020_20260920_20261014_browse_phase.png",
+       "width": 640,
+       "height": 644,
+       "granule": "NISAR_L2_PR_GUNW_031_034_A_020_033_4000_SH_20260920T130856_20260920T130931_20261014T130856_20261014T130931_P05023_N_F_J_001",
+       "fitRmsPx": 1.02,
+       "coverage": 0.954
+      }
+     ]
+    }
+   }
+  },
+  "mexico-city": {
+   "name": "Mexico City — lakebed aquifer subsidence",
+   "eventId": "mexico-city",
+   "bounds": [
+    [
+     19.1813,
+     -99.34195
+    ],
+    [
+     19.6787,
+     -98.81805
+    ]
+   ],
+   "stacks": {
+    "019_A_011": {
+     "direction": "A",
+     "track": 19,
+     "frame": 11,
+     "browse": [
+      {
+       "id": "20260615_20260627",
+       "reference": "2026-06-15",
+       "secondary": "2026-06-27",
+       "days": 12,
+       "phase": "nisar/mexico-city/019_A_011_20260615_20260627_browse_phase.png",
+       "width": 284,
+       "height": 286,
+       "granule": "NISAR_L2_PR_GUNW_023_019_A_011_024_4000_SH_20260615T120541_20260615T120616_20260627T120541_20260627T120615_P05023_N_F_J_001",
+       "fitRmsPx": 1.51,
+       "coverage": 0.999
+      },
+      {
+       "id": "20260627_20260709",
+       "reference": "2026-06-27",
+       "secondary": "2026-07-09",
+       "days": 12,
+       "phase": "nisar/mexico-city/019_A_011_20260627_20260709_browse_phase.png",
+       "width": 284,
+       "height": 286,
+       "granule": "NISAR_L2_PR_GUNW_024_019_A_011_025_4000_SH_20260627T120541_20260627T120615_20260709T120540_20260709T120615_P05023_N_F_J_001",
+       "fitRmsPx": 1.68,
+       "coverage": 0.999
+      },
+      {
+       "id": "20260709_20260721",
+       "reference": "2026-07-09",
+       "secondary": "2026-07-21",
+       "days": 12,
+       "phase": "nisar/mexico-city/019_A_011_20260709_20260721_browse_phase.png",
+       "width": 284,
+       "height": 286,
+       "granule": "NISAR_L2_PR_GUNW_025_019_A_011_026_4000_SH_20260709T120540_20260709T120615_20260721T120539_20260721T120614_P05023_N_F_J_001",
+       "fitRmsPx": 1.25,
+       "coverage": 0.997
+      },
+      {
+       "id": "20260721_20260814",
+       "reference": "2026-07-21",
+       "secondary": "2026-08-14",
+       "days": 24,
+       "phase": "nisar/mexico-city/019_A_011_20260721_20260814_browse_phase.png",
+       "width": 284,
+       "height": 286,
+       "granule": "NISAR_L2_PR_GUNW_026_019_A_011_028_4000_SH_20260721T120539_20260721T120614_20260814T120538_20260814T120613_P05023_N_F_J_001",
+       "fitRmsPx": 1.35,
+       "coverage": 0.999
+      },
+      {
+       "id": "20260814_20260826",
+       "reference": "2026-08-14",
+       "secondary": "2026-08-26",
+       "days": 12,
+       "phase": "nisar/mexico-city/019_A_011_20260814_20260826_browse_phase.png",
+       "width": 284,
+       "height": 286,
+       "granule": "NISAR_L2_PR_GUNW_028_019_A_011_029_4000_SH_20260814T120538_20260814T120613_20260826T120538_20260826T120612_P05023_N_F_J_001",
+       "fitRmsPx": 1.5,
+       "coverage": 1.0
+      },
+      {
+       "id": "20260826_20260907",
+       "reference": "2026-08-26",
+       "secondary": "2026-09-07",
+       "days": 12,
+       "phase": "nisar/mexico-city/019_A_011_20260826_20260907_browse_phase.png",
+       "width": 284,
+       "height": 286,
+       "granule": "NISAR_L2_PR_GUNW_029_019_A_011_030_4000_SH_20260826T120538_20260826T120612_20260907T120538_20260907T120612_P05023_N_F_J_001",
+       "fitRmsPx": 1.25,
+       "coverage": 0.998
+      },
+      {
+       "id": "20260907_20260919",
+       "reference": "2026-09-07",
+       "secondary": "2026-09-19",
+       "days": 12,
+       "phase": "nisar/mexico-city/019_A_011_20260907_20260919_browse_phase.png",
+       "width": 284,
+       "height": 286,
+       "granule": "NISAR_L2_PR_GUNW_030_019_A_011_031_4000_SH_20260907T120538_20260907T120612_20260919T120538_20260919T120612_P05023_F_F_J_001",
+       "fitRmsPx": 1.51,
+       "coverage": 0.999
+      },
+      {
+       "id": "20260919_20261001",
+       "reference": "2026-09-19",
+       "secondary": "2026-10-01",
+       "days": 12,
+       "phase": "nisar/mexico-city/019_A_011_20260919_20261001_browse_phase.png",
+       "width": 284,
+       "height": 286,
+       "granule": "NISAR_L2_PR_GUNW_031_019_A_011_032_4000_SH_20260919T120538_20260919T120612_20261001T120538_20261001T120612_P05023_N_F_J_001",
+       "fitRmsPx": 1.31,
+       "coverage": 0.998
+      },
+      {
+       "id": "20261001_20261013",
+       "reference": "2026-10-01",
+       "secondary": "2026-10-13",
+       "days": 12,
+       "phase": "nisar/mexico-city/019_A_011_20261001_20261013_browse_phase.png",
+       "width": 284,
+       "height": 286,
+       "granule": "NISAR_L2_PR_GUNW_032_019_A_011_033_4000_SH_20261001T120538_20261001T120612_20261013T120538_20261013T120612_P05023_N_F_J_001",
+       "fitRmsPx": 1.32,
+       "coverage": 0.999
+      }
+     ]
+    }
+   }
+  },
+  "jakarta": {
+   "name": "Jakarta — coastal subsidence",
+   "eventId": "jakarta",
+   "bounds": [
+    [
+     -6.34609,
+     106.60413
+    ],
+    [
+     -5.89391,
+     107.05587
+    ]
+   ],
+   "stacks": {
+    "010_A_174": {
+     "direction": "A",
+     "track": 10,
+     "frame": 174,
+     "browse": [
+      {
+       "id": "20260626_20260708",
+       "reference": "2026-06-26",
+       "secondary": "2026-07-08",
+       "days": 12,
+       "phase": "nisar/jakarta/010_A_174_20260626_20260708_browse_phase.png",
+       "width": 258,
+       "height": 260,
+       "granule": "NISAR_L2_PR_GUNW_024_010_A_174_025_4000_SH_20260626T223921_20260626T223956_20260708T223920_20260708T223955_P05023_N_F_J_001",
+       "fitRmsPx": 1.62,
+       "coverage": 0.858
+      },
+      {
+       "id": "20260708_20260720",
+       "reference": "2026-07-08",
+       "secondary": "2026-07-20",
+       "days": 12,
+       "phase": "nisar/jakarta/010_A_174_20260708_20260720_browse_phase.png",
+       "width": 258,
+       "height": 260,
+       "granule": "NISAR_L2_PR_GUNW_025_010_A_174_026_4000_SH_20260708T223920_20260708T223955_20260720T223920_20260720T223954_P05023_N_F_J_001",
+       "fitRmsPx": 1.49,
+       "coverage": 0.886
+      },
+      {
+       "id": "20260720_20260813",
+       "reference": "2026-07-20",
+       "secondary": "2026-08-13",
+       "days": 24,
+       "phase": "nisar/jakarta/010_A_174_20260720_20260813_browse_phase.png",
+       "width": 258,
+       "height": 260,
+       "granule": "NISAR_L2_PR_GUNW_026_010_A_174_028_4000_SH_20260720T223920_20260720T223954_20260813T223919_20260813T223953_P05023_N_F_J_001",
+       "fitRmsPx": 1.55,
+       "coverage": 0.863
+      },
+      {
+       "id": "20260813_20260825",
+       "reference": "2026-08-13",
+       "secondary": "2026-08-25",
+       "days": 12,
+       "phase": "nisar/jakarta/010_A_174_20260813_20260825_browse_phase.png",
+       "width": 258,
+       "height": 260,
+       "granule": "NISAR_L2_PR_GUNW_028_010_A_174_029_4000_SH_20260813T223919_20260813T223953_20260825T223918_20260825T223953_P05023_N_F_J_001",
+       "fitRmsPx": 1.56,
+       "coverage": 0.803
+      },
+      {
+       "id": "20260825_20260906",
+       "reference": "2026-08-25",
+       "secondary": "2026-09-06",
+       "days": 12,
+       "phase": "nisar/jakarta/010_A_174_20260825_20260906_browse_phase.png",
+       "width": 258,
+       "height": 260,
+       "granule": "NISAR_L2_PR_GUNW_029_010_A_174_030_4000_SH_20260825T223918_20260825T223953_20260906T223918_20260906T223953_P05023_N_F_J_001",
+       "fitRmsPx": 1.77,
+       "coverage": 0.804
+      },
+      {
+       "id": "20260906_20260918",
+       "reference": "2026-09-06",
+       "secondary": "2026-09-18",
+       "days": 12,
+       "phase": "nisar/jakarta/010_A_174_20260906_20260918_browse_phase.png",
+       "width": 258,
+       "height": 260,
+       "granule": "NISAR_L2_PR_GUNW_030_010_A_174_031_4000_SH_20260906T223918_20260906T223953_20260918T223918_20260918T223953_P05023_F_F_J_001",
+       "fitRmsPx": 1.63,
+       "coverage": 0.81
+      },
+      {
+       "id": "20260918_20260930",
+       "reference": "2026-09-18",
+       "secondary": "2026-09-30",
+       "days": 12,
+       "phase": "nisar/jakarta/010_A_174_20260918_20260930_browse_phase.png",
+       "width": 258,
+       "height": 260,
+       "granule": "NISAR_L2_PR_GUNW_031_010_A_174_032_4000_SH_20260918T223918_20260918T223953_20260930T223918_20260930T223953_P05023_N_F_J_001",
+       "fitRmsPx": 1.49,
+       "coverage": 0.842
+      },
+      {
+       "id": "20260930_20261012",
+       "reference": "2026-09-30",
+       "secondary": "2026-10-12",
+       "days": 12,
+       "phase": "nisar/jakarta/010_A_174_20260930_20261012_browse_phase.png",
+       "width": 258,
+       "height": 260,
+       "granule": "NISAR_L2_PR_GUNW_032_010_A_174_033_4000_SH_20260930T223918_20260930T223953_20261012T223918_20261012T223953_P05023_N_F_J_001",
+       "fitRmsPx": 1.55,
+       "coverage": 0.923
+      }
+     ]
+    }
+   }
+  },
+  "norfolk": {
+   "name": "Norfolk / Hampton Roads — coastal subsidence",
+   "eventId": "norfolk",
+   "bounds": [
+    [
+     36.61869,
+     -76.62696
+    ],
+    [
+     37.16131,
+     -75.95304
+    ]
+   ],
+   "stacks": {
+    "069_D_070": {
+     "direction": "D",
+     "track": 69,
+     "frame": 70,
+     "browse": [
+      {
+       "id": "20260630_20260712",
+       "reference": "2026-06-30",
+       "secondary": "2026-07-12",
+       "days": 12,
+       "phase": "nisar/norfolk/069_D_070_20260630_20260712_browse_phase.png",
+       "width": 307,
+       "height": 309,
+       "granule": "NISAR_L2_PR_GUNW_024_069_D_070_025_4000_SH_20260630T235334_20260630T235409_20260712T235333_20260712T235408_P05023_N_F_J_001",
+       "fitRmsPx": 0.83,
+       "coverage": 0.8
+      },
+      {
+       "id": "20260712_20260724",
+       "reference": "2026-07-12",
+       "secondary": "2026-07-24",
+       "days": 12,
+       "phase": "nisar/norfolk/069_D_070_20260712_20260724_browse_phase.png",
+       "width": 307,
+       "height": 309,
+       "granule": "NISAR_L2_PR_GUNW_025_069_D_070_026_4000_SH_20260712T235333_20260712T235408_20260724T235332_20260724T235407_P05023_N_F_J_001",
+       "fitRmsPx": 0.8,
+       "coverage": 0.911
+      },
+      {
+       "id": "20260724_20260817",
+       "reference": "2026-07-24",
+       "secondary": "2026-08-17",
+       "days": 24,
+       "phase": "nisar/norfolk/069_D_070_20260724_20260817_browse_phase.png",
+       "width": 307,
+       "height": 309,
+       "granule": "NISAR_L2_PR_GUNW_026_069_D_070_028_4000_SH_20260724T235332_20260724T235407_20260817T235331_20260817T235406_P05023_N_F_J_001",
+       "fitRmsPx": 1.13,
+       "coverage": 0.791
+      },
+      {
+       "id": "20260817_20260829",
+       "reference": "2026-08-17",
+       "secondary": "2026-08-29",
+       "days": 12,
+       "phase": "nisar/norfolk/069_D_070_20260817_20260829_browse_phase.png",
+       "width": 307,
+       "height": 309,
+       "granule": "NISAR_L2_PR_GUNW_028_069_D_070_029_4000_SH_20260817T235331_20260817T235406_20260829T235331_20260829T235406_P05023_N_F_J_001",
+       "fitRmsPx": 1.09,
+       "coverage": 0.864
+      },
+      {
+       "id": "20260829_20260910",
+       "reference": "2026-08-29",
+       "secondary": "2026-09-10",
+       "days": 12,
+       "phase": "nisar/norfolk/069_D_070_20260829_20260910_browse_phase.png",
+       "width": 307,
+       "height": 309,
+       "granule": "NISAR_L2_PR_GUNW_029_069_D_070_030_4000_SH_20260829T235331_20260829T235406_20260910T235331_20260910T235406_P05023_N_F_J_001",
+       "fitRmsPx": 0.93,
+       "coverage": 0.828
+      },
+      {
+       "id": "20260910_20260922",
+       "reference": "2026-09-10",
+       "secondary": "2026-09-22",
+       "days": 12,
+       "phase": "nisar/norfolk/069_D_070_20260910_20260922_browse_phase.png",
+       "width": 307,
+       "height": 309,
+       "granule": "NISAR_L2_PR_GUNW_030_069_D_070_031_4000_SH_20260910T235331_20260910T235406_20260922T235331_20260922T235406_P05023_N_F_J_001",
+       "fitRmsPx": 0.72,
+       "coverage": 0.767
+      },
+      {
+       "id": "20260922_20261004",
+       "reference": "2026-09-22",
+       "secondary": "2026-10-04",
+       "days": 12,
+       "phase": "nisar/norfolk/069_D_070_20260922_20261004_browse_phase.png",
+       "width": 307,
+       "height": 309,
+       "granule": "NISAR_L2_PR_GUNW_031_069_D_070_032_4000_SH_20260922T235331_20260922T235406_20261004T235331_20261004T235406_P05023_N_F_J_001",
+       "fitRmsPx": 0.7,
+       "coverage": 0.824
+      },
+      {
+       "id": "20261004_20261016",
+       "reference": "2026-10-04",
+       "secondary": "2026-10-16",
+       "days": 12,
+       "phase": "nisar/norfolk/069_D_070_20261004_20261016_browse_phase.png",
+       "width": 307,
+       "height": 309,
+       "granule": "NISAR_L2_PR_GUNW_032_069_D_070_033_4000_SH_20261004T235331_20261004T235406_20261016T235331_20261016T235406_P05023_N_F_J_001",
+       "fitRmsPx": 0.85,
+       "coverage": 0.794
+      }
+     ]
+    }
+   }
+  },
+  "campi-flegrei": {
+   "name": "Campi Flegrei — caldera uplift",
+   "eventId": "campi-flegrei",
+   "bounds": [
+    [
+     40.71848,
+     13.99654
+    ],
+    [
+     40.93552,
+     14.28146
+    ]
+   ],
+   "stacks": {
+    "152_D_068": {
+     "direction": "D",
+     "track": 152,
+     "frame": 68,
+     "browse": [
+      {
+       "id": "20260624_20260706",
+       "reference": "2026-06-24",
+       "secondary": "2026-07-06",
+       "days": 12,
+       "phase": "nisar/campi-flegrei/152_D_068_20260624_20260706_browse_phase.png",
+       "width": 122,
+       "height": 123,
+       "granule": "NISAR_L2_PR_GUNW_023_152_D_068_024_2000_SH_20260624T180251_20260624T180311_20260706T180250_20260706T180310_P05023_N_P_J_002",
+       "fitRmsPx": 1.0,
+       "coverage": 0.681
+      },
+      {
+       "id": "20260706_20260718",
+       "reference": "2026-07-06",
+       "secondary": "2026-07-18",
+       "days": 12,
+       "phase": "nisar/campi-flegrei/152_D_068_20260706_20260718_browse_phase.png",
+       "width": 122,
+       "height": 123,
+       "granule": "NISAR_L2_PR_GUNW_024_152_D_068_025_2000_SH_20260706T180250_20260706T180310_20260718T180250_20260718T180310_P05023_N_P_J_001",
+       "fitRmsPx": 1.0,
+       "coverage": 0.638
+      },
+      {
+       "id": "20260718_20260811",
+       "reference": "2026-07-18",
+       "secondary": "2026-08-11",
+       "days": 24,
+       "phase": "nisar/campi-flegrei/152_D_068_20260718_20260811_browse_phase.png",
+       "width": 122,
+       "height": 123,
+       "granule": "NISAR_L2_PR_GUNW_025_152_D_068_027_2000_SH_20260718T180250_20260718T180310_20260811T180248_20260811T180309_P05023_N_P_J_001",
+       "fitRmsPx": 0.61,
+       "coverage": 0.629
+      },
+      {
+       "id": "20260811_20260823",
+       "reference": "2026-08-11",
+       "secondary": "2026-08-23",
+       "days": 12,
+       "phase": "nisar/campi-flegrei/152_D_068_20260811_20260823_browse_phase.png",
+       "width": 122,
+       "height": 123,
+       "granule": "NISAR_L2_PR_GUNW_027_152_D_068_028_2000_SH_20260811T180248_20260811T180309_20260823T180248_20260823T180309_P05023_N_P_J_001",
+       "fitRmsPx": 0.89,
+       "coverage": 0.585
+      },
+      {
+       "id": "20260823_20260904",
+       "reference": "2026-08-23",
+       "secondary": "2026-09-04",
+       "days": 12,
+       "phase": "nisar/campi-flegrei/152_D_068_20260823_20260904_browse_phase.png",
+       "width": 122,
+       "height": 123,
+       "granule": "NISAR_L2_PR_GUNW_028_152_D_068_029_2000_SH_20260823T180248_20260823T180309_20260904T180248_20260904T180308_P05023_N_P_J_001",
+       "fitRmsPx": 0.86,
+       "coverage": 0.604
+      },
+      {
+       "id": "20260904_20260916",
+       "reference": "2026-09-04",
+       "secondary": "2026-09-16",
+       "days": 12,
+       "phase": "nisar/campi-flegrei/152_D_068_20260904_20260916_browse_phase.png",
+       "width": 122,
+       "height": 123,
+       "granule": "NISAR_L2_PR_GUNW_029_152_D_068_030_2000_SH_20260904T180248_20260904T180308_20260916T180247_20260916T180308_P05023_N_P_J_001",
+       "fitRmsPx": 0.83,
+       "coverage": 0.62
+      },
+      {
+       "id": "20260916_20260928",
+       "reference": "2026-09-16",
+       "secondary": "2026-09-28",
+       "days": 12,
+       "phase": "nisar/campi-flegrei/152_D_068_20260916_20260928_browse_phase.png",
+       "width": 122,
+       "height": 123,
+       "granule": "NISAR_L2_PR_GUNW_030_152_D_068_031_2000_SH_20260916T180247_20260916T180308_20260928T180248_20260928T180309_P05023_N_P_J_001",
+       "fitRmsPx": 0.74,
+       "coverage": 0.636
+      },
+      {
+       "id": "20260928_20261010",
+       "reference": "2026-09-28",
+       "secondary": "2026-10-10",
+       "days": 12,
+       "phase": "nisar/campi-flegrei/152_D_068_20260928_20261010_browse_phase.png",
+       "width": 122,
+       "height": 123,
+       "granule": "NISAR_L2_PR_GUNW_031_152_D_068_032_2000_SH_20260928T180248_20260928T180309_20261010T180248_20261010T180309_P05023_N_P_J_001",
+       "fitRmsPx": 0.94,
+       "coverage": 0.609
+      },
+      {
+       "id": "20261010_20261022",
+       "reference": "2026-10-10",
+       "secondary": "2026-10-22",
+       "days": 12,
+       "phase": "nisar/campi-flegrei/152_D_068_20261010_20261022_browse_phase.png",
+       "width": 122,
+       "height": 123,
+       "granule": "NISAR_L2_PR_GUNW_032_152_D_068_033_2000_SH_20261010T180248_20261010T180309_20261022T180248_20261022T180309_P05023_N_P_J_001",
+       "fitRmsPx": 0.76,
+       "coverage": 0.628
+      }
+     ]
+    }
+   }
+  },
+  "svartsengi": {
+   "name": "Svartsengi — magma inflation",
+   "eventId": "svartsengi",
+   "bounds": [
+    [
+     63.69713,
+     -22.84006
+    ],
+    [
+     64.05887,
+     -22.02394
+    ]
+   ],
+   "stacks": {
+    "159_A_034": {
+     "direction": "A",
+     "track": 159,
+     "frame": 34,
+     "browse": [
+      {
+       "id": "20260613_20260625",
+       "reference": "2026-06-13",
+       "secondary": "2026-06-25",
+       "days": 12,
+       "phase": "nisar/svartsengi/159_A_034_20260613_20260625_browse_phase.png",
+       "width": 163,
+       "height": 164,
+       "granule": "NISAR_L2_PR_GUNW_022_159_A_034_023_4000_SH_20260613T052239_20260613T052311_20260625T052238_20260625T052310_P05023_N_F_J_001",
+       "fitRmsPx": 0.31,
+       "coverage": 0.593
+      },
+      {
+       "id": "20260625_20260707",
+       "reference": "2026-06-25",
+       "secondary": "2026-07-07",
+       "days": 12,
+       "phase": "nisar/svartsengi/159_A_034_20260625_20260707_browse_phase.png",
+       "width": 163,
+       "height": 164,
+       "granule": "NISAR_L2_PR_GUNW_023_159_A_034_024_4000_SH_20260625T052238_20260625T052310_20260707T052237_20260707T052310_P05023_N_F_J_001",
+       "fitRmsPx": 0.39,
+       "coverage": 0.547
+      },
+      {
+       "id": "20260707_20260719",
+       "reference": "2026-07-07",
+       "secondary": "2026-07-19",
+       "days": 12,
+       "phase": "nisar/svartsengi/159_A_034_20260707_20260719_browse_phase.png",
+       "width": 163,
+       "height": 164,
+       "granule": "NISAR_L2_PR_GUNW_024_159_A_034_025_4000_SH_20260707T052237_20260707T052310_20260719T052237_20260719T052309_P05023_N_F_J_001",
+       "fitRmsPx": 0.42,
+       "coverage": 0.541
+      },
+      {
+       "id": "20260719_20260812",
+       "reference": "2026-07-19",
+       "secondary": "2026-08-12",
+       "days": 24,
+       "phase": "nisar/svartsengi/159_A_034_20260719_20260812_browse_phase.png",
+       "width": 163,
+       "height": 164,
+       "granule": "NISAR_L2_PR_GUNW_025_159_A_034_027_4000_SH_20260719T052237_20260719T052309_20260812T052236_20260812T052308_P05023_N_F_J_001",
+       "fitRmsPx": 0.3,
+       "coverage": 0.594
+      },
+      {
+       "id": "20260812_20260824",
+       "reference": "2026-08-12",
+       "secondary": "2026-08-24",
+       "days": 12,
+       "phase": "nisar/svartsengi/159_A_034_20260812_20260824_browse_phase.png",
+       "width": 163,
+       "height": 164,
+       "granule": "NISAR_L2_PR_GUNW_027_159_A_034_028_4000_SH_20260812T052236_20260812T052308_20260824T052236_20260824T052307_P05023_N_F_J_001",
+       "fitRmsPx": 0.39,
+       "coverage": 0.591
+      },
+      {
+       "id": "20260824_20260905",
+       "reference": "2026-08-24",
+       "secondary": "2026-09-05",
+       "days": 12,
+       "phase": "nisar/svartsengi/159_A_034_20260824_20260905_browse_phase.png",
+       "width": 163,
+       "height": 164,
+       "granule": "NISAR_L2_PR_GUNW_028_159_A_034_029_4000_SH_20260824T052236_20260824T052307_20260905T052235_20260905T052307_P05023_N_F_J_002",
+       "fitRmsPx": 0.32,
+       "coverage": 0.593
+      },
+      {
+       "id": "20260905_20260917",
+       "reference": "2026-09-05",
+       "secondary": "2026-09-17",
+       "days": 12,
+       "phase": "nisar/svartsengi/159_A_034_20260905_20260917_browse_phase.png",
+       "width": 163,
+       "height": 164,
+       "granule": "NISAR_L2_PR_GUNW_029_159_A_034_030_4000_SH_20260905T052235_20260905T052307_20260917T052235_20260917T052307_P05023_N_F_J_001",
+       "fitRmsPx": 0.19,
+       "coverage": 0.597
+      },
+      {
+       "id": "20260917_20260929",
+       "reference": "2026-09-17",
+       "secondary": "2026-09-29",
+       "days": 12,
+       "phase": "nisar/svartsengi/159_A_034_20260917_20260929_browse_phase.png",
+       "width": 163,
+       "height": 164,
+       "granule": "NISAR_L2_PR_GUNW_030_159_A_034_031_4000_SH_20260917T052235_20260917T052307_20260929T052236_20260929T052307_P05023_N_F_J_001",
+       "fitRmsPx": 0.4,
+       "coverage": 0.595
+      },
+      {
+       "id": "20260929_20261011",
+       "reference": "2026-09-29",
+       "secondary": "2026-10-11",
+       "days": 12,
+       "phase": "nisar/svartsengi/159_A_034_20260929_20261011_browse_phase.png",
+       "width": 163,
+       "height": 164,
+       "granule": "NISAR_L2_PR_GUNW_031_159_A_034_032_4000_SH_20260929T052236_20260929T052307_20261011T052236_20261011T052307_P05023_N_F_J_001",
+       "fitRmsPx": 0.41,
+       "coverage": 0.629
+      },
+      {
+       "id": "20261011_20261023",
+       "reference": "2026-10-11",
+       "secondary": "2026-10-23",
+       "days": 12,
+       "phase": "nisar/svartsengi/159_A_034_20261011_20261023_browse_phase.png",
+       "width": 163,
+       "height": 164,
+       "granule": "NISAR_L2_PR_GUNW_032_159_A_034_033_4000_SH_20261011T052236_20261011T052307_20261023T052236_20261023T052307_P05023_N_F_J_001",
+       "fitRmsPx": 0.31,
+       "coverage": 0.552
+      }
+     ]
+    }
+   }
+  },
+  "kilauea": {
+   "name": "Kīlauea — south flank",
+   "eventId": "kilauea",
+   "bounds": [
+    [
+     18.98347,
+     -155.48313
+    ],
+    [
+     19.61653,
+     -154.81687
+    ]
+   ],
+   "stacks": {
+    "072_D_079": {
+     "direction": "D",
+     "track": 72,
+     "frame": 79,
+     "browse": [
+      {
+       "id": "20260526_20260619",
+       "reference": "2026-05-26",
+       "secondary": "2026-06-19",
+       "days": 24,
+       "phase": "nisar/kilauea/072_D_079_20260526_20260619_browse_phase.png",
+       "width": 359,
+       "height": 361,
+       "granule": "NISAR_L2_PR_GUNW_021_072_D_079_023_4000_SH_20260526T045818_20260526T045837_20260619T045817_20260619T045836_P05023_N_P_J_001",
+       "fitRmsPx": 1.2,
+       "coverage": 0.583
+      },
+      {
+       "id": "20260701_20260713",
+       "reference": "2026-07-01",
+       "secondary": "2026-07-13",
+       "days": 12,
+       "phase": "nisar/kilauea/072_D_079_20260701_20260713_browse_phase.png",
+       "width": 359,
+       "height": 361,
+       "granule": "NISAR_L2_PR_GUNW_024_072_D_079_025_4000_SH_20260701T045816_20260701T045835_20260713T045815_20260713T045834_P05023_N_P_J_001",
+       "fitRmsPx": 1.47,
+       "coverage": 0.593
+      },
+      {
+       "id": "20260713_20260818",
+       "reference": "2026-07-13",
+       "secondary": "2026-08-18",
+       "days": 36,
+       "phase": "nisar/kilauea/072_D_079_20260713_20260818_browse_phase.png",
+       "width": 359,
+       "height": 361,
+       "granule": "NISAR_L2_PR_GUNW_025_072_D_079_028_4000_SH_20260713T045815_20260713T045834_20260818T045813_20260818T045833_P05023_N_P_J_001",
+       "fitRmsPx": 1.3,
+       "coverage": 0.564
+      },
+      {
+       "id": "20260818_20260830",
+       "reference": "2026-08-18",
+       "secondary": "2026-08-30",
+       "days": 12,
+       "phase": "nisar/kilauea/072_D_079_20260818_20260830_browse_phase.png",
+       "width": 359,
+       "height": 361,
+       "granule": "NISAR_L2_PR_GUNW_028_072_D_079_029_4000_SH_20260818T045813_20260818T045833_20260830T045813_20260830T045832_P05023_N_P_J_001",
+       "fitRmsPx": 1.28,
+       "coverage": 0.57
+      },
+      {
+       "id": "20260830_20260911",
+       "reference": "2026-08-30",
+       "secondary": "2026-09-11",
+       "days": 12,
+       "phase": "nisar/kilauea/072_D_079_20260830_20260911_browse_phase.png",
+       "width": 359,
+       "height": 361,
+       "granule": "NISAR_L2_PR_GUNW_029_072_D_079_030_4000_SH_20260830T045813_20260830T045832_20260911T045813_20260911T045832_P05023_N_P_J_001",
+       "fitRmsPx": 1.09,
+       "coverage": 0.593
+      },
+      {
+       "id": "20260911_20260923",
+       "reference": "2026-09-11",
+       "secondary": "2026-09-23",
+       "days": 12,
+       "phase": "nisar/kilauea/072_D_079_20260911_20260923_browse_phase.png",
+       "width": 359,
+       "height": 361,
+       "granule": "NISAR_L2_PR_GUNW_030_072_D_079_031_4000_SH_20260911T045813_20260911T045832_20260923T045813_20260923T045832_P05023_N_P_J_001",
+       "fitRmsPx": 1.04,
+       "coverage": 0.588
+      },
+      {
+       "id": "20260923_20261005",
+       "reference": "2026-09-23",
+       "secondary": "2026-10-05",
+       "days": 12,
+       "phase": "nisar/kilauea/072_D_079_20260923_20261005_browse_phase.png",
+       "width": 359,
+       "height": 361,
+       "granule": "NISAR_L2_PR_GUNW_031_072_D_079_032_4000_SH_20260923T045813_20260923T045832_20261005T045813_20261005T045833_P05023_N_P_J_001",
+       "fitRmsPx": 1.41,
+       "coverage": 0.738
+      },
+      {
+       "id": "20261005_20261017",
+       "reference": "2026-10-05",
+       "secondary": "2026-10-17",
+       "days": 12,
+       "phase": "nisar/kilauea/072_D_079_20261005_20261017_browse_phase.png",
+       "width": 359,
+       "height": 361,
+       "granule": "NISAR_L2_PR_GUNW_032_072_D_079_033_4000_SH_20261005T045813_20261005T045833_20261017T045813_20261017T045833_P05023_N_P_J_001",
+       "fitRmsPx": 1.27,
+       "coverage": 0.576
+      }
+     ]
+    }
+   }
+  },
+  "san-andreas": {
+   "name": "San Andreas — creeping section",
+   "eventId": "san-andreas",
+   "bounds": [
+    [
+     35.89303,
+     -121.40158
+    ],
+    [
+     36.70697,
+     -120.39842
+    ]
+   ],
+   "stacks": {
+    "135_A_020": {
+     "direction": "A",
+     "track": 135,
+     "frame": 20,
+     "browse": [
+      {
+       "id": "20260611_20260623",
+       "reference": "2026-06-11",
+       "secondary": "2026-06-23",
+       "days": 12,
+       "phase": "nisar/san-andreas/135_A_020_20260611_20260623_browse_phase.png",
+       "width": 457,
+       "height": 460,
+       "granule": "NISAR_L2_PR_GUNW_022_135_A_020_023_4000_SH_20260611T131720_20260611T131755_20260623T131719_20260623T131754_P05023_N_F_J_001",
+       "fitRmsPx": 0.92,
+       "coverage": 0.999
+      },
+      {
+       "id": "20260623_20260705",
+       "reference": "2026-06-23",
+       "secondary": "2026-07-05",
+       "days": 12,
+       "phase": "nisar/san-andreas/135_A_020_20260623_20260705_browse_phase.png",
+       "width": 457,
+       "height": 460,
+       "granule": "NISAR_L2_PR_GUNW_023_135_A_020_024_4000_SH_20260623T131719_20260623T131754_20260705T131719_20260705T131753_P05023_N_F_J_001",
+       "fitRmsPx": 1.0,
+       "coverage": 1.0
+      },
+      {
+       "id": "20260705_20260717",
+       "reference": "2026-07-05",
+       "secondary": "2026-07-17",
+       "days": 12,
+       "phase": "nisar/san-andreas/135_A_020_20260705_20260717_browse_phase.png",
+       "width": 457,
+       "height": 460,
+       "granule": "NISAR_L2_PR_GUNW_024_135_A_020_025_4000_SH_20260705T131719_20260705T131753_20260717T131718_20260717T131753_P05023_N_F_J_001",
+       "fitRmsPx": 0.67,
+       "coverage": 0.999
+      },
+      {
+       "id": "20260717_20260810",
+       "reference": "2026-07-17",
+       "secondary": "2026-08-10",
+       "days": 24,
+       "phase": "nisar/san-andreas/135_A_020_20260717_20260810_browse_phase.png",
+       "width": 457,
+       "height": 460,
+       "granule": "NISAR_L2_PR_GUNW_025_135_A_020_027_4000_SH_20260717T131718_20260717T131753_20260810T131717_20260810T131751_P05023_N_F_J_001",
+       "fitRmsPx": 0.99,
+       "coverage": 0.996
+      },
+      {
+       "id": "20260810_20260822",
+       "reference": "2026-08-10",
+       "secondary": "2026-08-22",
+       "days": 12,
+       "phase": "nisar/san-andreas/135_A_020_20260810_20260822_browse_phase.png",
+       "width": 457,
+       "height": 460,
+       "granule": "NISAR_L2_PR_GUNW_027_135_A_020_028_4000_SH_20260810T131717_20260810T131751_20260822T131716_20260822T131751_P05023_N_F_J_001",
+       "fitRmsPx": 0.84,
+       "coverage": 0.999
+      },
+      {
+       "id": "20260822_20260903",
+       "reference": "2026-08-22",
+       "secondary": "2026-09-03",
+       "days": 12,
+       "phase": "nisar/san-andreas/135_A_020_20260822_20260903_browse_phase.png",
+       "width": 457,
+       "height": 460,
+       "granule": "NISAR_L2_PR_GUNW_028_135_A_020_029_4000_SH_20260822T131716_20260822T131751_20260903T131716_20260903T131751_P05023_N_F_J_001",
+       "fitRmsPx": 0.7,
+       "coverage": 0.999
+      },
+      {
+       "id": "20260903_20260915",
+       "reference": "2026-09-03",
+       "secondary": "2026-09-15",
+       "days": 12,
+       "phase": "nisar/san-andreas/135_A_020_20260903_20260915_browse_phase.png",
+       "width": 457,
+       "height": 460,
+       "granule": "NISAR_L2_PR_GUNW_029_135_A_020_030_4000_SH_20260903T131716_20260903T131751_20260915T131716_20260915T131750_P05023_N_F_J_001",
+       "fitRmsPx": 1.01,
+       "coverage": 1.0
+      },
+      {
+       "id": "20260915_20260927",
+       "reference": "2026-09-15",
+       "secondary": "2026-09-27",
+       "days": 12,
+       "phase": "nisar/san-andreas/135_A_020_20260915_20260927_browse_phase.png",
+       "width": 457,
+       "height": 460,
+       "granule": "NISAR_L2_PR_GUNW_030_135_A_020_031_4000_SH_20260915T131716_20260915T131750_20260927T131716_20260927T131750_P05023_N_F_J_001",
+       "fitRmsPx": 1.1,
+       "coverage": 0.999
+      },
+      {
+       "id": "20260927_20261009",
+       "reference": "2026-09-27",
+       "secondary": "2026-10-09",
+       "days": 12,
+       "phase": "nisar/san-andreas/135_A_020_20260927_20261009_browse_phase.png",
+       "width": 457,
+       "height": 460,
+       "granule": "NISAR_L2_PR_GUNW_031_135_A_020_032_4000_SH_20260927T131716_20260927T131750_20261009T131716_20261009T131751_P05023_N_F_J_001",
+       "fitRmsPx": 1.1,
+       "coverage": 0.999
+      },
+      {
+       "id": "20261009_20261021",
+       "reference": "2026-10-09",
+       "secondary": "2026-10-21",
+       "days": 12,
+       "phase": "nisar/san-andreas/135_A_020_20261009_20261021_browse_phase.png",
+       "width": 457,
+       "height": 460,
+       "granule": "NISAR_L2_PR_GUNW_032_135_A_020_033_4000_SH_20261009T131716_20261009T131751_20261021T131716_20261021T131751_P05023_N_F_J_001",
+       "fitRmsPx": 0.81,
+       "coverage": 0.999
+      }
+     ]
+    }
+   }
+  },
+  "nile-delta": {
+   "name": "Nile Delta, Damietta and Mansoura",
+   "eventId": "nile-delta",
+   "bounds": [
+    [
+     30.79781,
+     31.09462
+    ],
+    [
+     31.70219,
+     32.14538
+    ]
+   ],
+   "stacks": {
+    "007_D_073": {
+     "direction": "D",
+     "track": 7,
+     "frame": 73,
+     "browse": [
+      {
+       "id": "20260626_20260708",
+       "reference": "2026-06-26",
+       "secondary": "2026-07-08",
+       "days": 12,
+       "phase": "nisar/nile-delta/007_D_073_20260626_20260708_browse_phase.png",
+       "width": 512,
+       "height": 515,
+       "granule": "NISAR_L2_PR_GUNW_024_007_D_073_025_4000_SH_20260626T164222_20260626T164300_20260708T164225_20260708T164259_P05023_N_F_J_001",
+       "fitRmsPx": null,
+       "fitFrom": "frame median",
+       "coverage": 0.423
+      },
+      {
+       "id": "20260708_20260720",
+       "reference": "2026-07-08",
+       "secondary": "2026-07-20",
+       "days": 12,
+       "phase": "nisar/nile-delta/007_D_073_20260708_20260720_browse_phase.png",
+       "width": 512,
+       "height": 515,
+       "granule": "NISAR_L2_PR_GUNW_025_007_D_073_026_4000_SH_20260708T164225_20260708T164259_20260720T164221_20260720T164258_P05023_N_F_J_001",
+       "fitRmsPx": 1.19,
+       "coverage": 0.442
+      },
+      {
+       "id": "20260720_20260813",
+       "reference": "2026-07-20",
+       "secondary": "2026-08-13",
+       "days": 24,
+       "phase": "nisar/nile-delta/007_D_073_20260720_20260813_browse_phase.png",
+       "width": 512,
+       "height": 515,
+       "granule": "NISAR_L2_PR_GUNW_026_007_D_073_028_4000_SH_20260720T164221_20260720T164258_20260813T164220_20260813T164257_P05023_N_F_J_001",
+       "fitRmsPx": null,
+       "fitFrom": "frame median",
+       "coverage": 0.407
+      },
+      {
+       "id": "20260813_20260825",
+       "reference": "2026-08-13",
+       "secondary": "2026-08-25",
+       "days": 12,
+       "phase": "nisar/nile-delta/007_D_073_20260813_20260825_browse_phase.png",
+       "width": 512,
+       "height": 515,
+       "granule": "NISAR_L2_PR_GUNW_028_007_D_073_029_4000_SH_20260813T164220_20260813T164257_20260825T164220_20260825T164257_P05023_N_F_J_001",
+       "fitRmsPx": null,
+       "fitFrom": "frame median",
+       "coverage": 0.412
+      },
+      {
+       "id": "20260825_20260906",
+       "reference": "2026-08-25",
+       "secondary": "2026-09-06",
+       "days": 12,
+       "phase": "nisar/nile-delta/007_D_073_20260825_20260906_browse_phase.png",
+       "width": 512,
+       "height": 515,
+       "granule": "NISAR_L2_PR_GUNW_029_007_D_073_030_4000_SH_20260825T164220_20260825T164257_20260906T164219_20260906T164257_P05023_N_F_J_001",
+       "fitRmsPx": 2.77,
+       "coverage": 0.419
+      },
+      {
+       "id": "20260906_20260918",
+       "reference": "2026-09-06",
+       "secondary": "2026-09-18",
+       "days": 12,
+       "phase": "nisar/nile-delta/007_D_073_20260906_20260918_browse_phase.png",
+       "width": 512,
+       "height": 515,
+       "granule": "NISAR_L2_PR_GUNW_030_007_D_073_031_4000_SH_20260906T164219_20260906T164257_20260918T164219_20260918T164257_P05023_F_F_J_001",
+       "fitRmsPx": null,
+       "fitFrom": "frame median",
+       "coverage": 0.414
+      },
+      {
+       "id": "20260918_20260930",
+       "reference": "2026-09-18",
+       "secondary": "2026-09-30",
+       "days": 12,
+       "phase": "nisar/nile-delta/007_D_073_20260918_20260930_browse_phase.png",
+       "width": 512,
+       "height": 515,
+       "granule": "NISAR_L2_PR_GUNW_031_007_D_073_032_4000_SH_20260918T164219_20260918T164257_20260930T164220_20260930T164257_P05023_N_F_J_001",
+       "fitRmsPx": null,
+       "fitFrom": "frame median",
+       "coverage": 0.413
+      },
+      {
+       "id": "20260930_20261012",
+       "reference": "2026-09-30",
+       "secondary": "2026-10-12",
+       "days": 12,
+       "phase": "nisar/nile-delta/007_D_073_20260930_20261012_browse_phase.png",
+       "width": 512,
+       "height": 515,
+       "granule": "NISAR_L2_PR_GUNW_032_007_D_073_033_4000_SH_20260930T164220_20260930T164257_20261012T164220_20261012T164257_P05023_N_F_J_001",
+       "fitRmsPx": 2.07,
+       "coverage": 0.409
+      }
+     ]
+    },
+    "028_A_017": {
+     "direction": "A",
+     "track": 28,
+     "frame": 17,
+     "browse": [
+      {
+       "id": "20260628_20260710",
+       "reference": "2026-06-28",
+       "secondary": "2026-07-10",
+       "days": 12,
+       "phase": "nisar/nile-delta/028_A_017_20260628_20260710_browse_phase.png",
+       "width": 514,
+       "height": 517,
+       "granule": "NISAR_L2_PR_GUNW_024_028_A_017_025_2000_SH_20260628T030800_20260628T030834_20260710T030759_20260710T030838_P05023_N_F_J_001",
+       "fitRmsPx": 1.02,
+       "coverage": 0.796
+      },
+      {
+       "id": "20260710_20260722",
+       "reference": "2026-07-10",
+       "secondary": "2026-07-22",
+       "days": 12,
+       "phase": "nisar/nile-delta/028_A_017_20260710_20260722_browse_phase.png",
+       "width": 514,
+       "height": 517,
+       "granule": "NISAR_L2_PR_GUNW_025_028_A_017_026_2000_SH_20260710T030759_20260710T030838_20260722T030758_20260722T030833_P05023_N_F_J_001",
+       "fitRmsPx": null,
+       "fitFrom": "frame median",
+       "coverage": 0.773
+      },
+      {
+       "id": "20260722_20260815",
+       "reference": "2026-07-22",
+       "secondary": "2026-08-15",
+       "days": 24,
+       "phase": "nisar/nile-delta/028_A_017_20260722_20260815_browse_phase.png",
+       "width": 514,
+       "height": 517,
+       "granule": "NISAR_L2_PR_GUNW_026_028_A_017_028_2000_SH_20260722T030758_20260722T030833_20260815T030757_20260815T030832_P05023_N_F_J_001",
+       "fitRmsPx": 1.06,
+       "coverage": 0.762
+      },
+      {
+       "id": "20260815_20260827",
+       "reference": "2026-08-15",
+       "secondary": "2026-08-27",
+       "days": 12,
+       "phase": "nisar/nile-delta/028_A_017_20260815_20260827_browse_phase.png",
+       "width": 514,
+       "height": 517,
+       "granule": "NISAR_L2_PR_GUNW_028_028_A_017_029_2000_SH_20260815T030757_20260815T030832_20260827T030757_20260827T030836_P05023_N_F_J_001",
+       "fitRmsPx": 1.07,
+       "coverage": 0.826
+      },
+      {
+       "id": "20260827_20260920",
+       "reference": "2026-08-27",
+       "secondary": "2026-09-20",
+       "days": 24,
+       "phase": "nisar/nile-delta/028_A_017_20260827_20260920_browse_phase.png",
+       "width": 514,
+       "height": 517,
+       "granule": "NISAR_L2_PR_GUNW_029_028_A_017_031_2000_SH_20260827T030757_20260827T030836_20260920T030757_20260920T030836_P05023_F_F_J_001",
+       "fitRmsPx": null,
+       "fitFrom": "frame median",
+       "coverage": 0.774
+      },
+      {
+       "id": "20260920_20261002",
+       "reference": "2026-09-20",
+       "secondary": "2026-10-02",
+       "days": 12,
+       "phase": "nisar/nile-delta/028_A_017_20260920_20261002_browse_phase.png",
+       "width": 514,
+       "height": 517,
+       "granule": "NISAR_L2_PR_GUNW_031_028_A_017_032_2000_SH_20260920T030757_20260920T030836_20261002T030757_20261002T030832_P05023_N_F_J_001",
+       "fitRmsPx": null,
+       "fitFrom": "frame median",
+       "coverage": 0.781
+      }
+     ]
+    }
+   },
+   "gcov": {
+    "stack": "007_D_073",
+    "track": 7,
+    "direction": "D",
+    "frame": 73,
+    "polarizations": [
+     "HH",
+     "HV"
+    ],
+    "composite": "R = HH, G = HV, B = HH",
+    "width": 683,
+    "frames": [
+     {
+      "date": "2026-06-26",
+      "file": "nisar/nile-delta/gcov/007_D_073_20260626.webp",
+      "granule": "NISAR_L2_PR_GCOV_024_007_D_073_4005_DHDH_A_20260626T164222_20260626T164300_P05023_N_F_J_001",
+      "fitRmsPx": null
+     },
+     {
+      "date": "2026-07-08",
+      "file": "nisar/nile-delta/gcov/007_D_073_20260708.webp",
+      "granule": "NISAR_L2_PR_GCOV_025_007_D_073_4005_DHDH_A_20260708T164225_20260708T164259_P05023_N_F_J_001",
+      "fitRmsPx": 0.88
+     },
+     {
+      "date": "2026-07-20",
+      "file": "nisar/nile-delta/gcov/007_D_073_20260720.webp",
+      "granule": "NISAR_L2_PR_GCOV_026_007_D_073_4005_DHDH_A_20260720T164221_20260720T164258_P05023_N_F_J_001",
+      "fitRmsPx": null
+     },
+     {
+      "date": "2026-08-13",
+      "file": "nisar/nile-delta/gcov/007_D_073_20260813.webp",
+      "granule": "NISAR_L2_PR_GCOV_028_007_D_073_4005_DHDH_A_20260813T164220_20260813T164257_P05023_N_F_J_001",
+      "fitRmsPx": null
+     },
+     {
+      "date": "2026-08-25",
+      "file": "nisar/nile-delta/gcov/007_D_073_20260825.webp",
+      "granule": "NISAR_L2_PR_GCOV_029_007_D_073_4005_DHDH_A_20260825T164220_20260825T164257_P05023_N_F_J_001",
+      "fitRmsPx": 4.06
+     },
+     {
+      "date": "2026-09-06",
+      "file": "nisar/nile-delta/gcov/007_D_073_20260906.webp",
+      "granule": "NISAR_L2_PR_GCOV_030_007_D_073_4005_DHDH_A_20260906T164219_20260906T164257_P05023_N_F_J_001",
+      "fitRmsPx": null
+     },
+     {
+      "date": "2026-09-18",
+      "file": "nisar/nile-delta/gcov/007_D_073_20260918.webp",
+      "granule": "NISAR_L2_PR_GCOV_031_007_D_073_4005_DHDH_A_20260918T164219_20260918T164257_P05023_F_F_J_001",
+      "fitRmsPx": null
+     },
+     {
+      "date": "2026-09-30",
+      "file": "nisar/nile-delta/gcov/007_D_073_20260930.webp",
+      "granule": "NISAR_L2_PR_GCOV_032_007_D_073_4005_DHDH_A_20260930T164220_20260930T164257_P05023_N_F_J_001",
+      "fitRmsPx": 2.57
+     },
+     {
+      "date": "2026-10-12",
+      "file": "nisar/nile-delta/gcov/007_D_073_20261012.webp",
+      "granule": "NISAR_L2_PR_GCOV_033_007_D_073_4005_DHDH_A_20261012T164220_20261012T164257_P05023_N_F_J_001",
+      "fitRmsPx": null
+     }
+    ]
+   }
+  }
+ },
+ "generatedAt": "2026-11-06T17:08:45Z"
+}

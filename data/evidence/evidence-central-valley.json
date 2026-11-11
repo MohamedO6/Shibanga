@@ -1,0 +1,123 @@
+{
+  "schema": "fringe.evidence/1",
+  "eventId": "central-valley",
+  "eventName": "Central Valley",
+  "region": "California",
+  "episode": "Drought subsidence",
+  "climateLink": "substantive",
+  "generatedAt": "2026-11-06",
+  "dossier": {
+    "headline": "When drought cut the surface water, growers turned to the aquifer — and the aquifer's clays never fully come back.",
+    "sections": [
+      {
+        "icon": "eye",
+        "title": "What we observed",
+        "body": "Satellite radar and NASA/JPL analyses show the San Joaquin Valley sinking up to ~5 cm per month at the 2014–2015 drought peak, with rates above 300 mm/yr near Corcoran from January 2015 to September 2016. Three bundled GNSS stations (Nevada Geodetic Lab) independently measured the bowl with no radar involved: 54 cm of ground drop at CRCN in Corcoran (≈310 mm/yr, matching the published rate), and only 6–8 cm at P304 and P307 on the valley floor ~100 km to the northwest."
+      },
+      {
+        "icon": "lightbulb",
+        "title": "What it means",
+        "body": "The signal is aquifer compaction. Drought cut surface-water deliveries, growers drilled deeper wells, and the water pressure that holds the clay layers between sand aquifers open collapsed. Clays compact permanently: the aquifer cannot hold as much water as before, so the drought's cost carries into every future dry year."
+      },
+      {
+        "icon": "exclamationmark.2",
+        "title": "Why it matters",
+        "body": "The Central Valley is one of the most productive agricultural regions in the United States, and its water-moving infrastructure — canals, aqueducts, bridges, wells — was built for a stable ground level. Sinking ground cracks and deforms them, and permanently lost aquifer storage shrinks the buffer between wet years precisely as climate change makes droughts deeper and wet years less reliable."
+      },
+      {
+        "icon": "arrow.triangle.branch",
+        "title": "Possible drivers",
+        "body": "Groundwater pumping is the published primary driver. Secondary or local contributions include oil and gas extraction in some zones and natural compaction of young sediments. Wet years add temporary elastic uplift — the ground recovers a little, but the clay compaction does not."
+      },
+      {
+        "icon": "eye.slash",
+        "title": "What the evidence cannot tell us",
+        "body": "How to split each local signal between pumping, hydrocarbon extraction, and natural compaction; how compaction will respond to SGMA management and future droughts; and how representative three GNSS stations are of the whole basin. This app's scene is a physics rendering tuned to the published figures — not raw SAR pixels."
+      },
+      {
+        "icon": "arrow.forward",
+        "title": "What to investigate next",
+        "body": "Track subsidence against SGMA groundwater-sustainability plans using the free California DWR / TRE ALTAMIRA InSAR time series; watch NISAR's L-band coverage of the valley; and connect subsidence maps to canal and well infrastructure risk. Open question: how much storage can still be recovered."
+      }
+    ]
+  },
+  "interpretation": {
+    "public": "During the 2012–2016 drought, farms in California's Central Valley pumped so much groundwater that the valley floor visibly sank — up to about 5 cm in a single month near Corcoran. The clay layers under the valley collapsed like a squeezed sponge, and that collapse is permanent: the aquifer will never hold quite as much water as before. Radar satellites caught it because the sinking deforms the ground across hundreds of square kilometers, and a GPS station in Corcoran measured 54 cm of the drop in under two years with no radar at all — while stations ~100 km to the northwest sank only 6–8 cm.",
+    "student": "Drought reduced surface-water deliveries, so growers pumped groundwater faster than rain could refill it. Water pressure in the aquifer dropped and the interbedded clay layers compacted — mostly permanently. InSAR (comparing radar phase between satellite passes) mapped the sinking pattern; three bundled GNSS stations confirm the vertical motion on the ground between January 2015 and September 2016: −54 cm at the bowl's centre (CRCN, Corcoran) versus −6 cm (P304) and −8 cm (P307) ~100 km to the northwest. California's SGMA law (2014) now requires local agencies to manage pumping so this stops, because lost storage capacity cannot be bought back.",
+    "scientist": "Sentinel-1 and JPL/DWR InSAR time series document peak rates >300 mm/yr near Corcoran (Jan 2015–Sep 2016), consistent with elastic-plus-inelastic aquifer-system compaction under sustained heads decline during the 2012–2016 drought. Bundled NGL IGS20 daily GNSS solutions independently resolve vertical land motion over the same window of −0.54 m at CRCN (36.114N −119.568E; ≈310 mm/yr, after removing the NGL-logged 2016-04-20 equipment offset) and −0.08 m / −0.06 m at P307 (36.947N −120.058E) / P304 (36.739N −120.357E), outlining a bowl dominated by inelastic clay consolidation. The rendering here is an analytic bowl source tuned to the published figures, labeled MODELED; recovery during wet years is elastic and partial."
+  },
+  "dataset": {
+    "mission": "Sentinel-1A/1B (Copernicus), 12-day repeat; NISAR L-band from 2025",
+    "datasetId": "JPL/DWR Central Valley InSAR (Calif. DWR–TRE ALTAMIRA time series); Copernicus Sentinel-1 SLC",
+    "window": "Published window: Jan 2015 – Sep 2016 drought-pumping spike; in-app pass-pair window: 180 days",
+    "coverage": "San Joaquin Valley, California — Corcoran / Westlands area (~140 km scene)",
+    "gnss": "CRCN (bowl centre) + P307 + P304 (~100 km NW), Nevada Geodetic Lab daily IGS20 solutions, bundled as weekly means (see MEASURED ON THE GROUND chart)",
+    "processing": "Published: SBAS InSAR time series (JPL/DWR–TRE ALTAMIRA). In-app: analytic elastic bowl model (physical point source) tuned to reproduce the published peak rates; one fringe = λ/2 line-of-sight motion"
+  },
+  "items": [
+    {
+      "label": "MEASURED",
+      "kind": "GNSS position time series",
+      "detail": "Real daily IGS20 solutions from Nevada Geodetic Lab stations CRCN, P307 and P304, downsampled to weekly means, referenced to the first 30 days of the window; offsets at NGL-logged equipment events are removed (CRCN, 2016-04-20). Bundled charts show −54 cm (CRCN), −8 cm (P307) and −6 cm (P304) vertical over Jan 2015 – Sep 2016."
+    },
+    {
+      "label": "MEASURED",
+      "kind": "Published InSAR rates",
+      "detail": "Peak sinking ~5 cm/month during 2014–2015 (NASA JPL, Farr et al. 2015) and >300 mm/yr near Corcoran Jan 2015–Sep 2016 (NASA JPL / CA DWR). Shown as citations; not re-derived in-app."
+    },
+    {
+      "label": "MODELED",
+      "kind": "Interferogram scene",
+      "detail": "Physics rendering of an elastic bowl source (peak 30 cm over the 180-day window) tuned to the published figures. This is NOT a raw Sentinel-1 SAR image — every ring is computed on-device by the same model that produces the metrics."
+    },
+    {
+      "label": "DERIVED",
+      "kind": "Motion metrics and rate",
+      "detail": "Displacement, fringes, and rate readouts are computed on-device from the physical model (one fringe = λ/2 LOS). They track the model, not a downloaded data product."
+    },
+    {
+      "label": "LIVE",
+      "kind": "ESP32 demo ground sensor",
+      "detail": "Live accelerometer trace from the demo ESP32 ground station — an IoT ground-truth demo of a moving ground, at the demo site. It does not measure the same phenomenon or location as the satellite data."
+    }
+  ],
+  "limitations": [
+    "The interferogram is a physics rendering of published figures, not raw SAR pixels — no SAR processing is done in-app.",
+    "GNSS stations are point measurements; the basin deforms unevenly and three stations do not represent it fully.",
+    "Partition between groundwater pumping, hydrocarbon extraction, and natural compaction is not resolved by this evidence.",
+    "Elastic recovery in wet years is temporary; permanent compaction fractions vary by location and depth.",
+    "Published rates carry the spatial and temporal sampling limits of the 2015–2016 study windows."
+  ],
+  "sources": [
+    {
+      "title": "NASA JPL: 'Groundwater Pumping Causing Central Valley Sinking' (Farr et al. / NASA Earth Science News, up to 2 inches per month, 2014–2015)",
+      "publisher": "NASA Jet Propulsion Laboratory",
+      "year": "2015",
+      "url": "https://www.jpl.nasa.gov/news/nasa-data-show-drought-causing-major-groundwater-loss-in-california/"
+    },
+    {
+      "title": "California DWR – TRE ALTAMIRA InSAR ground-motion time series (free statewide data)",
+      "publisher": "California Department of Water Resources / TRE ALTAMIRA",
+      "year": "2023",
+      "url": "https://dwr-insar.cnra.ca.gov/"
+    },
+    {
+      "title": "Sustainable Groundwater Management Act (SGMA) — California's groundwater law requiring sustainable yield by 2040",
+      "publisher": "California Department of Water Resources",
+      "year": "2014",
+      "url": "https://water.ca.gov/programs/groundwater-management/sgma-groundwater-management"
+    },
+    {
+      "title": "USGS Central Valley Hydrologic Model (CVHM) — groundwater/subsidence modeling and GNSS data",
+      "publisher": "U.S. Geological Survey, California Water Science Center",
+      "year": "2015",
+      "url": "https://ca.water.usgs.gov/projects/central-valley/about-central-valley-hydrologic-model.html"
+    },
+    {
+      "title": "Nevada Geodetic Lab daily IGS20 position solutions and equipment-step log (stations CRCN, P307, P304)",
+      "publisher": "Nevada Geodetic Laboratory, University of Nevada, Reno",
+      "year": "2026",
+      "url": "https://geodesy.unr.edu/"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema": "fringe.evidence/1",
+  "eventId": "mexico-city",
+  "eventName": "Mexico City",
+  "region": "Mexico",
+  "episode": "Aquifer subsidence",
+  "climateLink": "condensed",
+  "generatedAt": "2026-10-22",
+  "dossier": {
+    "headline": "A megacity draining its aquifer on an old lakebed — the drying climate tightens the squeeze.",
+    "sections": [
+      {
+        "icon": "eye",
+        "title": "What we observed",
+        "body": "NISAR L-band's first look (Oct 2025 – Jan 2026) mapped neighborhoods sinking more than 2 cm per month; historical peak rates reached ~35 cm/yr in the 1990s–2000s. The mechanism is published and long-established: groundwater pumping under the clays of ancient Lake Texcoco."
+      },
+      {
+        "icon": "lightbulb",
+        "title": "What it means",
+        "body": "Like the Central Valley, this is aquifer compaction — but under one of the world's largest cities, so the damage shows up as cracked metro lines, broken pipes and leaning buildings. Climate change deepens the driver: longer droughts push the city to pump more, while harder rains must drain through a distorted, sinking system."
+      },
+      {
+        "icon": "eye.slash",
+        "title": "What the evidence cannot tell us",
+        "body": "How much subsidence recent management actions have avoided; the exact compaction split between depth layers; and how NISAR's early 2025–2026 rates compare to historical peaks without the same processing chain. This app's scene is a physics rendering tuned to published figures — not raw SAR pixels."
+      }
+    ]
+  },
+  "interpretation": {
+    "public": "Mexico City sits on the clay of an ancient lake and drinks from the aquifer below it. Every liter pumped lets the clay compress a little, and the city sinks — over 2 cm in a month in the newest radar maps. Droughts make cities pump harder, so a hotter, drier climate turns directly into sinking streets and broken pipes.",
+    "student": "Pumping lowers water pressure in the aquifer, and the soft lakebed clays compact — mostly permanently. NISAR (L-band radar, launched 2024–25) mapped sinking above 2 cm/month in Oct 2025–Jan 2026; historical peaks hit ~35 cm/yr. The same physics as the Central Valley case, but the 'infrastructure' being deformed is a megacity.",
+    "scientist": "InSAR time series (NISAR L-band, Oct 2025–Jan 2026; historical SBAS studies) resolve differential settlement up to >2 cm/mo over compressible Texcoco lakebed clays, consistent with decades of published rates (~5–35 cm/yr) driven by heads decline from aquifer extraction. In-app scene: analytic bowl (MODELED), peak 30 cm over a 360-day window."
+  },
+  "dataset": {
+    "mission": "NISAR L-band (2025–26 first look); historical Sentinel-1/Envisat/ERS for published series",
+    "datasetId": "NASA/JPL NISAR early results; published InSAR literature rates",
+    "window": "Published: Oct 2025 – Jan 2026 NISAR look; historical 1990s–2020s series; in-app pass-pair window: 360 days",
+    "coverage": "Mexico City metro on the former Lake Texcoco bed (~55 km scene)",
+    "gnss": "Not bundled for this event — published rates cited instead; regional CORS coverage is sparse relative to the deformation gradient",
+    "processing": "Published: multi-mission InSAR time series. In-app: analytic elastic bowl model tuned to the published peak rates; one fringe = λ/2 line-of-sight motion"
+  },
+  "items": [
+    {
+      "label": "MEASURED",
+      "kind": "Published InSAR rates",
+      "detail": ">2 cm/mo mapped by NISAR L-band (Oct 2025–Jan 2026, NASA/JPL) and ~35 cm/yr historical peaks. Shown as citations; not re-derived in-app."
+    },
+    {
+      "label": "MODELED",
+      "kind": "Interferogram scene",
+      "detail": "Physics rendering of an elastic bowl source (peak 30 cm over the 360-day window) tuned to published rates. NOT a raw SAR image — computed on-device."
+    },
+    {
+      "label": "DERIVED",
+      "kind": "Motion metrics and rate",
+      "detail": "Computed on-device from the physical model (one fringe = λ/2 LOS). Tracks the model, not a downloaded product."
+    },
+    {
+      "label": "LIVE",
+      "kind": "ESP32 demo ground sensor",
+      "detail": "Live accelerometer from the demo ESP32 ground station — IoT demo at the demo site; not a satellite measurement of this event."
+    }
+  ],
+  "limitations": [
+    "The interferogram is a physics rendering of published figures, not raw SAR pixels — no SAR processing is done in-app.",
+    "No bundled GNSS chart for this event; cited rates come from the published literature.",
+    "Depth-partitioned compaction and management effects are not resolved by this evidence."
+  ],
+  "sources": [
+    {
+      "title": "NASA/JPL: NISAR first observations of Mexico City subsidence (2025–2026)",
+      "publisher": "NASA / Jet Propulsion Laboratory",
+      "year": "2026",
+      "url": "https://www.jpl.nasa.gov/"
+    },
+    {
+      "title": "Land subsidence in Mexico City from InSAR (historical rates and mechanism)",
+      "publisher": "Published InSAR literature (see app citation)",
+      "year": "2020",
+      "url": null
+    }
+  ]
+}

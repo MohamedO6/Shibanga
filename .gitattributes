@@ -1,0 +1,12 @@
+# Evidence records, proofs and scientific bundles must retain their exact bytes.
+data/** -text whitespace=cr-at-eol
+assets/** -text whitespace=cr-at-eol
+
+# Source line endings are consistent across Windows and CI.
+*.js text eol=lf
+*.mjs text eol=lf
+*.py text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
