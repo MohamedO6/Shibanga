@@ -13,7 +13,7 @@ falling notes Undula plays when the land sinks. One place, the Nile Delta: from 
 
 | Time | Shot | Source | Sound |
 |---|---|---|---|
-| 0-3 s | Black. Text: *"The ground under 50 million people is moving."* | Text | `sound/ground-heartbeat.wav` |
+| 0-3 s | Black. Text: *"The ground under more than 40 million people is moving."* | Text | `sound/ground-heartbeat.wav` |
 | 3-7 s | Dawn over a flooded rice field in the Nile Delta. A barefoot farmer; at his feet a thin crack in the mud slowly widens | Generated (cinematic) | Heartbeat closer |
 | 7-10 s | Camera rises fast into space. A radar satellite with a large golden mesh antenna glides past, a soft scanning wave toward Earth | Generated (cinematic) | Soft sweep |
 | 10-14 s | The Undula opening mission screen, then the Nile Delta map with the rainbow rings growing | `clips/01-opening.mp4`, `clips/02-delta-rings.mp4` | Heartbeat turns into falling notes: `sound/heartbeat-to-notes.wav` |

@@ -47,7 +47,7 @@ Text, exactly:
 
 ## Step 3: assemble the 30-second film (follow `video/README.md`)
 
-- 0-3 s: black, text *"The ground under 50 million people is moving."*, sound `video/sound/ground-heartbeat.wav`.
+- 0-3 s: black, text *"The ground under more than 40 million people is moving."*, sound `video/sound/ground-heartbeat.wav`.
 - 3-7 s: shot 1 (farmer). 7-10 s: shot 2 (rise to space).
 - 10-14 s: real app, `video/clips/01-opening.mp4` (first 2 s) then `video/clips/02-delta-rings.mp4`; sound `video/sound/heartbeat-to-notes.wav`.
 - 14-18 s: real app, `video/clips/04-real-nisar.mp4`.
