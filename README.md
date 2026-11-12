@@ -3,13 +3,17 @@
 An animated 7-slide deck that opens with the team's Egyptian hook film (55 s), then carries on with a 3D globe and
 the NISAR satellite. The satellite flies across between slides and its radar sweep reveals each new slide.
 
-**Just the film:** [`undula-hook-masry.mp4`](undula-hook-masry.mp4) (the same file plays at the start of the deck as
-`assets/opening.mp4`). Its source is in `film/` (a canvas page rendered frame by frame).
+**Just the film:** [`assets/opening.mp4`](assets/opening.mp4) (it plays at the start of the deck). Its source is in `film/` (a canvas page rendered frame by frame).
 
 ## Run it
 
-Double-click `present.bat` (or run `python serve.py`). It opens `http://127.0.0.1:5190/` in the browser.
-Press **F** for full screen. Everything works offline: fonts, clips and the film are all local.
+**Easiest:** double-click `index.html` (Chrome or Edge). It works offline, with no server and no internet.
+Press **F** for full screen.
+
+`present.bat` (or `python serve.py`) does the same through a small local server and also serves the live app at
+`/app/` for the **L** key.
+
+If it stutters: use Chrome or Edge with hardware acceleration on, plug the laptop in, close other tabs.
 
 ## Keys
 

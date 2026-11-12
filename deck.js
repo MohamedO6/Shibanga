@@ -55,10 +55,12 @@ const NOTES = [
 const gcv = $("#globe"), fcv = $("#fx");
 const gl = gcv.getContext("webgl", { antialias: true, premultipliedAlpha: false, preserveDrawingBuffer: EXPORT !== null });
 const fx = fcv.getContext("2d");
-let pxScale = 1;
+let pxScale = 1, gScale = 1;
 function sizeCanvases() {
-  pxScale = Math.min(2, scale * (devicePixelRatio || 1));
-  for (const c of [gcv, fcv]) { c.width = Math.round(W * pxScale); c.height = Math.round(H * pxScale); }
+  pxScale = Math.min(1, scale * (devicePixelRatio || 1));
+  gScale = pxScale * (EXPORT !== null ? 1 : 0.75);
+  fcv.width = Math.round(W * pxScale); fcv.height = Math.round(H * pxScale);
+  gcv.width = Math.round(W * gScale); gcv.height = Math.round(H * gScale);
   gl && gl.viewport(0, 0, gcv.width, gcv.height);
 }
 const VS = `attribute vec2 p; void main(){ gl_Position = vec4(p,0.,1.); }`;
@@ -110,7 +112,7 @@ function initGL() {
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
     gl.uniform1f(U.uHas, 1); texReady = true;
   };
-  img.src = "assets/earth-2k.jpg";
+  img.src = window.EARTH_DATA || "assets/earth-2k.jpg";
 }
 let texReady = false;
 // camera spring state
@@ -136,7 +138,7 @@ function project(lat, lon) {
 }
 function drawGlobe(t) {
   if (!gl || !prog) return;
-  gl.uniform2f(U.uRes, gcv.width, gcv.height); gl.uniform1f(U.uPx, pxScale);
+  gl.uniform2f(U.uRes, gcv.width, gcv.height); gl.uniform1f(U.uPx, gScale);
   gl.uniform2f(U.uC, cam.cx, cam.cy); gl.uniform1f(U.uR, Math.max(cam.R, 1));
   gl.uniform1f(U.uLat, cam.lat * D2R); gl.uniform1f(U.uLon, cam.lon * D2R);
   gl.uniform1f(U.uDim, clamp(cam.dim, 0, 1.2)); gl.uniform1f(U.uT, t); gl.uniform1i(U.uTex, 0);
@@ -366,27 +368,26 @@ film.addEventListener("ended", () => { if (cur === 0) go(1); });
 $("#begin").addEventListener("click", (e) => { e.stopPropagation(); startIntro(); });
 
 // ---------- ground sound ----------
-let actx = null, analyser = null, srcNode = null, soundBuf = null, playing = false;
-async function toggleSound() {
+let playing = false;
+const groundAudio = new Audio("assets/sound/ground-sinking-notes.wav");
+groundAudio.preload = "auto";
+groundAudio.addEventListener("ended", () => { playing = false; $("#playSound").classList.remove("on"); });
+function toggleSound() {
   const btn = $("#playSound");
-  if (!actx) { actx = new AudioContext(); analyser = actx.createAnalyser(); analyser.fftSize = 512; analyser.connect(actx.destination); }
-  if (playing) { srcNode?.stop(); return; }
-  if (!soundBuf) soundBuf = await fetch("assets/sound/ground-sinking-notes.wav").then((r) => r.arrayBuffer()).then((b) => actx.decodeAudioData(b));
-  srcNode = actx.createBufferSource(); srcNode.buffer = soundBuf; srcNode.connect(analyser); srcNode.start();
+  if (playing) { groundAudio.pause(); groundAudio.currentTime = 0; playing = false; btn.classList.remove("on"); return; }
+  groundAudio.currentTime = 0; groundAudio.play().catch(() => {});
   playing = true; btn.classList.add("on");
-  srcNode.onended = () => { playing = false; btn.classList.remove("on"); };
 }
 $("#playSound").addEventListener("click", (e) => { e.stopPropagation(); toggleSound(); });
 const wave = $("#wave"), wctx = wave.getContext("2d");
 function drawWave(t) {
   const w = wave.width, h = wave.height; wctx.clearRect(0, 0, w, h);
-  const bins = 64, data = new Uint8Array(analyser ? analyser.frequencyBinCount : 256);
-  if (analyser && playing) analyser.getByteFrequencyData(data);
+  const bins = 64, ph = groundAudio.currentTime;
   const g = wctx.createLinearGradient(0, 0, w, 0);
   ["#ff5d73", "#ffc24d", "#7cf28b", "#4cc9ff", "#b48cff"].forEach((c, i) => g.addColorStop(i / 4, c));
   wctx.fillStyle = g;
   for (let i = 0; i < bins; i++) {
-    const v = playing ? data[Math.floor(i * data.length / bins / 1.6)] / 255 : (0.08 + 0.06 * Math.sin(t * 2 + i * 0.4));
+    const v = playing ? 0.18 + 0.8 * Math.abs(Math.sin(ph * 7 + i * 0.37) * Math.sin(ph * 2.3 + i * 0.11)) * Math.exp(-((ph * 3) % 1) * 1.5) : (0.08 + 0.06 * Math.sin(t * 2 + i * 0.4));
     const bh = Math.max(4, v * h * 0.95), bw = w / bins - 4;
     wctx.globalAlpha = playing ? 1 : .5;
     wctx.beginPath(); wctx.roundRect(i * (w / bins) + 2, (h - bh) / 2, bw, bh, 3); wctx.fill();
@@ -443,13 +444,20 @@ stage.addEventListener("click", (e) => { if (e.target.closest("button, a, li, #l
 let idleT = 0; addEventListener("mousemove", () => { document.body.classList.remove("idle"); clearTimeout(idleT); idleT = setTimeout(() => document.body.classList.add("idle"), 2200); });
 
 // ---------- main loop ----------
-let last = performance.now(), t = 0;
+let last = performance.now(), t = 0, frameN = 0;
 function loop(now) {
   const dt = Math.min((now - last) / 1000, 0.05); last = now; t += dt;
   if (camTarget.spin) spinLon += camTarget.spin * dt;
-  stepCam(dt); drawGlobe(t); drawFx(t, dt);
-  if (cur === 5) drawWave(t);
-  if (cur === 3) drawMini(t);
+  frameN++;
+  const filmOnly = cur === 0 && !busy;
+  if (!filmOnly) {
+    stepCam(dt);
+    const moving = busy || Math.abs(camV.cx) + Math.abs(camV.cy) + Math.abs(camV.R) + Math.abs(camV.lat) + Math.abs(camV.lon) > 0.5 || camTarget.spin;
+    if (moving || frameN % 2 === 0) drawGlobe(t);
+    drawFx(t, dt);
+    if (cur === 5) drawWave(t);
+    if (cur === 3 && frameN % 2 === 0) drawMini(t);
+  }
   requestAnimationFrame(loop);
 }
 
