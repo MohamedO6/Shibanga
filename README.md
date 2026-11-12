@@ -1,6 +1,6 @@
 # Undula presentation (Team Shiblanga)
 
-An animated 7-slide deck that opens with the team's Egyptian hook film (55 s), then carries on with a 3D globe and
+An animated 9-slide deck that opens with the team's Egyptian hook film (55 s, a fast tour of the app's features), then carries on with a 3D globe and
 the NISAR satellite. The satellite flies across between slides and its radar sweep reveals each new slide.
 
 **Just the film:** [`assets/opening.mp4`](assets/opening.mp4) (it plays at the start of the deck). Its source is in `film/` (a canvas page rendered frame by frame).
@@ -21,7 +21,7 @@ If it stutters: use Chrome or Edge with hardware acceleration on, plug the lapto
 |---|---|
 | Space / → / click | Next (first press starts the film; the film hands over to the title by itself) |
 | ← | Back |
-| 1-7 | Jump to a slide |
+| 1-9 | Jump to a slide |
 | S | Play the Nile Delta's ground sound (slide 5) |
 | L | Open the live Undula app inside the deck (served from `../Undula`); Esc closes it |
 | N | Speaker notes |
@@ -34,14 +34,17 @@ On slide 5, the line "More than half of it is the land sinking" appears on the n
 1. Opening film (`assets/opening.mp4`), then the title: Undula, the challenge, the team.
 2. The problem: the Nile Delta sinking up to 11 mm/yr, sea rising 3.4 mm/yr, 40%+ of Egyptians on the Delta.
 3. NISAR: what it is and how two radar passes become rainbow rings.
-4. **See** (Mohamed): ten places, rings, real NISAR, any spot on Earth.
-5. **Hear & Imagine** (Omar): the ground sound and Sea 2100 (3,491 vs 1,557 km²).
-6. **Explore & Trust** (Islam): Astrounit, then and now, GPS, and the open data behind it.
-7. Why it matters, plus a QR code to try it.
+4. Around the world: the ten places on a world map (5 sinking, 3 volcanoes, 2 faults).
+5. **See** (Mohamed): ten places, rings, real NISAR, any spot on Earth.
+6. **Hear & Imagine** (Omar): the ground sound and Sea 2100 (3,491 vs 1,557 km²).
+7. **Explore & Trust** (Islam): Astrounit, then and now, GPS, and the open data behind it.
+8. Nine ways to feel the ground move: every feature in one view.
+9. Why it matters, plus a QR code to try it.
 
 ## For the Space Apps submission
 
-`Undula-Team-Shiblanga.pdf` is the same 7 slides as a PDF. The rules allow up to 7 slides including the title, in
+`Undula-Team-Shiblanga.pdf` is the 7-slide version for submission (slides 1, 2, 3, 5, 6, 7, 9).
+`Undula-Team-Shiblanga-full.pdf` has all 9 slides for the local judges. The rules allow up to 7 slides including the title, in
 English, with the team name, members and challenge. Host it publicly (Google Drive or similar) and submit the link.
 
 ## Change things

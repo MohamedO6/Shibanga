@@ -246,3 +246,39 @@ body.export .chips li span { max-height: 90px; opacity: 1; margin-top: 6px; }
 body.export .screen-body video { transition: none !important; }
 body.export .chips .bar { display: none; }
 body.export .delta-label { opacity: 1; transition: none; }
+
+/* world map */
+.world .feat-head h2 { font-size: 64px; }
+.map { position: absolute; left: 110px; top: 300px; width: 1700px; height: 567px; overflow: hidden; border-radius: 28px; border: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 40px 120px rgba(0,0,0,.6), 0 0 80px rgba(52,226,238,.1); }
+.map img { position: absolute; left: 0; top: -71px; width: 1700px; height: 850px; filter: saturate(.85) brightness(.62); }
+.pin { position: absolute; width: 0; height: 0; --c: var(--coral); }
+.pin.volc { --c: var(--gold); } .pin.fault { --c: var(--violet); }
+.pin i { position: absolute; left: -9px; top: -9px; width: 18px; height: 18px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 3px rgba(5,8,15,.7), 0 0 22px var(--c); }
+.pin i::before, .pin i::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--c); animation: ping 2.4s ease-out infinite; }
+.pin i::after { animation-delay: 1.2s; }
+@keyframes ping { from { transform: scale(.6); opacity: .9; } to { transform: scale(3.2); opacity: 0; } }
+.pin span { position: absolute; white-space: nowrap; font: 650 20px var(--display); padding: 5px 12px; border-radius: 99px; background: rgba(5,8,15,.82); border: 1px solid rgba(255,255,255,.16); }
+.pin.lab-r span { left: 18px; top: -17px; } .pin.lab-l span { right: 18px; top: -17px; }
+.pin.lab-t span { left: -60px; top: -52px; } .pin.lab-b span { left: -50px; top: 16px; }
+.legend { position: absolute; left: 110px; right: 110px; top: 900px; display: flex; gap: 18px; }
+.lg { flex: 1; display: flex; align-items: center; gap: 14px; padding: 18px 22px; border-radius: 20px; background: rgba(19,30,51,.75); border: 1px solid rgba(255,255,255,.08); font-size: 22px; color: var(--dim); --c: var(--coral); }
+.lg.volc { --c: var(--gold); } .lg.fault { --c: var(--violet); }
+.lg i { width: 16px; height: 16px; border-radius: 50%; background: var(--c); box-shadow: 0 0 16px var(--c); flex: none; }
+.lg b { font: 700 40px var(--display); color: var(--c); }
+
+/* only in Undula */
+.tiles { position: absolute; left: 110px; top: 250px; width: 1700px; height: 760px; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 22px; }
+.tile { position: relative; overflow: hidden; border-radius: 22px; border: 1px solid rgba(255,255,255,.1); background: #0b1120; padding: 0 24px 20px; display: flex; flex-direction: column; justify-content: flex-end; }
+.tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .75; transform: scale(1.04); transition: transform 6s ease-out, opacity .4s; }
+.unique.on .tile.in img { transform: scale(1.14); }
+.tile::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,8,15,0) 20%, rgba(5,8,15,.92) 78%); }
+.tile > * { position: relative; }
+.tile em { position: absolute; top: 16px; left: 20px; font: 600 18px var(--mono); font-style: normal; color: var(--cyan); padding: 4px 10px; border-radius: 99px; background: rgba(5,8,15,.75); }
+.tile b { font: 700 30px/1.15 var(--display); }
+.tile span { font-size: 19px; color: var(--dim); line-height: 1.35; margin-top: 4px; }
+body.export .tile img { transform: scale(1.06); transition: none; }
+.tile img { z-index: 0; opacity: .7; }
+.tile::before { z-index: 1; background: linear-gradient(180deg, rgba(5,8,15,0) 15%, rgba(5,8,15,.55) 45%, rgba(5,8,15,.95) 80%); }
+.tile > :not(img) { z-index: 2; }
+.tile em { z-index: 2; }

@@ -35,9 +35,11 @@ const CAM = [
   { cx: 960, cy: 1720, R: 1000, lat: -13, lon: 30, dim: 1, spin: 0 },        // title
   { cx: 1400, cy: 560, R: 900, lat: 30.6, lon: 31.2, dim: 1, spin: 0 },      // problem: Nile Delta
   { cx: 1430, cy: 540, R: 280, lat: 18, lon: 31, dim: 1, spin: 5 },          // NISAR orbit
+  { cx: 960, cy: 2300, R: 1100, lat: 0, lon: 31, dim: .3, spin: 0 },         // world (map slide)
   { cx: 1650, cy: 1500, R: 1050, lat: 5, lon: 20, dim: .45, spin: 0 },       // see
   { cx: 260, cy: 1500, R: 1000, lat: 10, lon: 40, dim: .45, spin: 0 },       // hear
   { cx: 960, cy: 2050, R: 1200, lat: -20, lon: 31, dim: .5, spin: 0 },       // trust
+  { cx: 960, cy: 2300, R: 1200, lat: -20, lon: 31, dim: .3, spin: 0 },       // unique
   { cx: 960, cy: 2080, R: 1100, lat: -22, lon: 31, dim: 1, spin: 0 },        // close
 ];
 const NOTES = [
@@ -45,9 +47,11 @@ const NOTES = [
   "We're team Shiblanga from Egypt. Undula turns NISAR radar into something anyone can see, hear and understand.",
   "The Nile Delta is home to more than 40% of Egyptians. It sinks up to 11 mm a year while the sea rises 3.4 mm. Too slow to see.",
   "NISAR is the NASA-ISRO radar satellite. Every 12 days, day and night, through clouds. Comparing two passes gives rainbow rings: each cycle is about 12 cm of motion.",
+  "Ten real places on a world map: five where the ground sinks, three volcanoes, two faults. NISAR sees all of them.",
   "Mohamed: ten real places, rings growing, real NISAR passes from 2026, and NISAR's latest image of any spot on Earth. Press L to open the live app.",
   "Omar: press S (or the button) to hear the Delta sink. Then Sea 2100: press → to reveal that more than half of it is the land sinking.",
   "Islam: Astrounit walks the map, Then & Now shows real satellite photos, GPS stations sit beside the radar. All of it built on open space data.",
+  "Everything in one app: nine ways to see, hear and check how the ground moves. Each tile is a real part of Undula.",
   "Close: scan the QR code to try Undula. Thank you.",
 ];
 
@@ -181,15 +185,15 @@ function drawFx(t, dt) {
   fx.setTransform(pxScale, 0, 0, pxScale, 0, 0);
   fx.clearRect(0, 0, W, H);
   const s = cur;
-  if (s === 1 || s === 2 || s === 7) {
+  const SC = slides[s].classList; if (SC.contains("title-slide") || SC.contains("problem") || SC.contains("close")) {
     const p = project(DELTA[0], DELTA[1]);
     if (p.z > 0.05 && p.y < H + 40) {
-      const a = clamp(cam.dim, 0, 1) * (s === 2 ? 1 : .8);
-      drawRings(p.x, p.y, t, s === 2 ? 170 : 90, a);
-      if (s === 2) { const lab = $("#deltaLabel"); lab.style.left = p.x + 30 + "px"; lab.style.top = p.y + "px"; }
+      const a = clamp(cam.dim, 0, 1) * (SC.contains("problem") ? 1 : .8);
+      drawRings(p.x, p.y, t, SC.contains("problem") ? 170 : 90, a);
+      if (SC.contains("problem")) { const lab = $("#deltaLabel"); lab.style.left = p.x + 30 + "px"; lab.style.top = p.y + "px"; }
     }
   }
-  if (s === 3) {
+  if (slides[s].classList.contains("nisar")) {
     orbitT += dt * 0.32;
     const u = orbitT % (Math.PI * 2);
     drawOrbit(t, .8, false);
@@ -250,7 +254,7 @@ satImg.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(SAT_SVG.re
 // ---------- deck state ----------
 let cur = 0, busy = false, stepIdx = 0;
 const dots = $("#dots");
-const DOT_SLIDES = [1, 2, 3, 4, 5, 6, 7];
+const DOT_SLIDES = slides.map((_, i) => i).filter((i) => i > 0);
 DOT_SLIDES.forEach((s, i) => { const b = document.createElement("button"); b.title = slides[s].dataset.title; b.addEventListener("click", () => go(s)); dots.append(b); });
 function paintDots() { $$("button", dots).forEach((b, i) => { b.classList.toggle("cur", DOT_SLIDES[i] === Math.max(cur, 1)); b.classList.toggle("done", DOT_SLIDES[i] < cur); }); }
 
@@ -321,7 +325,7 @@ function go(to, opts = {}) {
   revealAll(B, false); B.classList.add("on"); A.classList.add("leaving");
   activateVideos(B, true);
   camTarget = CAM[to]; spinLon = 0; cur = to; paintDots(); updateNotes();
-  if (to === 3) orbitT = 0.25;
+  if (slides[to].classList.contains("nisar")) orbitT = 0.25;
   runCounts(B);
   const els = animEls(B);
   const dur = opts.fast ? 900 : 1700, t0 = performance.now();
@@ -436,9 +440,9 @@ addEventListener("keydown", (e) => {
   else if (k === "f") { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen(); }
   else if (k === "n") { notes.hidden = !notes.hidden; }
   else if (k === "l") toggleLive(true);
-  else if (k === "s" && cur === 5) toggleSound();
+  else if (k === "s" && slides[cur].classList.contains("hear")) toggleSound();
   else if (k === "home") go(1, { fast: true });
-  else if (/^[1-7]$/.test(k)) go(Number(k), { fast: true });
+  else if (/^[1-9]$/.test(k) && Number(k) < slides.length) go(Number(k), { fast: true });
 });
 stage.addEventListener("click", (e) => { if (e.target.closest("button, a, li, #live")) return; next(); });
 let idleT = 0; addEventListener("mousemove", () => { document.body.classList.remove("idle"); clearTimeout(idleT); idleT = setTimeout(() => document.body.classList.add("idle"), 2200); });
@@ -455,8 +459,8 @@ function loop(now) {
     const moving = busy || Math.abs(camV.cx) + Math.abs(camV.cy) + Math.abs(camV.R) + Math.abs(camV.lat) + Math.abs(camV.lon) > 0.5 || camTarget.spin;
     if (moving || frameN % 2 === 0) drawGlobe(t);
     drawFx(t, dt);
-    if (cur === 5) drawWave(t);
-    if (cur === 3 && frameN % 2 === 0) drawMini(t);
+    if (slides[cur].classList.contains("hear")) drawWave(t);
+    if (slides[cur].classList.contains("nisar") && frameN % 2 === 0) drawMini(t);
   }
   requestAnimationFrame(loop);
 }
@@ -468,11 +472,11 @@ if (EXPORT !== null) {
   cur = clamp(EXPORT, 1, slides.length - 1); camTarget = CAM[cur]; snapCam();
   slides[cur].classList.add("on"); revealAll(slides[cur], true); for (const s of $$("[data-step]", slides[cur])) s.classList.add("in");
   runCounts(slides[cur]); activateVideos(slides[cur], true);
-  if (cur === 3) orbitT = 0.5;
+  if (slides[cur].classList.contains("nisar")) orbitT = 0.5;
   window.__ready = async () => {
     await document.fonts.ready;
-    if (cur === 4) { see.active(false); $$("#seeScreen video").forEach((v, k) => { v.classList.toggle("cur", v.hasAttribute("data-export")); }); $$("#seeChips li").forEach((c, k) => c.classList.toggle("cur", k === 1)); }
-    const vids = $$("video[data-src]", slides[cur]).filter((v) => cur !== 4 || v.hasAttribute("data-export"));
+    if (slides[cur].classList.contains("see")) { see.active(false); $$("#seeScreen video").forEach((v, k) => { v.classList.toggle("cur", v.hasAttribute("data-export")); }); $$("#seeChips li").forEach((c, k) => c.classList.toggle("cur", k === 1)); }
+    const vids = $$("video[data-src]", slides[cur]).filter((v) => !slides[cur].classList.contains("see") || v.hasAttribute("data-export"));
     await Promise.all(vids.map((v) => new Promise((r) => {
       if (!v.src) v.src = v.dataset.src;
       const seek = () => { v.pause(); v.addEventListener("seeked", () => setTimeout(r, 150), { once: true }); v.currentTime = Number(v.dataset.poster ?? v.dataset.start ?? 0); };
@@ -480,7 +484,7 @@ if (EXPORT !== null) {
       setTimeout(r, 15000);
     })));
     await new Promise((r) => { const w = () => texReady ? r() : setTimeout(w, 50); w(); });
-    drawGlobe(t); drawFx(t, 0); if (cur === 3) drawMini(1.2); if (cur === 5) drawWave(1);
+    drawGlobe(t); drawFx(t, 0); if (slides[cur].classList.contains("nisar")) drawMini(1.2); if (slides[cur].classList.contains("hear")) drawWave(1);
     return true;
   };
 } else {

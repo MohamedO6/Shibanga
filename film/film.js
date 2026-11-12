@@ -168,9 +168,10 @@ const lineWords = TL.lines.map((l) => {
   return { ...l, words, times };
 });
 function caption(t) {
-  const L = lineWords.find((l) => t >= l.start - 0.1 && t <= l.end + 0.35);
+  const L = [...lineWords].reverse().find((l) => t >= l.start - 0.1 && t <= l.end + 0.35);
   if (!L || L.id === "ALL") return;
-  const a = clamp((t - (L.start - 0.1)) / .2, 0, 1) * clamp((L.end + 0.35 - t) / .25, 0, 1);
+  const nxt = lineWords[lineWords.indexOf(L) + 1], stop = nxt && nxt.start - 0.1 < L.end + 0.35 ? nxt.start - 0.1 : L.end + 0.35;
+  const a = clamp((t - (L.start - 0.1)) / .2, 0, 1) * clamp((stop - t) / .12, 0, 1);
   ctx.save(); ctx.font = "700 44px Cairo"; ctx.direction = "rtl"; ctx.textBaseline = "middle";
   const space = ctx.measureText(" ").width, maxW = 1120;
   const rows = [[]]; let rw = 0;
