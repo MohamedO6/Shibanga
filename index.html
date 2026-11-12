@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Undula · Team Shiblanga</title>
+<link rel="icon" href="assets/brand/undula-mark.svg">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+<div id="viewport">
+<div id="stage">
+  <canvas id="globe" aria-hidden="true"></canvas>
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div id="shade" aria-hidden="true"></div>
+
+  <!-- ============ 0 · Opening film ============ -->
+  <section class="slide intro" data-num="1" data-title="Opening film">
+    <video id="opening" src="assets/opening.mp4" preload="auto" playsinline></video>
+    <button class="begin" id="begin">
+      <span class="begin-ring"></span>
+      <span class="begin-label">Begin transmission</span>
+      <span class="begin-hint">click or press space</span>
+    </button>
+  </section>
+
+  <!-- ============ 1 · Title ============ -->
+  <section class="slide title-slide" data-num="1" data-title="Undula">
+    <div class="title-block">
+      <div class="kicker" data-a>NASA Space Apps 2026 · Dancing with the SARs</div>
+      <h1 class="brand" data-a><img src="assets/brand/undula-mark.svg" alt=""><span>Undula</span></h1>
+      <p class="tagline" data-a>Hear the ground move.</p>
+      <p class="lede" data-a>NASA-ISRO <b>NISAR</b> radar, turned into something anyone can see, hear and understand.</p>
+      <p class="team-tag" data-a>Team <b>Shiblanga</b> · Egypt</p>
+    </div>
+    <div class="crew" data-a>
+      <figure class="astro" style="--i:0"><img src="assets/team/islam.png" alt="Islam as an astronaut"><figcaption>Islam</figcaption></figure>
+      <figure class="astro mid" style="--i:1"><img src="assets/team/mohamed.png" alt="Mohamed as an astronaut"><figcaption>Mohamed</figcaption></figure>
+      <figure class="astro" style="--i:2"><img src="assets/team/omar.png" alt="Omar as an astronaut"><figcaption>Omar</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ============ 2 · Problem ============ -->
+  <section class="slide problem" data-num="2" data-title="The problem">
+    <div class="col-left">
+      <div class="kicker" data-a>The problem</div>
+      <h2 data-a>The ground under more than <span class="hl">40 million</span> people is moving.</h2>
+      <p class="sub" data-a>The Nile Delta is sinking while the sea rises. Too slowly to see, fast enough to matter.</p>
+      <div class="stats">
+        <div class="stat coral" data-a><div class="v"><span data-count="11">0</span><small> mm/yr</small></div><div class="l">The Delta sinking, up to<br><em>Damietta</em></div></div>
+        <div class="stat cyan" data-a><div class="v"><span data-count="3.4" data-dec="1">0</span><small> mm/yr</small></div><div class="l">The sea rising<br><em>Mediterranean</em></div></div>
+        <div class="stat gold" data-a><div class="v"><span data-count="40">0</span><small>%+</small></div><div class="l">of Egyptians live<br>on the Delta</div></div>
+      </div>
+      <p class="source" data-a>Sinking and sea-rise rates: Hassan et al., 2025.</p>
+    </div>
+    <div class="delta-label" id="deltaLabel"><span class="dot"></span>Nile Delta, Egypt</div>
+  </section>
+
+  <!-- ============ 3 · NISAR ============ -->
+  <section class="slide nisar" data-num="3" data-title="NISAR">
+    <div class="col-left">
+      <div class="kicker" data-a>The eye in the sky</div>
+      <h2 data-a><span class="hl">NISAR</span> feels the ground move.</h2>
+      <ul class="facts">
+        <li data-a><span class="ic">◎</span><div><b>NASA and ISRO radar satellite</b><span>A 12-metre antenna, L-band and S-band radar.</span></div></li>
+        <li data-a><span class="ic">↻</span><div><b>Every 12 days</b><span>Images nearly all of Earth's land and ice.</span></div></li>
+        <li data-a><span class="ic">☾</span><div><b>Day and night, through clouds</b><span>Radar brings its own light.</span></div></li>
+        <li data-a class="fringe-fact"><canvas class="mini-fringe" width="150" height="150"></canvas><div><b>Two passes, compared</b><span>Each rainbow cycle is about <b>12 cm</b> of motion toward or away from the satellite.</span></div></li>
+      </ul>
+    </div>
+    <div class="orbit-label" data-a>NISAR · Sun-synchronous orbit</div>
+  </section>
+
+  <!-- ============ 4 · SEE ============ -->
+  <section class="slide feature see" data-num="4" data-title="See">
+    <div class="feat-head">
+      <div class="kicker" data-a><span class="sec">01</span> See</div>
+      <h2 data-a>Real radar, made readable.</h2>
+    </div>
+    <div class="screen tilt-r" data-a>
+      <div class="screen-bar"><i></i><i></i><i></i><span>undula · live app recording</span></div>
+      <div class="screen-body" id="seeScreen">
+        <video muted playsinline preload="auto" data-src="assets/clips/06-globe.mp4" data-start="12"></video>
+        <video muted playsinline preload="auto" data-src="assets/clips/02-delta-rings.mp4" data-start="6" data-poster="12" data-export></video>
+        <video muted playsinline preload="auto" data-src="assets/clips/04-real-nisar.mp4" data-start="3"></video>
+        <video muted playsinline preload="auto" data-src="assets/clips/05-live-cairo.mp4" data-start="7.5"></video>
+      </div>
+    </div>
+    <ol class="chips" id="seeChips">
+      <li data-a><b>Ten real places</b><span>Cities sinking, volcanoes swelling, faults tearing. Each with its story.</span><i class="bar"></i></li>
+      <li data-a><b>Watch the rings grow</b><span>Every ring is the land moving, pass after pass.</span><i class="bar"></i></li>
+      <li data-a><b>Real NISAR data</b><span>Actual radar passes from 2026, played like a film.</span><i class="bar"></i></li>
+      <li data-a><b>Any spot on Earth</b><span>NISAR's latest image of your own street, live from NASA.</span><i class="bar"></i></li>
+    </ol>
+    <figure class="presenter right" data-a><img src="assets/team/mohamed.png" alt=""><figcaption class="patch"><b>Mohamed</b><span>See</span></figcaption></figure>
+  </section>
+
+  <!-- ============ 5 · HEAR & IMAGINE ============ -->
+  <section class="slide feature hear" data-num="5" data-title="Hear & Imagine">
+    <div class="feat-head">
+      <div class="kicker" data-a><span class="sec">02</span> Hear &amp; Imagine</div>
+      <h2 data-a>Hear the ground. See 2100.</h2>
+    </div>
+    <div class="screen tilt-l" data-a>
+      <div class="screen-bar"><i></i><i></i><i></i><span>Sea 2100 · Nile Delta · live app recording</span></div>
+      <div class="screen-body"><video muted playsinline preload="auto" data-src="assets/clips/03-sea-2100.mp4" data-start="10" data-end="69" data-rate="2.6" data-poster="58"></video></div>
+    </div>
+    <div class="hear-col">
+      <div class="sound-card" data-a>
+        <button class="play-sound" id="playSound" aria-label="Play the sound of the Nile Delta sinking"><span class="tri"></span></button>
+        <div class="sound-text"><b>Every centimetre plays a note.</b><span>Falling for sinking, rising for uplift.</span></div>
+        <canvas id="wave" width="640" height="90"></canvas>
+      </div>
+      <div class="sea-bars" data-a>
+        <div class="sea-row with"><span class="sea-l">Under the sea by 2100, with the sinking</span><div class="track"><i style="--w:1"></i></div><span class="sea-v"><span data-count="3491">0</span> km²</span></div>
+        <div class="sea-row without"><span class="sea-l">Sea rise alone</span><div class="track"><i style="--w:0.446"></i></div><span class="sea-v"><span data-count="1557">0</span> km²</span></div>
+        <p class="sea-punch" data-step="1">More than half of it is <b>the land sinking.</b></p>
+        <p class="source">Rough estimate at constant 2026 rates, Copernicus DEM GLO-90.</p>
+      </div>
+    </div>
+    <figure class="presenter right" data-a><img src="assets/team/omar.png" alt=""><figcaption class="patch"><b>Omar</b><span>Hear &amp; Imagine</span></figcaption></figure>
+  </section>
+
+  <!-- ============ 6 · EXPLORE & TRUST ============ -->
+  <section class="slide feature trust" data-num="6" data-title="Explore & Trust">
+    <div class="feat-head">
+      <div class="kicker" data-a><span class="sec">03</span> Explore &amp; Trust</div>
+      <h2 data-a>Walk it. Compare it. Check it.</h2>
+    </div>
+    <div class="cards3">
+      <article class="vcard" data-a><div class="vframe"><video muted playsinline loop preload="auto" data-src="assets/clips/07-astrounit.mp4" data-start="7" data-end="26" data-poster="13"></video></div><b>Explore as Astrounit</b><span>Walk the map and discover each region's story.</span></article>
+      <article class="vcard" data-a><div class="vframe"><video muted playsinline loop preload="auto" data-src="assets/clips/08-then-now.mp4" data-start="5" data-poster="10"></video></div><b>Then &amp; now</b><span>Real satellite photos across the years.</span></article>
+      <article class="vcard" data-a><div class="vframe"><video muted playsinline loop preload="auto" data-src="assets/clips/09-gps.mp4" data-start="8" data-poster="13"></video></div><b>GPS on the ground</b><span>Station records beside the radar, with honest notes on what they can and can't confirm.</span></article>
+    </div>
+    <div class="data-band" data-a>
+      <span class="band-k">Built on open space data</span>
+      <span>NASA/JPL-Caltech &amp; ISRO NISAR via ASF</span><span>NASA CMR catalogue</span><span>Nevada Geodetic Lab GPS</span><span>Copernicus DEM GLO-90</span><span>Esri World Imagery &amp; Wayback</span>
+    </div>
+    <figure class="presenter right" data-a><img src="assets/team/islam.png" alt=""><figcaption class="patch"><b>Islam</b><span>Explore &amp; Trust</span></figcaption></figure>
+  </section>
+
+  <!-- ============ 7 · Close ============ -->
+  <section class="slide close" data-num="7" data-title="Try it">
+    <div class="close-left">
+      <div class="kicker" data-a>Why it matters</div>
+      <h2 data-a>From a satellite 747 km up,<br>to a farmer's field in the Delta.</h2>
+      <ul class="next">
+        <li data-a><b>For everyone.</b> No science degree needed: see it, hear it, understand why.</li>
+        <li data-a><b>Honest by design.</b> Every number shows its source. Estimates say they're estimates.</li>
+        <li data-a><b>Grows with NISAR.</b> Every 12-day pass adds new places and new chapters.</li>
+      </ul>
+    </div>
+    <div class="qr-card" data-a>
+      <div id="qr"></div>
+      <b>Try Undula</b>
+      <span id="qrUrl"></span>
+    </div>
+    <div class="sign-off" data-a><img src="assets/brand/undula-mark.svg" alt=""><span>Undula. <em>Hear the ground move.</em></span><small>Team Shiblanga · Omar · Mohamed · Islam</small></div>
+  </section>
+
+  <!-- satellite + radar sweep -->
+  <div id="scan" aria-hidden="true"><div class="scan-band"></div><div class="scan-line"></div></div>
+  <svg id="beam" viewBox="0 0 1920 1080" aria-hidden="true"><defs>
+    <linearGradient id="beamG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7ff3ff" stop-opacity=".55"/><stop offset="1" stop-color="#34e2ee" stop-opacity="0"/></linearGradient></defs>
+    <polygon id="beamPoly" fill="url(#beamG)"/></svg>
+  <div id="sat" aria-hidden="true"></div>
+
+  <nav id="dots" aria-label="Slides"></nav>
+  <div id="notes" hidden></div>
+  <div id="live" hidden><iframe title="Undula live app"></iframe><button id="liveClose">Close live app · Esc</button></div>
+</div>
+</div>
+<script src="assets/vendor/qrcode.js"></script>
+<script type="module" src="deck.js"></script>
+</body>
+</html>
