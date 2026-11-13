@@ -282,3 +282,21 @@ body.export .tile img { transform: scale(1.06); transition: none; }
 .tile::before { z-index: 1; background: linear-gradient(180deg, rgba(5,8,15,0) 15%, rgba(5,8,15,.55) 45%, rgba(5,8,15,.95) 80%); }
 .tile > :not(img) { z-index: 2; }
 .tile em { z-index: 2; }
+
+/* measured from full NISAR data (Explore & Trust) */
+.measured { position: absolute; left: 110px; top: 742px; width: 1420px; height: 160px; display: flex; align-items: center; gap: 26px; padding: 6px 24px;
+  border-radius: 22px; background: rgba(19,30,51,.82); border: 1px solid rgba(124,242,139,.25); }
+.measured .m-text { width: 560px; display: grid; gap: 4px; flex: none; }
+.measured .m-k { font: 600 15px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--green); }
+.measured b { font: 650 30px/1.15 var(--display); }
+.measured .m-s { font-size: 18px; color: var(--dim); }
+.measured .m-s em { font-style: normal; font-weight: 700; color: var(--text); }
+.measured svg.season { width: 790px; height: 150px; }
+.measured .ax { font: 500 12px var(--mono); fill: var(--faint); }
+.measured .lab { font: 650 14px var(--mono); }
+.trust .cards3 { top: 236px; }
+.trust .vframe { aspect-ratio: 16 / 9.4; }
+.trust .data-band { bottom: 40px; }
+.measured .m-text { width: 600px; }
+.measured b { font-size: 27px; }
+.measured .m-s { font-size: 17px; }

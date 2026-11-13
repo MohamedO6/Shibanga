@@ -47,10 +47,10 @@ const NOTES = [
   "The film (55 s). When it ends it moves to the next slide by itself. Press space to skip it.",
   "The Nile Delta is home to more than 40% of Egyptians. It sinks up to 11 mm a year while the sea rises 3.4 mm. Too slow to see.",
   "NISAR is the NASA-ISRO radar satellite. Every 12 days, day and night, through clouds. Comparing two passes gives rainbow rings: each cycle is about 12 cm of motion.",
-  "Ten real places on a world map: five where the ground sinks, three volcanoes, two faults. NISAR sees all of them.",
+  "Ten real places on a world map: five where the ground sinks, three volcanoes, two faults. The bundled NISAR data covers nine of these places; Kahramanmaras has published context only.",
   "Mohamed: ten real places, rings growing, real NISAR passes from 2026, and NISAR's latest image of any spot on Earth. Press L to open the live app.",
   "Omar: press S (or the button) to hear the Delta sink. Then Sea 2100: press → to reveal that more than half of it is the land sinking.",
-  "Islam: Astrounit walks the map, Then & Now shows real satellite photos, GPS stations sit beside the radar. All of it built on open space data.",
+  "Islam: Astrounit walks the map, Then & Now shows real satellite photos, GPS stations sit beside the radar. The chart is median HH/HV backscatter from 10 full GCOV dates, not a verified crop or flood map. We also processed 8 Delta GUNW pairs into relative LOS estimates, with about 4.7% valid coverage at the last cumulative date and no usable Delta GPS validation. The Central Valley comparison does not resolve its small station motion.",
   "Everything in one app: nine ways to see, hear and check how the ground moves. Each tile is a real part of Undula.",
   "Close: scan the QR code to try Undula. Thank you.",
 ];

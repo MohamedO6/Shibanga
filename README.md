@@ -38,6 +38,8 @@ On slide 5, the line "More than half of it is the land sinking" appears on the n
 5. **See** (Mohamed): ten places, rings, real NISAR, any spot on Earth.
 6. **Hear & Imagine** (Omar): the ground sound and Sea 2100 (3,491 vs 1,557 km²).
 7. **Explore & Trust** (Islam): Astrounit, then and now, GPS, and the open data behind it.
+   The data panel shows median HH/HV backscatter from 10 full GCOV dates. The speaker notes distinguish this
+   from a verified crop/flood map and describe the Delta GUNW coverage and lack of usable GPS validation.
 8. Nine ways to feel the ground move: every feature in one view.
 9. Why it matters, plus a QR code to try it.
 
