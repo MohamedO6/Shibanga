@@ -2,7 +2,7 @@
  "schema": "fringe.nisar/1",
  "sites": {
   "central-valley": {
-   "name": "Central Valley — Corcoran subsidence bowl",
+   "name": "Central Valley \u00e2\u20ac\u201d Corcoran subsidence bowl",
    "eventId": "central-valley",
    "bounds": [
     [
@@ -1815,7 +1815,8 @@
         "nodata": -32768,
         "file": "nisar/central-valley/114_D_070_cum_20260622_los.i16"
        },
-       "colorLimitCm": 7.13
+       "colorLimitCm": 7.13,
+       "validFraction": 0.738735
       },
       {
        "date": "2026-07-04",
@@ -1830,7 +1831,8 @@
         "nodata": -32768,
         "file": "nisar/central-valley/114_D_070_cum_20260704_los.i16"
        },
-       "colorLimitCm": 7.13
+       "colorLimitCm": 7.13,
+       "validFraction": 0.716998
       },
       {
        "date": "2026-07-16",
@@ -1845,7 +1847,8 @@
         "nodata": -32768,
         "file": "nisar/central-valley/114_D_070_cum_20260716_los.i16"
        },
-       "colorLimitCm": 7.13
+       "colorLimitCm": 7.13,
+       "validFraction": 0.700245
       },
       {
        "date": "2026-08-21",
@@ -1860,7 +1863,8 @@
         "nodata": -32768,
         "file": "nisar/central-valley/114_D_070_cum_20260821_los.i16"
        },
-       "colorLimitCm": 7.13
+       "colorLimitCm": 7.13,
+       "validFraction": 0.572875
       },
       {
        "date": "2026-09-02",
@@ -1875,7 +1879,8 @@
         "nodata": -32768,
         "file": "nisar/central-valley/114_D_070_cum_20260902_los.i16"
        },
-       "colorLimitCm": 7.13
+       "colorLimitCm": 7.13,
+       "validFraction": 0.560773
       },
       {
        "date": "2026-09-14",
@@ -1890,7 +1895,8 @@
         "nodata": -32768,
         "file": "nisar/central-valley/114_D_070_cum_20260914_los.i16"
        },
-       "colorLimitCm": 7.13
+       "colorLimitCm": 7.13,
+       "validFraction": 0.54991
       },
       {
        "date": "2026-09-26",
@@ -1905,7 +1911,8 @@
         "nodata": -32768,
         "file": "nisar/central-valley/114_D_070_cum_20260926_los.i16"
        },
-       "colorLimitCm": 7.13
+       "colorLimitCm": 7.13,
+       "validFraction": 0.543126
       },
       {
        "date": "2026-10-08",
@@ -1920,7 +1927,8 @@
         "nodata": -32768,
         "file": "nisar/central-valley/114_D_070_cum_20261008_los.i16"
        },
-       "colorLimitCm": 7.13
+       "colorLimitCm": 7.13,
+       "validFraction": 0.538182
       },
       {
        "date": "2026-10-20",
@@ -1935,7 +1943,8 @@
         "nodata": -32768,
         "file": "nisar/central-valley/114_D_070_cum_20261020_los.i16"
        },
-       "colorLimitCm": 7.13
+       "colorLimitCm": 7.13,
+       "validFraction": 0.52837
       }
      ],
      "cumulativeGnss": {
@@ -2117,7 +2126,7 @@
    }
   },
   "mexico-city": {
-   "name": "Mexico City — lakebed aquifer subsidence",
+   "name": "Mexico City \u00e2\u20ac\u201d lakebed aquifer subsidence",
    "eventId": "mexico-city",
    "bounds": [
     [
@@ -2248,7 +2257,7 @@
    }
   },
   "jakarta": {
-   "name": "Jakarta — coastal subsidence",
+   "name": "Jakarta \u00e2\u20ac\u201d coastal subsidence",
    "eventId": "jakarta",
    "bounds": [
     [
@@ -2367,7 +2376,7 @@
    }
   },
   "norfolk": {
-   "name": "Norfolk / Hampton Roads — coastal subsidence",
+   "name": "Norfolk / Hampton Roads \u00e2\u20ac\u201d coastal subsidence",
    "eventId": "norfolk",
    "bounds": [
     [
@@ -2486,7 +2495,7 @@
    }
   },
   "campi-flegrei": {
-   "name": "Campi Flegrei — caldera uplift",
+   "name": "Campi Flegrei \u00e2\u20ac\u201d caldera uplift",
    "eventId": "campi-flegrei",
    "bounds": [
     [
@@ -2617,7 +2626,7 @@
    }
   },
   "svartsengi": {
-   "name": "Svartsengi — magma inflation",
+   "name": "Svartsengi \u00e2\u20ac\u201d magma inflation",
    "eventId": "svartsengi",
    "bounds": [
     [
@@ -2760,7 +2769,7 @@
    }
   },
   "kilauea": {
-   "name": "Kīlauea — south flank",
+   "name": "K\u00c4\u00ablauea \u00e2\u20ac\u201d south flank",
    "eventId": "kilauea",
    "bounds": [
     [
@@ -2879,7 +2888,7 @@
    }
   },
   "san-andreas": {
-   "name": "San Andreas — creeping section",
+   "name": "San Andreas \u00e2\u20ac\u201d creeping section",
    "eventId": "san-andreas",
    "bounds": [
     [
@@ -3141,7 +3150,417 @@
        "fitRmsPx": 2.07,
        "coverage": 0.409
       }
-     ]
+     ],
+     "pairs": [
+      {
+       "id": "20260626_20260708",
+       "reference": "2026-06-26",
+       "secondary": "2026-07-08",
+       "days": 12,
+       "granule": "NISAR_L2_PR_GUNW_024_007_D_073_025_4000_SH_20260626T164222_20260626T164300_20260708T164225_20260708T164259_P05023_N_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/nile-delta/007_D_073_20260626_20260708_wrapped.png",
+       "los": "nisar/nile-delta/007_D_073_20260626_20260708_los.png",
+       "phase": "nisar/nile-delta/007_D_073_20260626_20260708_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/nile-delta/007_D_073_20260626_20260708_los.i16"
+       },
+       "colorLimitCm": 3.19,
+       "validFraction": 0.107,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "stations": [],
+        "reference": null,
+        "n": 0,
+        "note": "fewer than two stations with both InSAR and GNSS"
+       },
+       "notes": []
+      },
+      {
+       "id": "20260708_20260720",
+       "reference": "2026-07-08",
+       "secondary": "2026-07-20",
+       "days": 12,
+       "granule": "NISAR_L2_PR_GUNW_025_007_D_073_026_4000_SH_20260708T164225_20260708T164259_20260720T164221_20260720T164258_P05023_N_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/nile-delta/007_D_073_20260708_20260720_wrapped.png",
+       "los": "nisar/nile-delta/007_D_073_20260708_20260720_los.png",
+       "phase": "nisar/nile-delta/007_D_073_20260708_20260720_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/nile-delta/007_D_073_20260708_20260720_los.i16"
+       },
+       "colorLimitCm": 3.33,
+       "validFraction": 0.137,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "stations": [],
+        "reference": null,
+        "n": 0,
+        "note": "fewer than two stations with both InSAR and GNSS"
+       },
+       "notes": []
+      },
+      {
+       "id": "20260720_20260813",
+       "reference": "2026-07-20",
+       "secondary": "2026-08-13",
+       "days": 24,
+       "granule": "NISAR_L2_PR_GUNW_026_007_D_073_028_4000_SH_20260720T164221_20260720T164258_20260813T164220_20260813T164257_P05023_N_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/nile-delta/007_D_073_20260720_20260813_wrapped.png",
+       "los": "nisar/nile-delta/007_D_073_20260720_20260813_los.png",
+       "phase": "nisar/nile-delta/007_D_073_20260720_20260813_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/nile-delta/007_D_073_20260720_20260813_los.i16"
+       },
+       "colorLimitCm": 7.5,
+       "validFraction": 0.111,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "stations": [],
+        "reference": null,
+        "n": 0,
+        "note": "fewer than two stations with both InSAR and GNSS"
+       },
+       "notes": []
+      },
+      {
+       "id": "20260813_20260825",
+       "reference": "2026-08-13",
+       "secondary": "2026-08-25",
+       "days": 12,
+       "granule": "NISAR_L2_PR_GUNW_028_007_D_073_029_4000_SH_20260813T164220_20260813T164257_20260825T164220_20260825T164257_P05023_N_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/nile-delta/007_D_073_20260813_20260825_wrapped.png",
+       "los": "nisar/nile-delta/007_D_073_20260813_20260825_los.png",
+       "phase": "nisar/nile-delta/007_D_073_20260813_20260825_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/nile-delta/007_D_073_20260813_20260825_los.i16"
+       },
+       "colorLimitCm": 6.24,
+       "validFraction": 0.231,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "stations": [],
+        "reference": null,
+        "n": 0,
+        "note": "fewer than two stations with both InSAR and GNSS"
+       },
+       "notes": []
+      },
+      {
+       "id": "20260825_20260906",
+       "reference": "2026-08-25",
+       "secondary": "2026-09-06",
+       "days": 12,
+       "granule": "NISAR_L2_PR_GUNW_029_007_D_073_030_4000_SH_20260825T164220_20260825T164257_20260906T164219_20260906T164257_P05023_N_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/nile-delta/007_D_073_20260825_20260906_wrapped.png",
+       "los": "nisar/nile-delta/007_D_073_20260825_20260906_los.png",
+       "phase": "nisar/nile-delta/007_D_073_20260825_20260906_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/nile-delta/007_D_073_20260825_20260906_los.i16"
+       },
+       "colorLimitCm": 3.72,
+       "validFraction": 0.217,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "stations": [],
+        "reference": null,
+        "n": 0,
+        "note": "fewer than two stations with both InSAR and GNSS"
+       },
+       "notes": []
+      },
+      {
+       "id": "20260906_20260918",
+       "reference": "2026-09-06",
+       "secondary": "2026-09-18",
+       "days": 12,
+       "granule": "NISAR_L2_PR_GUNW_030_007_D_073_031_4000_SH_20260906T164219_20260906T164257_20260918T164219_20260918T164257_P05023_F_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/nile-delta/007_D_073_20260906_20260918_wrapped.png",
+       "los": "nisar/nile-delta/007_D_073_20260906_20260918_los.png",
+       "phase": "nisar/nile-delta/007_D_073_20260906_20260918_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/nile-delta/007_D_073_20260906_20260918_los.i16"
+       },
+       "colorLimitCm": 7.64,
+       "validFraction": 0.159,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "stations": [],
+        "reference": null,
+        "n": 0,
+        "note": "fewer than two stations with both InSAR and GNSS"
+       },
+       "notes": []
+      },
+      {
+       "id": "20260918_20260930",
+       "reference": "2026-09-18",
+       "secondary": "2026-09-30",
+       "days": 12,
+       "granule": "NISAR_L2_PR_GUNW_031_007_D_073_032_4000_SH_20260918T164219_20260918T164257_20260930T164220_20260930T164257_P05023_N_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/nile-delta/007_D_073_20260918_20260930_wrapped.png",
+       "los": "nisar/nile-delta/007_D_073_20260918_20260930_los.png",
+       "phase": "nisar/nile-delta/007_D_073_20260918_20260930_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/nile-delta/007_D_073_20260918_20260930_los.i16"
+       },
+       "colorLimitCm": 5.79,
+       "validFraction": 0.124,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "stations": [],
+        "reference": null,
+        "n": 0,
+        "note": "fewer than two stations with both InSAR and GNSS"
+       },
+       "notes": []
+      },
+      {
+       "id": "20260930_20261012",
+       "reference": "2026-09-30",
+       "secondary": "2026-10-12",
+       "days": 12,
+       "granule": "NISAR_L2_PR_GUNW_032_007_D_073_033_4000_SH_20260930T164220_20260930T164257_20261012T164220_20261012T164257_P05023_N_F_J_001",
+       "polarization": "HH",
+       "wavelengthCm": 24.196,
+       "wrapped": "nisar/nile-delta/007_D_073_20260930_20261012_wrapped.png",
+       "los": "nisar/nile-delta/007_D_073_20260930_20261012_los.png",
+       "phase": "nisar/nile-delta/007_D_073_20260930_20261012_phase.png",
+       "width": 640,
+       "height": 644,
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/nile-delta/007_D_073_20260930_20261012_los.i16"
+       },
+       "colorLimitCm": 5.38,
+       "validFraction": 0.123,
+       "componentFraction": 1.0,
+       "ionosphereCorrected": true,
+       "referencing": "scene median",
+       "minCoherence": 0.35,
+       "gnss": {
+        "stations": [],
+        "reference": null,
+        "n": 0,
+        "note": "fewer than two stations with both InSAR and GNSS"
+       },
+       "notes": []
+      }
+     ],
+     "cumulative": [
+      {
+       "date": "2026-07-08",
+       "start": "2026-06-26",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/nile-delta/007_D_073_cum_20260708_los.png",
+       "wrapped": "nisar/nile-delta/007_D_073_cum_20260708_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/nile-delta/007_D_073_cum_20260708_los.i16"
+       },
+       "colorLimitCm": 6.25,
+       "validFraction": 0.106391
+      },
+      {
+       "date": "2026-07-20",
+       "start": "2026-06-26",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/nile-delta/007_D_073_cum_20260720_los.png",
+       "wrapped": "nisar/nile-delta/007_D_073_cum_20260720_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/nile-delta/007_D_073_cum_20260720_los.i16"
+       },
+       "colorLimitCm": 6.25,
+       "validFraction": 0.089526
+      },
+      {
+       "date": "2026-08-13",
+       "start": "2026-06-26",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/nile-delta/007_D_073_cum_20260813_los.png",
+       "wrapped": "nisar/nile-delta/007_D_073_cum_20260813_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/nile-delta/007_D_073_cum_20260813_los.i16"
+       },
+       "colorLimitCm": 6.25,
+       "validFraction": 0.066411
+      },
+      {
+       "date": "2026-08-25",
+       "start": "2026-06-26",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/nile-delta/007_D_073_cum_20260825_los.png",
+       "wrapped": "nisar/nile-delta/007_D_073_cum_20260825_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/nile-delta/007_D_073_cum_20260825_los.i16"
+       },
+       "colorLimitCm": 6.25,
+       "validFraction": 0.063521
+      },
+      {
+       "date": "2026-09-06",
+       "start": "2026-06-26",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/nile-delta/007_D_073_cum_20260906_los.png",
+       "wrapped": "nisar/nile-delta/007_D_073_cum_20260906_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/nile-delta/007_D_073_cum_20260906_los.i16"
+       },
+       "colorLimitCm": 6.25,
+       "validFraction": 0.058834
+      },
+      {
+       "date": "2026-09-18",
+       "start": "2026-06-26",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/nile-delta/007_D_073_cum_20260918_los.png",
+       "wrapped": "nisar/nile-delta/007_D_073_cum_20260918_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/nile-delta/007_D_073_cum_20260918_los.i16"
+       },
+       "colorLimitCm": 6.25,
+       "validFraction": 0.053501
+      },
+      {
+       "date": "2026-09-30",
+       "start": "2026-06-26",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/nile-delta/007_D_073_cum_20260930_los.png",
+       "wrapped": "nisar/nile-delta/007_D_073_cum_20260930_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/nile-delta/007_D_073_cum_20260930_los.i16"
+       },
+       "colorLimitCm": 6.25,
+       "validFraction": 0.049537
+      },
+      {
+       "date": "2026-10-12",
+       "start": "2026-06-26",
+       "referencing": "sum of pairs, each referenced to its scene median",
+       "los": "nisar/nile-delta/007_D_073_cum_20261012_los.png",
+       "wrapped": "nisar/nile-delta/007_D_073_cum_20261012_wrapped.png",
+       "grid": {
+        "width": 213,
+        "height": 215,
+        "unit": "mm",
+        "nodata": -32768,
+        "file": "nisar/nile-delta/007_D_073_cum_20261012_los.i16"
+       },
+       "colorLimitCm": 6.25,
+       "validFraction": 0.04713
+      }
+     ],
+     "cumulativeGnss": {
+      "stations": [],
+      "reference": null,
+      "n": 0,
+      "note": "fewer than two stations with both InSAR and GNSS"
+     }
     },
     "028_A_017": {
      "direction": "A",
@@ -3296,5 +3715,5 @@
    }
   }
  },
- "generatedAt": "2026-11-06T17:08:45Z"
+ "generatedAt": "2026-11-13T12:04:06Z"
 }

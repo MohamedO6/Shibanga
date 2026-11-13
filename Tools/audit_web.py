@@ -5,10 +5,12 @@ Run: python Tools/audit_web.py          (write manifest)
 Fingerprints verify a bundled copy, not scientific accuracy or source authenticity.
 """
 import argparse
+import array
 import hashlib
 import json
 import math
 import re
+import sys
 from datetime import date, datetime, timezone
 from pathlib import Path
 
@@ -26,6 +28,7 @@ def iso(value):
 def audit():
     nisar = json.loads((WEB / "data/nisar/index.json").read_text(encoding="utf-8"))
     errors, references, pairs, processed, frames = [], set(), 0, 0, 0
+    cumulative_coverage = {}
 
     def paths(value):
         if isinstance(value, dict):
@@ -42,8 +45,8 @@ def audit():
         path = (WEB / "data" / relative).resolve()
         if not path.is_relative_to((WEB / "data/nisar").resolve()) or not path.is_file():
             errors.append(f"Missing or unsafe indexed asset: {relative}")
-    for site in nisar["sites"].values():
-        for stack in site.get("stacks", {}).values():
+    for site_id, site in nisar["sites"].items():
+        for stack_id, stack in site.get("stacks", {}).items():
             unique = set()
             for p in stack.get("browse", []) + stack.get("pairs", []):
                 if iso(p["reference"]) >= iso(p["secondary"]):
@@ -51,6 +54,34 @@ def audit():
                 unique.add((p["reference"], p["secondary"]))
             pairs += len(unique)
             processed += len({(p["reference"], p["secondary"]) for p in stack.get("pairs", [])})
+            for frame in stack.get("pairs", []) + stack.get("cumulative", []):
+                grid = frame.get("grid", {})
+                relative = grid.get("file")
+                if not relative or relative not in references:
+                    errors.append(f"Missing indexed LOS grid: {site_id}/{stack_id}")
+                    continue
+                path = WEB / "data" / relative
+                if not path.resolve().is_relative_to((WEB / "data/nisar").resolve()) or not path.is_file():
+                    continue
+                expected = grid["width"] * grid["height"]
+                content = path.read_bytes()
+                if len(content) != expected * 2:
+                    errors.append(f"LOS grid size mismatch: {relative}")
+                    continue
+                values = array.array("h")
+                values.frombytes(content)
+                if sys.byteorder != "little":
+                    values.byteswap()
+                valid = sum(v != grid["nodata"] for v in values)
+                if not valid:
+                    errors.append(f"No usable cells in LOS grid: {relative}")
+                if "date" in frame:
+                    iso(frame["date"])
+                    cumulative_coverage.setdefault(site_id, {})[stack_id] = {
+                        "date": frame["date"], "validCells": valid, "totalCells": expected,
+                        "validFraction": valid / expected,
+                        "scope": "Final reduced LOS grid; missing cells remain unknown, not zero motion.",
+                    }
         seen = set()
         for f in site.get("gcov", {}).get("frames", []):
             iso(f["date"])
@@ -58,6 +89,23 @@ def audit():
                 errors.append("Duplicate GCOV acquisition date")
             seen.add(f["date"])
             frames += 1
+    season_path = WEB / "data/nisar/nile-delta/gcov-season.json"
+    season = json.loads(season_path.read_text(encoding="utf-8"))
+    season_dates = []
+    for row in season["dates"]:
+        season_dates.append(iso(row["date"]))
+        image = season_path.parent / "gcov-season" / f"{row['date']}.png"
+        if not image.is_file():
+            errors.append(f"Missing measured GCOV snapshot: {row['date']}")
+        for key in ("hhDb", "hvDb", "rvi", "darkKm2", "validFrac"):
+            if not isinstance(row.get(key), (int, float)) or not math.isfinite(row[key]):
+                errors.append(f"Invalid measured GCOV value: {row['date']} {key}")
+        if not 0 <= row["validFrac"] <= 1 or row["darkKm2"] < 0:
+            errors.append(f"Invalid GCOV coverage or dark-surface area: {row['date']}")
+        if not row.get("granule") or row["date"].replace("-", "") not in row["granule"]:
+            errors.append(f"GCOV source/date mismatch: {row['date']}")
+    if not season_dates or season_dates != sorted(set(season_dates)):
+        errors.append("Measured GCOV dates must be nonempty, unique and chronological")
     index = json.loads((WEB / "data/index.json").read_text(encoding="utf-8"))
     evidence_manifest = json.loads((WEB / "data/evidence" / index["manifest"]).read_text(encoding="utf-8"))
     for record in evidence_manifest["records"]:
@@ -84,9 +132,14 @@ def audit():
                 "radarGnssRmsCm": rms([r["insarCm"] - r["gnssCm"] for r in rows]),
                 "zeroMotionBaselineRmsCm": rms([r["gnssCm"] for r in rows]),
                 "interpretation": "Small motion unresolved in this bundled comparison; shared-reference errors are correlated.",
+                "finalCumulativeCoverage": cumulative_coverage,
+                "nileDeltaGnssComparison": nisar["sites"]["nile-delta"]["stacks"]["007_D_073"]["cumulativeGnss"],
+                "measuredGcovSeason": {"stack": season["stack"], "start": season["dates"][0]["date"], "end": season["dates"][-1]["date"],
+                    "windowKm": season["windowKm"], "pixelM": season["pixelM"],
+                    "interpretation": "Median HH/HV backscatter; crop and water interpretations are hypotheses. Dark-surface thresholds are not validated water areas."},
                 "scope": "Metadata and file integrity only. No source authentication, OTS proof verification, scientific accuracy certification or independent field validation performed."}
     return {"schema": "fringe.bundle-audit/1", "datasetSnapshot": nisar.get("generatedAt"),
-            "counts": {"radarSites": len(nisar["sites"]), "uniqueGUNWPairs": pairs, "fullGUNWPairs": processed, "gcovPreviews": frames, "files": len(files)},
+            "counts": {"radarSites": len(nisar["sites"]), "uniqueGUNWPairs": pairs, "fullGUNWPairs": processed, "gcovPreviews": frames, "gcovMeasuredDates": len(season_dates), "files": len(files)},
             "findings": findings, "errors": errors, "files": files}
 
 

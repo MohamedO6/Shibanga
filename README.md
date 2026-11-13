@@ -37,6 +37,18 @@ COPERNICUS by the European Union and ESA); Esri World Imagery and Wayback; cited
 photographs. Sources are shown in the app next to each number. `pipeline/` and `Tools/` hold the scripts that
 build the data.
 
+The current bundle contains 93 GUNW pairs across 9 of the app's 10 places. Of these, 17 have full-product
+processing: 9 in Central Valley and 8 over the Nile Delta. The Delta also has 9 GCOV browse images and a separate
+10-date analysis of HH/HV backscatter from full GCOV products near Kafr El Sheikh. See
+[pipeline/README.md](pipeline/README.md) for the exact windows, methods and limitations.
+The project-page draft is in [SUBMISSION.md](SUBMISSION.md); marked links and AI tool names still need the team's details.
+
+To check the bundled files against the reviewed data manifest:
+
+```sh
+python Tools/audit_web.py --check
+```
+
 ## Licence
 
 MIT, see [LICENSE](LICENSE).

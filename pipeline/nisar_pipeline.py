@@ -1021,6 +1021,7 @@ def run_process(site: Site, args) -> None:
             Image.fromarray(render_wrapped(cum, run[0][1].wavelength)).save(WEB_NISAR / f"{base}_wrapped.png", optimize=True)
             grid = save_grid(cum, WEB_NISAR / f"{base}_los.i16")
             st["cumulative"].append({"date": date.isoformat(), "start": start.isoformat(), "referencing": "sum of pairs, each referenced to its scene median",
+                                     "validFraction": round(float(np.isfinite(cum).mean()), 6),
                                      "los": f"nisar/{base}_los.png",
                                      "wrapped": f"nisar/{base}_wrapped.png", "grid": {**grid, "file": f"nisar/{base}_los.i16"},
                                      "colorLimitCm": round(limit * 100, 2)})
