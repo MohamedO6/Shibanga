@@ -40,6 +40,8 @@ On slide 5, the line "More than half of it is the land sinking" appears on the n
 7. **Explore & Trust** (Islam): Astrounit, then and now, GPS, and the open data behind it.
    The data panel shows median HH/HV backscatter from 10 full GCOV dates. The speaker notes distinguish this
    from a verified crop/flood map and describe the Delta GUNW coverage and lack of usable GPS validation.
+   It also reports an independent Landsat NDVI check: 8 date pairs, HV rank correlation 0.67, with full
+   methods and sensitivity checks in the app repository's `pipeline/SCIENCE.md`.
 8. Nine ways to feel the ground move: every feature in one view.
 9. Why it matters, plus a QR code to try it.
 
