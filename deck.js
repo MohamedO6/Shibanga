@@ -31,8 +31,8 @@ addEventListener("resize", fit);
 const slides = $$(".slide");
 // Globe camera per slide: centre (stage px), radius, view-centre lat/lon, brightness, slow spin (deg/s).
 const CAM = [
-  { cx: 960, cy: 1900, R: 1000, lat: -12, lon: 31, dim: 0, spin: 0 },        // opening film (globe hidden)
   { cx: 960, cy: 1720, R: 1000, lat: -13, lon: 30, dim: 1, spin: 0 },        // title
+  { cx: 960, cy: 1900, R: 1000, lat: -12, lon: 31, dim: 0, spin: 0 },        // opening film (globe hidden)
   { cx: 1400, cy: 560, R: 900, lat: 30.6, lon: 31.2, dim: 1, spin: 0 },      // problem: Nile Delta
   { cx: 1430, cy: 540, R: 280, lat: 18, lon: 31, dim: 1, spin: 5 },          // NISAR orbit
   { cx: 960, cy: 2300, R: 1100, lat: 0, lon: 31, dim: .3, spin: 0 },         // world (map slide)
@@ -43,8 +43,8 @@ const CAM = [
   { cx: 960, cy: 2080, R: 1100, lat: -22, lon: 31, dim: 1, spin: 0 },        // close
 ];
 const NOTES = [
-  "Press space to start the Egyptian hook film (55 s). It plays with sound and hands over to the title by itself.",
-  "We're team Shiblanga from Egypt. Undula turns NISAR radar into something anyone can see, hear and understand.",
+  "Introduce yourselves (about 10 s): we're team Shiblanga from Egypt. Then: let us show you. Press space and the film starts with sound.",
+  "The film (55 s). When it ends it moves to the next slide by itself. Press space to skip it.",
   "The Nile Delta is home to more than 40% of Egyptians. It sinks up to 11 mm a year while the sea rises 3.4 mm. Too slow to see.",
   "NISAR is the NASA-ISRO radar satellite. Every 12 days, day and night, through clouds. Comparing two passes gives rainbow rings: each cycle is about 12 cm of motion.",
   "Ten real places on a world map: five where the ground sinks, three volcanoes, two faults. NISAR sees all of them.",
@@ -254,9 +254,10 @@ satImg.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(SAT_SVG.re
 // ---------- deck state ----------
 let cur = 0, busy = false, stepIdx = 0;
 const dots = $("#dots");
-const DOT_SLIDES = slides.map((_, i) => i).filter((i) => i > 0);
+const INTRO = slides.findIndex((s) => s.classList.contains("intro"));
+const DOT_SLIDES = slides.map((_, i) => i).filter((i) => i !== INTRO);
 DOT_SLIDES.forEach((s, i) => { const b = document.createElement("button"); b.title = slides[s].dataset.title; b.addEventListener("click", () => go(s)); dots.append(b); });
-function paintDots() { $$("button", dots).forEach((b, i) => { b.classList.toggle("cur", DOT_SLIDES[i] === Math.max(cur, 1)); b.classList.toggle("done", DOT_SLIDES[i] < cur); }); }
+function paintDots() { $$("button", dots).forEach((b, i) => { b.classList.toggle("cur", DOT_SLIDES[i] === (cur === INTRO ? cur - 1 : cur)); b.classList.toggle("done", DOT_SLIDES[i] < cur); }); }
 
 function revealAll(slide, on) { for (const el of $$("[data-a]", slide)) el.classList.toggle("in", on); if (!on) for (const el of $$("[data-step]", slide)) el.classList.remove("in"); }
 function animEls(slide) {
@@ -324,6 +325,7 @@ function go(to, opts = {}) {
   busy = true; stepIdx = 0;
   revealAll(B, false); B.classList.add("on"); A.classList.add("leaving");
   activateVideos(B, true);
+  if (to === INTRO) startIntro();
   camTarget = CAM[to]; spinLon = 0; cur = to; paintDots(); updateNotes();
   if (slides[to].classList.contains("nisar")) orbitT = 0.25;
   runCounts(B);
@@ -349,7 +351,7 @@ function go(to, opts = {}) {
       A.classList.remove("on", "leaving"); A.style.clipPath = ""; B.style.clipPath = "";
       revealAll(A, false); activateVideos(A, false);
       for (const o of els) o.el.classList.add("in");
-      if (from === 0) stopIntro();
+      if (from === INTRO) stopIntro();
       busy = false;
     }
   };
@@ -357,18 +359,18 @@ function go(to, opts = {}) {
 }
 function next() {
   if (busy) return;
-  if (cur === 0) { const intro = slides[0]; if (!intro.classList.contains("playing")) return startIntro(); return go(1); }
+  if (cur === INTRO && !slides[INTRO].classList.contains("playing")) return startIntro();
   const steps = $$("[data-step]", slides[cur]).filter((e) => !e.classList.contains("in"));
   if (steps.length) { steps[0].classList.add("in"); return; }
   go(cur + 1);
 }
-function prev() { if (busy) return; if (cur === 1) return; go(cur - 1); }
+function prev() { if (busy || cur === 0) return; go(cur - 1 === INTRO ? cur - 2 : cur - 1); }
 
 // ---------- opening film ----------
 const film = $("#opening");
-function startIntro() { slides[0].classList.add("playing"); film.currentTime = 0; film.muted = false; film.play().catch(() => { film.muted = true; film.play(); }); }
-function stopIntro() { film.pause(); slides[0].classList.remove("playing"); }
-film.addEventListener("ended", () => { if (cur === 0) go(1); });
+function startIntro() { slides[INTRO].classList.add("playing"); film.currentTime = 0; film.muted = false; film.play().catch(() => { film.muted = true; film.play(); }); }
+function stopIntro() { film.pause(); slides[INTRO].classList.remove("playing"); }
+film.addEventListener("ended", () => { if (cur === INTRO) go(INTRO + 1); });
 $("#begin").addEventListener("click", (e) => { e.stopPropagation(); startIntro(); });
 
 // ---------- ground sound ----------
@@ -441,8 +443,8 @@ addEventListener("keydown", (e) => {
   else if (k === "n") { notes.hidden = !notes.hidden; }
   else if (k === "l") toggleLive(true);
   else if (k === "s" && slides[cur].classList.contains("hear")) toggleSound();
-  else if (k === "home") go(1, { fast: true });
-  else if (/^[1-9]$/.test(k) && Number(k) < slides.length) go(Number(k), { fast: true });
+  else if (k === "home") go(0, { fast: true });
+  else if (/^[1-9]$/.test(k) && Number(k) <= DOT_SLIDES.length) go(DOT_SLIDES[Number(k) - 1], { fast: true });
 });
 stage.addEventListener("click", (e) => { if (e.target.closest("button, a, li, #live")) return; next(); });
 let idleT = 0; addEventListener("mousemove", () => { document.body.classList.remove("idle"); clearTimeout(idleT); idleT = setTimeout(() => document.body.classList.add("idle"), 2200); });
@@ -453,7 +455,7 @@ function loop(now) {
   const dt = Math.min((now - last) / 1000, 0.05); last = now; t += dt;
   if (camTarget.spin) spinLon += camTarget.spin * dt;
   frameN++;
-  const filmOnly = cur === 0 && !busy;
+  const filmOnly = cur === INTRO && !busy;
   if (!filmOnly) {
     stepCam(dt);
     const moving = busy || Math.abs(camV.cx) + Math.abs(camV.cy) + Math.abs(camV.R) + Math.abs(camV.lat) + Math.abs(camV.lon) > 0.5 || camTarget.spin;
@@ -469,7 +471,7 @@ function loop(now) {
 fit(); initGL(); updateNotes(); paintDots();
 if (EXPORT !== null) {
   // Static export: show one slide in its final state (used to build the PDF).
-  cur = clamp(EXPORT, 1, slides.length - 1); camTarget = CAM[cur]; snapCam();
+  cur = DOT_SLIDES[clamp(EXPORT, 1, DOT_SLIDES.length) - 1]; camTarget = CAM[cur]; snapCam();
   slides[cur].classList.add("on"); revealAll(slides[cur], true); for (const s of $$("[data-step]", slides[cur])) s.classList.add("in");
   runCounts(slides[cur]); activateVideos(slides[cur], true);
   if (slides[cur].classList.contains("nisar")) orbitT = 0.5;
@@ -488,7 +490,8 @@ if (EXPORT !== null) {
     return true;
   };
 } else {
-  slides[0].classList.add("on"); camTarget = CAM[0]; snapCam();
+  slides[0].classList.add("on"); camTarget = CAM[0]; snapCam(); runCounts(slides[0]);
+  setTimeout(() => { if (cur === 0) revealAll(slides[0], true); }, 350);
   if (params.has("slide")) { const s = Number(params.get("slide")); cur = 0; slides[0].classList.remove("on"); cur = s; slides[s].classList.add("on"); camTarget = CAM[s]; snapCam(); revealAll(slides[s], true); runCounts(slides[s]); activateVideos(slides[s], true); paintDots(); updateNotes(); }
 }
 requestAnimationFrame(loop);

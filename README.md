@@ -19,7 +19,7 @@ If it stutters: use Chrome or Edge with hardware acceleration on, plug the lapto
 
 | Key | What it does |
 |---|---|
-| Space / → / click | Next (first press starts the film; the film hands over to the title by itself) |
+| Space / → / click | Next. On the title slide it starts the film; when the film ends the deck moves on by itself |
 | ← | Back |
 | 1-9 | Jump to a slide |
 | S | Play the Nile Delta's ground sound (slide 5) |
@@ -31,7 +31,7 @@ On slide 5, the line "More than half of it is the land sinking" appears on the n
 
 ## Slides
 
-1. Opening film (`assets/opening.mp4`), then the title: Undula, the challenge, the team.
+1. Title: Undula, the challenge, the team (introduce yourselves), then the opening film (`assets/opening.mp4`).
 2. The problem: the Nile Delta sinking up to 11 mm/yr, sea rising 3.4 mm/yr, 40%+ of Egyptians on the Delta.
 3. NISAR: what it is and how two radar passes become rainbow rings.
 4. Around the world: the ten places on a world map (5 sinking, 3 volcanoes, 2 faults).
