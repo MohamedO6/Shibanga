@@ -50,6 +50,13 @@ could reach with and without the sinking, and every number carries its source an
   Only the needed chunks are read: about 50 MB per date instead of about 5 GB.
   Crop types and harvest dates were not independently checked. The output is backscatter, not a validated crop
   classification or a measured flooded area.
+- **An independent scientific check.** We tested the seasonal radar interpretation against cloud-masked Landsat
+  8/9 surface-reflectance NDVI over the same 20 x 20 km study area. Fixed date/quality rules accepted 8 paired
+  observations within 4 days; 2 radar dates had no acceptable optical match. The optical comparison uses the same
+  98.3% of the area at every accepted date. Primary HV/NDVI Spearman correlation is 0.67; the first-difference rate
+  check is 0.86. We publish all matched and rejected scenes, spatial-block bootstrap intervals, the secondary HH
+  result, and sensitivity to block size and leaving dates out. This is supporting regional evidence for seasonal
+  change, not crop identification, flood mapping or validation of ground displacement. Methods: pipeline/SCIENCE.md.
 - **Any spot on Earth, live.** Tap anywhere or use your location; Undula asks NASA's CMR catalogue for NISAR's newest
   GCOV image there and opens it in seconds, with links to ASF Vertex and NASA Earthdata Search for the full data.
 - **Hear the ground.** Every centimetre of motion plays a note: falling for sinking, rising for uplift.
@@ -93,8 +100,9 @@ NumPy); OpenTimestamps; Vercel and GitHub Pages for hosting.
 - **Images:** the astronaut characters of the three team members were generated with AI from our own photos
   ([fill in tool name]).
 - **Voices:** the film's narration uses AI text-to-speech with our own cloned voices ([fill in tool name]).
-- **Data is never generated.** Every map, ring, radar image and number in the app and in the film is a real recording
-  of the app or real data with its source.
+- **Observations and simulations are identified separately.** Satellite and GNSS observations come from cited
+  datasets. Physics-model rings, the mapping of motion to sound, and Sea 2100 are simulations or interpretations.
+  AI tools were not used to fabricate satellite or GNSS observations.
 
 ## NASA data and resources used
 - **NISAR L2 GUNW** (geocoded unwrapped interferograms), provisional, 93 pairs over 9 places, NASA/JPL-Caltech & ISRO,
@@ -104,6 +112,9 @@ NumPy); OpenTimestamps; Vercel and GitHub Pages for hosting.
   measured for the farming-season analysis (pipeline/gcov_season.py), plus live GCOV previews for any place.
 - **NASA Earthdata Search** and **ASF Data Search Vertex**: linked from every place and every live image.
 - **NISAR Data User Guide** (ASF): product layout for GUNW and GCOV.
+- **NASA/USGS Landsat 8/9 Collection 2 Level 2:** 8 quality-filtered optical dates for the independent greenness
+  check, obtained through the public Microsoft Planetary Computer catalogue. Red/NIR surface reflectance is
+  scaled with the USGS offset and scale before computing NDVI; per-pixel QA and a fixed common area are used.
 - Linked in the app's Guide for learners: Intro to Remote Sensing, Intro to SAR, NASA ARSET trainings, NISAR
   StoryMaps, NISAR Applications White Papers, UAVSAR Postcards.
 

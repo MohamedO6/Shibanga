@@ -45,6 +45,11 @@ must not be presented as evidence that no water was present or as a validated wa
 
 ## Check or reproduce
 
+An independent Landsat optical check now tests the growing-season interpretation. Eight dates meet the
+fixed quality and matching rules. HV/NDVI rank correlation is about 0.67, with a first-difference rate check
+of about 0.86. This is supporting regional evidence, not crop/flood classification or GPS validation.
+See [SCIENCE.md](SCIENCE.md) for the analysis plan, rejected dates, spatial intervals and robustness checks.
+
 Serve the app from the repository root with `python -m http.server 5173 --bind 127.0.0.1`.
 
 ```sh

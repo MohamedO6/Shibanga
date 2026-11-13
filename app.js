@@ -1435,6 +1435,7 @@ function renderDetail(e) {
 
 // ---------- the farming season in numbers, from NISAR GCOV (Nile Delta) ----------
 const seasonCache = {};
+const seasonChecks = {};
 async function renderSeasonCard(e) {
   const card = $("#season-card");
   if (!card) return;
@@ -1442,6 +1443,7 @@ async function renderSeasonCard(e) {
     seasonCache[e.id] = null;
     if (e.id === "nile-delta") {
       try { const r = await fetch(`data/nisar/${e.id}/gcov-season.json?v=2`); if (r.ok) seasonCache[e.id] = await r.json(); } catch {}
+      try { const r = await fetch(`data/nisar/${e.id}/season-check.json?v=1`); if (r.ok) seasonChecks[e.id] = await r.json(); } catch {}
     }
   }
   const d = seasonCache[e.id];
@@ -1462,7 +1464,7 @@ async function renderSeasonCard(e) {
   const thumbs = rows.map((r) => `<figure><img loading="lazy" src="data/nisar/${e.id}/gcov-season/${esc(r.date)}.png" alt="NISAR HH/HV composite, ${esc(r.date)}"><figcaption>${esc(fmtD(r.date))}</figcaption></figure>`).join("");
   card.hidden = false;
   card.innerHTML = `<div class="card-head"><h3>The farming season, measured by NISAR</h3><span class="label-pill label-PROCESSED" style="padding:4px 8px">From GCOV</span></div>
-    <p class="muted" style="margin:0;font-size:13px;line-height:1.5">${n} NISAR passes over a ${d.windowKm} × ${d.windowKm} km patch of rice and cotton fields near Kafr El Sheikh, read from the full radar data in two polarizations. Brighter means more radar echo (dB).</p>
+    <p class="muted" style="margin:0;font-size:13px;line-height:1.5">${n} NISAR passes over a ${d.windowKm} × ${d.windowKm} km farming area near Kafr El Sheikh, read from the full radar data in two polarizations. Brighter means more radar echo (dB).</p>
     <svg class="season-chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="HH and HV radar backscatter through the season">
       ${grid.join("")}
       <path d="${path("hhDb")}" fill="none" stroke="#ff9ec7" stroke-width="2.4" stroke-linejoin="round"/>${dots("hhDb", "#ff9ec7", "HH")}
@@ -1475,7 +1477,25 @@ async function renderSeasonCard(e) {
       <li><span class="v">+${(hhPeak.hhDb - first.hhDb).toFixed(1)} dB</span><span>HH jumps by ${esc(fmtD(hhPeak.date))}<span class="s">Likely radar bouncing between standing water and rice stalks in flooded paddies (double bounce). A hypothesis, not a classification.</span></span></li>
     </ul>
     <div class="season-strip">${thumbs}</div>
-    <p class="quality-note">Undula's own reading of provisional NISAR GCOV (${esc(d.stack)}): median gamma0 over the patch, ${d.pixelM} m cells. Not a validated crop or flood map.</p>`;
+    <p class="quality-note">Undula's own reading of provisional NISAR GCOV (${esc(d.stack)}): median gamma0 over the patch, ${d.pixelM} m cells. Not a validated crop or flood map.</p>
+    ${seasonCheckHtml(seasonChecks[e.id])}`;
+}
+
+function seasonCheckHtml(check) {
+  const r = check?.results;
+  if (!r?.matchedDates || !Number.isFinite(r.hvSpearman)) return "";
+  const range = r.leaveOneDateOutHvSpearmanRange;
+  return `<section class="season-check" aria-label="Independent Landsat season check">
+    <h3>Does another satellite agree?</h3>
+    <p class="prose-p">Landsat 8 and 9 measure greenness with reflected sunlight. We compared their cloud-masked vegetation index (NDVI) with the radar over the same study area, using fixed date and quality rules.</p>
+    <dl class="kv"><dt>Matched dates</dt><dd>${r.matchedDates}, within ${check.method.maxDateGapDays} days. ${r.radarDates - r.matchedDates} radar dates had no optical image meeting the quality rules.</dd>
+      <dt>Same optical area</dt><dd>${F.fmt(r.commonAreaFraction * 100, 1)}% of the patch stays valid across all matched dates.</dd>
+      <dt>HV and greenness</dt><dd>Rank correlation ${F.fmt(r.hvSpearman, 2)}: positive, imperfect agreement. This is not an accuracy percentage.</dd>
+      <dt>Check the changes</dt><dd>Correlation of change rates: ${F.fmt(r.hvFirstDifferenceRateSpearman, 2)} across ${r.matchedDates - 1} intervals. The comparison is not based only on the broad seasonal shape.</dd></dl>
+    <a href="data/nisar/nile-delta/season-check.png" target="_blank" rel="noopener"><img class="season-check-figure" loading="lazy" src="data/nisar/nile-delta/season-check.png" alt="Separate NISAR backscatter and Landsat NDVI time series, with spatial bootstrap intervals. Open the full figure."></a>
+    <p class="quality-note">Supporting evidence for seasonal change, not proof of crop type, flooding or ground motion. Only ${r.matchedDates} dates; leaving one out gives correlations from ${F.fmt(range[0], 2)} to ${F.fmt(range[1], 2)}. The shaded interval describes spatial variability and omits sensor and atmospheric errors. See the methods for the HH comparison, block-size sensitivity and ${r.exactDateMatches} exact-date matches.</p>
+    <div class="quality-actions"><a class="pill-btn ghost" href="data/nisar/nile-delta/season-check.csv" download>${icon("download", {size:14})}Paired measurements (.csv)</a><a class="pill-btn ghost" href="https://github.com/MohamedO6/Shibanga/blob/undula/pipeline/SCIENCE.md" target="_blank" rel="noopener">${icon("external", {size:14})}Methods and limitations</a></div>
+  </section>`;
 }
 
 function renderDetailReadouts() {
@@ -1485,7 +1505,7 @@ function renderDetailReadouts() {
   const full = eventStats(e, state.geom);
   const band = F.BANDS[state.band];
   if (state.mode === "fields") el.innerHTML = `<div class="stat"><div class="v">HH / HV</div><div class="l">qualitative backscatter composite</div></div><div class="stat"><div class="v">${gcovOf()?.frames?.length || 0}</div><div class="l">dated previews, no verified water classification</div></div>`;
-  else if (state.mode === "nisar") el.innerHTML = `<div class="stat"><div class="v">${nisarStack()?.pairs?.length ? "Derived LOS" : "Preview"}</div><div class="l">${nisarStack()?.pairs?.length ? "station comparison and residuals below" : "no validated displacement estimate"}</div></div><div class="stat"><div class="v">${nis.items.length}</div><div class="l">acquisition pairs in this animation</div></div>`;
+  else if (state.mode === "nisar") el.innerHTML = `<div class="stat"><div class="v">${nisarStack()?.pairs?.length ? "Derived LOS" : "Preview"}</div><div class="l">${nisarStack()?.pairs?.length ? "quality, coverage and comparison limits below" : "no validated displacement estimate"}</div></div><div class="stat"><div class="v">${nis.items.length}</div><div class="l">acquisition pairs in this animation</div></div>`;
   else el.innerHTML = `
     <div class="stat"><div class="v ${kindColor(e.kind)}">${esc(F.motionText(e, full))}</div><div class="l">model: ${esc(F.KIND[e.kind].word)} over ${esc(F.windowText(e))}</div></div>
     <div class="stat"><div class="v">${esc(statusText(e).replace(/^[A-Za-z ]+? (?=[0-9~])/, ""))}</div><div class="l">model rate, informed by cited studies</div></div>`;
@@ -3249,6 +3269,7 @@ function renderGuide() {
       <tr><td>Processed NISAR LOS</td><td><span class="label-pill label-PROCESSED" style="padding:3px 8px">DERIVED</span></td><td>17 full GUNW pairs: 9 on Central Valley track 114 and 8 on Nile Delta track 7. Bad pixels are masked and the ionosphere corrected. These are relative line-of-sight estimates, not absolute vertical sinking. Central Valley's station comparison does not resolve its small motion; the Delta has no usable GNSS comparison. Valid coverage is shown in Details.</td></tr>
       <tr><td>NISAR crops and water</td><td><span class="label-pill label-PREVIEW" style="padding:3px 8px">PREVIEW</span></td><td>Dated HH/HV GCOV colour composites over the Nile Delta. Colours suggest scattering mechanisms; they are not a verified crop or water classification. Quantitative analysis requires the calibrated product and independent reference observations.</td></tr>
       <tr><td>NISAR farming-season backscatter</td><td><span class="label-pill label-PROCESSED" style="padding:3px 8px">DERIVED</span></td><td>10 full GCOV dates on track 129, 23 June to 21 October 2026, over a 20 x 20 km patch near Kafr El Sheikh. The chart shows median HH and HV gamma0 in dB, averaged onto 50 m cells. Seasonal growth and flooded rice are hypotheses, not verified crop types, harvest dates or measured flood areas.</td></tr>
+      <tr><td>Landsat season check</td><td><span class="label-pill label-PROCESSED" style="padding:3px 8px">DERIVED</span></td><td>Independent Landsat 8/9 optical greenness compared with radar across 8 date pairs. Cloud, shadow, snow, saturation and high-aerosol masks are applied; 98.3% of the optical area remains common to all eight dates. HV/NDVI rank correlation is 0.67, with spatial intervals and sensitivity checks. This supports a seasonal interpretation, not a crop/flood classification or a GPS check of displacement.</td></tr>
       <tr><td>Then &amp; Now photos</td><td><span class="label-pill" style="padding:3px 8px;background:rgba(255,255,255,0.08);color:var(--text)">REAL PHOTOS</span></td><td>High-resolution satellite photos of one spot per site, from every version of Esri World Imagery Wayback since 2014, with their real capture dates and sensors.</td></tr>
       <tr><td>On the ground</td><td><span class="label-pill" style="padding:3px 8px;background:rgba(255,255,255,0.08);color:var(--text)">REAL PHOTOS</span></td><td>Freely licensed photos of each site from Wikimedia Commons (USGS, NASA, VOA and others), each with its author, licence and source linked.</td></tr>
       <tr><td>GNSS time series</td><td><span class="label-pill label-MEASURED" style="padding:3px 8px">MEASURED</span></td><td>Daily positions from the Nevada Geodetic Lab, averaged by week with logged offsets removed. Historical series provide context. Only matching dates, locations and references can support a direct radar comparison.</td></tr>
@@ -3273,6 +3294,7 @@ function renderGuide() {
     <h2>Data &amp; credits</h2>
     <ul>
       <li>NISAR L-band GUNW and GCOV: NASA/JPL-Caltech &amp; ISRO via the Alaska Satellite Facility DAAC, found through NASA Earthdata (CMR) and ASF Vertex.</li>
+      <li>Landsat 8/9 Collection 2 Level 2: NASA/USGS surface reflectance via Microsoft Planetary Computer, used for the independent seasonal NDVI check. <a href="https://www.usgs.gov/landsat-missions/landsat-collection-2-quality-assessment-bands" target="_blank" rel="noopener">USGS quality flags</a>.</li>
       <li>GNSS: Nevada Geodetic Laboratory, University of Nevada, Reno (Blewitt et al., 2018).</li>
       <li>NASA/JPL, California DWR, USGS, INGV, Icelandic Met Office, NOAA and peer-reviewed papers, cited for each site.</li>
       <li>Then &amp; Now photos: Esri World Imagery Wayback, with imagery from Vantor (Maxar), Airbus, Earthstar Geographics and partners.</li>

@@ -10,3 +10,5 @@ assets/** -text whitespace=cr-at-eol
 *.css text eol=lf
 *.yml text eol=lf
 *.md text eol=lf
+# The optical-check result fingerprints this analysis plan.
+pipeline/season_check_plan.json text eol=lf

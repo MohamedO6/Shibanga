@@ -1080,3 +1080,6 @@ input[type="range"] { accent-color: var(--accent); }
 .season-strip figure { margin: 0; flex: none; width: 64px; text-align: center; }
 .season-strip img { width: 64px; height: 64px; border-radius: 8px; display: block; object-fit: cover; background: #000; }
 .season-strip figcaption { font: 500 10px var(--mono); color: var(--sage); margin-top: 3px; }
+.season-check { border-top: 1px solid var(--stroke); margin-top: 12px; padding-top: 16px; display: grid; gap: 12px; min-width: 0; }
+.season-check h3, .season-check .prose-p { margin: 0; }
+.season-check-figure { display: block; width: 100%; height: auto; border-radius: 8px; background: white; }

@@ -7,7 +7,8 @@
     "fullGUNWPairs": 17,
     "gcovPreviews": 9,
     "gcovMeasuredDates": 10,
-    "files": 294
+    "landsatMatchedDates": 8,
+    "files": 297
   },
   "findings": {
     "evidenceRecordsChecked": 10,
@@ -49,6 +50,13 @@
       "windowKm": 20.0,
       "pixelM": 50,
       "interpretation": "Median HH/HV backscatter; crop and water interpretations are hypotheses. Dark-surface thresholds are not validated water areas."
+    },
+    "independentOpticalCheck": {
+      "matchedDates": 8,
+      "commonAreaFraction": 0.982912,
+      "hvSpearman": 0.666667,
+      "hvFirstDifferenceRateSpearman": 0.857143,
+      "interpretation": "Exploratory cross-sensor seasonal consistency; not crop/flood classification, causal attribution or displacement validation."
     },
     "scope": "Metadata and file integrity only. No source authentication, OTS proof verification, scientific accuracy certification or independent field validation performed."
   },
@@ -1265,6 +1273,21 @@
       "sha256": "734950e11aee2ad28e6d370b78dadcfce9f7b82f06708e8270d4c682fbefd418"
     },
     {
+      "path": "data/nisar/nile-delta/season-check.csv",
+      "bytes": 932,
+      "sha256": "eba6fa9ffbb865cf3707259376c1c3c5f6ae6a9edfc5de3ebf2d31249907641c"
+    },
+    {
+      "path": "data/nisar/nile-delta/season-check.json",
+      "bytes": 18095,
+      "sha256": "b4e8df8c374dc06f4814407a9dd3c33e24cf265df8dc9c70a39fd19ced40f383"
+    },
+    {
+      "path": "data/nisar/nile-delta/season-check.png",
+      "bytes": 184096,
+      "sha256": "0245815a10d97938af5c8ceed363c123deaf8985a0b0f17b94e06912bc58ba2d"
+    },
+    {
       "path": "data/nisar/norfolk/069_D_070_20260630_20260712_browse_phase.png",
       "bytes": 94834,
       "sha256": "94edbda44ff74de609abe49baccd5dc04999d8abffb2ee374923a11151297421"
@@ -1525,5 +1548,5 @@
       "sha256": "8ec515296871b5eacf45680edb2b6bfcc6163ce78035a8fbd40cce5963e9f17d"
     }
   ],
-  "generatedAt": "2026-11-13T15:03:48.144859+00:00"
+  "generatedAt": "2026-11-13T15:40:30.180201+00:00"
 }

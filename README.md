@@ -32,6 +32,7 @@ Open `http://127.0.0.1:5173/`.
 ## Data
 
 NASA/JPL-Caltech and ISRO NISAR products via the Alaska Satellite Facility; Nevada Geodetic Laboratory GPS;
+NASA/USGS Landsat 8/9 surface reflectance via Microsoft Planetary Computer;
 Copernicus DEM GLO-90 (© DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under
 COPERNICUS by the European Union and ESA); Esri World Imagery and Wayback; cited publications and credited
 photographs. Sources are shown in the app next to each number. `pipeline/` and `Tools/` hold the scripts that
@@ -41,6 +42,8 @@ The current bundle contains 93 GUNW pairs across 9 of the app's 10 places. Of th
 processing: 9 in Central Valley and 8 over the Nile Delta. The Delta also has 9 GCOV browse images and a separate
 10-date analysis of HH/HV backscatter from full GCOV products near Kafr El Sheikh. See
 [pipeline/README.md](pipeline/README.md) for the exact windows, methods and limitations.
+An [independent Landsat season check](pipeline/SCIENCE.md) compares the radar with cloud-masked optical
+greenness on eight matching dates and records spatial intervals, sensitivity checks and excluded observations.
 The project-page draft is in [SUBMISSION.md](SUBMISSION.md); marked links and AI tool names still need the team's details.
 
 To check the bundled files against the reviewed data manifest:

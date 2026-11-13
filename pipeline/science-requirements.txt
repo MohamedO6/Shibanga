@@ -1,0 +1,4 @@
+-r requirements.txt
+requests>=2.32
+rasterio>=1.4
+scipy>=1.14

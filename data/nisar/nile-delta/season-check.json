@@ -1,0 +1,345 @@
+{
+  "schema": "undula.season-check/1",
+  "generatedAt": "2026-11-13T15:39:23.029434+00:00",
+  "analysisPlanSha256": "371742d323d88dc0a667a3b15126f3aef0092a151947fc0fc0a1a96380eb7e4e",
+  "radarSourceSha256": "734950e11aee2ad28e6d370b78dadcfce9f7b82f06708e8270d4c682fbefd418",
+  "question": "Does the seasonal NISAR HV backscatter pattern agree with independent Landsat optical greenness over the same study area?",
+  "method": {
+    "schema": "undula.season-check-plan/1",
+    "question": "Does the seasonal NISAR HV backscatter pattern agree with independent Landsat optical greenness over the same study area?",
+    "primaryRadarChannel": "hvDb",
+    "secondaryRadarChannel": "hhDb",
+    "radarSource": "data/nisar/nile-delta/gcov-season.json",
+    "opticalCollection": "landsat-c2-l2",
+    "sensors": [
+      "landsat-8",
+      "landsat-9"
+    ],
+    "tier": "T1",
+    "maxDateGapDays": 4,
+    "selection": "For each existing radar date, nearest unused optical acquisition within four days; ties prefer the earlier date, then scene ID. Selection uses QA coverage only, never NDVI or correlation.",
+    "surfaceReflectance": {
+      "scale": 2.75e-05,
+      "offset": -0.2
+    },
+    "qaPixelRejectBits": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "qaRadsatRejectBits": [
+      3,
+      4,
+      11
+    ],
+    "aerosolRejectLevels": [
+      3
+    ],
+    "reflectanceRange": [
+      0,
+      1
+    ],
+    "outputCellM": 50,
+    "minValidNativeFractionPerCell": 0.9,
+    "minClearFractionPerScene": 0.8,
+    "minCommonAreaFraction": 0.5,
+    "minMatchedDates": 6,
+    "spatialBlockM": 2000,
+    "sensitivityBlockM": [
+      1000,
+      4000
+    ],
+    "minCommonFractionPerBlock": 0.5,
+    "bootstrapReplicates": 2000,
+    "randomSeed": 20261113,
+    "primaryStatistic": "Spearman rank correlation between radar medians and the median of spatial-block mean NDVI values on common optical support.",
+    "robustness": [
+      "First-difference rates using each sensor's own observation dates",
+      "Leave-one-date-out rank correlation",
+      "Alternative spatial block sizes",
+      "Exact-date matches reported separately when at least three exist"
+    ],
+    "interpretation": "An exploratory cross-sensor consistency check of an already observed radar pattern. It is not a preregistered field trial, causal attribution, independent crop/flood classification, or validation of radar displacement. No p-values: dates are few and temporally dependent. Spatial bootstrap intervals do not include calibration, atmospheric or temporal sampling uncertainty."
+  },
+  "area": {
+    "center": {
+      "lat": 31.1,
+      "lon": 30.95
+    },
+    "windowKm": 20.0,
+    "epsg": 32636,
+    "supportNote": "Radar uses the existing whole-window medians. Optical NDVI uses fixed common support within that footprint; this is regional consistency, not pixel-level validation."
+  },
+  "software": {
+    "python": "3.13.7",
+    "numpy": "2.5.4",
+    "matplotlib": "3.11.2",
+    "processingCodeSha256": "4354d82933ddd03c4a578409104746dbe174b17198929149ce27549b638fb759"
+  },
+  "results": {
+    "radarDates": 10,
+    "matchedDates": 8,
+    "commonAreaFraction": 0.982912,
+    "commonAreaKm2": 393.165,
+    "spatialBlocks": 100,
+    "hvSpearman": 0.666667,
+    "hhSpearmanSecondary": 0.761905,
+    "hvFirstDifferenceRateSpearman": 0.857143,
+    "leaveOneDateOutHvSpearmanRange": [
+      0.535714,
+      0.821429
+    ],
+    "blockSizeSensitivity": [
+      {
+        "blockM": 1000,
+        "blocks": 400,
+        "hvSpearman": 0.571429
+      },
+      {
+        "blockM": 4000,
+        "blocks": 25,
+        "hvSpearman": 0.571429
+      }
+    ],
+    "exactDateMatches": 3,
+    "exactDateHvSpearman": 0.5,
+    "rows": [
+      {
+        "radarDate": "2026-06-23",
+        "opticalDate": "2026-06-27",
+        "lagDays": 4,
+        "scene": "LC08_L2SP_177038_20260627_02_T1",
+        "clearFraction": 0.998363,
+        "assets": {
+          "red": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260627_20260707_02_T1/LC08_L2SP_177038_20260627_20260707_02_T1_SR_B4.TIF",
+          "nir08": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260627_20260707_02_T1/LC08_L2SP_177038_20260627_20260707_02_T1_SR_B5.TIF",
+          "qa_pixel": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260627_20260707_02_T1/LC08_L2SP_177038_20260627_20260707_02_T1_QA_PIXEL.TIF",
+          "qa_radsat": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260627_20260707_02_T1/LC08_L2SP_177038_20260627_20260707_02_T1_QA_RADSAT.TIF",
+          "qa_aerosol": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260627_20260707_02_T1/LC08_L2SP_177038_20260627_20260707_02_T1_SR_QA_AEROSOL.TIF"
+        },
+        "hhDb": -8.61,
+        "hvDb": -18.75,
+        "ndvi": 0.478063,
+        "ndviSpatialCi95": [
+          0.457038,
+          0.500078
+        ]
+      },
+      {
+        "radarDate": "2026-07-05",
+        "opticalDate": "2026-07-05",
+        "lagDays": 0,
+        "scene": "LC09_L2SP_177038_20260705_02_T1",
+        "clearFraction": 0.994631,
+        "assets": {
+          "red": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC09_L2SP_177038_20260705_20260707_02_T1/LC09_L2SP_177038_20260705_20260707_02_T1_SR_B4.TIF",
+          "nir08": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC09_L2SP_177038_20260705_20260707_02_T1/LC09_L2SP_177038_20260705_20260707_02_T1_SR_B5.TIF",
+          "qa_pixel": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC09_L2SP_177038_20260705_20260707_02_T1/LC09_L2SP_177038_20260705_20260707_02_T1_QA_PIXEL.TIF",
+          "qa_radsat": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC09_L2SP_177038_20260705_20260707_02_T1/LC09_L2SP_177038_20260705_20260707_02_T1_QA_RADSAT.TIF",
+          "qa_aerosol": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC09_L2SP_177038_20260705_20260707_02_T1/LC09_L2SP_177038_20260705_20260707_02_T1_SR_QA_AEROSOL.TIF"
+        },
+        "hhDb": -7.8,
+        "hvDb": -18.41,
+        "ndvi": 0.563966,
+        "ndviSpatialCi95": [
+          0.543243,
+          0.585082
+        ]
+      },
+      {
+        "radarDate": "2026-07-17",
+        "opticalDate": "2026-07-13",
+        "lagDays": -4,
+        "scene": "LC08_L2SP_177038_20260713_02_T1",
+        "clearFraction": 0.998563,
+        "assets": {
+          "red": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260713_20260720_02_T1/LC08_L2SP_177038_20260713_20260720_02_T1_SR_B4.TIF",
+          "nir08": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260713_20260720_02_T1/LC08_L2SP_177038_20260713_20260720_02_T1_SR_B5.TIF",
+          "qa_pixel": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260713_20260720_02_T1/LC08_L2SP_177038_20260713_20260720_02_T1_QA_PIXEL.TIF",
+          "qa_radsat": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260713_20260720_02_T1/LC08_L2SP_177038_20260713_20260720_02_T1_QA_RADSAT.TIF",
+          "qa_aerosol": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260713_20260720_02_T1/LC08_L2SP_177038_20260713_20260720_02_T1_SR_QA_AEROSOL.TIF"
+        },
+        "hhDb": -6.71,
+        "hvDb": -17.39,
+        "ndvi": 0.619758,
+        "ndviSpatialCi95": [
+          0.601498,
+          0.642474
+        ]
+      },
+      {
+        "radarDate": "2026-08-10",
+        "opticalDate": "2026-08-06",
+        "lagDays": -4,
+        "scene": "LC09_L2SP_177038_20260806_02_T1",
+        "clearFraction": 0.999337,
+        "assets": {
+          "red": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC09_L2SP_177038_20260806_20260808_02_T1/LC09_L2SP_177038_20260806_20260808_02_T1_SR_B4.TIF",
+          "nir08": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC09_L2SP_177038_20260806_20260808_02_T1/LC09_L2SP_177038_20260806_20260808_02_T1_SR_B5.TIF",
+          "qa_pixel": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC09_L2SP_177038_20260806_20260808_02_T1/LC09_L2SP_177038_20260806_20260808_02_T1_QA_PIXEL.TIF",
+          "qa_radsat": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC09_L2SP_177038_20260806_20260808_02_T1/LC09_L2SP_177038_20260806_20260808_02_T1_QA_RADSAT.TIF",
+          "qa_aerosol": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC09_L2SP_177038_20260806_20260808_02_T1/LC09_L2SP_177038_20260806_20260808_02_T1_SR_QA_AEROSOL.TIF"
+        },
+        "hhDb": -4.38,
+        "hvDb": -15.7,
+        "ndvi": 0.674159,
+        "ndviSpatialCi95": [
+          0.657749,
+          0.688122
+        ]
+      },
+      {
+        "radarDate": "2026-08-22",
+        "opticalDate": "2026-08-22",
+        "lagDays": 0,
+        "scene": "LC09_L2SP_177038_20260822_02_T1",
+        "clearFraction": 0.99915,
+        "assets": {
+          "red": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC09_L2SP_177038_20260822_20260824_02_T1/LC09_L2SP_177038_20260822_20260824_02_T1_SR_B4.TIF",
+          "nir08": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC09_L2SP_177038_20260822_20260824_02_T1/LC09_L2SP_177038_20260822_20260824_02_T1_SR_B5.TIF",
+          "qa_pixel": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC09_L2SP_177038_20260822_20260824_02_T1/LC09_L2SP_177038_20260822_20260824_02_T1_QA_PIXEL.TIF",
+          "qa_radsat": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC09_L2SP_177038_20260822_20260824_02_T1/LC09_L2SP_177038_20260822_20260824_02_T1_QA_RADSAT.TIF",
+          "qa_aerosol": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC09_L2SP_177038_20260822_20260824_02_T1/LC09_L2SP_177038_20260822_20260824_02_T1_SR_QA_AEROSOL.TIF"
+        },
+        "hhDb": -4.77,
+        "hvDb": -15.68,
+        "ndvi": 0.630097,
+        "ndviSpatialCi95": [
+          0.607858,
+          0.650481
+        ]
+      },
+      {
+        "radarDate": "2026-09-03",
+        "opticalDate": "2026-08-30",
+        "lagDays": -4,
+        "scene": "LC08_L2SP_177038_20260830_02_T1",
+        "clearFraction": 0.991694,
+        "assets": {
+          "red": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260830_20260910_02_T1/LC08_L2SP_177038_20260830_20260910_02_T1_SR_B4.TIF",
+          "nir08": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260830_20260910_02_T1/LC08_L2SP_177038_20260830_20260910_02_T1_SR_B5.TIF",
+          "qa_pixel": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260830_20260910_02_T1/LC08_L2SP_177038_20260830_20260910_02_T1_QA_PIXEL.TIF",
+          "qa_radsat": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260830_20260910_02_T1/LC08_L2SP_177038_20260830_20260910_02_T1_QA_RADSAT.TIF",
+          "qa_aerosol": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260830_20260910_02_T1/LC08_L2SP_177038_20260830_20260910_02_T1_SR_QA_AEROSOL.TIF"
+        },
+        "hhDb": -5.56,
+        "hvDb": -16.1,
+        "ndvi": 0.571134,
+        "ndviSpatialCi95": [
+          0.546588,
+          0.5906
+        ]
+      },
+      {
+        "radarDate": "2026-09-15",
+        "opticalDate": "2026-09-15",
+        "lagDays": 0,
+        "scene": "LC08_L2SP_177038_20260915_02_T1",
+        "clearFraction": 0.99885,
+        "assets": {
+          "red": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260915_20260924_02_T1/LC08_L2SP_177038_20260915_20260924_02_T1_SR_B4.TIF",
+          "nir08": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260915_20260924_02_T1/LC08_L2SP_177038_20260915_20260924_02_T1_SR_B5.TIF",
+          "qa_pixel": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260915_20260924_02_T1/LC08_L2SP_177038_20260915_20260924_02_T1_QA_PIXEL.TIF",
+          "qa_radsat": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260915_20260924_02_T1/LC08_L2SP_177038_20260915_20260924_02_T1_QA_RADSAT.TIF",
+          "qa_aerosol": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20260915_20260924_02_T1/LC08_L2SP_177038_20260915_20260924_02_T1_SR_QA_AEROSOL.TIF"
+        },
+        "hhDb": -6.67,
+        "hvDb": -16.81,
+        "ndvi": 0.444911,
+        "ndviSpatialCi95": [
+          0.421384,
+          0.465585
+        ]
+      },
+      {
+        "radarDate": "2026-10-21",
+        "opticalDate": "2026-10-17",
+        "lagDays": -4,
+        "scene": "LC08_L2SP_177038_20261017_02_T1",
+        "clearFraction": 0.998231,
+        "assets": {
+          "red": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20261017_20261021_02_T1/LC08_L2SP_177038_20261017_20261021_02_T1_SR_B4.TIF",
+          "nir08": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20261017_20261021_02_T1/LC08_L2SP_177038_20261017_20261021_02_T1_SR_B5.TIF",
+          "qa_pixel": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20261017_20261021_02_T1/LC08_L2SP_177038_20261017_20261021_02_T1_QA_PIXEL.TIF",
+          "qa_radsat": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20261017_20261021_02_T1/LC08_L2SP_177038_20261017_20261021_02_T1_QA_RADSAT.TIF",
+          "qa_aerosol": "https://landsateuwest.blob.core.windows.net/landsat-c2/level-2/standard/oli-tirs/2026/177/038/LC08_L2SP_177038_20261017_20261021_02_T1/LC08_L2SP_177038_20261017_20261021_02_T1_SR_QA_AEROSOL.TIF"
+        },
+        "hhDb": -8.47,
+        "hvDb": -17.72,
+        "ndvi": 0.360252,
+        "ndviSpatialCi95": [
+          0.350713,
+          0.367934
+        ]
+      }
+    ],
+    "excludedCandidates": [
+      {
+        "radarDate": "2026-06-23",
+        "scene": "LC09_L2SP_177038_20260619_02_T1",
+        "clearFraction": 0.127,
+        "reason": "below planned optical coverage threshold"
+      },
+      {
+        "radarDate": "2026-06-23",
+        "scene": "LC09_L2SP_177039_20260619_02_T1",
+        "clearFraction": 0.045863,
+        "reason": "below planned optical coverage threshold"
+      },
+      {
+        "radarDate": "2026-09-27",
+        "scene": "LC08_L2SP_177038_20261001_02_T1",
+        "clearFraction": 0.013112,
+        "reason": "below planned optical coverage threshold"
+      },
+      {
+        "radarDate": "2026-09-27",
+        "scene": "LC08_L2SP_177039_20261001_02_T1",
+        "clearFraction": 0.011262,
+        "reason": "below planned optical coverage threshold"
+      },
+      {
+        "radarDate": "2026-09-27",
+        "reason": "no unused optical scene met the frozen date/coverage rules"
+      },
+      {
+        "radarDate": "2026-10-09",
+        "scene": "LC09_L2SP_177038_20261009_02_T1",
+        "clearFraction": 0.581575,
+        "reason": "below planned optical coverage threshold"
+      },
+      {
+        "radarDate": "2026-10-09",
+        "scene": "LC09_L2SP_177039_20261009_02_T1",
+        "clearFraction": 0.311419,
+        "reason": "below planned optical coverage threshold"
+      },
+      {
+        "radarDate": "2026-10-09",
+        "reason": "no unused optical scene met the frozen date/coverage rules"
+      }
+    ]
+  },
+  "interpretation": "An exploratory cross-sensor consistency check of an already observed radar pattern. It is not a preregistered field trial, causal attribution, independent crop/flood classification, or validation of radar displacement. No p-values: dates are few and temporally dependent. Spatial bootstrap intervals do not include calibration, atmospheric or temporal sampling uncertainty.",
+  "sources": [
+    {
+      "title": "USGS Landsat surface reflectance and scaling",
+      "url": "https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products"
+    },
+    {
+      "title": "USGS Landsat QA flags",
+      "url": "https://www.usgs.gov/landsat-missions/landsat-collection-2-quality-assessment-bands"
+    },
+    {
+      "title": "ASF NISAR GCOV guide",
+      "url": "https://nisar-docs.asf.alaska.edu/gcov/"
+    },
+    {
+      "title": "Landsat public STAC catalogue",
+      "url": "https://planetarycomputer.microsoft.com/api/stac/v1"
+    }
+  ]
+}

@@ -106,6 +106,36 @@ def audit():
             errors.append(f"GCOV source/date mismatch: {row['date']}")
     if not season_dates or season_dates != sorted(set(season_dates)):
         errors.append("Measured GCOV dates must be nonempty, unique and chronological")
+    check_path = season_path.parent / "season-check.json"
+    optical_check = json.loads(check_path.read_text(encoding="utf-8"))
+    optical = optical_check["results"]
+    plan_path = ROOT / "pipeline/season_check_plan.json"
+    if optical_check["analysisPlanSha256"] != hashlib.sha256(plan_path.read_bytes()).hexdigest():
+        errors.append("Optical check differs from its recorded analysis plan")
+    if optical_check["radarSourceSha256"] != hashlib.sha256(season_path.read_bytes()).hexdigest():
+        errors.append("Optical check does not match the bundled GCOV season")
+    if optical_check["software"]["processingCodeSha256"] != hashlib.sha256((ROOT / "pipeline/season_check.py").read_bytes()).hexdigest():
+        errors.append("Optical check does not match its processing script")
+    for suffix in (".png", ".csv"):
+        if not check_path.with_suffix(suffix).is_file():
+            errors.append(f"Missing optical check output: {suffix}")
+    plan = optical_check["method"]
+    if len(optical["rows"]) != optical["matchedDates"] or optical["matchedDates"] < plan["minMatchedDates"]:
+        errors.append("Invalid optical date-pair count")
+    seen_optical = set()
+    radar_rows = {r["date"]: r for r in season["dates"]}
+    for row in optical["rows"]:
+        lag = (iso(row["opticalDate"]) - iso(row["radarDate"])).days
+        if lag != row["lagDays"] or abs(lag) > plan["maxDateGapDays"] or row["opticalDate"] in seen_optical:
+            errors.append("Optical date reused or outside the fixed matching rule")
+        seen_optical.add(row["opticalDate"])
+        if row["clearFraction"] < plan["minClearFractionPerScene"] or not -1 <= row["ndvi"] <= 1:
+            errors.append("Optical check violates the quality or NDVI range rules")
+        source = radar_rows.get(row["radarDate"], {})
+        if any(row[k] != source.get(k) for k in ("hhDb", "hvDb")):
+            errors.append("Paired radar value differs from its source GCOV season")
+    if not plan["minCommonAreaFraction"] <= optical["commonAreaFraction"] <= 1:
+        errors.append("Insufficient common optical area")
     index = json.loads((WEB / "data/index.json").read_text(encoding="utf-8"))
     evidence_manifest = json.loads((WEB / "data/evidence" / index["manifest"]).read_text(encoding="utf-8"))
     for record in evidence_manifest["records"]:
@@ -137,9 +167,12 @@ def audit():
                 "measuredGcovSeason": {"stack": season["stack"], "start": season["dates"][0]["date"], "end": season["dates"][-1]["date"],
                     "windowKm": season["windowKm"], "pixelM": season["pixelM"],
                     "interpretation": "Median HH/HV backscatter; crop and water interpretations are hypotheses. Dark-surface thresholds are not validated water areas."},
+                "independentOpticalCheck": {"matchedDates":optical["matchedDates"], "commonAreaFraction":optical["commonAreaFraction"],
+                    "hvSpearman":optical["hvSpearman"], "hvFirstDifferenceRateSpearman":optical["hvFirstDifferenceRateSpearman"],
+                    "interpretation":"Exploratory cross-sensor seasonal consistency; not crop/flood classification, causal attribution or displacement validation."},
                 "scope": "Metadata and file integrity only. No source authentication, OTS proof verification, scientific accuracy certification or independent field validation performed."}
     return {"schema": "fringe.bundle-audit/1", "datasetSnapshot": nisar.get("generatedAt"),
-            "counts": {"radarSites": len(nisar["sites"]), "uniqueGUNWPairs": pairs, "fullGUNWPairs": processed, "gcovPreviews": frames, "gcovMeasuredDates": len(season_dates), "files": len(files)},
+            "counts": {"radarSites": len(nisar["sites"]), "uniqueGUNWPairs": pairs, "fullGUNWPairs": processed, "gcovPreviews": frames, "gcovMeasuredDates": len(season_dates), "landsatMatchedDates":optical["matchedDates"], "files": len(files)},
             "findings": findings, "errors": errors, "files": files}
 
 
