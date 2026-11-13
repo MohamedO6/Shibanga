@@ -1,0 +1,109 @@
+{
+ "schema": "undula.gcov-season/1",
+ "product": "NISAR_L2_GCOV_PROVISIONAL_V1",
+ "stack": "129_A_017",
+ "center": {
+  "lat": 31.1,
+  "lon": 30.95
+ },
+ "windowKm": 20.0,
+ "pixelM": 50,
+ "thresholds": {
+  "darkHHdb": -18.0,
+  "darkHVdb": -24.0
+ },
+ "rvi": "4*HV/(HH+HV), linear gamma0",
+ "note": "Undula's estimate from provisional NISAR GCOV. Simple thresholds; not a validated crop or flood classification.",
+ "dates": [
+  {
+   "date": "2026-06-23",
+   "hhDb": -8.61,
+   "hvDb": -18.75,
+   "rvi": 0.365,
+   "darkKm2": 0.0,
+   "validFrac": 1.0,
+   "granule": "NISAR_L2_PR_GCOV_023_129_A_017_4005_DHDH_A_20260623T031620_20260623T031651_P05023_N_F_J_001"
+  },
+  {
+   "date": "2026-07-05",
+   "hhDb": -7.8,
+   "hvDb": -18.41,
+   "rvi": 0.332,
+   "darkKm2": 0.0,
+   "validFrac": 1.0,
+   "granule": "NISAR_L2_PR_GCOV_024_129_A_017_4005_DHDH_A_20260705T031619_20260705T031651_P05023_N_F_J_001"
+  },
+  {
+   "date": "2026-07-17",
+   "hhDb": -6.71,
+   "hvDb": -17.39,
+   "rvi": 0.316,
+   "darkKm2": 0.0,
+   "validFrac": 1.0,
+   "granule": "NISAR_L2_PR_GCOV_025_129_A_017_4005_DHDH_A_20260717T031619_20260717T031650_P05023_N_F_J_001"
+  },
+  {
+   "date": "2026-08-10",
+   "hhDb": -4.38,
+   "hvDb": -15.7,
+   "rvi": 0.257,
+   "darkKm2": 0.0,
+   "validFrac": 1.0,
+   "granule": "NISAR_L2_PR_GCOV_027_129_A_017_4005_DHDH_A_20260810T031617_20260810T031649_P05023_N_F_J_001"
+  },
+  {
+   "date": "2026-08-22",
+   "hhDb": -4.77,
+   "hvDb": -15.68,
+   "rvi": 0.285,
+   "darkKm2": 0.0,
+   "validFrac": 1.0,
+   "granule": "NISAR_L2_PR_GCOV_028_129_A_017_4005_DHDH_A_20260822T031617_20260822T031649_P05023_N_F_J_001"
+  },
+  {
+   "date": "2026-09-03",
+   "hhDb": -5.56,
+   "hvDb": -16.1,
+   "rvi": 0.32,
+   "darkKm2": 0.0,
+   "validFrac": 1.0,
+   "granule": "NISAR_L2_PR_GCOV_029_129_A_017_4005_DHDH_A_20260903T031616_20260903T031648_P05023_N_F_J_001"
+  },
+  {
+   "date": "2026-09-15",
+   "hhDb": -6.67,
+   "hvDb": -16.81,
+   "rvi": 0.351,
+   "darkKm2": 0.0,
+   "validFrac": 1.0,
+   "granule": "NISAR_L2_PR_GCOV_030_129_A_017_4005_DHDH_A_20260915T031616_20260915T031648_P05023_N_F_J_001"
+  },
+  {
+   "date": "2026-09-27",
+   "hhDb": -8.12,
+   "hvDb": -17.62,
+   "rvi": 0.404,
+   "darkKm2": 0.0,
+   "validFrac": 1.0,
+   "granule": "NISAR_L2_PR_GCOV_031_129_A_017_4005_DHDH_A_20260927T031616_20260927T031648_P05023_N_F_J_001"
+  },
+  {
+   "date": "2026-10-09",
+   "hhDb": -8.59,
+   "hvDb": -17.9,
+   "rvi": 0.428,
+   "darkKm2": 0.0,
+   "validFrac": 1.0,
+   "granule": "NISAR_L2_PR_GCOV_032_129_A_017_4005_DHDH_A_20261009T031616_20261009T031649_P05023_N_F_J_001"
+  },
+  {
+   "date": "2026-10-21",
+   "hhDb": -8.47,
+   "hvDb": -17.72,
+   "rvi": 0.429,
+   "darkKm2": 0.0,
+   "validFrac": 1.0,
+   "granule": "NISAR_L2_PR_GCOV_033_129_A_017_4005_DHDH_A_20261021T031616_20261021T031649_P05023_N_F_J_001"
+  }
+ ]
+}

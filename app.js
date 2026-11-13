@@ -1388,6 +1388,7 @@ function renderDetail(e) {
     <div class="card" id="coast-card"></div>
     <div class="card photo-card" id="photo-card"></div>
     <div class="card nisar-card" id="nisar-card"></div>
+    <div class="card season-card" id="season-card" hidden></div>
     <div class="card"><div class="card-head"><h3>Published measurements</h3><span class="label-pill label-MEASURED" style="padding:4px 8px">Cited</span></div>
       <ul class="facts">${e.facts.map(([v, l, s]) => `<li><span class="v">${esc(v)}</span><span>${esc(l)}<span class="s">${esc(s)}</span></span></li>`).join("")}</ul></div>
     <div class="card" id="interp-card"></div>
@@ -1421,6 +1422,7 @@ function renderDetail(e) {
   });
   renderDetailReadouts();
   renderNisarCard();
+  renderSeasonCard(e);
   renderPhotoCard();
   renderGroundCard(e);
   renderCoastCard(e);
@@ -1429,6 +1431,51 @@ function renderDetail(e) {
   renderEvidence(e);
   renderIntegrity(e);
   updateClock();
+}
+
+// ---------- the farming season in numbers, from NISAR GCOV (Nile Delta) ----------
+const seasonCache = {};
+async function renderSeasonCard(e) {
+  const card = $("#season-card");
+  if (!card) return;
+  if (!(e.id in seasonCache)) {
+    seasonCache[e.id] = null;
+    if (e.id === "nile-delta") {
+      try { const r = await fetch(`data/nisar/${e.id}/gcov-season.json?v=2`); if (r.ok) seasonCache[e.id] = await r.json(); } catch {}
+    }
+  }
+  const d = seasonCache[e.id];
+  if (state.eventId !== e.id || !d?.dates?.length) { card.hidden = true; return; }
+  const rows = d.dates, n = rows.length;
+  const W = 320, H = 160, ml = 30, mr = 12, mt = 12, mb = 26, iw = W - ml - mr, ih = H - mt - mb;
+  const t = rows.map((r) => Date.parse(r.date)), t0 = Math.min(...t), t1 = Math.max(...t) || t0 + 1;
+  const X = (i) => ml + (t1 === t0 ? iw / 2 : (t[i] - t0) / (t1 - t0) * iw);
+  const all = rows.flatMap((r) => [r.hhDb, r.hvDb]), lo = Math.floor(Math.min(...all) - 1), hi = Math.ceil(Math.max(...all) + 1);
+  const Y = (v) => mt + ih - (v - lo) / (hi - lo) * ih;
+  const path = (k) => rows.map((r, i) => `${i ? "L" : "M"}${X(i).toFixed(1)},${Y(r[k]).toFixed(1)}`).join("");
+  const dots = (k, c, name) => rows.map((r, i) => `<circle cx="${X(i).toFixed(1)}" cy="${Y(r[k]).toFixed(1)}" r="3.2" fill="${c}"><title>${esc(r.date)}: ${name} ${r[k]} dB</title></circle>`).join("");
+  const grid = [];
+  for (let v = Math.ceil(lo / 5) * 5; v <= hi; v += 5) grid.push(`<line x1="${ml}" x2="${W - mr}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}" stroke="var(--stroke)" stroke-dasharray="2 4"/><text x="${ml - 5}" y="${(Y(v) + 3).toFixed(1)}" text-anchor="end" class="ax">${v}</text>`);
+  const fmtD = (s) => new Date(s + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+  const hvPeak = rows.reduce((x, y) => (y.hvDb > x.hvDb ? y : x)), hhPeak = rows.reduce((x, y) => (y.hhDb > x.hhDb ? y : x));
+  const first = rows[0], last = rows[n - 1];
+  const thumbs = rows.map((r) => `<figure><img loading="lazy" src="data/nisar/${e.id}/gcov-season/${esc(r.date)}.png" alt="NISAR HH/HV composite, ${esc(r.date)}"><figcaption>${esc(fmtD(r.date))}</figcaption></figure>`).join("");
+  card.hidden = false;
+  card.innerHTML = `<div class="card-head"><h3>The farming season, measured by NISAR</h3><span class="label-pill label-PROCESSED" style="padding:4px 8px">From GCOV</span></div>
+    <p class="muted" style="margin:0;font-size:13px;line-height:1.5">${n} NISAR passes over a ${d.windowKm} × ${d.windowKm} km patch of rice and cotton fields near Kafr El Sheikh, read from the full radar data in two polarizations. Brighter means more radar echo (dB).</p>
+    <svg class="season-chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="HH and HV radar backscatter through the season">
+      ${grid.join("")}
+      <path d="${path("hhDb")}" fill="none" stroke="#ff9ec7" stroke-width="2.4" stroke-linejoin="round"/>${dots("hhDb", "#ff9ec7", "HH")}
+      <path d="${path("hvDb")}" fill="none" stroke="#7cf28b" stroke-width="2.4" stroke-linejoin="round"/>${dots("hvDb", "#7cf28b", "HV")}
+      <text x="${ml}" y="${H - 6}" class="ax">${esc(fmtD(first.date))}</text><text x="${W - mr}" y="${H - 6}" text-anchor="end" class="ax">${esc(fmtD(last.date))}</text>
+    </svg>
+    <div class="season-legend"><span><i style="background:#7cf28b"></i>HV: leaves and stems (volume)</span><span><i style="background:#ff9ec7"></i>HH: water under the plants, ground</span></div>
+    <ul class="facts">
+      <li><span class="v">${esc(fmtD(hvPeak.date))}</span><span>Fields at their fullest: HV peaks at ${hvPeak.hvDb} dB<span class="s">${(hvPeak.hvDb - first.hvDb).toFixed(1)} dB above ${esc(fmtD(first.date))}, then down to ${last.hvDb} dB by ${esc(fmtD(last.date))}, as crops are harvested</span></span></li>
+      <li><span class="v">+${(hhPeak.hhDb - first.hhDb).toFixed(1)} dB</span><span>HH jumps by ${esc(fmtD(hhPeak.date))}<span class="s">Likely radar bouncing between standing water and rice stalks in flooded paddies (double bounce). A hypothesis, not a classification.</span></span></li>
+    </ul>
+    <div class="season-strip">${thumbs}</div>
+    <p class="quality-note">Undula's own reading of provisional NISAR GCOV (${esc(d.stack)}): median gamma0 over the patch, ${d.pixelM} m cells. Not a validated crop or flood map.</p>`;
 }
 
 function renderDetailReadouts() {
