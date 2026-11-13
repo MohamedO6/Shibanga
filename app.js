@@ -408,7 +408,8 @@ function anywherePopup(ll) {
     <div style="font:650 16px var(--mono);margin:4px 0">${ll.lat.toFixed(3)}°, ${ll.lng.toFixed(3)}°</div>
     <div class="muted" style="font-size:13px;line-height:1.45">NISAR images nearly all land and ice every 12 days. The data is free.</div>
     <button class="pill-btn" data-live style="margin-top:10px">${icon("radio", { size: 14 })}Show NISAR here, live</button>
-    <a class="pill-btn ghost" href="${esc(url)}" target="_blank" rel="noopener" style="margin-top:6px">${icon("external", { size: 14 })}Get the data</a>
+    <a class="pill-btn ghost" href="${esc(url)}" target="_blank" rel="noopener" style="margin-top:6px">${icon("external", { size: 14 })}Get the data (ASF Vertex)</a>
+    <a class="pill-btn ghost" href="${esc(earthdataUrl(ll.lat, ll.lng))}" target="_blank" rel="noopener" style="margin-top:6px">${icon("external", { size: 14 })}Search NASA Earthdata</a>
     <button class="pill-btn ghost" data-go style="margin-top:6px">${icon("locate", { size: 14 })}Nearest story: ${esc(near.ev.name)}</button>`;
   el.querySelector("[data-go]").addEventListener("click", () => { map.closePopup(); selectEvent(near.ev.id, { fly: true }); });
   el.querySelector("[data-live]").addEventListener("click", () => openLive(ll.lat, ll.lng));
@@ -2719,6 +2720,10 @@ function liveCard({ kicker = "Live from NASA, NISAR satellite", title, text, key
   if (data) a.href = data;
 }
 
+function earthdataUrl(lat, lon) {
+  return `https://search.earthdata.nasa.gov/search?q=NISAR&sp[0]=${lon.toFixed(4)}%2C${lat.toFixed(4)}`;
+}
+
 function vertexUrl(lat, lon) {
   const wkt = `POINT(${lon.toFixed(4)} ${lat.toFixed(4)})`;
   return `https://search.asf.alaska.edu/#/?dataset=NISAR&polygon=${encodeURIComponent(wkt)}&zoom=8&center=${lon.toFixed(3)},${lat.toFixed(3)}`;
@@ -3207,9 +3212,16 @@ function renderGuide() {
     <h2>Evidence you can check</h2>
     <p>Each site has an evidence record. We fingerprinted every record with SHA-256 and time-stamped the list in the Bitcoin blockchain using OpenTimestamps. The integrity panel redoes the fingerprint in your browser, follows the proof up to the Bitcoin block and checks it against the live chain. This shows the records haven't changed since they were stamped. It can't tell you whether the science is right.</p>
 
+
+    <h2>Learn more and go further</h2>
+    <p>Every NASA resource from the Space Apps "Dancing with the SARs" challenge, and how Undula uses it:</p>
+    <ul class="guide-resources"><li><b><a href="https://search.earthdata.nasa.gov/search" target="_blank" rel="noopener">NASA Earthdata Search</a></b>: NASA's catalogue of Earth data. Undula asks the same catalogue (its CMR API) for NISAR's latest image of any spot you tap, and the pipeline finds NISAR GUNW pairs there. Every place's popup has a button that opens it on that spot.</li><li><b><a href="https://search.asf.alaska.edu/" target="_blank" rel="noopener">ASF Data Search Vertex</a></b>: Where the NISAR products in Undula come from: the Alaska Satellite Facility, NASA's radar data centre. Every place and every live image links back to Vertex.</li><li><b><a href="https://nisar-docs.asf.alaska.edu/" target="_blank" rel="noopener">NISAR Data User Guide</a></b>: How the GUNW interferograms and GCOV backscatter products are laid out. Undula reads them by this guide.</li><li><b><a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing" target="_blank" rel="noopener">Intro to Remote Sensing</a></b>: Passive and active sensors, and why radar brings its own light.</li><li><b><a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/sar" target="_blank" rel="noopener">Intro to Synthetic Aperture Radar</a></b>: Wavelengths, polarizations and interferometry: the ideas behind every ring on the map.</li><li><b><a href="https://appliedsciences.nasa.gov/get-involved/training" target="_blank" rel="noopener">NASA ARSET trainings</a></b>: Free courses, including working with NISAR for earthquakes, volcanoes, landslides and floods.</li><li><b><a href="https://nisar.jpl.nasa.gov/applications/arcgis-storymaps/" target="_blank" rel="noopener">NISAR StoryMaps</a></b>: NASA-JPL's own stories of what NISAR will show, from ecosystems to hazards.</li><li><b><a href="https://nisar.jpl.nasa.gov/applications/societal-benefit/" target="_blank" rel="noopener">NISAR Applications White Papers</a></b>: How NISAR helps with subsidence, coasts, water, farming and disasters: the same uses Undula shows.</li><li><b><a href="https://uavsar.jpl.nasa.gov/education/postcards.html" target="_blank" rel="noopener">UAVSAR Postcards</a></b>: Radar views from NASA's airborne L-band radar, NISAR's test bed.</li></ul>
+    <p>Other space agencies' radars dance too. Undula doesn't use them yet; they are where it can go next:</p>
+    <ul class="guide-resources"><li><b><a href="https://catalogos.conae.gov.ar/catalogo/catalogoSatSaocomInfo.html" target="_blank" rel="noopener">SAOCOM (CONAE, Argentina)</a></b>: an L-band radar like NISAR, a natural next comparison over the Nile Delta.</li><li><b><a href="https://donnees-data.asc-csa.gc.ca/en/dataset/rcm" target="_blank" rel="noopener">RADARSAT Constellation Mission (CSA, Canada)</a></b>: C-band radar, with shorter waves that show about four times as many rings for the same motion.</li><li><b><a href="https://donnees-data.asc-csa.gc.ca/en/dataset/radarsat1" target="_blank" rel="noopener">RADARSAT-1 archive</a></b>: radar images from 1995 to 2013, for looking much further back in time.</li><li><b><a href="https://github.com/asc-csa/Synthetic_Aperture_Radar_Tutorial" target="_blank" rel="noopener">CSA's SAR Python tutorial</a></b>: a hands-on start for processing radar yourself.</li></ul>
+
     <h2>Data &amp; credits</h2>
     <ul>
-      <li>NISAR L-band GUNW: NASA/JPL-Caltech &amp; ISRO via the Alaska Satellite Facility DAAC.</li>
+      <li>NISAR L-band GUNW and GCOV: NASA/JPL-Caltech &amp; ISRO via the Alaska Satellite Facility DAAC, found through NASA Earthdata (CMR) and ASF Vertex.</li>
       <li>GNSS: Nevada Geodetic Laboratory, University of Nevada, Reno (Blewitt et al., 2018).</li>
       <li>NASA/JPL, California DWR, USGS, INGV, Icelandic Met Office, NOAA and peer-reviewed papers, cited for each site.</li>
       <li>Then &amp; Now photos: Esri World Imagery Wayback, with imagery from Vantor (Maxar), Airbus, Earthstar Geographics and partners.</li>

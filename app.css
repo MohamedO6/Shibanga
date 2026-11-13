@@ -1067,3 +1067,7 @@ input[type="range"] { accent-color: var(--accent); }
 @media (max-width: 860px) {
   .app.dock-min .scout-panel { display: none !important; }
 }
+
+.guide-resources { display: grid; gap: 8px; padding-left: 20px; }
+.guide-resources li { line-height: 1.5; }
+.guide-resources b a { color: var(--accent); }
