@@ -1,0 +1,102 @@
+{
+  "project": "Undula",
+  "images": [
+    {
+      "order": 1,
+      "title": "واجهة Undula",
+      "name": "00-undula-overview.png",
+      "alt": "Undula's application view showing the globe and locations available to explore.",
+      "imageUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/nasa-static/00-undula-overview.png",
+      "imageSha256": "53f5bc72d7618e8f88cd866f428eef21887e90857767711622aea623a8cc7fdd",
+      "gifUrl": null,
+      "gifLinkText": "",
+      "bytes": 1303008,
+      "recommendedUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/nasa-static/00-undula-overview.png",
+      "recommendedText": "View the full-size Undula overview"
+    },
+    {
+      "order": 2,
+      "title": "الرادار ومراحل الموديل",
+      "name": "01-radar-and-model.png",
+      "alt": "Two dated Nile Delta radar observations, followed by separate Jakarta model states at 0 and minus 18 centimetres of relative line-of-sight motion.",
+      "imageUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/nasa-static/01-radar-and-model.png",
+      "imageSha256": "f5d675eec0ba9d97be07fbea8d42997589a2b9718dde40d7414150c7c5b5cea3",
+      "gifUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/01-nisar-season.gif",
+      "gifLinkText": "Watch the radar sequence and motion-model animation",
+      "bytes": 1242366,
+      "gifSha256": "f7ab77c33a06f64f1bfe10c48c948cef674406a0dbd6e77e30a22282add9f130",
+      "recommendedUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/01-nisar-season.gif",
+      "recommendedText": "Watch the radar sequence and motion-model animation"
+    },
+    {
+      "order": 3,
+      "title": "رسم التحليل العلمي",
+      "name": "04-season-check.png",
+      "alt": "Seasonal NISAR HH/HV backscatter and independently measured Landsat greenness, with separate units and a spatial resampling interval.",
+      "imageUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/nasa-static/04-season-check.png",
+      "imageSha256": "0245815a10d97938af5c8ceed363c123deaf8985a0b0f17b94e06912bc58ba2d",
+      "gifUrl": null,
+      "gifLinkText": "",
+      "bytes": 184096,
+      "recommendedUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/nasa-static/04-season-check.png",
+      "recommendedText": "View the full-size seasonal science figure"
+    },
+    {
+      "order": 4,
+      "title": "تحويل الحركة إلى نغمات",
+      "name": "07-motion-to-notes.png",
+      "alt": "The Jakarta motion model at minus 18 centimetres of relative line-of-sight motion beside its descending phrase and 18 whole-centimetre note events.",
+      "imageUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/nasa-static/07-motion-to-notes.png",
+      "imageSha256": "21637b5d51ca1f0a9542e390b46827546f744af59991f6b9efd13ee6650148e0",
+      "gifUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/07-motion-to-sound.gif",
+      "gifLinkText": "Watch modelled motion become musical notes — silent GIF",
+      "bytes": 449103,
+      "gifSha256": "d70116e83939e39c5fba4b512bf59f20431a9e586e45bfe2f2d8adf1c1f44c5a",
+      "recommendedUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/07-motion-to-sound.gif",
+      "recommendedText": "Watch modelled motion become musical notes — silent GIF"
+    },
+    {
+      "order": 5,
+      "title": "الدلتا: 2026 و2100",
+      "name": "02-delta-2026-vs-2100.png",
+      "alt": "Nile Delta scenario at its 2026 baseline and in 2100, showing 3491 square kilometres of additional threshold exposure with continued subsidence, compared with 1557 without.",
+      "imageUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/nasa-static/02-delta-2026-vs-2100.png",
+      "imageSha256": "f95cfaa1bded7c6eb192fa471df70fc6a61590e43524dee5d41fb8ce8de67706",
+      "gifUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/02-sea-scenario.gif",
+      "gifLinkText": "Watch the Nile Delta scenario progress from 2026 to 2100",
+      "bytes": 676035,
+      "gifSha256": "7abc329d7b24c0f4a4c308989c0e0cb142c421e88ae4ab0d3dd89a61c81ce8ac",
+      "recommendedUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/02-sea-scenario.gif",
+      "recommendedText": "Watch the Nile Delta scenario progress from 2026 to 2100"
+    },
+    {
+      "order": 6,
+      "title": "الأسترونوت: أفريقيا إلى كانساس",
+      "name": "03-africa-to-kansas.png",
+      "alt": "Two actual app captures: Astrounit starting in North Africa, and the NASA NISAR GCOV preview returned at the selected Kansas point. AI-generated character: Google Flow.",
+      "imageUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/nasa-static/03-africa-to-kansas.png",
+      "imageSha256": "740b1fca267687dfe92b329ee5ce66d626cace9cba0c526c8f0cff1e6f73dda8",
+      "gifUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/03-astrounit.gif",
+      "gifLinkText": "Watch Astrounit travel from Africa to Kansas and open NASA radar",
+      "bytes": 1352080,
+      "gifSha256": "ce16500a1938511494a2d59f324a0de9a39d9ac129579e32944b0f37bd0551bc",
+      "recommendedUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/03-astrounit.gif",
+      "recommendedText": "Watch Astrounit travel from Africa to Kansas and open NASA radar"
+    },
+    {
+      "order": 7,
+      "title": "مسار الأدلة والنتائج",
+      "name": "05-evidence-flow.png",
+      "alt": "The separate paths from observations and assumptions to derived results, audio models and the Sea 2100 scenario.",
+      "imageUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/nasa-static/05-evidence-flow.png",
+      "imageSha256": "4a13828959a335ee7046fba665f3714f98338acfad3763355a3d4c8b3dd8cc16",
+      "gifUrl": null,
+      "gifLinkText": "",
+      "bytes": 140488,
+      "recommendedUrl": "https://mohamedo6.github.io/Shibanga/assets/submission/nasa-static/05-evidence-flow.png",
+      "recommendedText": "View the full-size evidence flow"
+    }
+  ],
+  "author": "Mohamed Tamer",
+  "sourceImagesModified": false
+}
