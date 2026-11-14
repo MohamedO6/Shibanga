@@ -7,6 +7,8 @@ the NISAR satellite. The satellite flies across between slides and its radar swe
 
 ## Run it
 
+The separate [submission-copy helper](submission-copy.html) copies the formatted Project Details text and public media references to the clipboard. It does not edit, save or submit the NASA form. Its media under `assets/submission/` are derivatives from the submission kit; the presentation's original films and assets are retained.
+
 **Easiest:** double-click `index.html` (Chrome or Edge). It works offline, with no server and no internet.
 Press **F** for full screen.
 
