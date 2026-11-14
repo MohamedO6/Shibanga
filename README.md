@@ -53,8 +53,8 @@ English, with the team name, members and challenge. Host it publicly (Google Dri
 
 ## Change things
 
-- **QR code / link:** in `deck.js`, `APP_URL` (now the GitHub `undula` branch). Point it at the live site once Undula
-  is deployed, then rebuild the PDF.
+- **QR code / link:** in `deck.js`, `APP_URL` points to the public application at https://undula.vercel.app.
+  Rebuild both PDFs after changing it. The source repository is https://github.com/MohamedO6/Undula.
 - **Who presents which part:** the `presenter` figures in `index.html`.
 - **Speaker notes:** `NOTES` in `deck.js`.
 - App clips are real recordings in `assets/clips/`. The film is `undula-30s-final.mp4` from the team folder.

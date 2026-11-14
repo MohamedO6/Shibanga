@@ -3,8 +3,8 @@
 
 // ---------- config ----------
 const params = new URLSearchParams(location.search);
-// The live app the QR code and the "L" key open. Change this once Undula is deployed.
-const APP_URL = params.get("app") || "https://github.com/MohamedO6/Shibanga/tree/undula";
+// Public application URL used by the closing slide's QR code.
+const APP_URL = params.get("app") || "https://undula.vercel.app";
 const LIVE_URL = params.get("live") || "app/?welcome=0";
 const EXPORT = params.has("export") ? Number(params.get("export")) : null;
 const W = 1920, H = 1080;
